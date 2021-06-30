@@ -1,0 +1,58 @@
+# policies_syslog - Intersight Syslog Policy Terraform Module
+
+## Usage
+
+```hcl
+module "syslog_policy" {
+
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_syslog"
+
+  # omitted...
+}
+```
+
+This module will create a Syslog Policy in Intersight.  This can be used to create Domains, Profiles, and Templates that require a Syslog Policy.  
+
+These resources are consumed
+
+* [syslog_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/syslog_policy)
+
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_intersight"></a> [intersight](#provider\_intersight) | n/a |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [intersight_syslog_policy.syslog](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/syslog_policy) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"syslog"` | no |
+| <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
+| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_remote_clients"></a> [remote\_clients](#input\_remote\_clients) | Configure up to 2 remote syslog servers. | `list(map(string))` | `[]` | no |
+| <a name="input_syslog_severity"></a> [syslog\_severity](#input\_syslog\_severity) | n/a | `string` | `"warning"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_moid"></a> [moid](#output\_moid) | Syslog Policy Managed Object ID (moid). |
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
