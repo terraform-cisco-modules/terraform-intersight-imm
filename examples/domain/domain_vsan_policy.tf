@@ -8,7 +8,7 @@ module "vsan_policy_example_a" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/domain_vsan_policy"
+  source      = "terraform-cisco-modules/imm/intersight//modules/domain_vsan_policy"
   description = "Fabric A VSAN Policy Example."
   name        = "example_fabric_a"
   org_moid    = local.org_moid
@@ -25,7 +25,7 @@ module "vsan_policy_example_b" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/domain_vsan_policy"
+  source      = "terraform-cisco-modules/imm/intersight//modules/domain_vsan_policy"
   description = "Fabric B VSAN Policy Example."
   name        = "example_fabric_b"
   org_moid    = local.org_moid
@@ -50,7 +50,7 @@ module "vsan_policy_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/domain_vsan_policy"
+  source          = "terraform-cisco-modules/imm/intersight//modules/domain_vsan_policy"
   description     = ""
   enable_trunking = false
   name            = "vsan_policy"

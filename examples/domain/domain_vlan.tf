@@ -11,7 +11,7 @@ module "vlan_example_1" {
     module.multicast_example,
     module.vlan_policy_example
   ]
-  source           = "../../modules/domain_vlan"
+  source           = "terraform-cisco-modules/imm/intersight//modules/domain_vlan"
   is_native        = true
   multicast_moid   = [module.multicast_example.moid]
   vlan_list        = [1]
@@ -31,7 +31,7 @@ module "vlan_example_2" {
     module.multicast_example,
     module.vlan_policy_example
   ]
-  source           = "../../modules/domain_vlan"
+  source           = "terraform-cisco-modules/imm/intersight//modules/domain_vlan"
   multicast_moid   = [module.multicast_example.moid]
   vlan_list_type   = "range"
   vlan_range_start = 2
@@ -47,7 +47,7 @@ module "vlan_example_3" {
     module.multicast_example,
     module.vlan_policy_example
   ]
-  source           = "../../modules/domain_vlan"
+  source           = "terraform-cisco-modules/imm/intersight//modules/domain_vlan"
   multicast_moid   = [module.multicast_example.moid]
   vlan_list        = [101, 105, 110, 115]
   vlan_list_type   = "list"
@@ -67,7 +67,7 @@ module "vlan_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/domain_vlan"
+  source                = "terraform-cisco-modules/imm/intersight//modules/domain_vlan"
   auto_allow_on_uplinks = true
   is_native             = false
   multicast_moid        = [ module.multicast_example.moid ]

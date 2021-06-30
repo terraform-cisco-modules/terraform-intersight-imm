@@ -13,7 +13,7 @@ module "wwnn_pool" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/pools_fc"
+  source           = "terraform-cisco-modules/imm/intersight//modules/pools_fc"
   assignment_order = "sequential"
   description      = "WWNN Pool Example."
   name             = "wwn_pool"
@@ -32,7 +32,7 @@ module "wwpn_pool_a" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/pools_fc"
+  source           = "terraform-cisco-modules/imm/intersight//modules/pools_fc"
   assignment_order = "sequential"
   description      = "WWPN Pool A Example."
   name             = "wwpn_pool_a"
@@ -54,7 +54,7 @@ module "wwpn_pool_b" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/pools_fc"
+  source           = "terraform-cisco-modules/imm/intersight//modules/pools_fc"
   assignment_order = "sequential"
   description      = "WWPN Pool B Example."
   name             = "wwpn_pool_b"
@@ -83,7 +83,7 @@ module "wwxn_pool_default" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/pools_fc"
+  source              = "terraform-cisco-modules/imm/intersight//modules/pools_fc"
   assignment_order    = "default"
   description         = ""
   name                = "default"

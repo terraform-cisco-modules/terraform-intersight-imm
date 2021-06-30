@@ -10,7 +10,7 @@ module "vsan_example_a" {
     data.intersight_organization_organization.org_moid,
     module.vsan_policy_example_a
   ]
-  source           = "../../modules/domain_vsan"
+  source           = "terraform-cisco-modules/imm/intersight//modules/domain_vsan"
   vsan_policy_moid = module.vsan_policy_example_a.moid
   vsan_prefix      = "example-a"
   vsan_list = {
@@ -35,7 +35,7 @@ module "vsan_example_b" {
     data.intersight_organization_organization.org_moid,
     module.vsan_policy_example_b
   ]
-  source           = "../../modules/domain_vsan"
+  source           = "terraform-cisco-modules/imm/intersight//modules/domain_vsan"
   vsan_policy_moid = module.vsan_policy_example_b.moid
   vsan_prefix      = "example-b"
   vsan_list = {
@@ -61,7 +61,7 @@ module "vsan_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/domain_vsan"
+  source                = "terraform-cisco-modules/imm/intersight//modules/domain_vsan"
   default_zoning        = var.default_zoning
   fc_zone_sharing_mode  = var.fc_zone_sharing_mode
   name_prefix           = "vsan"

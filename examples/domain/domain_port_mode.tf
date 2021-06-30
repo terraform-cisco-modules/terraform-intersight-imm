@@ -9,7 +9,7 @@ module "port_mode_example_a" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_a
   ]
-  source        = "../../modules/domain_port_mode"
+  source        = "terraform-cisco-modules/imm/intersight//modules/domain_port_mode"
   custom_mode   = "FibreChannel"
   port_id_end   = 4
   port_id_start = 1
@@ -27,7 +27,7 @@ module "port_mode_example_b" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_b
   ]
-  source        = "../../modules/domain_port_mode"
+  source        = "terraform-cisco-modules/imm/intersight//modules/domain_port_mode"
   custom_mode   = "FibreChannel"
   port_id_end   = 4
   port_id_start = 1
@@ -52,7 +52,7 @@ module "port_mode_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source            = "../../modules/domain_port_mode"
+  source            = "terraform-cisco-modules/imm/intersight//modules/domain_port_mode"
   custom_mode       = FibreChannel
   port_id_end       = 4
   port_id_start     = 1

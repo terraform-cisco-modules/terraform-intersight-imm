@@ -11,7 +11,7 @@ module "switch_profile_example_a" {
     module.port_policy_example_a,
     module.switch_cluster_example
   ]
-  source          = "../../modules/domain_profile_switch"
+  source          = "terraform-cisco-modules/imm/intersight//modules/domain_profile_switch"
   description     = "Switch Profile Example."
   name            = "example_a"
   switch_action   = "No-op"
@@ -42,7 +42,7 @@ module "switch_profile_example_b" {
     module.port_policy_example_b,
     module.switch_cluster_example
   ]
-  source          = "../../modules/domain_profile_switch"
+  source          = "terraform-cisco-modules/imm/intersight//modules/domain_profile_switch"
   description     = "Switch Profile Example."
   name            = "example_b"
   switch_action   = "No-op"
@@ -78,7 +78,7 @@ module "switch_control_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/domain_profile_switch"
+  source                = "terraform-cisco-modules/imm/intersight//modules/domain_profile_switch"
   description           = ""
   name                  = "switch_control"
   mac_aging_option      = "Default"

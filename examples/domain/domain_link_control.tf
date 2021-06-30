@@ -8,7 +8,7 @@ module "link_control_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/domain_link_control"
+  source      = "terraform-cisco-modules/imm/intersight//modules/domain_link_control"
   description = "Link Control Policy Example."
   name        = "example"
   org_moid    = local.org_moid
@@ -27,7 +27,7 @@ module "link_control_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source            = "../../modules/domain_link_control"
+  source            = "terraform-cisco-modules/imm/intersight//modules/domain_link_control"
   description       = ""
   udld_admin_state  = "Enabled"
   udld_mode         = "normal"

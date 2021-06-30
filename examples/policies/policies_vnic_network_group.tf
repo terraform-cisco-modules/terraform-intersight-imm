@@ -15,7 +15,7 @@ module "vlan_group_range" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/policies_vnic_network_group"
+  source      = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_network_group"
   description = "Example VLAN Group using Range."
   name        = "vlan_group_range"
   org_moid    = local.org_moid
@@ -36,7 +36,7 @@ module "vlan_group_list" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/policies_vnic_network_group"
+  source      = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_network_group"
   description = "Example VLAN Group using Range."
   name        = "vlan_group_list"
   org_moid    = local.org_moid

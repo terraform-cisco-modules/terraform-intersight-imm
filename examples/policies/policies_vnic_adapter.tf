@@ -16,7 +16,7 @@ module "vnic_adapter_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/policies_vnic_adapter"
+  source      = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter"
   description = "vNIC Adapter Example."
   name        = "example"
   org_moid    = local.org_moid
@@ -27,7 +27,7 @@ module "vnic_adapter_linux_nvme_roce" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source = "../../modules/policies_vnic_adapter"
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter"
   # Completion Settings - Reduce Queue Count
   completion_queue_count = 2
   description            = "Linux NVMe RoCE vNIC Adapter Example."
@@ -49,7 +49,7 @@ module "vnic_adapter_vmware" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source = "../../modules/policies_vnic_adapter"
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter"
   # Completion Settings - Reduce Queue Count
   completion_queue_count = 2
   description            = "VMware vNIC Adapter Example."
@@ -68,7 +68,7 @@ module "vnic_adapter_windows" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/policies_vnic_adapter"
+  source      = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter"
   description = "Windows vNIC Adapter Example (It is the Same as Default)."
   name        = "windows_vnic_adapter"
   org_moid    = local.org_moid
@@ -89,7 +89,7 @@ module "vnic_adapter_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source       = "../../modules/policies_vnic_adapter"
+  source       = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter"
 
   # Enable Advanced Filter
   advanced_filter = false

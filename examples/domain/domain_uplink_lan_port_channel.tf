@@ -12,7 +12,7 @@ module "lan_uplink_port_channel_example_a" {
     module.link_control_example,
     module.port_policy_example_a
   ]
-  source                = "../../modules/domain_uplink_lan_port_channel"
+  source                = "terraform-cisco-modules/imm/intersight//modules/domain_uplink_lan_port_channel"
   flow_control_moid     = [module.flow_control_example.moid]
   lan_uplink_pc_id      = 97
   lan_uplink_pc_ports   = [97, 99]
@@ -34,7 +34,7 @@ module "lan_uplink_port_channel_example_b" {
     module.link_control_example,
     module.port_policy_example_b
   ]
-  source                = "../../modules/domain_uplink_lan_port_channel"
+  source                = "terraform-cisco-modules/imm/intersight//modules/domain_uplink_lan_port_channel"
   flow_control_moid     = [module.flow_control_example.moid]
   lan_uplink_pc_id      = 97
   lan_uplink_pc_ports   = [97, 99]
@@ -60,7 +60,7 @@ module "lan_uplink_port_channel_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/domain_uplink_lan_port_channel"
+  source              = "terraform-cisco-modules/imm/intersight//modules/domain_uplink_lan_port_channel"
   breakout_sw_port    = 0
   fec                 = "Auto"
   flow_control_moid   = ""

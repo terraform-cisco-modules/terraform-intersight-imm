@@ -8,7 +8,7 @@ module "multicast_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/domain_multicast"
+  source      = "terraform-cisco-modules/imm/intersight//modules/domain_multicast"
   description = "Multicast Policy Example."
   name        = "example"
   org_moid    = local.org_moid
@@ -27,7 +27,7 @@ module "multicast_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/policies_multicast"
+  source              = "terraform-cisco-modules/imm/intersight//modules/policies_multicast"
   description         = ""
   querier_ip          = ""
   querier_state       = "Disabled"

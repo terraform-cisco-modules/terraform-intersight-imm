@@ -8,7 +8,7 @@ module "system_qos_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/domain_system_qos"
+  source      = "terraform-cisco-modules/imm/intersight//modules/domain_system_qos"
   description = "System QoS Default Example."
   name        = "example"
   org_moid    = local.org_moid
@@ -90,7 +90,7 @@ module "system_qos_default" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source       = "../../modules/domain_system_qos"
+  source       = "terraform-cisco-modules/imm/intersight//modules/domain_system_qos"
   description  = "System QoS Default Example."
   name         = "system_qos_default"
   org_moid     = local.org_moid

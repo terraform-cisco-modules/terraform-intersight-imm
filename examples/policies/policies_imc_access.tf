@@ -8,7 +8,7 @@ module "imc_access_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/policies_imc_access"
+  source           = "terraform-cisco-modules/imm/intersight//modules/policies_imc_access"
   description      = "IMC Access Policy Example."
   inband_mgmt_vlan = 1101
   name             = "example"
@@ -31,7 +31,7 @@ module "imc_access_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source            = "../../modules/policies_imc_access"
+  source            = "terraform-cisco-modules/imm/intersight//modules/policies_imc_access"
   description       = ""
   inband_mgmt_vlan  = 1
   name              = "imc_access"

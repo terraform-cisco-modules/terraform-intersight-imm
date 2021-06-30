@@ -8,7 +8,7 @@ module "device_connector" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/policies_device_connector"
+  source      = "terraform-cisco-modules/imm/intersight//modules/policies_device_connector"
   description = "Device Connector Policy Example."
   name        = "example"
   org_moid    = local.org_moid
@@ -28,7 +28,7 @@ module "device_connector_defaults" {
   depends_on  = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/policies_device_connector"
+  source      = "terraform-cisco-modules/imm/intersight//modules/policies_device_connector"
   lockout     = false
   description = ""
   name        = "device_connector"

@@ -8,7 +8,7 @@ module "ipmi_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/policies_ipmi_over_lan"
+  source      = "terraform-cisco-modules/imm/intersight//modules/policies_ipmi_over_lan"
   description = "IPMI Over LAN Policy Example."
   name        = "example"
   profiles    = var.profiles
@@ -27,7 +27,7 @@ module "ipmi_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/policies_ipmi_over_lan"
+  source                = "terraform-cisco-modules/imm/intersight//modules/policies_ipmi_over_lan"
   description           = ""
   enabled               = true
   encryption_key        = ""

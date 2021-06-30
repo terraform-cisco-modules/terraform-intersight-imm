@@ -9,7 +9,7 @@ module "server_port_example_a1" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_a
   ]
-  source         = "../../modules/domain_port_server"
+  source         = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
   port_list      = [5, 6, 7, 8, 9, 10, 11, 12]
   port_list_type = "list"
   port_policy_moid = [
@@ -26,7 +26,7 @@ module "server_port_example_a2" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_a
   ]
-  source         = "../../modules/domain_port_server"
+  source         = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
   port_list_type = "range"
   port_policy_moid = [
     {
@@ -44,7 +44,7 @@ module "server_port_example_b1" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_b
   ]
-  source         = "../../modules/domain_port_server"
+  source         = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
   port_list      = [5, 6, 7, 8, 9, 10, 11, 12]
   port_list_type = "list"
   port_policy_moid = [
@@ -61,7 +61,7 @@ module "server_port_example_b2" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_b
   ]
-  source         = "../../modules/domain_port_server"
+  source         = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
   port_list_type = "range"
   port_policy_moid = [
     {
@@ -86,7 +86,7 @@ module "server_port_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source            = "../../modules/domain_port_server"
+  source            = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
   port_list         = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
   port_list_type    = "list"
   port_policy_moid  = ""

@@ -10,7 +10,7 @@ module "san_uplink_example_a" {
     module.port_mode_example_a,
     module.port_policy_example_a
   ]
-  source               = "../../modules/domain_uplink_san"
+  source               = "terraform-cisco-modules/imm/intersight//modules/domain_uplink_san"
   san_uplink_port_list = [4]
   port_policy_moid = [
     {
@@ -27,7 +27,7 @@ module "san_uplink_example_b" {
     module.port_mode_example_b,
     module.port_policy_example_b
   ]
-  source               = "../../modules/domain_uplink_san"
+  source               = "terraform-cisco-modules/imm/intersight//modules/domain_uplink_san"
   san_uplink_port_list = [4]
   port_policy_moid = [
     {
@@ -50,7 +50,7 @@ module "san_uplink_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/domain_uplink_san"
+  source                = "terraform-cisco-modules/imm/intersight//modules/domain_uplink_san"
   breakout_sw_port      = 0
   fill_pattern          = var.fill_pattern
   san_uplink_port_list  = []

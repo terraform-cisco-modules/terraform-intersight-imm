@@ -13,7 +13,7 @@ module "domain_vnic_qos" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source         = "../../modules/policies_vnic_qos"
+  source         = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_qos"
   description    = "Recommended Domain Attached vNIC QoS Example."
   name           = "recommended"
   mtu            = 9000
@@ -33,7 +33,7 @@ module "standalone_vnic_qos" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/policies_vnic_qos"
+  source      = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_qos"
   description = "Default Standalone vNIC QoS Example."
   name        = "default_standalone"
   org_moid    = local.org_moid
@@ -53,7 +53,7 @@ module "vnic_qos_standalone" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/policies_vnic_adapter"
+  source          = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter"
   description     = ""
   name            = "vnic_qos"
   cos             = 0
@@ -68,7 +68,7 @@ module "vnic_qos_domain" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/policies_vnic_adapter"
+  source          = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter"
   description     = ""
   name            = "vnic_qos"
   burst           = 1024

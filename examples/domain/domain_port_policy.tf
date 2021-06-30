@@ -8,7 +8,7 @@ module "port_policy_example_a" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source       = "../../modules/domain_port_policy"
+  source       = "terraform-cisco-modules/imm/intersight//modules/domain_port_policy"
   description  = "Port Policy Example."
   device_model = "UCS-FI-64108"
   name         = "example_a"
@@ -25,7 +25,7 @@ module "port_policy_example_b" {
   depends_on = [
     data.intersight_organization_organization.org_moid,
   ]
-  source       = "../../modules/domain_port_policy"
+  source       = "terraform-cisco-modules/imm/intersight//modules/domain_port_policy"
   description  = "Port Policy Example."
   device_model = "UCS-FI-64108"
   name         = "example_b"
@@ -46,7 +46,7 @@ module "port_policy_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source        = "../../modules/domain_port_policy"
+  source        = "terraform-cisco-modules/imm/intersight//modules/domain_port_policy"
   description   = ""
   device_model  = "UCS-FI-6454"
   name          = "port_policy"
