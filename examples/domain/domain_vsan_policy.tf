@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Example Intersight VLAN Policies Module
+# Example Intersight VSAN Policies Module
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
