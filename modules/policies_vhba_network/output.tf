@@ -1,9 +1,9 @@
 #____________________________________________________________
 #
-# Collect the moid of the Ethernet Network Policy
+# Collect the moid of the Fibre Channel Network Policy
 #____________________________________________________________
 
 output "moid" {
-  description = "Ethernet Network Policy Managed Object ID (moid)."
-  value       = intersight_vnic_eth_network_policy.vnic_policy.moid
+  description = "Fibre Channel Network Policy Managed Object ID (moid)."
+  value       = intersight_vnic_fc_network_policy.vhba_policy.moid
 }

@@ -1,25 +1,19 @@
 #____________________________________________________________
 #
-# Intersight LAN Connectivity Policy
+# Intersight SAN Connectivity Policy
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
-resource "intersight_vnic_lan_connectivity_policy" "lan_connectivity" {
+resource "intersight_vnic_san_connectivity_policy" "san_connectivity" {
   description         = var.description
-  iqn_allocation_type = var.iqn_allocation_type
   name                = var.name
   placement_mode      = var.placement_mode
-  static_iqn_name     = var.iqn_static_name
+  static_wwnn_address = var.static_wwnn_address
   target_platform     = var.target_platform
+  wwnn_address_type   = var.wwnn_address_type
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
-  }
-  dynamic "iqn_pool" {
-    for_each = var.iqn_pool
-    content {
-      moid = iqn_pool.value["moid"]
-    }
   }
   dynamic "profiles" {
     for_each = var.profiles
@@ -33,6 +27,12 @@ resource "intersight_vnic_lan_connectivity_policy" "lan_connectivity" {
     content {
       key   = tags.value.key
       value = tags.value.value
+    }
+  }
+  dynamic "wwnn_pool" {
+    for_each = var.wwnn_pool
+    content {
+      moid = wwnn_pool.value.moid
     }
   }
 }

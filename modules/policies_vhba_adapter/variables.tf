@@ -1,31 +1,7 @@
 #____________________________________________________________
 #
-# Ethernet (vNIC) Adapter Policy Variables Section.
+# Ethernet (vHBA) Adapter Policy Variables Section.
 #____________________________________________________________
-
-variable "advanced_filter" {
-  default     = false
-  description = "Enables advanced filtering on the interface."
-  type        = bool
-}
-
-variable "arfs_enable" {
-  default     = false
-  description = "Status of Accelerated Receive Flow Steering on the virtual ethernet interface."
-  type        = bool
-}
-
-variable "completion_queue_count" {
-  default     = 5
-  description = "The number of completion queue resources to allocate. In general, the number of completion queue resources to allocate is equal to the number of transmit queue resources plus the number of receive queue resources.  Range is 1-2000."
-  type        = number
-}
-
-variable "completion_ring_size" {
-  default     = 1
-  description = "The number of descriptors in each completion queue.  Range is 1-256."
-  type        = number
-}
 
 variable "description" {
   default     = ""
@@ -33,33 +9,75 @@ variable "description" {
   type        = string
 }
 
-variable "interrupt_coalescing_type" {
-  default     = "MIN"
-  description = "Interrupt Coalescing Type. This can be one of the following:- MIN - The system waits for the time specified in the Coalescing Time field before sending another interrupt event IDLE - The system does not send an interrupt until there is a period of no activity lasting as least as long as the time specified in the Coalescing Time field.  Options are {IDLE|MIN}."
-  type        = string
+variable "error_detection_timeout" {
+  default     = 20000
+  description = "Error Detection Timeout, also referred to as EDTOV, is the number of milliseconds to wait before the system assumes that an error has occurred."
+  type        = number
 }
 
-variable "interrupt_interrupts" {
+variable "error_recovery_enabled" {
+  default     = false
+  description = "Enables Fibre Channel Error recovery."
+  type        = bool
+}
+
+variable "error_recovery_io_retry_count" {
   default     = 8
-  description = "The number of interrupt resources to allocate. Typical value is be equal to the number of completion queue resources.  Range is 1-1024."
+  description = "The number of times an I/O request to a port is retried because the port is busy before the system decides the port is unavailable.  Range is 0-255."
+  type        = number
+}
+
+variable "error_recovery_io_retry_timeout" {
+  default     = 5
+  description = "The number of seconds the adapter waits before aborting the pending command and resending the same IO request. Range is 1-59."
+  type        = number
+}
+
+variable "error_recovery_link_down_timeout" {
+  default     = 30000
+  description = "The number of milliseconds the port should actually be down before it is marked down and fabric connectivity is lost.  Range is 0-240000."
+  type        = number
+}
+
+variable "error_recovery_port_down_timeout" {
+  default     = 10000
+  description = "The number of milliseconds a remote Fibre Channel port should be offline before informing the SCSI upper layer that the port is unavailable. For a server with a VIC adapter running ESXi, the recommended value is 10000. For a server with a port used to boot a Windows OS from the SAN, the recommended value is 5000 milliseconds.  Range is 0-240000."
+  type        = number
+}
+
+variable "flogi_retries" {
+  default     = 8
+  description = "he number of times that the system tries to log in to the fabric after the first failure.  A Value greater than 0."
+  type        = number
+}
+
+variable "flogi_timeout" {
+  default     = 4000
+  description = "The number of milliseconds that the system waits before it tries to log in again.  Range is 1000-255000."
   type        = number
 }
 
 variable "interrupt_mode" {
   default     = "MSIx"
-  description = "Preferred driver interrupt mode. This can be one of the following:- MSIx - Message Signaled Interrupts (MSI) with the optional extension. MSI - MSI only. INTx - PCI INTx interrupts. MSIx is the recommended option.  Options are {MSI|MSIx|INTx}."
+  description = "The preferred driver interrupt mode. This can be one of the following:- MSIx - Message Signaled Interrupts (MSI) with the optional extension. MSI - MSI only. INTx - PCI INTx interrupts. MSIx is the recommended option.\r\n * INTx - Line-based interrupt (INTx) mechanism similar to the one used in Legacy systems.\r\n * MSI - Message Signaled Interrupt (MSI) mechanism that treats messages as interrupts.\r\n * MSIx - Message Signaled Interrupt (MSI) mechanism with the optional extension (MSIx). MSIx is the recommended and default option."
   type        = string
 }
 
-variable "interrupt_scaling" {
-  default     = false
-  description = "Enables Interrupt Scaling on the interface."
-  type        = bool
+variable "io_throttle_count" {
+  default     = 512
+  description = "The maximum number of data or control I/O operations that can be pending for the virtual interface at one time. If this value is exceeded, the additional I/O operations wait in the queue until the number of pending I/O operations decreases and the additional operations can be processed.  Range is 1-1024."
+  type        = number
 }
 
-variable "interrupt_timer" {
-  default     = 125
-  description = "The time to wait between interrupts or the idle period that must be encountered before an interrupt is sent. To turn off interrupt coalescing, enter 0 (zero) in this field.  Range is 0-65535."
+variable "lun_count" {
+  default     = 1024
+  description = "The maximum number of LUNs that the Fibre Channel driver will export or show. The maximum number of LUNs is usually controlled by the operating system running on the server.  Rnage is 1-1024."
+  type        = number
+}
+
+variable "lun_queue_depth" {
+  default     = 20
+  description = "The number of commands that the HBA can send and receive in a single transmission per LUN.  Range is 1-254."
   type        = number
 }
 
@@ -69,116 +87,50 @@ variable "name" {
   type        = string
 }
 
-variable "nvgre_enable" {
-  default     = false
-  description = "Status of the Network Virtualization using Generic Routing Encapsulation on the virtual ethernet interface."
-  type        = bool
-}
-
 variable "org_moid" {
   description = "Intersight Organization moid."
   type        = string
 }
 
-variable "receive_side_scaling" {
-  default     = false
-  description = "Receive Side Scaling allows the incoming traffic to be spread across multiple CPU cores."
-  type        = bool
-}
-
-variable "roce_cos" {
-  default     = 5
-  description = "The Class of Service for RoCE on this virtual interface.  Options are {1|2|4|5|6}."
+variable "plogi_retries" {
+  default     = 8
+  description = "The number of times that the system tries to log in to a port after the first failure.  Range is 0-255."
   type        = number
 }
 
-variable "roce_enable" {
-  default     = false
-  description = "If enabled sets RDMA over Converged Ethernet (RoCE) on this virtual interface."
-  type        = bool
-}
-
-variable "roce_memory_regions" {
-  default     = 0
-  description = "The number of memory regions per adapter. Recommended value = integer power of 2.  Range is 0-524288."
+variable "plogi_timeout" {
+  default     = 20000
+  description = "The number of milliseconds that the system waits before it tries to log in again.  Range is 1000-255000."
   type        = number
 }
 
-variable "roce_queue_pairs" {
-  default     = 0
-  description = "The number of queue pairs per adapter. Recommended value = integer power of 2.  Range is 0-8192."
-  type        = number
-}
-
-variable "roce_resource_groups" {
-  default     = 0
-  description = "The number of resource groups per adapter. Recommended value = be an integer power of 2 greater than or equal to the number of CPU cores on the system for optimum performance.  Range is 0-128."
-  type        = number
-}
-
-variable "roce_version" {
-  default     = 2
-  description = "Configure RDMA over Converged Ethernet (RoCE) version on the virtual interface. Only RoCEv1 is supported on Cisco VIC 13xx series adapters and only RoCEv2 is supported on Cisco VIC 14xx series adapters.  Options are 1 or 2."
-  type        = number
-}
-
-variable "rss_hash_ipv4_hash" {
-  default     = true
-  description = "When enabled, the IPv4 address is used for traffic distribution."
-  type        = bool
-}
-
-variable "rss_hash_ipv6_ext_hash" {
-  default     = false
-  description = "When enabled, the IPv6 extensions are used for traffic distribution."
-  type        = bool
-}
-
-variable "rss_hash_ipv6_hash" {
-  default     = true
-  description = "When enabled, the IPv6 address is used for traffic distribution."
-  type        = bool
-}
-
-variable "rss_hash_tcp_ipv4_hash" {
-  default     = true
-  description = "When enabled, both the IPv4 address and TCP port number are used for traffic distribution."
-  type        = bool
-}
-
-variable "rss_hash_tcp_ipv6_ext_hash" {
-  default     = false
-  description = "When enabled, both the IPv6 extensions and TCP port number are used for traffic distribution."
-  type        = bool
-}
-
-variable "rss_hash_tcp_ipv6_hash" {
-  default     = true
-  description = "When enabled, both the IPv6 address and TCP port number are used for traffic distribution."
-  type        = bool
-}
-
-variable "rss_hash_udp_ipv4_hash" {
-  default     = false
-  description = "When enabled, both the IPv4 address and UDP port number are used for traffic distribution."
-  type        = bool
-}
-
-variable "rss_hash_udp_ipv6_hash" {
-  default     = false
-  description = "When enabled, both the IPv6 address and UDP port number are used for traffic distribution."
-  type        = bool
-}
-
-variable "rx_queue_count" {
-  default     = 4
-  description = "The number of queue resources to allocate.  Range is 1-1000."
+variable "resource_allocation_timeout" {
+  default     = 10000
+  description = "Resource Allocation Timeout, also referred to as RATOV, is the number of milliseconds to wait before the system assumes that a resource cannot be properly allocated.  Range is 5000-100000."
   type        = number
 }
 
 variable "rx_ring_size" {
+  default     = 64
+  description = "The number of descriptors in each queue.  Range is 64-2048."
+  type        = number
+}
+
+variable "scsi_io_queues" {
+  default     = 1
+  description = "The number of SCSI I/O queue resources the system should allocate.  Range is 1-245."
+  type        = number
+}
+
+variable "scsi_io_ring_size" {
   default     = 512
-  description = "The number of descriptors in each queue.  Range is 64-4096."
+  description = "The number of descriptors in each SCSI I/O queue.  Range is 64-512."
+  type        = number
+}
+
+variable "tx_ring_size" {
+  default     = 64
+  description = "The number of descriptors in each queue.  Range is 64-2048."
   type        = number
 }
 
@@ -186,52 +138,4 @@ variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
-}
-
-variable "tcp_offload_large_recieve" {
-  default     = true
-  description = "Enables the reassembly of segmented packets in hardware before sending them to the CPU."
-  type        = bool
-}
-
-variable "tcp_offload_large_send" {
-  default     = true
-  description = "Enables the CPU to send large packets to the hardware for segmentation."
-  type        = bool
-}
-
-variable "tcp_offload_rx_checksum" {
-  default     = true
-  description = "When enabled, the CPU sends all packet checksums to the hardware for validation."
-  type        = bool
-}
-
-variable "tcp_offload_tx_checksum" {
-  default     = true
-  description = "When enabled, the CPU sends all packets to the hardware so that the checksum can be calculated."
-  type        = bool
-}
-
-variable "tx_queue_count" {
-  default     = 1
-  description = "The number of queue resources to allocate.  Range is 1-1000."
-  type        = number
-}
-
-variable "tx_ring_size" {
-  default     = 256
-  description = "The number of descriptors in each queue.  Range is 64-4096."
-  type        = number
-}
-
-variable "vxlan_enable" {
-  default     = false
-  description = "Status of the Virtual Extensible LAN Protocol on the virtual ethernet interface."
-  type        = bool
-}
-
-variable "uplink_failback_timeout" {
-  default     = 5
-  description = "Uplink Failback Timeout in seconds when uplink failover is enabled for a vNIC. After a vNIC has started using its secondary interface, this setting controls how long the primary interface must be available before the system resumes using the primary interface for the vNIC.  Range is 0-600."
-  type        = number
 }

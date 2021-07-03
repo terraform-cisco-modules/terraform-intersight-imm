@@ -47,7 +47,7 @@ variable "interrupt_interrupts" {
 
 variable "interrupt_mode" {
   default     = "MSIx"
-  description = "Preferred driver interrupt mode. This can be one of the following:- MSIx - Message Signaled Interrupts (MSI) with the optional extension. MSI - MSI only. INTx - PCI INTx interrupts. MSIx is the recommended option.  Options are {MSI|MSIx|INTx}."
+  description = "The preferred driver interrupt mode. This can be one of the following:- MSIx - Message Signaled Interrupts (MSI) with the optional extension. MSI - MSI only. INTx - PCI INTx interrupts. MSIx is the recommended option.\r\n * INTx - Line-based interrupt (INTx) mechanism similar to the one used in Legacy systems.\r\n * MSI - Message Signaled Interrupt (MSI) mechanism that treats messages as interrupts.\r\n * MSIx - Message Signaled Interrupt (MSI) mechanism with the optional extension (MSIx). MSIx is the recommended and default option."
   type        = string
 }
 

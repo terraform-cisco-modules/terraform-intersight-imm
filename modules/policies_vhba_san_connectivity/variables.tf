@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Ethernet (vNIC) LAN Connectivity Policy Variables Section.
+# Ethernet (vHBA) SAN Connectivity Policy Variables Section.
 #____________________________________________________________
 
 variable "description" {
@@ -9,26 +9,8 @@ variable "description" {
   type        = string
 }
 
-variable "iqn_allocation_type" {
-  default     = "None"
-  description = "Allocation Type of iSCSI Qualified Name.  Options are {None|Pool|Static}."
-  type        = string
-}
-
-variable "iqn_pool" {
-  default     = []
-  description = "IQN Pool to Assign to the Policy."
-  type        = list(map(string))
-}
-
-variable "iqn_static_name" {
-  default     = ""
-  description = "User provided static iSCSI Qualified Name (IQN) for use as initiator identifiers by iSCSI vNICs."
-  type        = string
-}
-
 variable "name" {
-  default     = "lan_connectivity"
+  default     = "san_connectivity"
   description = "Name for the Policy."
   type        = string
 }
@@ -40,7 +22,13 @@ variable "org_moid" {
 
 variable "placement_mode" {
   default     = "custom"
-  description = "The mode used for placement of vNICs on network adapters. It can either be auto or custom."
+  description = "The mode used for placement of vNICs on network adapters. It can either be Auto or Custom.\r\n * auto - The placement of the vNICs / vHBAs on network adapters is automatically determined by the system.\r\n * custom - The placement of the vNICs / vHBAs on network adapters is manually chosen by the user."
+  type        = string
+}
+
+variable "static_wwnn_address" {
+  default     = ""
+  description = "The WWNN address for the server node must be in hexadecimal format xx:xx:xx:xx:xx:xx:xx:xx.  Allowed ranges are 20:00:00:00:00:00:00:00 to 20:FF:FF:FF:FF:FF:FF:FF or from 50:00:00:00:00:00:00:00 to 5F:FF:FF:FF:FF:FF:FF:FF.  To ensure uniqueness of WWN's in the SAN fabric, you are strongly encouraged to use the WWN prefix - 20:00:00:25:B5:xx:xx:xx."
   type        = string
 }
 
@@ -59,5 +47,17 @@ variable "profiles" {
 variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
+  type        = list(map(string))
+}
+
+variable "wwnn_address_type" {
+  default     = "POOL"
+  description = "Type of allocation selected to assign a WWNN address for the server node.\r\n * POOL - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface.\r\n * STATIC - The user assigns a static mac/wwn address for the Virtual Interface."
+  type        = string
+}
+
+variable "wwnn_pool" {
+  default     = []
+  description = "WWNN Pool to Assign to the Policy."
   type        = list(map(string))
 }

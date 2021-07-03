@@ -1,9 +1,9 @@
 #____________________________________________________________
 #
-# Collect the moid of the LAN Connectivity Policy
+# Collect the moid of the SAN Connectivity Policy
 #____________________________________________________________
 
 output "moid" {
-  description = "LAN Connectivity Policy Managed Object ID (moid)."
-  value       = intersight_vnic_lan_connectivity_policy.lan_connectivity.moid
+  description = "SAN Connectivity Policy Managed Object ID (moid)."
+  value       = intersight_vnic_san_connectivity_policy.san_connectivity.moid
 }

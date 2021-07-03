@@ -1,70 +1,48 @@
 #____________________________________________________________
 #
-# Intersight Ethernet (vNIC) Adapter Policy
+# Intersight Fibre Channel (vHBA) Adapter Policy
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
-resource "intersight_vnic_eth_adapter_policy" "vnic_adapter" {
-  advanced_filter         = var.advanced_filter
-  description             = var.description
-  interrupt_scaling       = var.interrupt_scaling
-  name                    = var.name
-  rss_settings            = var.receive_side_scaling
-  uplink_failback_timeout = var.uplink_failback_timeout
-  arfs_settings {
-    enabled = var.arfs_enable
+resource "intersight_vnic_fc_adapter_policy" "vhba_adapter" {
+  description                 = var.description
+  error_detection_timeout     = var.error_detection_timeout
+  io_throttle_count           = var.io_throttle_count
+  lun_count                   = var.lun_count
+  lun_queue_depth             = var.lun_queue_depth
+  name                        = var.name
+  resource_allocation_timeout = var.resource_allocation_timeout
+  error_recovery_settings {
+    enabled           = var.error_recovery_enabled
+    io_retry_count    = var.error_recovery_io_retry_count
+    io_retry_timeout  = var.error_recovery_io_retry_timeout
+    link_down_timeout = var.error_recovery_link_down_timeout
+    port_down_timeout = var.error_recovery_port_down_timeout
   }
-  completion_queue_settings {
-    nr_count  = var.completion_queue_count
-    ring_size = var.completion_ring_size
+  flogi_settings {
+    retries = var.flogi_retries
+    timeout = var.flogi_timeout
   }
   interrupt_settings {
-    coalescing_time = var.interrupt_timer
-    coalescing_type = var.interrupt_coalescing_type
-    nr_count        = var.interrupt_interrupts
     mode            = var.interrupt_mode
-  }
-  nvgre_settings {
-    enabled = var.nvgre_enable
   }
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
   }
-  roce_settings {
-    class_of_service = var.roce_cos
-    enabled          = var.roce_enable
-    memory_regions   = var.roce_memory_regions
-    queue_pairs      = var.roce_queue_pairs
-    resource_groups  = var.roce_resource_groups
-    nr_version       = var.roce_version
-  }
-  rss_hash_settings {
-    ipv4_hash         = var.rss_hash_ipv4_hash
-    ipv6_ext_hash     = var.rss_hash_ipv6_ext_hash
-    ipv6_hash         = var.rss_hash_ipv6_hash
-    tcp_ipv4_hash     = var.rss_hash_tcp_ipv4_hash
-    tcp_ipv6_ext_hash = var.rss_hash_tcp_ipv6_ext_hash
-    tcp_ipv6_hash     = var.rss_hash_tcp_ipv6_hash
-    udp_ipv4_hash     = var.rss_hash_udp_ipv4_hash
-    udp_ipv6_hash     = var.rss_hash_udp_ipv6_hash
+  plogi_settings {
+    retries = var.plogi_retries
+    timeout = var.plogi_timeout
   }
   rx_queue_settings {
-    nr_count  = var.rx_queue_count
     ring_size = var.rx_ring_size
   }
-  tcp_offload_settings {
-    large_receive = var.tcp_offload_large_recieve
-    large_send    = var.tcp_offload_large_send
-    rx_checksum   = var.tcp_offload_rx_checksum
-    tx_checksum   = var.tcp_offload_tx_checksum
+  scsi_queue_settings {
+    nr_count  = var.scsi_io_queues
+    ring_size = var.scsi_io_ring_size
   }
   tx_queue_settings {
-    nr_count  = var.tx_queue_count
     ring_size = var.tx_ring_size
-  }
-  vxlan_settings {
-    enabled = var.vxlan_enable
   }
   dynamic "tags" {
     for_each = var.tags

@@ -1,21 +1,21 @@
-# policies_lan_adapter - Intersight Ethernet (vNIC) Adapter Policy Terraform Module
+# policies_vhba_adapter - Intersight Fibre Channel (vHBA) Adapter Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vnic_adapter" {
+module "vhba_adapter" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_lan_adapter"
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_vhba_adapter"
 
   # omitted...
 }
 ```
 
-This module will create an Ethernet (vNIC) Adapter Policy in Intersight.  This can be used to create Profiles and Templates that require a Ethernet Adapter Policy.  
+This module will create an Fibre Channel (vHBA) Adapter Policy in Intersight.  This can be used to create Profiles and Templates that require a Fibre Channel Adapter Policy.  
 
 These resources are consumed
 
-* [vnic_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_eth_adapter_policy)
+* [vhba_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_adapter_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -57,11 +57,11 @@ No modules.
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_receive_side_scaling"></a> [receive\_side\_scaling](#input\_receive\_side\_scaling) | Receive Side Scaling allows the incoming traffic to be spread across multiple CPU cores. | `bool` | `false` | no |
 | <a name="input_roce_cos"></a> [roce\_cos](#input\_roce\_cos) | The Class of Service for RoCE on this virtual interface.  Options are {1\|2\|4\|5\|6}. | `number` | `5` | no |
-| <a name="input_roce_enable"></a> [roce\_enable](#input\_roce\_enable) | If enabled sets RDMA over Converged Ethernet (RoCE) on this virtual interface. | `bool` | `false` | no |
+| <a name="input_roce_enable"></a> [roce\_enable](#input\_roce\_enable) | If enabled sets RDMA over Converged Fibre Channel (RoCE) on this virtual interface. | `bool` | `false` | no |
 | <a name="input_roce_memory_regions"></a> [roce\_memory\_regions](#input\_roce\_memory\_regions) | The number of memory regions per adapter. Recommended value = integer power of 2.  Range is 0-524288. | `number` | `0` | no |
 | <a name="input_roce_queue_pairs"></a> [roce\_queue\_pairs](#input\_roce\_queue\_pairs) | The number of queue pairs per adapter. Recommended value = integer power of 2.  Range is 0-8192. | `number` | `0` | no |
 | <a name="input_roce_resource_groups"></a> [roce\_resource\_groups](#input\_roce\_resource\_groups) | The number of resource groups per adapter. Recommended value = be an integer power of 2 greater than or equal to the number of CPU cores on the system for optimum performance.  Range is 0-128. | `number` | `0` | no |
-| <a name="input_roce_version"></a> [roce\_version](#input\_roce\_version) | Configure RDMA over Converged Ethernet (RoCE) version on the virtual interface. Only RoCEv1 is supported on Cisco VIC 13xx series adapters and only RoCEv2 is supported on Cisco VIC 14xx series adapters.  Options are 1 or 2. | `number` | `2` | no |
+| <a name="input_roce_version"></a> [roce\_version](#input\_roce\_version) | Configure RDMA over Converged Fibre Channel (RoCE) version on the virtual interface. Only RoCEv1 is supported on Cisco VIC 13xx series adapters and only RoCEv2 is supported on Cisco VIC 14xx series adapters.  Options are 1 or 2. | `number` | `2` | no |
 | <a name="input_rss_hash_ipv4_hash"></a> [rss\_hash\_ipv4\_hash](#input\_rss\_hash\_ipv4\_hash) | When enabled, the IPv4 address is used for traffic distribution. | `bool` | `true` | no |
 | <a name="input_rss_hash_ipv6_ext_hash"></a> [rss\_hash\_ipv6\_ext\_hash](#input\_rss\_hash\_ipv6\_ext\_hash) | When enabled, the IPv6 extensions are used for traffic distribution. | `bool` | `false` | no |
 | <a name="input_rss_hash_ipv6_hash"></a> [rss\_hash\_ipv6\_hash](#input\_rss\_hash\_ipv6\_hash) | When enabled, the IPv6 address is used for traffic distribution. | `bool` | `true` | no |
@@ -86,5 +86,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet (vNIC) Adapter Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Fibre Channel (vNIC) Adapter Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

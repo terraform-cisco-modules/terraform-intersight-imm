@@ -1,21 +1,21 @@
-# policies_vnic_network - Intersight vNIC Network Policy Terraform Module
+# policies_vhba_network - Intersight vNIC Network Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vnic_policy" {
+module "vhba_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_network"
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_vhba_network"
 
   # omitted...
 }
 ```
 
-This module will create an Ethernet Network Policy in Intersight.  This Policy is for Standalone UCS Rackmount Servers that require a Ethernet (vNIC) Network Policy.  
+This module will create an Fibre Channel Network Policy in Intersight.  This Policy is for Standalone UCS Rackmount Servers that require a Fibre Channel (vNIC) Network Policy.  
 
 These resources are consumed
 
-* [vnic_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_eth_network_policy)
+* [vhba_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_network_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_vnic_eth_network_policy.vnic_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_eth_network_policy) | resource |
+| [intersight_vhba_eth_network_policy.vhba_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vhba_eth_network_policy) | resource |
 
 ## Inputs
 
@@ -53,5 +53,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet Network Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Fibre Channel Network Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

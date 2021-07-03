@@ -1,7 +1,13 @@
 #____________________________________________________________
 #
-# Ethernet Network Policy Variables Section.
+# Fibre Channel Network Policy Variables Section.
 #____________________________________________________________
+
+variable "default_vlan_id" {
+  default     = ""
+  description = "Only required for Standalone Servers.  Default VLAN of the virtual interface in Standalone Rack server. Setting the value to 0 is equivalent to None and will not associate any Default VLAN to the traffic on the virtual interface (0-4094)."
+  type        = number
+}
 
 variable "description" {
   default     = ""
@@ -10,15 +16,9 @@ variable "description" {
 }
 
 variable "name" {
-  default     = "network_group"
+  default     = "vhba_policy"
   description = "Name for the Policy."
   type        = string
-}
-
-variable "default_vlan" {
-  default     = 1
-  description = "VLAN to Assign as the Default VLAN."
-  type        = number
 }
 
 variable "org_moid" {
@@ -26,10 +26,9 @@ variable "org_moid" {
   type        = string
 }
 
-variable "mode" {
-  default     = "Access"
-  description = "Option to determine if the port can carry single VLAN (Access) or multiple VLANs (Trunk) traffic."
-  type        = string
+variable "vsan_id" {
+  description = "VSAN ID of the virtual interface in FI attached server (1-4094)."
+  type        = number
 }
 
 variable "tags" {
