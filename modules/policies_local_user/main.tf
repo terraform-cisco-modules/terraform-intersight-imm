@@ -1,31 +1,39 @@
 #____________________________________________________________
 #
-# Intersight NTP Policy
+# Intersight Local User Password Policy
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
-resource "intersight_ntp_policy" "ntp" {
-  description = var.description
-  enabled     = var.enabled
-  name        = var.name
-  ntp_servers = var.ntp_servers
-  timezone    = var.timezone
+data "intersight_iam_end_point_role" "user_role" {
+  name = var.user_role
+  type = "IMC"
+}
+
+resource "intersight_iam_end_point_user" "user" {
+  name        = var.username
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
   }
-  dynamic "profiles" {
-    for_each = var.profiles
-    content {
-      moid        = profiles.value.moid
-      object_type = profiles.value.object_type
-    }
+}
+
+resource "intersight_iam_end_point_user_role" "user_role" {
+  depends_on = [
+    data.intersight_iam_end_point_role.user_role,
+    intersight_iam_end_point_user.username
+  ]
+  enabled  = var.user_enabled
+  password = var.user_password
+  end_point_role {
+    moid        = data.intersight_iam_end_point_role.user_role.results[0].moid
+    object_type = "iam.EndPointRole"
   }
-  dynamic "tags" {
-    for_each = var.tags
-    content {
-      key   = tags.value.key
-      value = tags.value.value
-    }
+  end_point_user {
+    moid        = intersight_iam_end_point_user.user.moid
+    object_type = "iam.EndPointUser"
+  }
+  end_point_user_policy {
+    moid        = var.user_policy_moid
+    object_type = "iam.EndPointUserPolicy"
   }
 }

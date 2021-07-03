@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# IMC Access Policy Variables Section.
+# Certificate Management Policy Variables Section.
 #____________________________________________________________
 
 variable "description" {
@@ -11,7 +11,7 @@ variable "description" {
 
 variable "inband_mgmt_vlan" {
   default     = 1
-  description = "VLAN ID to Assign as the Inband Management VLAN for IMC Access"
+  description = "VLAN ID to Assign as the Inband Management VLAN for Certificate Management"
   type        = number
 }
 
@@ -29,7 +29,7 @@ variable "ipv6_enable" {
 
 variable "imc_ip_pool" {
   default     = ""
-  description = "moid of an IP Pool to Assign to the IMC Access Policy."
+  description = "moid of an IP Pool to Assign to the Certificate Management Policy."
 }
 
 variable "name" {

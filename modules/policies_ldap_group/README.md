@@ -1,4 +1,4 @@
-# policies_ldap_group - Intersight LDAP Group Policy Terraform Module
+# policies_ldap_group - Intersight LDAP Group Terraform Module
 
 ## Usage
 
@@ -11,7 +11,7 @@ module "ldap_group" {
 }
 ```
 
-This module will create a LDAP Group Policy in Intersight.  This can be used to create Profiles and Templates that require a LDAP Group Policy.  
+This module will assign an LDAP Group to a LDAP Policy in Intersight.  
 
 These resources are consumed
 

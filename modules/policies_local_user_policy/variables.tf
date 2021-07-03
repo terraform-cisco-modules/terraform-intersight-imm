@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# NTP Policy Variables Section.
+# Local User Policy Variables Section.
 #____________________________________________________________
 
 variable "description" {
@@ -9,10 +9,28 @@ variable "description" {
   type        = string
 }
 
-variable "enabled" {
-  default     = true
-  description = "Flag to Enable or Disable the Policy."
+variable "enable_password_expiry" {
+  default     = false
+  description = "Enables password expiry on the endpoint."
   type        = bool
+}
+
+variable "enforce_strong_password" {
+  default     = true
+  description = "Enables a strong password policy. Strong password requirements: A. The password must have a minimum of 8 and a maximum of 20 characters. B. The password must not contain the User's Name. C. The password must contain characters from three of the following four categories. 1) English uppercase characters (A through Z). 2) English lowercase characters (a through z). 3) Base 10 digits (0 through 9). 4) Non-alphabetic characters (! , @, #, $, %, ^, &, *, -, _, +, =)."
+  type        = bool
+}
+
+variable "force_send_password" {
+  default     = false
+  description = "User password will always be sent to endpoint device. If the option is not selected, then user password will be sent to endpoint device for new users and if user password is changed for existing users."
+  type        = bool
+}
+
+variable "grace_period" {
+  default     = 0
+  description = "Time period until when you can use the existing password, after it expires."
+  type        = number
 }
 
 variable "name" {
@@ -21,15 +39,27 @@ variable "name" {
   type        = string
 }
 
-variable "ntp_servers" {
-  default     = ["time-a-g.nist.gov", "time-b-g.nist.gov"]
-  description = "List of NTP Servers to Assign to the Policy."
-  type        = list(string)
+variable "notification_period" {
+  default     = 15
+  description = "The duration after which the password will expire."
+  type        = number
 }
 
 variable "org_moid" {
   description = "Intersight Organization moid."
   type        = string
+}
+
+variable "password_expiry_duration" {
+  default     = 90
+  description = "Set time period for password expiration. Value should be greater than notification period and grace period."
+  type        = number
+}
+
+variable "password_history" {
+  default     = 5
+  description = "Tracks password change history. Specifies in number of instances, that the new password was already used."
+  type        = number
 }
 
 variable "profiles" {
@@ -43,268 +73,3 @@ variable "tags" {
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
 }
-
-variable "timezone" {
-  default     = "America/New_York"
-  description = "Timezone to Assign to the Policy."
-  type        = string
-}
-
-#____________________________________________________________
-#
-# List of Supported Timezones.
-#____________________________________________________________
-
-/* List of Supported Timezones
-  Africa/Abidjan
-  Africa/Accra
-  Africa/Algiers
-  Africa/Bissau
-  Africa/Cairo
-  Africa/Casablanca
-  Africa/Ceuta
-  Africa/El_Aaiun
-  Africa/Johannesburg
-  Africa/Khartoum
-  Africa/Lagos
-  Africa/Maputo
-  Africa/Monrovia
-  Africa/Nairobi
-  Africa/Ndjamena
-  Africa/Tripoli
-  Africa/Tunis
-  Africa/Windhoek
-  America/Anchorage
-  America/Araguaina
-  America/Argentina/Buenos_Aires
-  America/Asuncion
-  America/Bahia
-  America/Barbados
-  America/Belem
-  America/Belize
-  America/Boa_Vista
-  America/Bogota
-  America/Campo_Grande
-  America/Cancun
-  America/Caracas
-  America/Cayenne
-  America/Cayman
-  America/Chicago
-  America/Costa_Rica
-  America/Cuiaba
-  America/Curacao
-  America/Danmarkshavn
-  America/Dawson_Creek
-  America/Denver
-  America/Edmonton
-  America/El_Salvador
-  America/Fortaleza
-  America/Godthab
-  America/Grand_Turk
-  America/Guatemala
-  America/Guayaquil
-  America/Guyana
-  America/Halifax
-  America/Havana
-  America/Hermosillo
-  America/Iqaluit
-  America/Jamaica
-  America/La_Paz
-  America/Lima
-  America/Los_Angeles
-  America/Maceio
-  America/Managua
-  America/Manaus
-  America/Martinique
-  America/Mazatlan
-  America/Mexico_City
-  America/Miquelon
-  America/Montevideo
-  America/Nassau
-  America/New_York
-  America/Noronha
-  America/Panama
-  America/Paramaribo
-  America/Phoenix
-  America/Port_of_Spain
-  America/Port-au-Prince
-  America/Porto_Velho
-  America/Puerto_Rico
-  America/Recife
-  America/Regina
-  America/Rio_Branco
-  America/Santiago
-  America/Santo_Domingo
-  America/Sao_Paulo
-  America/Scoresbysund
-  America/St_Johns
-  America/Tegucigalpa
-  America/Thule
-  America/Tijuana
-  America/Toronto
-  America/Vancouver
-  America/Whitehorse
-  America/Winnipeg
-  America/Yellowknife
-  Antarctica/Casey
-  Antarctica/Davis
-  Antarctica/DumontDUrville
-  Antarctica/Mawson
-  Antarctica/Palmer
-  Antarctica/Rothera
-  Antarctica/Syowa
-  Antarctica/Vostok
-  Asia/Almaty
-  Asia/Amman
-  Asia/Aqtau
-  Asia/Aqtobe
-  Asia/Ashgabat
-  Asia/Baghdad
-  Asia/Baku
-  Asia/Bangkok
-  Asia/Beirut
-  Asia/Bishkek
-  Asia/Brunei
-  Asia/Calcutta
-  Asia/Choibalsan
-  Asia/Colombo
-  Asia/Damascus
-  Asia/Dhaka
-  Asia/Dili
-  Asia/Dubai
-  Asia/Dushanbe
-  Asia/Gaza
-  Asia/Hong_Kong
-  Asia/Hovd
-  Asia/Irkutsk
-  Asia/Jakarta
-  Asia/Jayapura
-  Asia/Jerusalem
-  Asia/Kabul
-  Asia/Kamchatka
-  Asia/Karachi
-  Asia/Katmandu
-  Asia/Kolkata
-  Asia/Krasnoyarsk
-  Asia/Kuala_Lumpur
-  Asia/Macau
-  Asia/Magadan
-  Asia/Makassar
-  Asia/Manila
-  Asia/Nicosia
-  Asia/Omsk
-  Asia/Pyongyang
-  Asia/Qatar
-  Asia/Rangoon
-  Asia/Riyadh
-  Asia/Saigon
-  Asia/Seoul
-  Asia/Shanghai
-  Asia/Singapore
-  Asia/Taipei
-  Asia/Tashkent
-  Asia/Tbilisi
-  Asia/Tehran
-  Asia/Thimphu
-  Asia/Tokyo
-  Asia/Ulaanbaatar
-  Asia/Vladivostok
-  Asia/Yakutsk
-  Asia/Yekaterinburg
-  Asia/Yerevan
-  Atlantic/Azores
-  Atlantic/Bermuda
-  Atlantic/Canary
-  Atlantic/Cape_Verde
-  Atlantic/Faroe
-  Atlantic/Reykjavik
-  Atlantic/South_Georgia
-  Atlantic/Stanley
-  Australia/Adelaide
-  Australia/Brisbane
-  Australia/Darwin
-  Australia/Hobart
-  Australia/Perth
-  Australia/Sydney
-  Etc/GMT
-  Europe/Amsterdam
-  Europe/Andorra
-  Europe/Athens
-  Europe/Belgrade
-  Europe/Berlin
-  Europe/Brussels
-  Europe/Bucharest
-  Europe/Budapest
-  Europe/Chisinau
-  Europe/Copenhagen
-  Europe/Dublin
-  Europe/Gibraltar
-  Europe/Helsinki
-  Europe/Istanbul
-  Europe/Kaliningrad
-  Europe/Kiev
-  Europe/Lisbon
-  Europe/London
-  Europe/Luxembourg
-  Europe/Madrid
-  Europe/Malta
-  Europe/Minsk
-  Europe/Monaco
-  Europe/Moscow
-  Europe/Oslo
-  Europe/Paris
-  Europe/Prague
-  Europe/Riga
-  Europe/Rome
-  Europe/Samara
-  Europe/Sofia
-  Europe/Stockholm
-  Europe/Tallinn
-  Europe/Tirane
-  Europe/Vienna
-  Europe/Vilnius
-  Europe/Warsaw
-  Europe/Zurich
-  Indian/Chagos
-  Indian/Christmas
-  Indian/Cocos
-  Indian/Kerguelen
-  Indian/Mahe
-  Indian/Maldives
-  Indian/Mauritius
-  Indian/Reunion
-  Pacific/Apia
-  Pacific/Auckland
-  Pacific/Chuuk
-  Pacific/Easter
-  Pacific/Efate
-  Pacific/Enderbury
-  Pacific/Fakaofo
-  Pacific/Fiji
-  Pacific/Funafuti
-  Pacific/Galapagos
-  Pacific/Gambier
-  Pacific/Guadalcanal
-  Pacific/Guam
-  Pacific/Honolulu
-  Pacific/Kiritimati
-  Pacific/Kosrae
-  Pacific/Kwajalein
-  Pacific/Majuro
-  Pacific/Marquesas
-  Pacific/Nauru
-  Pacific/Niue
-  Pacific/Norfolk
-  Pacific/Noumea
-  Pacific/Pago_Pago
-  Pacific/Palau
-  Pacific/Pitcairn
-  Pacific/Pohnpei
-  Pacific/Port_Moresby
-  Pacific/Rarotonga
-  Pacific/Tahiti
-  Pacific/Tarawa
-  Pacific/Tongatapu
-  Pacific/Wake
-  Pacific/Wallis
-*/

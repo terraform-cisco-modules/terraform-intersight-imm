@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# IMC Access Policy Variables Section.
+# SMTP Policy Variables Section.
 #____________________________________________________________
 
 variable "description" {
@@ -9,31 +9,20 @@ variable "description" {
   type        = string
 }
 
-variable "inband_mgmt_vlan" {
-  default     = 1
-  description = "VLAN ID to Assign as the Inband Management VLAN for IMC Access"
-  type        = number
-}
-
-variable "ipv4_enable" {
+variable "enabled" {
   default     = true
-  description = "Flag to Enable or Disable the IPv4 Address Family for Poliices."
+  description = "If enabled, controls the state of the SMTP client service on the managed device."
   type        = bool
 }
 
-variable "ipv6_enable" {
-  default     = false
-  description = "Flag to Enable or Disable the IPv6 Address Family for Poliices."
-  type        = bool
-}
-
-variable "imc_ip_pool" {
-  default     = ""
-  description = "moid of an IP Pool to Assign to the IMC Access Policy."
+variable "min_severity" {
+  default     = "critical"
+  description = "Minimum fault severity level to receive email notifications. Email notifications are sent for all faults whose severity is equal to or greater than the chosen level.\r\n * critical - Minimum severity to report is critical.\r\n * condition - Minimum severity to report is informational.\r\n * warning - Minimum severity to report is warning.\r\n * minor - Minimum severity to report is minor.\r\n * major - Minimum severity to report is major."
+  type        = string
 }
 
 variable "name" {
-  default     = "imc_access"
+  default     = "smtp"
   description = "Name for the Policy."
   type        = string
 }
@@ -47,6 +36,29 @@ variable "profiles" {
   default     = []
   description = "List of Profiles to Assign to the Policy."
   type        = list(map(string))
+}
+
+variable "sender_email" {
+  default     = ""
+  description = "The email address entered here will be displayed as the from address (mail received from address) of all the SMTP mail alerts that are received. If not configured, the hostname of the server is used in the from address field."
+  type        = string
+}
+
+variable "smtp_port" {
+  default     = 25
+  description = "Port number used by the SMTP server for outgoing SMTP communication."
+  type        = number
+}
+
+variable "smtp_recipients" {
+  default     = []
+  description = "List of Emails to send alerts to."
+  type        = list(string)
+}
+
+variable "smtp_server" {
+  description = "IP address or hostname of the SMTP server. The SMTP server is used by the managed device to send email notifications."
+  type        = string
 }
 
 variable "tags" {

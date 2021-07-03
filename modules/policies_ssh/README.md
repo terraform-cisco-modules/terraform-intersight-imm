@@ -1,21 +1,21 @@
-# policies_imc_access - Intersight IMC Access Policy Terraform Module
+# policies_ssh - Intersight SSH Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "imc_access_policy" {
+module "ssh_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_imc_access"
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_ssh"
 
   # omitted...
 }
 ```
 
-This module will create a IMC Access Policy in Intersight.  This can be used to create Profiles and Templates that require a IMC Access Policy.  
+This module will create an SSH Policy in Intersight.  This can be used to create Profiles and Templates that require an SSH Policy.  
 
 These resources are consumed
 
-* [access_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/access_policy)
+* [ssh_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/ssh_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

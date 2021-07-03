@@ -1,21 +1,21 @@
-# policies_ntp - Intersight NTP Policy Terraform Module
+# policies_local_user_pwd_policy - Intersight Local User Password Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "ntp_policy" {
+module "password_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_ntp"
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_local_user_pwd_policy"
 
   # omitted...
 }
 ```
 
-This module will create a NTP Policy in Intersight.  This can be used to create Profiles and Templates that require a NTP Policy.  
+This module will create a Local User Password Policy in Intersight.  This can be used to create Profiles and Templates that require a Local User Password Policy.  
 
 These resources are consumed
 
-* [ntp_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/ntp_policy)
+* [password_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_end_point_user_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

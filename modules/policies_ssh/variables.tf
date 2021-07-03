@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# IMC Access Policy Variables Section.
+# SSH Policy Variables Section.
 #____________________________________________________________
 
 variable "description" {
@@ -9,31 +9,14 @@ variable "description" {
   type        = string
 }
 
-variable "inband_mgmt_vlan" {
-  default     = 1
-  description = "VLAN ID to Assign as the Inband Management VLAN for IMC Access"
-  type        = number
-}
-
-variable "ipv4_enable" {
+variable "enabled" {
   default     = true
-  description = "Flag to Enable or Disable the IPv4 Address Family for Poliices."
+  description = "State of SSH service on the endpoint."
   type        = bool
-}
-
-variable "ipv6_enable" {
-  default     = false
-  description = "Flag to Enable or Disable the IPv6 Address Family for Poliices."
-  type        = bool
-}
-
-variable "imc_ip_pool" {
-  default     = ""
-  description = "moid of an IP Pool to Assign to the IMC Access Policy."
 }
 
 variable "name" {
-  default     = "imc_access"
+  default     = "ssh"
   description = "Name for the Policy."
   type        = string
 }
@@ -49,8 +32,20 @@ variable "profiles" {
   type        = list(map(string))
 }
 
+variable "ssh_port" {
+  default     = 22
+  description = "Port used for secure shell access."
+  type        = number
+}
+
 variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
+}
+
+variable "timeout" {
+  default     = 1800
+  description = "Number of seconds to wait before the system considers a SSH request to have timed out."
+  type        = number
 }

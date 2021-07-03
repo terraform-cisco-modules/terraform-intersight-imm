@@ -11,7 +11,7 @@ module "ldap_provider" {
 }
 ```
 
-This module will create a LDAP Provider in Intersight.  This can be used to create Profiles and Templates that require a LDAP Provider.  
+This module will add an LDAP Provider to a LDAP Policy in Intersight.
 
 These resources are consumed
 

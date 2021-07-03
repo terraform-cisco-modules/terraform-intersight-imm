@@ -1,22 +1,15 @@
 #____________________________________________________________
 #
-# Intersight IMC Access Policy
+# Intersight SSH Policy
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
-resource "intersight_access_policy" "imc_access" {
+resource "intersight_ssh_policy" "ssh" {
   description = var.description
-  inband_vlan = var.inband_mgmt_vlan
+  enabled = var.enabled
   name        = var.name
-  address_type {
-    enable_ip_v4 = var.ipv4_enable
-    enable_ip_v6 = var.ipv6_enable
-    object_type  = "access.AddressType"
-  }
-  inband_ip_pool {
-    moid        = var.imc_ip_pool
-    object_type = "ippool.Pool"
-  }
+  port = var.ssh_port
+  timeout = var.timeout
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

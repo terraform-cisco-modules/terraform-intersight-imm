@@ -1,22 +1,18 @@
 #____________________________________________________________
 #
-# Intersight IMC Access Policy
+# Intersight SMTP Policy
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
-resource "intersight_access_policy" "imc_access" {
+resource "intersight_smtp_policy" "smtp" {
   description = var.description
-  inband_vlan = var.inband_mgmt_vlan
+  enabled = var.enabled
+  min_severity = var.min_severity
   name        = var.name
-  address_type {
-    enable_ip_v4 = var.ipv4_enable
-    enable_ip_v6 = var.ipv6_enable
-    object_type  = "access.AddressType"
-  }
-  inband_ip_pool {
-    moid        = var.imc_ip_pool
-    object_type = "ippool.Pool"
-  }
+  sender_email = var.sender_email == "" ? var.smtp_server : var.sender_email
+  smtp_port = var.smtp_port
+  smtp_recipients = var.smtp_recipients
+  smtp_server = var.smtp_server
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

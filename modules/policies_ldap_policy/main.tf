@@ -1,28 +1,34 @@
 #____________________________________________________________
 #
 # Intersight LDAP Policy
-# GUI Location: Policies > Create Policy
+# GUI Location: Policies > Create Policy > LDAP
 #____________________________________________________________
 
 resource "intersight_iam_ldap_policy" "ldap_policy" {
   base_properties {
-    attribute                  = "CiscoAvPair"
-    base_dn                    = "dc=auslab,dc=cisco,dc=com"
-    bind_method                = "LoginCredentials"
-    domain                     = "auslab.cisco.com"
-    enable_encryption          = false
-    enable_group_authorization = true
-    filter                     = "samAccountName"
-    group_attribute            = "memberOf"
-    is_password_set            = false
-    nested_group_search_depth  = 128
-    timeout                    = 30
+    attribute                  = var.attribute
+    base_dn                    = var.base_dn
+    bind_dn                    = var.bind_dn
+    bind_method                = var.bind_method
+    domain                     = var.domain
+    enable_encryption          = var.enable_encryption
+    enable_group_authorization = var.enable_group_authorization
+    filter                     = var.filter
+    group_attribute            = var.group_attribute
+    nested_group_search_depth  = var.nested_group_search_depth
+    password                   = var.password
+    timeout                    = var.timeout
   }
   description            = var.description
-  enable_dns             = false
+  dns_paramters {
+    nr_source = var.nr_source
+    search_domain = var.search_domain
+    search_forest = var.search_forest
+  }
+  enable_dns             = var.enable_dns
   enabled                = var.enabled
   name                   = var.name
-  user_search_precedence = "LDAPUserDb"
+  user_search_precedence = var.user_search_precedence
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

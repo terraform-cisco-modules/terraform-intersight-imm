@@ -1,9 +1,9 @@
 #____________________________________________________________
 #
-# Collect the moid of the NTP Policy as an Output
+# Collect the moid of the Local User as an Output
 #____________________________________________________________
 
 output "moid" {
-  description = "NTP Policy Managed Object ID (moid)."
-  value       = intersight_ntp_policy.ntp.moid
+  description = "Local User Managed Object ID (moid)."
+  value       = intersight_iam_end_point_user.user.moid
 }
