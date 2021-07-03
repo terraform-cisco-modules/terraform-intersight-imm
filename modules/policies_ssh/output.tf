@@ -5,5 +5,5 @@
 
 output "moid" {
   description = "SSH Policy Managed Object ID (moid)."
-  value       = intersight_ssh_policy.imc_access.moid
+  value       = intersight_ssh_policy.ssh.moid
 }

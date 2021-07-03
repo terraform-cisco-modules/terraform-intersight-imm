@@ -5,5 +5,5 @@
 
 output "moid" {
   description = "SMTP Policy Managed Object ID (moid)."
-  value       = intersight_smtp_policy.imc_access.moid
+  value       = intersight_smtp_policy.smtp.moid
 }
