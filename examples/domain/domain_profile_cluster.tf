@@ -28,17 +28,12 @@ module "switch_control_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "terraform-cisco-modules/imm/intersight//modules/domain_profile_cluster"
-  description           = ""
-  name                  = "switch_control"
-  mac_aging_option      = "Default"
-  mac_aging_time        = 120
-  udld_message_interval = 15
-  udld_recovery_action  = "none"
-  vlan_optimization     = false
-  org_moid              = local.org_moid
-  profiles              = var.profiles
-  tags                  = var.tags
+  source      = "terraform-cisco-modules/imm/intersight//modules/domain_profile_cluster"
+  description = ""
+  name        = "cluster_profile"
+  domain_type = "instance"
+  org_moid    = local.org_moid
+  tags        = var.tags
 }
 
 */

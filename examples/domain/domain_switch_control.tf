@@ -51,8 +51,8 @@ module "switch_control_defaults" {
   udld_recovery_action  = "none"
   vlan_optimization     = false
   org_moid              = local.org_moid
-  profiles              = var.profiles
-  tags                  = var.tags
+  profiles = []
+  tags = var.tags
 }
 
 */

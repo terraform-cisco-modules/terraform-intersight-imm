@@ -54,7 +54,7 @@ module "san_uplink_defaults" {
   breakout_sw_port      = 0
   fill_pattern          = var.fill_pattern
   san_uplink_port_list  = []
-  san_uplink_speed      = "Auto"
+  san_uplink_speed      = "16Gbps"
   port_policy_moid      = ""
   slot_id               = 1
   vsan_id               = 1

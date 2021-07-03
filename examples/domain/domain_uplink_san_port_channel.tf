@@ -56,7 +56,7 @@ module "san_uplink_port_channel_defaults" {
   fill_pattern        = var.fill_pattern
   san_uplink_pc_id    = 1
   san_uplink_pc_ports = [1, 2]
-  san_uplink_speed    = "Auto"
+  san_uplink_speed    = "16Gbps"
   port_policy_moid    = ""
   slot_id             = 1
   tags                = var.tags

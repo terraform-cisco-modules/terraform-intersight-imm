@@ -1,9 +1,9 @@
-#____________________________________________________________
+#________________________________________________________________
 #
-# Collect the moid of the NTP Policy as an Output
-#____________________________________________________________
+# Collect the moid of the Ethernet (vNIC) Qos Policy
+#________________________________________________________________
 
 output "moid" {
-  description = "NTP Policy Managed Object ID (moid)."
-  value       = intersight_ntp_policy.ntp.moid
+  description = "Ethernet (vNIC) Qos Policy Managed Object ID (moid)."
+  value       = intersight_vnic_eth_qos_policy.vnic_qos.moid
 }

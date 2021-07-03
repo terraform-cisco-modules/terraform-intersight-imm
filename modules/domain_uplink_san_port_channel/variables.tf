@@ -28,7 +28,7 @@ variable "san_uplink_pc_id" {
 }
 
 variable "san_uplink_speed" {
-  default     = "Auto"
+  default     = "16Gbps"
   description = "Admin configured speed for the port.\r\n * Auto - Admin configurable speed AUTO ( default ).\r\n * 8Gbps - Admin configurable speed 8Gbps.\r\n * 16Gbps - Admin configurable speed 16Gbps.\r\n * 32Gbps - Admin configurable speed 32Gbps."
   type        = string
 }

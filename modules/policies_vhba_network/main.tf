@@ -1,25 +1,21 @@
 #____________________________________________________________
 #
-# Intersight NTP Policy
+# This Policy is for Standalone UCS Servers
+# Intersight Ethernet Network Policy
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
-resource "intersight_ntp_policy" "ntp" {
+resource "intersight_vnic_eth_network_policy" "vnic_policy" {
   description = var.description
-  enabled     = var.enabled
   name        = var.name
-  ntp_servers = var.ntp_servers
-  timezone    = var.timezone
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
   }
-  dynamic "profiles" {
-    for_each = var.profiles
-    content {
-      moid        = profiles.value["moid"]
-      object_type = profiles.value["object_type"]
-    }
+  vlan_settings {
+    default_vlan = var.default_vlan
+    mode         = var.mode
+    object_type  = "vnic.VlanSettings"
   }
   dynamic "tags" {
     for_each = var.tags

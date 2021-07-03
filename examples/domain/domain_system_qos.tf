@@ -4,7 +4,7 @@
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
-module "system_qos_example" {
+module "system_qos_example_1" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
@@ -26,25 +26,26 @@ module "system_qos_example" {
   classes = []
 }
 
-
-#______________________________________________
-#
-# Example with Default Values
-#______________________________________________
-
-/*
-
-module "system_qos_default" {
-  depends_on        = [
+module "system_qos_example_2" {
+  depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source       = "terraform-cisco-modules/imm/intersight//modules/domain_system_qos"
-  description  = "System QoS Default Example."
-  name         = "system_qos_default"
-  org_moid     = local.org_moid
-  profiles     = var.profiles
-  tags         = var.tags
-  classes      = [
+  source      = "terraform-cisco-modules/imm/intersight//modules/domain_system_qos"
+  description = "System QoS Default Example."
+  name        = "example"
+  org_moid    = local.org_moid
+  profiles = [
+    {
+      moid        = module.switch_profile_example_a.moid
+      object_type = "fabric.SwitchProfile"
+    },
+    {
+      moid        = module.switch_profile_example_b.moid
+      object_type = "fabric.SwitchProfile"
+    },
+  ]
+  tags    = var.tags
+  classes = [
     {
       admin_state         = "Disabled"
       bandwidth_percent   = 0
@@ -106,6 +107,27 @@ module "system_qos_default" {
       weight              = 5
     },
   ]
+}
+
+
+#______________________________________________
+#
+# Example with Default Values
+#______________________________________________
+
+/*
+
+module "system_qos_default" {
+  depends_on        = [
+    data.intersight_organization_organization.org_moid
+  ]
+  source       = "terraform-cisco-modules/imm/intersight//modules/domain_system_qos"
+  description  = "System QoS Default Example."
+  name         = "system_qos_default"
+  org_moid     = local.org_moid
+  profiles     = var.profiles
+  tags         = var.tags
+  classes      = []
 }
 
 */

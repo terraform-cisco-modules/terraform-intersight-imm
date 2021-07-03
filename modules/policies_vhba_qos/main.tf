@@ -1,25 +1,21 @@
 #____________________________________________________________
 #
-# Intersight NTP Policy
+# Intersight Ethernet (vNIC) Qos Policy
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
-resource "intersight_ntp_policy" "ntp" {
-  description = var.description
-  enabled     = var.enabled
-  name        = var.name
-  ntp_servers = var.ntp_servers
-  timezone    = var.timezone
+resource "intersight_vnic_eth_qos_policy" "vnic_qos" {
+  description    = var.description
+  name           = var.name
+  burst          = var.burst
+  cos            = var.cos
+  mtu            = var.mtu
+  priority       = var.priority
+  rate_limit     = var.rate_limit
+  trust_host_cos = var.trust_host_cos
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
-  }
-  dynamic "profiles" {
-    for_each = var.profiles
-    content {
-      moid        = profiles.value["moid"]
-      object_type = profiles.value["object_type"]
-    }
   }
   dynamic "tags" {
     for_each = var.tags
