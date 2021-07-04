@@ -11,7 +11,7 @@ module "ipmi_example" {
   source      = "terraform-cisco-modules/imm/intersight//modules/policies_ipmi_over_lan"
   description = "IPMI Over LAN Policy Example."
   name        = "example"
-  profiles    = var.profiles
+  profiles    = []
   org_moid    = local.org_moid
   tags        = var.tags
 }
@@ -34,7 +34,7 @@ module "ipmi_defaults" {
   is_encryption_key_set = false
   privilege             = "admin"
   name                  = "ipmi"
-  profiles              = var.profiles
+  profiles              = []
   org_moid              = local.org_moid
   tags                  = var.tags
 }

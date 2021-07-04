@@ -20,7 +20,7 @@ resource "intersight_iam_ldap_policy" "ldap_policy" {
     timeout                    = var.timeout
   }
   description = var.description
-  dns_paramters {
+  dns_parameters {
     nr_source     = var.nr_source
     search_domain = var.search_domain
     search_forest = var.search_forest

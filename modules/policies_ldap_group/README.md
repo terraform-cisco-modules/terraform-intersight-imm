@@ -47,7 +47,6 @@ No modules.
 | <a name="input_ldap_domain"></a> [ldap\_domain](#input\_ldap\_domain) | LDAP server domain the Group resides in. | `string` | `"example.com"` | no |
 | <a name="input_ldap_group"></a> [ldap\_group](#input\_ldap\_group) | LDAP Group name in the LDAP server database. | `string` | n/a | yes |
 | <a name="input_ldap_policy_moid"></a> [ldap\_policy\_moid](#input\_ldap\_policy\_moid) | A reference to a iamLdapPolicy resource. | `string` | n/a | yes |
-| <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 
 ## Outputs
 

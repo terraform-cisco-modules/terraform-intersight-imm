@@ -31,7 +31,6 @@ module "domain_profile_a_example" {
     data.intersight_organization_organization.org_moid,
     data.terraform_remote_state.pools,
     module.domain_profile_example,
-    module.port_policy_example_a
   ]
   source          = "terraform-cisco-modules/imm/intersight//modules/domain_profile_switch"
   assigned_switch = []
@@ -48,7 +47,7 @@ module "domain_profile_b_example" {
     data.intersight_organization_organization.org_moid,
     data.terraform_remote_state.pools,
     module.domain_profile_example,
-    module.port_policy_example_b
+    module.domain_profile_a_example
   ]
   source          = "terraform-cisco-modules/imm/intersight//modules/domain_profile_switch"
   assigned_switch = []

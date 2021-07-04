@@ -5,5 +5,5 @@
 
 output "moid" {
   description = "Fabric VLAN Managed Object ID (moid)."
-  value       = intersight_fabric_vlan.vlan.moid
+  value       = { for v in sort(keys(intersight_fabric_vlan.vlan_list)) : v => intersight_fabric_vlan.vlan_list[v].moid }
 }

@@ -76,7 +76,7 @@ module "server_port_example_a1" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_a
   ]
-  source = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
+  source = "../../modules/domain_port_server"
   # Using the default port_list in this example of "5-18"
   port_policy_moid = module.port_policy_example_a.moid
   # Accepting the default slot id of 1
@@ -88,7 +88,7 @@ module "server_port_example_a2" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_a
   ]
-  source           = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
+  source           = "../../modules/domain_port_server"
   port_list        = "19-20,22-24"
   port_policy_moid = module.port_policy_example_a.moid
   tags             = var.tags
@@ -99,7 +99,7 @@ module "server_port_example_b1" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_b
   ]
-  source = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
+  source = "../../modules/domain_port_server"
   # Using the default port_list in this example of "5-18"
   port_policy_moid = module.port_policy_example_b.moid
   # Accepting the default slot id of 1
@@ -111,7 +111,7 @@ module "server_port_example_b2" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_b
   ]
-  source           = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
+  source           = "../../modules/domain_port_server"
   port_list        = "19-20,22-24"
   port_policy_moid = module.port_policy_example_b.moid
   tags             = var.tags
@@ -243,7 +243,7 @@ module "san_uplink_example_a" {
   ]
   source               = "terraform-cisco-modules/imm/intersight//modules/domain_uplink_san"
   san_uplink_port_list = [3]
-  port_policy_moid     = module.port_policy_example_b.moid
+  port_policy_moid     = module.port_policy_example_a.moid
   vsan_id              = 500
   tags                 = var.tags
 }

@@ -98,8 +98,8 @@ output "switch_control_example" {
 # UCS Domain Switch Cluster Output
 #______________________________________________
 
-output "switch_cluster_example" {
-  value = module.switch_cluster_example
+output "domain_profile_example" {
+  value = module.domain_profile_example
 }
 
 #______________________________________________
@@ -107,12 +107,12 @@ output "switch_cluster_example" {
 # UCS Domain Switch Profile Output
 #______________________________________________
 
-output "switch_profile_example_a" {
-  value = module.switch_profile_example_a
+output "domain_profile_a_example" {
+  value = module.domain_profile_a_example
 }
 
-output "switch_profile_example_b" {
-  value = module.switch_profile_example_b
+output "domain_profile_b_example" {
+  value = module.domain_profile_b_example
 }
 
 #______________________________________________
@@ -120,8 +120,8 @@ output "switch_profile_example_b" {
 # System QoS Policy Output
 #______________________________________________
 
-output "system_qos_example" {
-  value = module.system_qos_example
+output "system_qos_example_2" {
+  value = module.system_qos_example_2
 }
 
 #______________________________________________
@@ -196,10 +196,6 @@ output "vlan_example_1" {
 
 output "vlan_example_2" {
   value = module.vlan_example_2
-}
-
-output "vlan_example_3" {
-  value = module.vlan_example_3
 }
 
 #______________________________________________

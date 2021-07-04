@@ -18,7 +18,7 @@ module "boot_legacy_iscsi" {
   description = "Legacy iSCSI Boot Example."
   name        = "example_legacy_iscsi"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   tags        = var.tags
   boot_devices = [
     {
@@ -45,7 +45,7 @@ module "boot_legacy_san" {
   description = "Legacy SAN Boot Example."
   name        = "example_legacy_san"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   tags        = var.tags
   boot_devices = [
     {
@@ -73,7 +73,7 @@ module "boot_uefi_cimc_dvd" {
   description = "UEFI CIMC DVD Boot Example."
   name        = "example_uefi_cimc_dvd"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   tags        = var.tags
   boot_devices = [
     {
@@ -94,7 +94,7 @@ module "boot_uefi_iscsi" {
   description = "UEFI iSCSI Boot Example."
   name        = "example_uefi_iscsi"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   tags        = var.tags
   boot_devices = [
     {
@@ -128,7 +128,7 @@ module "boot_uefi_kvm_dvd" {
   description = "UEFI KVM DVD Boot Example."
   name        = "example_uefi_kvm_dvd"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   tags        = var.tags
   boot_devices = [
     {
@@ -149,7 +149,7 @@ module "boot_uefi_local_disk" {
   description = "UEFI Local Disk Boot Example."
   name        = "example_uefi_local_disk"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   tags        = var.tags
   boot_devices = [
     {
@@ -170,7 +170,7 @@ module "boot_uefi_san" {
   description = "UEFI SAN Boot Example."
   name        = "example_uefi_san"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   tags        = var.tags
   boot_devices = [
     {
@@ -214,7 +214,7 @@ module "boot_defaults" {
   description   = ""
   name          = "boot"
   org_moid      = local.org_moid
-  profiles      = var.profiles
+  profiles      = []
   tags          = var.tags
   boot_devices  = []
 }

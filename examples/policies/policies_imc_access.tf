@@ -12,7 +12,7 @@ module "imc_access_example" {
   description      = "IMC Access Policy Example."
   inband_mgmt_vlan = 1101
   name             = "example"
-  profiles         = var.profiles
+  profiles         = []
   org_moid         = local.org_moid
   tags             = var.tags
   ipv4_enable      = var.ipv4_enable
@@ -35,7 +35,7 @@ module "imc_access_defaults" {
   description       = ""
   inband_mgmt_vlan  = 1
   name              = "imc_access"
-  profiles          = var.profiles
+  profiles          = []
   org_moid          = local.org_moid
   tags              = var.tags
   ipv4_enable       = true

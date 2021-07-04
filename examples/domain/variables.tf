@@ -71,6 +71,7 @@ variable "policy_bucket" {
 }
 
 variable "port_policy_moid" {
+  default     = ""
   description = " A reference to a fabricPortPolicy resource."
   type        = string
 }
@@ -452,6 +453,7 @@ variable "is_native" {
 }
 
 variable "multicast_moid" {
+  default     = ""
   description = "Multicast Policy moid map."
   type        = string
 }
@@ -468,6 +470,7 @@ variable "vlan_prefix" {
 }
 
 variable "vlan_policy_moid" {
+  default     = ""
   description = "VLAN Policy (Ethernet Network Policy) moid."
   type        = string
 }

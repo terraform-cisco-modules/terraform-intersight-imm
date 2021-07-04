@@ -77,8 +77,8 @@
 | <a name="module_disk_group_example_raid1"></a> [disk\_group\_example\_raid1](#module\_disk\_group\_example\_raid1) | terraform-cisco-modules/imm/intersight//modules/policies_disk_group | n/a |
 | <a name="module_disk_group_example_raid10"></a> [disk\_group\_example\_raid10](#module\_disk\_group\_example\_raid10) | terraform-cisco-modules/imm/intersight//modules/policies_disk_group | n/a |
 | <a name="module_disk_group_example_raid5"></a> [disk\_group\_example\_raid5](#module\_disk\_group\_example\_raid5) | terraform-cisco-modules/imm/intersight//modules/policies_disk_group | n/a |
-| <a name="module_dns_example_1"></a> [dns\_example\_1](#module\_dns\_example\_1) | terraform-cisco-modules/imm/intersight//modules/policies_network_connectivity | n/a |
-| <a name="module_dns_example_2"></a> [dns\_example\_2](#module\_dns\_example\_2) | terraform-cisco-modules/imm/intersight//modules/policies_network_connectivity | n/a |
+| <a name="module_dns_example_1"></a> [dns\_example\_1](#module\_dns\_example\_1) | ../../modules/policies_network_connectivity | n/a |
+| <a name="module_dns_example_2"></a> [dns\_example\_2](#module\_dns\_example\_2) | ../../modules/policies_network_connectivity | n/a |
 | <a name="module_domain_vnic_qos"></a> [domain\_vnic\_qos](#module\_domain\_vnic\_qos) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_qos | n/a |
 | <a name="module_imc_access_example"></a> [imc\_access\_example](#module\_imc\_access\_example) | terraform-cisco-modules/imm/intersight//modules/policies_imc_access | n/a |
 | <a name="module_ipmi_example"></a> [ipmi\_example](#module\_ipmi\_example) | terraform-cisco-modules/imm/intersight//modules/policies_ipmi_over_lan | n/a |
@@ -92,11 +92,11 @@
 | <a name="module_ldap_provider_server1"></a> [ldap\_provider\_server1](#module\_ldap\_provider\_server1) | ../../modules/policies_ldap_provider | n/a |
 | <a name="module_ldap_provider_server2"></a> [ldap\_provider\_server2](#module\_ldap\_provider\_server2) | ../../modules/policies_ldap_provider | n/a |
 | <a name="module_lldp_example"></a> [lldp\_example](#module\_lldp\_example) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_network_control | n/a |
-| <a name="module_ntp_example"></a> [ntp\_example](#module\_ntp\_example) | terraform-cisco-modules/imm/intersight//modules/policies_ntp | n/a |
-| <a name="module_snmp_example"></a> [snmp\_example](#module\_snmp\_example) | terraform-cisco-modules/imm/intersight//modules/policies_snmp | n/a |
+| <a name="module_ntp_example"></a> [ntp\_example](#module\_ntp\_example) | ../../modules/policies_ntp | n/a |
+| <a name="module_snmp_example"></a> [snmp\_example](#module\_snmp\_example) | ../../modules/policies_snmp | n/a |
 | <a name="module_sol_example"></a> [sol\_example](#module\_sol\_example) | terraform-cisco-modules/imm/intersight//modules/policies_serial_over_lan | n/a |
 | <a name="module_standalone_vnic_qos"></a> [standalone\_vnic\_qos](#module\_standalone\_vnic\_qos) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_qos | n/a |
-| <a name="module_syslog_example"></a> [syslog\_example](#module\_syslog\_example) | terraform-cisco-modules/imm/intersight//modules/policies_syslog | n/a |
+| <a name="module_syslog_example"></a> [syslog\_example](#module\_syslog\_example) | ../../modules/policies_syslog | n/a |
 | <a name="module_vlan_group_list"></a> [vlan\_group\_list](#module\_vlan\_group\_list) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_network_group | n/a |
 | <a name="module_vlan_group_range"></a> [vlan\_group\_range](#module\_vlan\_group\_range) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_network_group | n/a |
 | <a name="module_vnic_adapter_example"></a> [vnic\_adapter\_example](#module\_vnic\_adapter\_example) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter | n/a |

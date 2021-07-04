@@ -40,9 +40,9 @@ variable "description" {
 }
 
 variable "enable_dns" {
-  default     = ""
-  description = "Description for the Policy."
-  type        = string
+  default     = false
+  description = "Enables DNS to access LDAP servers."
+  type        = bool
 }
 
 variable "enable_encryption" {

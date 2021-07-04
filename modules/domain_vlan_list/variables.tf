@@ -26,8 +26,8 @@ variable "tags" {
   type        = list(map(string))
 }
 
-variable "vlan" {
-  default = "1"
+variable "vlan_list" {
+  default = "2-10,21-30"
   type    = string
 }
 

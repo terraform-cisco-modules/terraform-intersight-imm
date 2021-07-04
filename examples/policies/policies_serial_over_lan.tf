@@ -12,7 +12,7 @@ module "sol_example" {
   description = "Serial over LAN Policy Example."
   name        = "example"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   tags        = var.tags
 }
 
@@ -34,7 +34,7 @@ module "sol_defaults" {
   enabled     = true
   name        = "sol"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   ssh_port    = 2400
   tags        = var.tags
 }

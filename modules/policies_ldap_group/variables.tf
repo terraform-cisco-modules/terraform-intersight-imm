@@ -24,8 +24,3 @@ variable "ldap_group" {
   description = "LDAP Group name in the LDAP server database."
   type        = string
 }
-
-variable "org_moid" {
-  description = "Intersight Organization moid."
-  type        = string
-}

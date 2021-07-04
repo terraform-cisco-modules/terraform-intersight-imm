@@ -5,9 +5,8 @@
 #____________________________________________________________
 
 resource "intersight_syslog_policy" "syslog" {
-  description  = var.description
-  name         = var.name
-  profile_type = var.profile_type
+  description = var.description
+  name        = var.name
   local_clients {
     min_severity = var.syslog_severity
     object_type  = "syslog.LocalFileLoggingClient"

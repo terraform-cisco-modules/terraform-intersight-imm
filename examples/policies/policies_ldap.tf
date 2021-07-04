@@ -17,7 +17,7 @@ module "ldap_policy_example" {
   description = "LDAP Policy Example accepting default values."
   name        = "example"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   tags        = var.tags
 }
 
@@ -59,7 +59,6 @@ module "ldap_provider_group1" {
   source           = "../../modules/policies_ldap_group"
   ldap_group       = "server_ops"
   ldap_policy_moid = module.ldap_policy_example.moid
-  org_moid         = local.org_moid
 }
 
 module "ldap_provider_group2" {
@@ -71,7 +70,6 @@ module "ldap_provider_group2" {
   group_role       = "admin"
   ldap_group       = "server_admins"
   ldap_policy_moid = module.ldap_policy_example.moid
-  org_moid         = local.org_moid
 }
 
 
@@ -104,7 +102,7 @@ module "ldap_policy_defaults" {
   nr_source                  = "Extracted"
   org_moid                   = local.org_moid
   password                   = ""
-  profiles                   = var.profiles
+  profiles                   = []
   search_domain              = ""
   search_forest              = ""
   tags                       = var.tags
@@ -142,7 +140,6 @@ module "ldap_group_defaults" {
   ldap_domain      = "example.com"
   ldap_group       = ""
   ldap_policy_moid = ""
-  org_moid         = local.org_moid
 }
 
 */

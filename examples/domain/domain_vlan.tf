@@ -10,7 +10,7 @@ module "vlan_policy_example" {
     module.domain_profile_a_example,
     module.domain_profile_b_example
   ]
-  source      = "terraform-cisco-modules/imm/intersight//modules/domain_vlan_policy"
+  source      = "../../modules/domain_vlan_policy"
   description = "VLAN Policy Example."
   name        = "example"
   org_moid    = local.org_moid
@@ -27,29 +27,29 @@ module "vlan_policy_example" {
 # VLAN Examples
 #______________________________________________
 
-# Adding the Native VLAN
+# Adding a single VLAN (Native VLAN in this Example)
 module "vlan_example_1" {
   depends_on = [
     data.intersight_organization_organization.org_moid,
     module.multicast_example,
     module.vlan_policy_example
   ]
-  source           = "terraform-cisco-modules/imm/intersight//modules/domain_vlan"
+  source           = "../../modules/domain_vlan"
   is_native        = true
   multicast_moid   = module.multicast_example.moid
-  vlan_list        = "1"
+  vlan             = "1"
   vlan_policy_moid = module.vlan_policy_example.moid
   vlan_prefix      = "example"
 }
 
-# Adding a VLAN List Example
+# Adding a List of VLANs Example
 module "vlan_example_2" {
   depends_on = [
     data.intersight_organization_organization.org_moid,
     module.multicast_example,
     module.vlan_policy_example
   ]
-  source           = "terraform-cisco-modules/imm/intersight//modules/domain_vlan"
+  source           = "../../modules/domain_vlan_list"
   multicast_moid   = module.multicast_example.moid
   vlan_list        = "2-100,105,110,115"
   vlan_policy_moid = module.vlan_policy_example.moid

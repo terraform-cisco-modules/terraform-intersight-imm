@@ -11,7 +11,6 @@ resource "intersight_snmp_policy" "snmp" {
   enabled                 = var.enabled
   engine_id               = var.snmp_engine_id
   name                    = var.name
-  profile_type            = var.profile_type
   snmp_port               = var.snmp_port
   sys_contact             = var.system_contact
   sys_location            = var.system_location

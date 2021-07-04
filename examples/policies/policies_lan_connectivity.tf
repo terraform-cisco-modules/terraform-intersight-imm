@@ -12,7 +12,7 @@ module "lan_connectivity_example" {
   description = "vNIC LAN Connectivity Example."
   name        = "example"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
 }
 
 
@@ -37,7 +37,7 @@ module "lan_connectivity_defaults" {
   name                = "lan_connectivity"
   org_moid            = local.org_moid
   placement_mode      = "custom"
-  profiles            = var.profiles
+  profiles            = []
   target_platform     = "FIAttached"
 }
 

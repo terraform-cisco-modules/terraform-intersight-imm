@@ -11,7 +11,7 @@ module "kvm_example" {
   source   = "terraform-cisco-modules/imm/intersight//modules/policies_virtual_kvm"
   name     = "example"
   org_moid = local.org_moid
-  profiles = var.profiles
+  profiles = []
   tags     = var.tags
 }
 
@@ -35,7 +35,7 @@ module "kvm_defaults" {
   name                      = "kvm"
   remote_port               = 2068
   org_moid                  = local.org_moid
-  profiles                  = var.profiles
+  profiles                  = []
   tags                      = var.tags
 }
 

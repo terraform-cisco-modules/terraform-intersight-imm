@@ -5,12 +5,11 @@
 #____________________________________________________________
 
 resource "intersight_ntp_policy" "ntp" {
-  description  = var.description
-  enabled      = var.enabled
-  name         = var.name
-  ntp_servers  = var.ntp_servers
-  profile_type = var.profile_type
-  timezone     = var.timezone
+  description = var.description
+  enabled     = var.enabled
+  name        = var.name
+  ntp_servers = var.ntp_servers
+  timezone    = var.timezone
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

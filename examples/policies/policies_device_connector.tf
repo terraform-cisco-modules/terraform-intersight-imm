@@ -12,7 +12,7 @@ module "device_connector" {
   description = "Device Connector Policy Example."
   name        = "example"
   org_moid    = local.org_moid
-  profiles    = var.profiles
+  profiles    = []
   tags        = var.tags
 }
 

@@ -10,7 +10,7 @@ module "switch_control_example" {
     module.domain_profile_a_example,
     module.domain_profile_b_example
   ]
-  source               = "terraform-cisco-modules/imm/intersight//modules/domain_switch_control"
+  source               = "../../modules/domain_switch_control"
   description          = "Switch Control Policy Example."
   name                 = "example"
   mac_aging_option     = "Custom"

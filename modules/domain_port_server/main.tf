@@ -10,10 +10,11 @@ locals {
     for v in range(tonumber(element(split("-", s), 0)), (tonumber(element(split("-", s), 1)) + 1)) : tonumber(v)] : [s]
   ]
   flattened_port_list = flatten(local.port_lists)
+  port_list_set       = toset(local.flattened_port_list)
 }
 
 resource "intersight_fabric_server_role" "server_port" {
-  for_each          = local.flattened_port_list
+  for_each          = local.port_list_set
   aggregate_port_id = var.breakout_sw_port
   port_id           = each.value
   slot_id           = var.slot_id

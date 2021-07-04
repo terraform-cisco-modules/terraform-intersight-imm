@@ -9,7 +9,7 @@ module "syslog_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "terraform-cisco-modules/imm/intersight//modules/policies_syslog"
+  source          = "../../modules/policies_syslog"
   description     = "Syslog Policy Example."
   name            = "example"
   org_moid        = local.org_moid
@@ -17,14 +17,8 @@ module "syslog_example" {
   syslog_severity = "warning"
   tags            = var.tags
   profiles = [
-    {
-      moid        = data.terraform_remote_state.domain.outputs.domain_profile_a_example.moid
-      object_type = "fabric.SwitchProfile"
-    },
-    {
-      moid        = data.terraform_remote_state.domain.outputs.domain_profile_b_example.moid
-      object_type = "fabric.SwitchProfile"
-    }
+    data.terraform_remote_state.domain.outputs.domain_profile_a_example.moid,
+    data.terraform_remote_state.domain.outputs.domain_profile_b_example.moid
   ]
   remote_clients = [
     {
