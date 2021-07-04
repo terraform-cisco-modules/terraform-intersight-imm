@@ -44,9 +44,9 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_breakout_sw_port"></a> [breakout\_sw\_port](#input\_breakout\_sw\_port) | Breakout port Identifier of the Switch Interface.  When a port is not configured as a breakout port, the aggregatePortId is set to 0, and unused.  When a port is configured as a breakout port, the 'aggregatePortId' port number as labeled on the equipment, e.g. the id of the port on the switch. | `number` | `0` | no |
 | <a name="input_fill_pattern"></a> [fill\_pattern](#input\_fill\_pattern) | Fill pattern to differentiate the configs in NPIV.<br> * Idle - Fc Fill Pattern type Idle.<br> * Arbff - Fc Fill Pattern type Arbff. | `string` | `"Idle"` | no |
-| <a name="input_port_policy_moid"></a> [port\_policy\_moid](#input\_port\_policy\_moid) | A reference to a fabricPortPolicy resource. | `list(map(string))` | `[]` | no |
+| <a name="input_port_policy_moid"></a> [port\_policy\_moid](#input\_port\_policy\_moid) | A reference to a fabricPortPolicy resource. | `string` | n/a | yes |
 | <a name="input_san_uplink_pc_id"></a> [san\_uplink\_pc\_id](#input\_san\_uplink\_pc\_id) | Unique Identifier of the port-channel, local to this switch. | `string` | `1` | no |
-| <a name="input_san_uplink_pc_ports"></a> [san\_uplink\_pc\_ports](#input\_san\_uplink\_pc\_ports) | List of Ports to Assign to the SAN Port-Channel Policy. | `set(string)` | `[]` | no |
+| <a name="input_san_uplink_pc_ports"></a> [san\_uplink\_pc\_ports](#input\_san\_uplink\_pc\_ports) | List of Ports to Assign to the SAN Port-Channel Policy. | `set(string)` | <pre>[<br>  1,<br>  2<br>]</pre> | no |
 | <a name="input_san_uplink_speed"></a> [san\_uplink\_speed](#input\_san\_uplink\_speed) | Admin configured speed for the port.<br> * Auto - Admin configurable speed AUTO ( default ).<br> * 8Gbps - Admin configurable speed 8Gbps.<br> * 16Gbps - Admin configurable speed 16Gbps.<br> * 32Gbps - Admin configurable speed 32Gbps. | `string` | `"16Gbps"` | no |
 | <a name="input_slot_id"></a> [slot\_id](#input\_slot\_id) | Slot Identifier of the Switch/FEX/Chassis Interface. | `number` | `1` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |

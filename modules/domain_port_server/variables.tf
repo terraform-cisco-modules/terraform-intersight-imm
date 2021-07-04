@@ -9,7 +9,7 @@ variable "breakout_sw_port" {
   type        = number
 }
 
-vvariable "port_list" {
+variable "port_list" {
   default     = "5-18"
   description = "List of Ports to assign to the Server Port Policy."
   type        = string

@@ -52,7 +52,7 @@ No modules.
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_password_expiry_duration"></a> [password\_expiry\_duration](#input\_password\_expiry\_duration) | Set time period for password expiration. Value should be greater than notification period and grace period. | `number` | `90` | no |
 | <a name="input_password_history"></a> [password\_history](#input\_password\_history) | Tracks password change history. Specifies in number of instances, that the new password was already used. | `number` | `5` | no |
-| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs

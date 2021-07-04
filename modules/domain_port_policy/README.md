@@ -46,7 +46,7 @@ No modules.
 | <a name="input_device_model"></a> [device\_model](#input\_device\_model) | This field specifies the device model that this Port Policy is being configured for.<br> * UCS-FI-6454 - The standard 4th generation UCS Fabric Interconnect with 54 ports.<br> * UCS-FI-64108 - The expanded 4th generation UCS Fabric Interconnect with 108 ports.<br> * unknown - Unknown device type, usage is TBD. | `string` | `"UCS-FI-6454"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"port_policy"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs

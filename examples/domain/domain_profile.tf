@@ -43,7 +43,7 @@ module "domain_profile_a_example" {
   tags            = var.tags
 }
 
-module "domain_profile_a_example" {
+module "domain_profile_b_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid,
     data.terraform_remote_state.pools,

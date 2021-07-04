@@ -10,15 +10,15 @@ module "switch_control_example" {
     module.domain_profile_a_example,
     module.domain_profile_b_example
   ]
-  source                = "terraform-cisco-modules/imm/intersight//modules/domain_switch_control"
-  description           = "Switch Control Policy Example."
-  name                  = "example"
-  mac_aging_option      = "Custom"
-  mac_aging_time        = 1200
-  udld_recovery_action  = "reset"
-  vlan_optimization     = true
-  org_moid              = local.org_moid
-  tags                  = var.tags
+  source               = "terraform-cisco-modules/imm/intersight//modules/domain_switch_control"
+  description          = "Switch Control Policy Example."
+  name                 = "example"
+  mac_aging_option     = "Custom"
+  mac_aging_time       = 1200
+  udld_recovery_action = "reset"
+  vlan_optimization    = true
+  org_moid             = local.org_moid
+  tags                 = var.tags
   profiles = [
     module.domain_profile_a_example.moid,
     module.domain_profile_b_example.moid

@@ -46,7 +46,7 @@ No modules.
 | <a name="input_lockout"></a> [lockout](#input\_lockout) | Enables configuration lockout on the endpoint. | `bool` | `false` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"device_connector"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs

@@ -45,7 +45,8 @@ No modules.
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"syslog"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_profile_type"></a> [profile\_type](#input\_profile\_type) | Value to Identify the Type of Profile being applied to the policy.  Options are {domain\|server} | `string` | `"server"` | no |
+| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_remote_clients"></a> [remote\_clients](#input\_remote\_clients) | Configure up to 2 remote syslog servers. | `list(map(string))` | `[]` | no |
 | <a name="input_syslog_severity"></a> [syslog\_severity](#input\_syslog\_severity) | n/a | `string` | `"warning"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |

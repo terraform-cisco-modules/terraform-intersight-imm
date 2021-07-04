@@ -7,7 +7,7 @@
 locals {
   vlan_split = length(regexall("-", var.vlan_list)) > 0 ? tolist(split(",", var.vlan_list)) : tolist(var.vlan_list)
   vlan_lists = [for s in local.vlan_split : length(regexall("-", s)) > 0 ? [
-    for v in range(tonumber(element(split("-", s), 0)),(tonumber(element(split("-", s), 1))+1)): tonumber(v)] : [s]
+    for v in range(tonumber(element(split("-", s), 0)), (tonumber(element(split("-", s), 1)) + 1)) : tonumber(v)] : [s]
   ]
   flattened_vlan_list = flatten(local.vlan_lists)
 }

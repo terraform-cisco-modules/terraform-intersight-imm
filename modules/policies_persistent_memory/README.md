@@ -49,7 +49,7 @@ No modules.
 | <a name="input_management_mode"></a> [management\_mode](#input\_management\_mode) | Management Mode of the policy. This can be either Configured from Intersight or Configured from Operating System.<br>* configured-from-intersight - The Persistent Memory Modules are configured from Intersight thorugh Persistent Memory policy.<br> * configured-from-operating-system - The Persistent Memory Modules are configured from operating system thorugh OS tools. | `string` | `"configured-from-intersight"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"persistent_memory"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_retain_name_spaces"></a> [retain\_name\_spaces](#input\_retain\_name\_spaces) | Persistent Memory Namespaces to be retained or not. | `bool` | `true` | no |
 | <a name="input_secure_passphrase"></a> [secure\_passphrase](#input\_secure\_passphrase) | Secure passphrase to be applied on the Persistent Memory Modules on the server. The allowed characters are a-z, A to Z, 0-9, and special characters =, !, &, #, $, %, +, ^, @, \_, *, -. | `string` | `""` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |

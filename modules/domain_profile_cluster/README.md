@@ -46,7 +46,7 @@ No modules.
 | <a name="input_domain_profiles"></a> [domain\_profiles](#input\_domain\_profiles) | An array of relationships to fabricSwitchProfile resources. | `list(map(string))` | `[]` | no |
 | <a name="input_domain_src_template"></a> [domain\_src\_template](#input\_domain\_src\_template) | A reference to a policyAbstractProfile resource. | `list(map(string))` | `[]` | no |
 | <a name="input_domain_type"></a> [domain\_type](#input\_domain\_type) | Defines the type of the profile. Accepted values are instance or template. | `string` | `"instance"` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"cluster_profile"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"domain_profile"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 

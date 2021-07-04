@@ -76,11 +76,11 @@ module "server_port_example_a1" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_a
   ]
-  source           = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
+  source = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
   # Using the default port_list in this example of "5-18"
   port_policy_moid = module.port_policy_example_a.moid
   # Accepting the default slot id of 1
-  tags             = var.tags
+  tags = var.tags
 }
 
 module "server_port_example_a2" {
@@ -99,11 +99,11 @@ module "server_port_example_b1" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_b
   ]
-  source           = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
+  source = "terraform-cisco-modules/imm/intersight//modules/domain_port_server"
   # Using the default port_list in this example of "5-18"
   port_policy_moid = module.port_policy_example_b.moid
   # Accepting the default slot id of 1
-  tags             = var.tags
+  tags = var.tags
 }
 
 module "server_port_example_b2" {
