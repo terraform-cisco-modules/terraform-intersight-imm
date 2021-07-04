@@ -1,21 +1,21 @@
-# policies_vnic_adapter - Intersight Ethernet (vNIC) Adapter Policy Terraform Module
+# policies_vic_adapter - Intersight Adapter (VIC) Configuration Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vnic_adapter" {
+module "vic_adapter" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter"
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_vic_adapter"
 
   # omitted...
 }
 ```
 
-This module will create an Ethernet (vNIC) Adapter Policy in Intersight.  This can be used to create Profiles and Templates that require a Ethernet Adapter Policy.  
+This module will create an Adapter (VIC) Configuration Policy in Intersight.  This can be used to create Profiles and Templates that require a Adapter (VIC) Configuration Policy.  
 
 These resources are consumed
 
-* [vnic_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_eth_adapter_policy)
+* [vic_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/adapter_config_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

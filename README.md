@@ -33,7 +33,7 @@ This set of modules support creating the following Pool Types:
 
 This set of modules support creating the following Policy Types:
 
-1. Adapter Configuration (Under Developement).  See Module policies_vic_configuration and the example in the examples/policies directory.
+1. Adapter Configuration.  See Module policies_vic_adapter and the example in the examples/policies directory.
 
 2. BIOS.  See Module policies_bios and the example in the examples/policies directory.
 
@@ -47,7 +47,7 @@ This set of modules support creating the following Policy Types:
 
 7. Ethernet Adapter.  See Module policies_vnic_adapter and the example in the examples/policies directory.
 
-8. Ethernet Network (Under Developement).  See Module policies_vnic_network and the example in the examples/policies directory.
+8. Ethernet Network.  See Module policies_vnic_network and the example in the examples/policies directory.
 
 9. Ethernet Network Control.  See Module policies_vnic_network_control and the example in the examples/policies directory.
 
@@ -55,11 +55,11 @@ This set of modules support creating the following Policy Types:
 
 11. Ethernet QoS.  See Module policies_vnic_qos and the example in the examples/policies directory.
 
-12. Fibre Channel Adapter (Under Developement).  See Module policies_vhba_adapter and the example in the examples/policies directory.
+12. Fibre Channel Adapter.  See Module policies_vhba_adapter and the example in the examples/policies directory.
 
-13. Fibre Channel Network (Under Developement).  See Module policies_vhba_network and the example in the examples/policies directory.
+13. Fibre Channel Network.  See Module policies_vhba_network and the example in the examples/policies directory.
 
-14. Fibre Channel QoS (Under Developement).  See Module policies_vhba_qos and the example in the examples/policies directory.
+14. Fibre Channel QoS.  See Module policies_vhba_qos and the example in the examples/policies directory.
 
 15. IMC Access.  See Module policies_imc_access and the example in the examples/policies directory.
 
@@ -67,33 +67,33 @@ This set of modules support creating the following Policy Types:
 
 17. iSCSI Adapter.  See Module policies_vnic_iscsi_adapter and the example in the examples/policies directory.
 
-18. iSCSI Boot (Under Developement).  See Module policies_iscsi_boot and the example in the examples/policies directory.
+18. iSCSI Boot.  See Module policies_iscsi_boot and the example in the examples/policies directory.
 
 19. iSCSI Static Target.  See Module policies_vnic_iscsi_target and the example in the examples/policies directory.
 
 20. LAN Connectivity.  See Modules policies_vnic_lan_connectivity, policies_vnic, and the examples in the examples/policies directory.
 
-21. LDAP (Under Developement).  See Modules policies_ldap_group, policies_ldap_policy, policies_ldap_provider, and the examples in the examples/policies directory.
+21. LDAP.  See Modules policies_ldap_group, policies_ldap_policy, policies_ldap_provider, and the examples in the examples/policies directory.
 
-22. Local User (Under Developement).  See Modules policies_local_group, policies_local_user, policies_user_policy, and the examples in the examples/policies directory.
+22. Local User.  See Modules policies_local_group, policies_local_user, policies_user_policy, and the examples in the examples/policies directory.
 
 23. Network Connectivity.  See Module policies_network_connectivity and the example in the examples/policies directory.
 
 24. NTP.  See Module policies_ntp and the example in the examples/policies directory.
 
-25. Persistent Memory (Under Developement).  See Module policies_persistent_memory and the example in the examples/policies directory.
+25. Persistent Memory.  See Module policies_persistent_memory and the example in the examples/policies directory.
 
-26. SAN Connectivity (Under Developement).  See Module policies_vhba_san_connectivity, policies_vhba and the examples in the examples/policies directory.
+26. SAN Connectivity.  See Module policies_vhba_san_connectivity, policies_vhba and the examples in the examples/policies directory.
 
 27. SD Card.  See Module policies_sd_card and the example in the examples/policies directory.
 
 28. Serial over LAN.  See Module policies_serial_over_lan and the example in the examples/policies directory.
 
-29. SMTP (Under Developement).  See Module policies_smtp and the example in the examples/policies directory.
+29. SMTP.  See Module policies_smtp and the example in the examples/policies directory.
 
 30. SNMP.  See Module policies_snmp and the example in the examples/policies directory.
 
-31. SSH (Under Developement).  See Module policies_ssh and the example in the examples/policies directory.
+31. SSH.  See Module policies_ssh and the example in the examples/policies directory.
 
 32. Storage.  See Module policies_storage and the example in the examples/policies directory.
 

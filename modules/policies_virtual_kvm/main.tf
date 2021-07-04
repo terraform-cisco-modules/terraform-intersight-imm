@@ -20,7 +20,7 @@ resource "intersight_kvm_policy" "kvm" {
     for_each = var.profiles
     content {
       moid        = profiles.value.moid
-      object_type = profiles.value.object_type
+      object_type = "server.Profile"
     }
   }
   dynamic "tags" {

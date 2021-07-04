@@ -30,7 +30,6 @@
     LDAP Policy (Under Developement)
     LDAP Provider (Under Developement)
 * Local User Policy
-    Local Group (Under Developement)
     Local User (Under Developement)
     Local User Policy (Under Developement)
 * Network Connectivity Policy
