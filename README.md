@@ -129,6 +129,6 @@ Domain Specific Policies
 
 ### Create UCS Service Profiles and Templates and Assign to physical Servers
 
-1. Service Profile (Under Developement).  See Module service_profile, and the example in the examples/service_profile directory.
+1. Server Profile.  See Module server_profile, and the example in the examples/server_profile directory.
 
-2. Service Profile Template (Under Developement).  See Module service_profile_template, and the example in the examples/service_profile directory.
+2. Server Profile Template.  See Module server_profile_template, and the example in the examples/server_profile directory.

@@ -19,7 +19,7 @@ resource "intersight_ipmioverlan_policy" "ipmi" {
     for_each = var.profiles
     content {
       moid        = profiles.value.moid
-      object_type = profiles.value.object_type
+      object_type = "server.Profile"
     }
   }
   dynamic "tags" {

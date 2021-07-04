@@ -1,21 +1,21 @@
-# service_profile - Intersight UCS Service Profile Terraform Module
+# server_profile - Intersight UCS Server Profile Terraform Module
 
 ## Usage
 
 ```hcl
-module "service_profile" {
+module "server_profile" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/service_profile"
+  source = "terraform-cisco-modules/imm/intersight//modules/server_profile"
 
   # omitted...
 }
 ```
 
-This module will create a UCS Service Profile in Intersight.  This can be assigned to Fabric Attached Servers or Standalone Servers.  
+This module will create a UCS Server Profile in Intersight.  This can be assigned to Fabric Attached Servers or Standalone Servers.  
 
 These resources are created
 
-* [service_profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/server_profile_template)
+* [server_profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/server_profile)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
