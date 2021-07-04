@@ -14,8 +14,8 @@ resource "intersight_fabric_system_qos_policy" "system_qos" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
-      object_type = profiles.value.object_type
+      moid        = profiles.value
+      object_type = "fabric.SwitchProfile"
     }
   }
   dynamic "tags" {

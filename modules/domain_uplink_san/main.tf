@@ -12,11 +12,8 @@ resource "intersight_fabric_fc_uplink_role" "san_uplink" {
   port_id           = each.value
   slot_id           = var.slot_id
   vsan_id           = var.vsan_id
-  dynamic "port_policy" {
-    for_each = var.port_policy_moid
-    content {
-      moid = port_policy.value.moid
-    }
+  port_policy {
+    moid = var.port_policy_moid
   }
   dynamic "tags" {
     for_each = var.tags

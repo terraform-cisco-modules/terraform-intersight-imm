@@ -5,11 +5,12 @@
 #____________________________________________________________
 
 resource "intersight_ntp_policy" "ntp" {
-  description = var.description
-  enabled     = var.enabled
-  name        = var.name
-  ntp_servers = var.ntp_servers
-  timezone    = var.timezone
+  description  = var.description
+  enabled      = var.enabled
+  name         = var.name
+  ntp_servers  = var.ntp_servers
+  profile_type = var.profile_type
+  timezone     = var.timezone
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
@@ -27,8 +28,8 @@ resource "intersight_ntp_policy" "ntp" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
-      object_type = profiles.value.object_type
+      moid        = profiles.value
+      object_type = var.profile_type == "domain" ? "fabric.SwitchProfile" : "server.Profile"
     }
   }
   dynamic "tags" {

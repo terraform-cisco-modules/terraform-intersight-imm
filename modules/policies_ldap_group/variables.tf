@@ -3,8 +3,9 @@
 # LDAP Group Variables Section.
 #____________________________________________________________
 
-variable "org_moid" {
-  description = "Intersight Organization moid."
+variable "group_role" {
+  default     = "readonly"
+  description = "The Role to Assign to the LDAP Group.  Valid Options are {admin|readonly|user}"
   type        = string
 }
 
@@ -14,6 +15,7 @@ variable "ldap_policy_moid" {
 }
 
 variable "ldap_domain" {
+  default     = "example.com"
   description = "LDAP server domain the Group resides in."
   type        = string
 }
@@ -23,8 +25,7 @@ variable "ldap_group" {
   type        = string
 }
 
-variable "group_role" {
-  default     = "readonly"
-  description = "The Role to Assign to the LDAP Group.  Valid Options are {admin|readonly|user}"
+variable "org_moid" {
+  description = "Intersight Organization moid."
   type        = string
 }

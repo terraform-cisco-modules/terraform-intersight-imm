@@ -11,6 +11,7 @@ resource "intersight_snmp_policy" "snmp" {
   enabled                 = var.enabled
   engine_id               = var.snmp_engine_id
   name                    = var.name
+  profile_type            = var.profile_type
   snmp_port               = var.snmp_port
   sys_contact             = var.system_contact
   sys_location            = var.system_location
@@ -24,8 +25,8 @@ resource "intersight_snmp_policy" "snmp" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
-      object_type = profiles.value.object_type
+      moid        = profiles.value
+      object_type = var.profile_type == "chassis" ? "chassis.Profile" : var.profile_type == "domain" ? "fabric.SwitchProfile" : "server.Profile"
     }
   }
   dynamic "snmp_traps" {

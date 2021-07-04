@@ -22,7 +22,7 @@ variable "flow_control_moid" {
 }
 
 variable "lan_uplink_port_list" {
-  default     = [53, 54]
+  default     = [49]
   description = "List of Ports to Assign to the LAN Uplink Policy."
   type        = set(string)
 }
@@ -40,9 +40,8 @@ variable "link_control_moid" {
 }
 
 variable "port_policy_moid" {
-  default     = []
   description = " A reference to a fabricPortPolicy resource."
-  type        = list(map(string))
+  type        = string
 }
 
 variable "slot_id" {

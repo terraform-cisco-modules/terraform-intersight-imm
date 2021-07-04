@@ -1,5 +1,38 @@
 #____________________________________________________________
 #
+# Example Intersight VSAN Policies Module
+# GUI Location: Policies > Create Policy
+#____________________________________________________________
+
+module "vsan_policy_example_a" {
+  depends_on = [
+    data.intersight_organization_organization.org_moid,
+    domain_profile_a_example
+  ]
+  source      = "terraform-cisco-modules/imm/intersight//modules/domain_vsan_policy"
+  description = "Fabric A VSAN Policy Example."
+  name        = "example_fabric_a"
+  org_moid    = local.org_moid
+  profiles    = [module.domain_profile_a_example.moid]
+  tags        = var.tags
+}
+
+module "vsan_policy_example_b" {
+  depends_on = [
+    data.intersight_organization_organization.org_moid,
+    domain_profile_b_example
+  ]
+  source      = "terraform-cisco-modules/imm/intersight//modules/domain_vsan_policy"
+  description = "Fabric B VSAN Policy Example."
+  name        = "example_fabric_b"
+  org_moid    = local.org_moid
+  profiles    = [module.domain_profile_b_example.moid]
+  tags        = var.tags
+}
+
+
+#____________________________________________________________
+#
 # Example Intersight VLAN Policies Module
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
@@ -50,26 +83,43 @@ module "vsan_example_b" {
   }
 }
 
-#______________________________________________
-#
-# Example with Default Values
-#______________________________________________
 
 /*
+
+#______________________________________________
+#
+# VSAN Policy with Default Values
+#______________________________________________
+
+module "vsan_policy_defaults" {
+  depends_on        = [
+    data.intersight_organization_organization.org_moid
+  ]
+  source          = "terraform-cisco-modules/imm/intersight//modules/domain_vsan_policy"
+  description     = ""
+  enable_trunking = false
+  name            = "vsan_policy"
+  org_moid        = local.org_moid
+  profiles        = []
+  tags            = var.tags
+}
+
+
+#______________________________________________
+#
+# VSAN with Default Values
+#______________________________________________
 
 module "vsan_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
   source                = "terraform-cisco-modules/imm/intersight//modules/domain_vsan"
-  default_zoning        = var.default_zoning
-  fc_zone_sharing_mode  = var.fc_zone_sharing_mode
+  default_zoning        = "Disabled"
+  fc_zone_sharing_mode  = ""
   name_prefix           = "vsan"
-  vsan_list             = [1, 2]
-  vsan_list_type        = "list"
-  vsan_range_start      = 1
-  vsan_range_stop       = 2
-  vsan_policy_moid      = module.vsan_policy_example.moid
+  vsan_list             = **no default, required field**
+  vsan_policy_moid      = **no default, required field**
 }
 
 */

@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Example Intersight Serial over LAN Policies Module
+# Example Intersight Serial over LAN Policy Module
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 

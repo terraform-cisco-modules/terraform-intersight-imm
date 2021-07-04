@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Example Intersight Device Connector Policies Module
+# Example Intersight Device Connector Policy Module
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 

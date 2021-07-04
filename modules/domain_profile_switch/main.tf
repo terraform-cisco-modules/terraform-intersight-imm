@@ -5,20 +5,17 @@
 #____________________________________________________________
 
 resource "intersight_fabric_switch_profile" "switch_profile" {
-  description = var.description
   action      = var.switch_action
+  description = var.description
   name        = var.name
   type        = var.switch_type
+  switch_cluster_profile {
+    moid = var.cluster_moid
+  }
   dynamic "assigned_switch" {
     for_each = var.assigned_switch
     content {
-      moid = assigned_switch.value.moid
-    }
-  }
-  dynamic "switch_cluster_profile" {
-    for_each = var.cluster_moid
-    content {
-      moid = switch_cluster_profile.value.moid
+      moid = assigned_switch.value
     }
   }
   dynamic "policy_bucket" {

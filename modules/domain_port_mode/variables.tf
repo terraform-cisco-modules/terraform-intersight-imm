@@ -22,9 +22,8 @@ variable "port_id_start" {
 }
 
 variable "port_policy_moid" {
-  default     = []
   description = " A reference to a fabricPortPolicy resource."
-  type        = list(map(string))
+  type        = string
 }
 
 variable "slot_id" {

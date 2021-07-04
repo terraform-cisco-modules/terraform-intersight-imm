@@ -8,11 +8,8 @@ resource "intersight_fabric_fc_uplink_pc_role" "port_channel" {
   admin_speed = var.san_uplink_speed
   pc_id       = var.san_uplink_pc_id
   vsan_id     = var.vsan_id
-  dynamic "port_policy" {
-    for_each = var.port_policy_moid
-    content {
-      moid = port_policy.value.moid
-    }
+  port_policy {
+    moid = var.port_policy_moid
   }
   dynamic "ports" {
     for_each = var.san_uplink_pc_ports

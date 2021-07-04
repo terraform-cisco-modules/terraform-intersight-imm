@@ -6,28 +6,23 @@
 
 module "switch_control_example" {
   depends_on = [
-    data.intersight_organization_organization.org_moid
+    data.intersight_organization_organization.org_moid,
+    module.domain_profile_a_example,
+    module.domain_profile_b_example
   ]
   source                = "terraform-cisco-modules/imm/intersight//modules/domain_switch_control"
   description           = "Switch Control Policy Example."
   name                  = "example"
   mac_aging_option      = "Custom"
   mac_aging_time        = 1200
-  udld_message_interval = 15
   udld_recovery_action  = "reset"
   vlan_optimization     = true
   org_moid              = local.org_moid
+  tags                  = var.tags
   profiles = [
-    {
-      moid        = module.switch_profile_example_a.moid
-      object_type = "fabric.SwitchProfile"
-    },
-    {
-      moid        = module.switch_profile_example_b.moid
-      object_type = "fabric.SwitchProfile"
-    },
+    module.domain_profile_a_example.moid,
+    module.domain_profile_b_example.moid
   ]
-  tags = var.tags
 }
 
 

@@ -22,6 +22,7 @@ resource "intersight_networkconfig_policy" "dns" {
   enable_ipv6dns_from_dhcp = var.ipv6_enable == true && var.dynamic_dns == true ? true : false
   preferred_ipv4dns_server = length(var.dns_servers_v4) > 0 ? var.dns_servers_v4[0] : null
   preferred_ipv6dns_server = length(var.dns_servers_v6) > 0 ? var.dns_servers_v6[0] : null
+  profile_type             = var.profile_type
   name                     = var.name
   organization {
     moid        = var.org_moid
@@ -30,8 +31,8 @@ resource "intersight_networkconfig_policy" "dns" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
-      object_type = profiles.value.object_type
+      moid        = profiles.value
+      object_type = var.profile_type == "domain" ? "fabric.SwitchProfile" : "server.Profile"
     }
   }
   dynamic "tags" {

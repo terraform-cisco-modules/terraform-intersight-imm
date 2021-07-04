@@ -16,13 +16,13 @@ variable "flow_control_moid" {
 }
 
 variable "lan_uplink_pc_ports" {
-  default     = []
+  default     = [49, 50]
   description = "List of Ports to Assign to the LAN Port-Channel Policy."
   type        = set(string)
 }
 
 variable "lan_uplink_pc_id" {
-  default     = 53
+  default     = 49
   description = "Unique Identifier of the port-channel, local to this switch."
   type        = string
 }
@@ -46,9 +46,8 @@ variable "link_control_moid" {
 }
 
 variable "port_policy_moid" {
-  default     = []
   description = " A reference to a fabricPortPolicy resource."
-  type        = list(map(string))
+  type        = string
 }
 
 variable "slot_id" {

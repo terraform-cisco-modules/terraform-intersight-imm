@@ -29,7 +29,7 @@ variable "org_moid" {
 variable "profiles" {
   default     = []
   description = "List of Profiles to Assign to the Policy."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "tags" {

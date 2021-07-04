@@ -5,8 +5,9 @@
 #____________________________________________________________
 
 resource "intersight_syslog_policy" "syslog" {
-  description = var.description
-  name        = var.name
+  description  = var.description
+  name         = var.name
+  profile_type = var.profile_type
   local_clients {
     min_severity = var.syslog_severity
     object_type  = "syslog.LocalFileLoggingClient"
@@ -18,8 +19,8 @@ resource "intersight_syslog_policy" "syslog" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
-      object_type = profiles.value.object_type
+      moid        = profiles.value
+      object_type = var.profile_type == "domain" ? "fabric.SwitchProfile" : "server.Profile"
     }
   }
   dynamic "remote_clients" {

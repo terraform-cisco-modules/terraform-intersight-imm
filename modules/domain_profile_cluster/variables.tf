@@ -28,7 +28,7 @@ variable "domain_type" {
 }
 
 variable "name" {
-  default     = "cluster_profile"
+  default     = "domain_profile"
   description = "Name for the Policy."
   type        = string
 }

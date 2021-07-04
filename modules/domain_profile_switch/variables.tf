@@ -6,13 +6,12 @@
 variable "assigned_switch" {
   default     = []
   description = "A reference to a networkElement resource."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "cluster_moid" {
-  default     = []
   description = "List of UCS Domain Cluster Profiles to Assign to the Switch Profile."
-  type        = list(map(string))
+  type        = string
 }
 
 variable "description" {
@@ -22,7 +21,7 @@ variable "description" {
 }
 
 variable "name" {
-  default     = "switch_profile"
+  default     = "domain_profile_switch"
   description = "Name for the Policy."
   type        = string
 }

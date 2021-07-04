@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Example Intersight Boot Policies Module
+# Example Intersight Boot Policy Module
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 

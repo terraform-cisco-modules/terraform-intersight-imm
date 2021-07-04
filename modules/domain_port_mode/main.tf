@@ -9,11 +9,8 @@ resource "intersight_fabric_port_mode" "port_mode" {
   port_id_end   = var.port_id_end
   port_id_start = var.port_id_start
   slot_id       = var.slot_id
-  dynamic "port_policy" {
-    for_each = var.port_policy_moid
-    content {
-      moid = port_policy.value.moid
-    }
+  port_policy {
+    moid = var.port_policy_moid
   }
   dynamic "tags" {
     for_each = var.tags

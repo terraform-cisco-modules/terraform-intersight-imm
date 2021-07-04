@@ -5,19 +5,20 @@
 #____________________________________________________________
 
 locals {
-  port_list = var.port_list_type == "range" ? [for s in range(var.port_start, var.port_stop) : tonumber(s)] : var.port_list
+  port_split = length(regexall("-", var.port_list)) > 0 ? tolist(split(",", var.port_list)) : tolist(var.port_list)
+  port_lists = [for s in local.port_split : length(regexall("-", s)) > 0 ? [
+    for v in range(tonumber(element(split("-", s), 0)),(tonumber(element(split("-", s), 1))+1)): tonumber(v)] : [s]
+  ]
+  flattened_port_list = flatten(local.port_lists)
 }
 
 resource "intersight_fabric_server_role" "server_port" {
-  for_each          = local.port_list
+  for_each          = local.flattened_port_list
   aggregate_port_id = var.breakout_sw_port
   port_id           = each.value
   slot_id           = var.slot_id
-  dynamic "port_policy" {
-    for_each = var.port_policy_moid
-    content {
-      moid = port_policy.value.moid
-    }
+  port_policy {
+    moid = var.port_policy_moid
   }
   dynamic "tags" {
     for_each = var.tags

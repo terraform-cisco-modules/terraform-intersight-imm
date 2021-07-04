@@ -16,7 +16,7 @@ variable "fill_pattern" {
 }
 
 variable "san_uplink_pc_ports" {
-  default     = []
+  default     = [1, 2]
   description = "List of Ports to Assign to the SAN Port-Channel Policy."
   type        = set(string)
 }
@@ -34,9 +34,8 @@ variable "san_uplink_speed" {
 }
 
 variable "port_policy_moid" {
-  default     = []
   description = " A reference to a fabricPortPolicy resource."
-  type        = list(map(string))
+  type        = string
 }
 
 variable "slot_id" {

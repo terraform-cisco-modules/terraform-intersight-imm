@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Example Intersight SNMP Policies Module
+# Example Intersight SNMP Policy Module
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
@@ -8,19 +8,14 @@ module "snmp_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "terraform-cisco-modules/imm/intersight//modules/policies_snmp"
-  description = "SNMP Policy Example."
-  name        = "example"
-  org_moid    = local.org_moid
+  source       = "terraform-cisco-modules/imm/intersight//modules/policies_snmp"
+  description  = "SNMP Policy Example."
+  name         = "example"
+  org_moid     = local.org_moid
+  profile_type = "domain"
   profiles = [
-    {
-      moid        = data.terraform_remote_state.domain.outputs.switch_profile_example_a.moid
-      object_type = "fabric.SwitchProfile"
-    },
-    {
-      moid        = data.terraform_remote_state.domain.outputs.switch_profile_example_b.moid
-      object_type = "fabric.SwitchProfile"
-    },
+    data.terraform_remote_state.domain.outputs.domain_profile_a_example.moid,
+    data.terraform_remote_state.domain.outputs.domain_profile_a_example.moid
   ]
   snmp_community  = var.snmp_community
   system_contact  = "admin@example.com"
@@ -78,13 +73,14 @@ module "syslog_defaults" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "terraform-cisco-modules/imm/intersight//modules/policies_snmp"
+  source          = "terraform-cisco-modules/imm/intersight//modules/policies_snmp"
   description     = ""
   enabled         = true
   engine_id       = ""
   name            = "snmp"
   org_moid        = local.org_moid
   profiles        = var.profiles
+  profile_type    = "domain"
   snmp_access     = "Full"
   snmp_community  = var.snmp_community
   snmp_port       = 161

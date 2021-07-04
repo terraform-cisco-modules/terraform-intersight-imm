@@ -15,7 +15,7 @@ resource "intersight_fabric_port_policy" "port_policy" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "fabric.SwitchProfile"
     }
   }

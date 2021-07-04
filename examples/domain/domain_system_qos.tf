@@ -6,45 +6,37 @@
 
 module "system_qos_example_1" {
   depends_on = [
-    data.intersight_organization_organization.org_moid
+    data.intersight_organization_organization.org_moid,
+    module.domain_profile_a_example,
+    module.domain_profile_b_example
   ]
   source      = "terraform-cisco-modules/imm/intersight//modules/domain_system_qos"
+  classes     = []
   description = "System QoS Default Example."
   name        = "example"
   org_moid    = local.org_moid
+  tags        = var.tags
   profiles = [
-    {
-      moid        = module.switch_profile_example_a.moid
-      object_type = "fabric.SwitchProfile"
-    },
-    {
-      moid        = module.switch_profile_example_b.moid
-      object_type = "fabric.SwitchProfile"
-    },
+    module.domain_profile_a_example.moid,
+    module.domain_profile_b_example.moid
   ]
-  tags    = var.tags
-  classes = []
 }
 
 module "system_qos_example_2" {
   depends_on = [
-    data.intersight_organization_organization.org_moid
+    data.intersight_organization_organization.org_moid,
+    module.domain_profile_a_example,
+    module.domain_profile_b_example
   ]
   source      = "terraform-cisco-modules/imm/intersight//modules/domain_system_qos"
   description = "System QoS Default Example."
   name        = "example"
   org_moid    = local.org_moid
+  tags        = var.tags
   profiles = [
-    {
-      moid        = module.switch_profile_example_a.moid
-      object_type = "fabric.SwitchProfile"
-    },
-    {
-      moid        = module.switch_profile_example_b.moid
-      object_type = "fabric.SwitchProfile"
-    },
+    module.domain_profile_a_example.moid,
+    module.domain_profile_b_example.moid
   ]
-  tags = var.tags
   classes = [
     {
       admin_state        = "Disabled"
@@ -122,12 +114,12 @@ module "system_qos_default" {
     data.intersight_organization_organization.org_moid
   ]
   source       = "terraform-cisco-modules/imm/intersight//modules/domain_system_qos"
+  classes      = []
   description  = "System QoS Default Example."
   name         = "system_qos_default"
   org_moid     = local.org_moid
   profiles     = var.profiles
   tags         = var.tags
-  classes      = []
 }
 
 */

@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Example Intersight IPMI over LAN Policies Module
+# Example Intersight IPMI over LAN Policy Module
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 

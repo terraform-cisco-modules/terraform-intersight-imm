@@ -71,9 +71,8 @@ variable "policy_bucket" {
 }
 
 variable "port_policy_moid" {
-  default     = []
   description = " A reference to a fabricPortPolicy resource."
-  type        = list(map(string))
+  type        = string
 }
 
 variable "profiles" {
@@ -236,28 +235,10 @@ variable "breakout_sw_port" {
   type        = number
 }
 
-variable "port_list_type" {
-  default     = "list"
-  description = "Port list is the group of ports to assign to the policy.\r\n * list - this is to assign a list of ports to the policy using the port_list variable.\r\n * range - will assign a rang of ports with the port_start and port_stop variables."
-  type        = string
-}
-
 variable "port_list" {
-  default     = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  default     = "5-18"
   description = "List of Ports to assign to the Server Port Policy."
-  type        = list(number)
-}
-
-variable "port_start" {
-  default     = 5
-  description = "Beginning port to assign to the Server Port Policy."
-  type        = number
-}
-
-variable "port_stop" {
-  default     = 18
-  description = "Ending port to assign to the Server Port Policy."
-  type        = number
+  type        = string
 }
 
 #____________________________________________________________
@@ -471,20 +452,13 @@ variable "is_native" {
 }
 
 variable "multicast_moid" {
-  default     = []
   description = "Multicast Policy moid map."
-  type        = list(string)
-}
-
-variable "vlan_list_type" {
-  default     = "list"
-  description = "Options are {list|range}.  You can add VLANs as a list [1, 2, 3] or as a 1-100.  This will tell the script which type you are using."
   type        = string
 }
 
 variable "vlan_list" {
-  default = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  type    = set(string)
+  default = "1-10,21-30"
+  type    = string
 }
 
 variable "vlan_prefix" {
@@ -493,20 +467,7 @@ variable "vlan_prefix" {
   type        = string
 }
 
-variable "vlan_range_start" {
-  default     = 1
-  description = "When vlan_list_type is set to range, this is the starting vlan id."
-  type        = number
-}
-
-variable "vlan_range_stop" {
-  default     = 2
-  description = "When vlan_list_type is set to range, this is the ending vlan id."
-  type        = number
-}
-
 variable "vlan_policy_moid" {
-  default     = ""
   description = "VLAN Policy (Ethernet Network Policy) moid."
   type        = string
 }

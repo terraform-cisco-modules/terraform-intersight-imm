@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Example Intersight Virtual KVM Policies Module
+# Example Intersight Virtual KVM Policy Module
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 

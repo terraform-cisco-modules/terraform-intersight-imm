@@ -1,6 +1,6 @@
 #_______________________________________________________________
 #
-# Example Intersight Network Connectivity (DNS) Policies Module
+# Example Intersight Network Connectivity (DNS) Policy Module
 # GUI Location: Policies > Create Policy
 #_______________________________________________________________
 
@@ -15,11 +15,11 @@ module "dns_example_1" {
   org_moid       = local.org_moid
   profiles = [
     {
-      moid        = data.terraform_remote_state.domain.outputs.switch_profile_example_a.moid
+      moid        = data.terraform_remote_state.domain.outputs.domain_profile_a_example.moid
       object_type = "fabric.SwitchProfile"
     },
     {
-      moid        = data.terraform_remote_state.domain.outputs.switch_profile_example_b.moid
+      moid        = data.terraform_remote_state.domain.outputs.domain_profile_b_example.moid
       object_type = "fabric.SwitchProfile"
     },
   ]
