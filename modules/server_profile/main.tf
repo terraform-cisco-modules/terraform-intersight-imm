@@ -17,7 +17,7 @@ resource "intersight_server_profile" "server_profile" {
   dynamic "assigned_server" {
     for_each = var.assigned_server
     content {
-      moid        = assigned_server.value.moid
+      moid = assigned_server.value.moid
     }
   }
   dynamic "policy_bucket" {
@@ -30,7 +30,7 @@ resource "intersight_server_profile" "server_profile" {
   dynamic "src_template" {
     for_each = var.src_template
     content {
-      moid        = src_template.value.moid
+      moid = src_template.value.moid
     }
   }
   dynamic "tags" {

@@ -89,7 +89,7 @@ variable "mschap_user_id" {
   type        = string
 }
 
-vvariable "name" {
+variable "name" {
   default     = "vnic_iscsi_boot"
   description = "Name for the Policy."
   type        = string

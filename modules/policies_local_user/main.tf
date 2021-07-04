@@ -10,7 +10,7 @@ data "intersight_iam_end_point_role" "user_role" {
 }
 
 resource "intersight_iam_end_point_user" "user" {
-  name        = var.username
+  name = var.username
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

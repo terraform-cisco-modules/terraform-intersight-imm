@@ -42,14 +42,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to Enable or Disable the Policy. | `bool` | `true` | no |
-| <a name="input_ldap_servers"></a> [ldap\_servers](#input\_ldap\_servers) | List of LDAP Servers to Assign to the Policy. | `list(string)` | <pre>[<br>  "time-a-g.nist.gov",<br>  "time-b-g.nist.gov"<br>]</pre> | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the LDAP Provider. | `string` | `"ldap_provider"` | no |
-| <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_timezone"></a> [timezone](#input\_timezone) | Timezone to Assign to the Policy. | `string` | `"America/New_York"` | no |
+| <a name="input_ldap_policy_moid"></a> [ldap\_policy\_moid](#input\_ldap\_policy\_moid) | A reference to a iamLdapPolicy resource. | `string` | n/a | yes |
+| <a name="input_ldap_port"></a> [ldap\_port](#input\_ldap\_port) | LDAP Server Port for connection establishment. | `number` | `389` | no |
+| <a name="input_ldap_server"></a> [ldap\_server](#input\_ldap\_server) | LDAP Server Address, can be IP address or hostname. | `string` | n/a | yes |
 
 ## Outputs
 

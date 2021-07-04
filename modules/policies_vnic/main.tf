@@ -5,11 +5,11 @@
 #____________________________________________________________
 
 resource "intersight_vnic_eth_if" "vnic" {
-  failover_enabled                    = var.failover_enabled
-  mac_address_type                    = var.mac_address_type
-  name                                = var.vnic_name
-  order                               = var.vnic_order
-  static_mac_address                  = var.static_mac_address
+  failover_enabled   = var.failover_enabled
+  mac_address_type   = var.mac_address_type
+  name               = var.vnic_name
+  order              = var.vnic_order
+  static_mac_address = var.static_mac_address
   cdn {
     value     = var.cdn_name
     nr_source = var.cdn_source
@@ -60,7 +60,7 @@ resource "intersight_vnic_eth_if" "vnic" {
   dynamic "iscsi_boot_policy" {
     for_each = var.iscsi_boot_policy_moid
     content {
-      moid  = iscsi_boot_policy.value.moid
+      moid = iscsi_boot_policy.value.moid
     }
   }
   dynamic "mac_lease" {

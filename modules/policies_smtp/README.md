@@ -36,25 +36,27 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_access_policy.imc_access](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/access_policy) | resource |
+| [intersight_smtp_policy.smtp](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/smtp_policy) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_imc_ip_pool"></a> [imc\_ip\_pool](#input\_imc\_ip\_pool) | moid of an IP Pool to Assign to the IMC Access Policy. | `string` | `""` | no |
-| <a name="input_inband_mgmt_vlan"></a> [inband\_mgmt\_vlan](#input\_inband\_mgmt\_vlan) | VLAN ID to Assign as the Inband Management VLAN for IMC Access | `number` | `1` | no |
-| <a name="input_ipv4_enable"></a> [ipv4\_enable](#input\_ipv4\_enable) | Flag to Enable or Disable the IPv4 Address Family for Poliices. | `bool` | `true` | no |
-| <a name="input_ipv6_enable"></a> [ipv6\_enable](#input\_ipv6\_enable) | Flag to Enable or Disable the IPv6 Address Family for Poliices. | `bool` | `false` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"imc_access"` | no |
+| <a name="input_enabled"></a> [enabled](#input\_enabled) | If enabled, controls the state of the SMTP client service on the managed device. | `bool` | `true` | no |
+| <a name="input_min_severity"></a> [min\_severity](#input\_min\_severity) | Minimum fault severity level to receive email notifications. Email notifications are sent for all faults whose severity is equal to or greater than the chosen level.<br> * critical - Minimum severity to report is critical.<br> * condition - Minimum severity to report is informational.<br> * warning - Minimum severity to report is warning.<br> * minor - Minimum severity to report is minor.<br> * major - Minimum severity to report is major. | `string` | `"critical"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"smtp"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_sender_email"></a> [sender\_email](#input\_sender\_email) | The email address entered here will be displayed as the from address (mail received from address) of all the SMTP mail alerts that are received. If not configured, the hostname of the server is used in the from address field. | `string` | `""` | no |
+| <a name="input_smtp_port"></a> [smtp\_port](#input\_smtp\_port) | Port number used by the SMTP server for outgoing SMTP communication. | `number` | `25` | no |
+| <a name="input_smtp_recipients"></a> [smtp\_recipients](#input\_smtp\_recipients) | List of Emails to send alerts to. | `list(string)` | `[]` | no |
+| <a name="input_smtp_server"></a> [smtp\_server](#input\_smtp\_server) | IP address or hostname of the SMTP server. The SMTP server is used by the managed device to send email notifications. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | IMC Access Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | SMTP Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

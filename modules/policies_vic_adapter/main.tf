@@ -5,8 +5,8 @@
 #____________________________________________________________
 
 resource "intersight_adapter_config_policy" "vic_adapter" {
-  description             = var.description
-  name                    = var.name
+  description = var.description
+  name        = var.name
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

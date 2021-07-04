@@ -5,20 +5,20 @@
 #____________________________________________________________
 
 resource "intersight_vnic_iscsi_boot_policy" "vnic_iscsi_boot" {
-  auto_targetvendor_name         = var.auto_targetvendor_name
+  auto_targetvendor_name = var.auto_targetvendor_name
   chap = [
     {
-      class_id    = "vnic.IscsiAuthProfile"
+      class_id        = "vnic.IscsiAuthProfile"
       is_password_set = var.chap_password == "" ? false : true
-      object_type = "vnic.IscsiAuthProfile"
-      password    = var.chap_password
-      user_id     = var.chap_user_id
+      object_type     = "vnic.IscsiAuthProfile"
+      password        = var.chap_password
+      user_id         = var.chap_user_id
     }
   ]
   description                    = var.description
   initiator_ip_source            = var.initiator_ip_source
   initiator_static_ip_v4_address = var.initiator_static_ip
-  initiator_static_ip_v4_config  = [
+  initiator_static_ip_v4_config = [
     {
       class_id      = "ippool.IpV4Config"
       gateway       = var.initiator_static_gateway
@@ -30,15 +30,15 @@ resource "intersight_vnic_iscsi_boot_policy" "vnic_iscsi_boot" {
   ]
   mutual_chap = [
     {
-      class_id    = "vnic.IscsiAuthProfile"
+      class_id        = "vnic.IscsiAuthProfile"
       is_password_set = var.mschap_password == "" ? false : true
-      object_type = "vnic.IscsiAuthProfile"
-      password    = var.mschap_password
-      user_id     = var.mschap_user_id
+      object_type     = "vnic.IscsiAuthProfile"
+      password        = var.mschap_password
+      user_id         = var.mschap_user_id
     }
   ]
-  name                           = var.name
-  target_source_type             = var.target_source_type
+  name               = var.name
+  target_source_type = var.target_source_type
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
@@ -52,7 +52,7 @@ resource "intersight_vnic_iscsi_boot_policy" "vnic_iscsi_boot" {
   dynamic "iscsi_adapter_policy" {
     for_each = var.iscsi_adapter_policy
     content {
-      moid       = iscsi_adapter_policy.value.moid
+      moid = iscsi_adapter_policy.value.moid
     }
   }
   dynamic "primary_target_policy" {

@@ -66,7 +66,8 @@
 | <a name="module_switch_control_example"></a> [switch\_control\_example](#module\_switch\_control\_example) | terraform-cisco-modules/imm/intersight//modules/domain_switch_control | n/a |
 | <a name="module_switch_profile_example_a"></a> [switch\_profile\_example\_a](#module\_switch\_profile\_example\_a) | terraform-cisco-modules/imm/intersight//modules/domain_profile_switch | n/a |
 | <a name="module_switch_profile_example_b"></a> [switch\_profile\_example\_b](#module\_switch\_profile\_example\_b) | terraform-cisco-modules/imm/intersight//modules/domain_profile_switch | n/a |
-| <a name="module_system_qos_example"></a> [system\_qos\_example](#module\_system\_qos\_example) | terraform-cisco-modules/imm/intersight//modules/domain_system_qos | n/a |
+| <a name="module_system_qos_example_1"></a> [system\_qos\_example\_1](#module\_system\_qos\_example\_1) | terraform-cisco-modules/imm/intersight//modules/domain_system_qos | n/a |
+| <a name="module_system_qos_example_2"></a> [system\_qos\_example\_2](#module\_system\_qos\_example\_2) | terraform-cisco-modules/imm/intersight//modules/domain_system_qos | n/a |
 | <a name="module_vlan_example_1"></a> [vlan\_example\_1](#module\_vlan\_example\_1) | terraform-cisco-modules/imm/intersight//modules/domain_vlan | n/a |
 | <a name="module_vlan_example_2"></a> [vlan\_example\_2](#module\_vlan\_example\_2) | terraform-cisco-modules/imm/intersight//modules/domain_vlan | n/a |
 | <a name="module_vlan_example_3"></a> [vlan\_example\_3](#module\_vlan\_example\_3) | terraform-cisco-modules/imm/intersight//modules/domain_vlan | n/a |

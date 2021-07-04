@@ -36,24 +36,36 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_vnic_iscsi_static_target_policy.vnic_iscsi_target](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_static_target_policy) | resource |
+| [intersight_vnic_iscsi_boot_policy.vnic_iscsi_boot](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_boot_policy) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_auto_targetvendor_name"></a> [auto\_targetvendor\_name](#input\_auto\_targetvendor\_name) | Auto target interface that is represented via the Initiator name or the DHCP vendor ID. The vendor ID can be up to 32 alphanumeric characters. | `string` | `""` | no |
+| <a name="input_chap_password"></a> [chap\_password](#input\_chap\_password) | Chap Password, if doing chap authentication. | `string` | `""` | no |
+| <a name="input_chap_user_id"></a> [chap\_user\_id](#input\_chap\_user\_id) | Chap User Id, if doing chap authentication. | `string` | `""` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_ip_address"></a> [ip\_address](#input\_ip\_address) | The IPv4 address assigned to the iSCSI target. | `string` | `""` | no |
-| <a name="input_lun"></a> [lun](#input\_lun) | The LUN parameters associated with an iSCSI target. This complex property has following sub-properties:<br> * bootable: Specifies LUN is bootable. true or false.<br> * lun\_id: The Identifier of the LUN. | `list(map(string))` | `[]` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"vnic_iscsi_target"` | no |
+| <a name="input_initiator_ip_pool"></a> [initiator\_ip\_pool](#input\_initiator\_ip\_pool) | A reference to a ippoolPool resource. | `list(map(string))` | `[]` | no |
+| <a name="input_initiator_ip_source"></a> [initiator\_ip\_source](#input\_initiator\_ip\_source) | Source Type of Initiator IP Address - DHCP/Static/Pool.<br> * DHCP - The IP address is assigned using DHCP, if available.<br> * Static - Static IPv4 address is assigned to the iSCSI boot interface based on the information entered in this area.<br> * Pool - An IPv4 address is assigned to the iSCSI boot interface from the management IP address pool. | `string` | `"Auto"` | no |
+| <a name="input_initiator_static_gateway"></a> [initiator\_static\_gateway](#input\_initiator\_static\_gateway) | IP address of the default IPv4 gateway. | `string` | `""` | no |
+| <a name="input_initiator_static_ip"></a> [initiator\_static\_ip](#input\_initiator\_static\_ip) | Static IP address provided for iSCSI Initiator. | `string` | `""` | no |
+| <a name="input_initiator_static_netmask"></a> [initiator\_static\_netmask](#input\_initiator\_static\_netmask) | A subnet mask is a 32-bit number that masks an IP address and divides the IP address into network address and host address. | `string` | `""` | no |
+| <a name="input_initiator_static_primary_dns"></a> [initiator\_static\_primary\_dns](#input\_initiator\_static\_primary\_dns) | IP Address of the primary Domain Name System (DNS) server. | `string` | `""` | no |
+| <a name="input_initiator_static_secondary_dns"></a> [initiator\_static\_secondary\_dns](#input\_initiator\_static\_secondary\_dns) | IP Address of the secondary Domain Name System (DNS) server. | `string` | `""` | no |
+| <a name="input_iscsi_adapter_policy"></a> [iscsi\_adapter\_policy](#input\_iscsi\_adapter\_policy) | A reference to a vnicIscsiAdapterPolicy resource. | `list(map(string))` | `[]` | no |
+| <a name="input_mschap_password"></a> [mschap\_password](#input\_mschap\_password) | Mutual Chap Password, if doing mschap authentication. | `string` | `""` | no |
+| <a name="input_mschap_user_id"></a> [mschap\_user\_id](#input\_mschap\_user\_id) | Mutual Chap User Id, if doing mschap authentication. | `string` | `""` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"vnic_iscsi_boot"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_port"></a> [port](#input\_port) | The port associated with the iSCSI target. | `number` | `0` | no |
+| <a name="input_primary_target_policy"></a> [primary\_target\_policy](#input\_primary\_target\_policy) | A reference to a vnicIscsiStaticTargetPolicy resource. | `list(map(string))` | `[]` | no |
+| <a name="input_secondary_target_policy"></a> [secondary\_target\_policy](#input\_secondary\_target\_policy) | A reference to a vnicIscsiStaticTargetPolicy resource. | `list(map(string))` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_target_name"></a> [target\_name](#input\_target\_name) | Qualified Name (IQN) or Extended Unique Identifier (EUI) name of the iSCSI target. | `string` | `""` | no |
+| <a name="input_target_source_type"></a> [target\_source\_type](#input\_target\_source\_type) | Source Type of Targets - Auto/Static.<br> * Auto - Type indicates that the system selects the target interface automatically during iSCSI boot.<br> * Static - Type indicates that static target interface is assigned to iSCSI boot. | `string` | `"Auto"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet (vNIC) iSCSI Target Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet (vNIC) iSCSI Boot Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -11,7 +11,7 @@ resource "intersight_certificatemanagement_policy" "certificates" {
     moid        = var.org_moid
     object_type = "organization.Organization"
   }
-/*
+  /*
   dynamic "certificates" {
     for_each = var.certificates
     content {

@@ -15,12 +15,6 @@ variable "fip_enabled" {
   type        = bool
 }
 
-variable "fip_enabled" {
-  default     = true
-  description = "Enables advanced filtering on the interface."
-  type        = bool
-}
-
 variable "int0_fec_mode" {
   default     = "cl91"
   description = "Interface 0 Forward Error Correction (FEC) mode setting for the DCE interfaces of the adapter. FEC mode setting is supported only for Cisco VIC 14xx adapters. FEC mode 'cl74' is unsupported for Cisco VIC 1495/1497. This setting will be ignored for unsupported adapters and for unavailable DCE interfaces.\r\n * cl74 - Use cl74 standard as FEC mode setting. 'Clause 74' aka FC-FEC ('FireCode' FEC) offers simple, low-latency protection against 1 burst/sparse bit error, but it is not good for random errors.\r\n * cl91 - Use cl91 standard as FEC mode setting. 'Clause 91' aka RS-FEC ('ReedSolomon' FEC) offers better error protection against bursty and random errors but adds latency.\r\n * Off - Disable FEC mode on the DCE Interface."

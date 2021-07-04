@@ -37,23 +37,21 @@ No modules.
 | Name | Type |
 |------|------|
 | [intersight_iam_ldap_group.ldap_group](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_ldap_group) | resource |
+| [intersight_iam_end_point_role.group_role](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/iam_end_point_role) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to Enable or Disable the Policy. | `bool` | `true` | no |
-| <a name="input_ldap_servers"></a> [ldap\_servers](#input\_ldap\_servers) | List of LDAP Servers to Assign to the Policy. | `list(string)` | <pre>[<br>  "time-a-g.nist.gov",<br>  "time-b-g.nist.gov"<br>]</pre> | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the LDAP Group Policy. | `string` | `"ldap_group"` | no |
+| <a name="input_group_role"></a> [group\_role](#input\_group\_role) | The Role to Assign to the LDAP Group.  Valid Options are {admin\|readonly\|user} | `string` | `"readonly"` | no |
+| <a name="input_ldap_domain"></a> [ldap\_domain](#input\_ldap\_domain) | LDAP server domain the Group resides in. | `string` | n/a | yes |
+| <a name="input_ldap_group"></a> [ldap\_group](#input\_ldap\_group) | LDAP Group name in the LDAP server database. | `string` | n/a | yes |
+| <a name="input_ldap_policy_moid"></a> [ldap\_policy\_moid](#input\_ldap\_policy\_moid) | A reference to a iamLdapPolicy resource. | `string` | n/a | yes |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_timezone"></a> [timezone](#input\_timezone) | Timezone to Assign to the Policy. | `string` | `"America/New_York"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | LDAP Group Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | LDAP Group Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

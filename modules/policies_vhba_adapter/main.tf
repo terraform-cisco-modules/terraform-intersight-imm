@@ -24,7 +24,7 @@ resource "intersight_vnic_fc_adapter_policy" "vhba_adapter" {
     timeout = var.flogi_timeout
   }
   interrupt_settings {
-    mode            = var.interrupt_mode
+    mode = var.interrupt_mode
   }
   organization {
     moid        = var.org_moid

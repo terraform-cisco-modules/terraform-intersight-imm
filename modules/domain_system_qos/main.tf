@@ -29,7 +29,7 @@ resource "intersight_fabric_system_qos_policy" "system_qos" {
 
 
 resource "intersight_fabric_system_qos_policy" "system_qos_classes" {
-  depends_on  = [
+  depends_on = [
     intersight_fabric_system_qos_policy.system_qos
   ]
   description = var.description
@@ -52,7 +52,7 @@ resource "intersight_fabric_system_qos_policy" "system_qos_classes" {
       weight             = classes.value.weight
     }
   }
-/*
+  /*
   dynamic "profiles" {
     for_each = var.profiles
     content {

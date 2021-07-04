@@ -37,6 +37,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [intersight_fabric_system_qos_policy.system_qos](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_system_qos_policy) | resource |
+| [intersight_fabric_system_qos_policy.system_qos_classes](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_system_qos_policy) | resource |
 
 ## Inputs
 

@@ -5,8 +5,8 @@
 #____________________________________________________________
 
 resource "intersight_vnic_fc_qos_policy" "vhba_qos" {
-  burst               = var.burst               # FI-Attached
-  cos                 = var.cos                 # Standalone
+  burst               = var.burst # FI-Attached
+  cos                 = var.cos   # Standalone
   description         = var.description
   name                = var.name
   max_data_field_size = var.max_data_field_size # FI-Attached and Standalone

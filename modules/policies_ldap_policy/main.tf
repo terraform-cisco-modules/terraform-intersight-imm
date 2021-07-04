@@ -19,9 +19,9 @@ resource "intersight_iam_ldap_policy" "ldap_policy" {
     password                   = var.password
     timeout                    = var.timeout
   }
-  description            = var.description
+  description = var.description
   dns_paramters {
-    nr_source = var.nr_source
+    nr_source     = var.nr_source
     search_domain = var.search_domain
     search_forest = var.search_forest
   }

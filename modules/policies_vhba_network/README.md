@@ -36,18 +36,18 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_vhba_eth_network_policy.vhba_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vhba_eth_network_policy) | resource |
+| [intersight_vnic_fc_network_policy.vhba_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_network_policy) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_default_vlan"></a> [default\_vlan](#input\_default\_vlan) | VLAN to Assign as the Default VLAN. | `number` | `1` | no |
+| <a name="input_default_vlan_id"></a> [default\_vlan\_id](#input\_default\_vlan\_id) | Only required for Standalone Servers.  Default VLAN of the virtual interface in Standalone Rack server. Setting the value to 0 is equivalent to None and will not associate any Default VLAN to the traffic on the virtual interface (0-4094). | `number` | `0` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_mode"></a> [mode](#input\_mode) | Option to determine if the port can carry single VLAN (Access) or multiple VLANs (Trunk) traffic. | `string` | `"Access"` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"network_group"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"vhba_policy"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_vsan_id"></a> [vsan\_id](#input\_vsan\_id) | VSAN ID of the virtual interface in FI attached server (1-4094). | `number` | n/a | yes |
 
 ## Outputs
 

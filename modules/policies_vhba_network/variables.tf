@@ -4,7 +4,7 @@
 #____________________________________________________________
 
 variable "default_vlan_id" {
-  default     = ""
+  default     = 0
   description = "Only required for Standalone Servers.  Default VLAN of the virtual interface in Standalone Rack server. Setting the value to 0 is equivalent to None and will not associate any Default VLAN to the traffic on the virtual interface (0-4094)."
   type        = number
 }
