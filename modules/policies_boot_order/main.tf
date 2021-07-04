@@ -25,7 +25,7 @@ resource "intersight_boot_precision_policy" "boot" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "server.Profile"
     }
   }

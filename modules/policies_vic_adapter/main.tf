@@ -52,7 +52,7 @@ resource "intersight_adapter_config_policy" "vic_adapter" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "server.Profile"
     }
   }

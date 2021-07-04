@@ -18,7 +18,7 @@ variable "iqn_allocation_type" {
 variable "iqn_pool" {
   default     = []
   description = "IQN Pool to Assign to the Policy."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "iqn_static_name" {
@@ -53,7 +53,7 @@ variable "target_platform" {
 variable "profiles" {
   default     = []
   description = "List of Profiles to Assign to the Policy."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "tags" {

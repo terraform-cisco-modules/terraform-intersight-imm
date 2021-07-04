@@ -20,7 +20,7 @@ resource "intersight_smtp_policy" "smtp" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "server.Profile"
     }
   }

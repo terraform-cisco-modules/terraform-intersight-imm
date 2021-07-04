@@ -18,13 +18,13 @@ resource "intersight_vnic_lan_connectivity_policy" "lan_connectivity" {
   dynamic "iqn_pool" {
     for_each = var.iqn_pool
     content {
-      moid = iqn_pool.value.moid
+      moid = iqn_pool.value
     }
   }
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "server.Profile"
     }
   }

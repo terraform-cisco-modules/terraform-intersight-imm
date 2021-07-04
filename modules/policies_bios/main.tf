@@ -455,7 +455,7 @@ resource "intersight_bios_policy" "bios" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "server.Profile"
     }
   }

@@ -36,7 +36,7 @@ resource "intersight_iam_ldap_policy" "ldap_policy" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "server.Profile"
     }
   }

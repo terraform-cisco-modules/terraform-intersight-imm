@@ -282,7 +282,7 @@ variable "iqn_allocation_type" {
 variable "iqn_pool" {
   default     = []
   description = "IQN Pool to Assign to the Policy."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "iqn_static_name" {

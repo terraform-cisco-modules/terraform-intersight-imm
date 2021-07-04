@@ -56,7 +56,7 @@ resource "intersight_sdcard_policy" "sd_card" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "server.Profile"
     }
   }

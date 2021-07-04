@@ -15,7 +15,7 @@ resource "intersight_deviceconnector_policy" "device_connector" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "server.Profile"
     }
   }

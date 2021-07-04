@@ -18,7 +18,7 @@ resource "intersight_vnic_san_connectivity_policy" "san_connectivity" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "server.Profile"
     }
   }

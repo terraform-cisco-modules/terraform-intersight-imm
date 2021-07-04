@@ -23,7 +23,7 @@ resource "intersight_iam_end_point_user_policy" "password_policy" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value.moid
+      moid        = profiles.value
       object_type = "server.Profile"
     }
   }
