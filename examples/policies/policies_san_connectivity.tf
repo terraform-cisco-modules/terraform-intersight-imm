@@ -29,26 +29,7 @@ module "san_connectivity" {
 # vHBA Examples
 #______________________________________________
 
-variable "fabric_vhbas" {
-  default = {
-    vHBA_1 = {
-      wwpn_pool  = "60d76a896962752d31ac8c3d"
-      switch_id  = "A"
-      network    = "60e252559da7b5d569a9fa92"
-      vhba_name  = "vHBA-1"
-      vhba_order = 6
-    },
-    vHBA_2 = {
-      wwpn_pool  = "60d76a886962752d31ac8c20"
-      switch_id  = "B"
-      network    = "60e252549da7b5d569a9fa7e"
-      vhba_name  = "vHBA-2"
-      vhba_order = 7
-    },
-  }
-}
-
-module "vhba" {
+module "vhba_loop" {
   depends_on = [
     data.intersight_organization_organization.org_moid,
     module.san_connectivity,
@@ -57,23 +38,33 @@ module "vhba" {
     module.vhba_network_example_b,
     module.vhba_qos_example_1
   ]
-  for_each              = var.fabric_vhbas
-  source                = "terraform-cisco-modules/imm/intersight//modules/policies_vhba"
+  source                = "../../modules/policies_vhba_loop"
+  fabric_vhba           = {
+    vHBA_1 = {
+      wwpn_pool  = data.terraform_remote_state.pools.outputs.wwpn_pool_a.moid
+      switch_id  = "A"
+      network    = module.vhba_network_example_a.moid
+      vhba_name  = "vHBA-1"
+      vhba_order = 6
+    },
+    vHBA_2 = {
+      wwpn_pool  = data.terraform_remote_state.pools.outputs.wwpn_pool_b.moid
+      switch_id  = "B"
+      network    = module.vhba_network_example_b.moid
+      vhba_name  = "vHBA-2"
+      vhba_order = 7
+    },
+  }
   placement_pci_link    = 0
   placement_slot_id     = "MLOM"
-  placement_switch_id   = each.value.switch_id
   placement_uplink      = 0
   san_connectivity_moid = module.san_connectivity.moid
   static_wwpn_address   = ""
   vhba_adapter_moid     = module.vhba_adapter_example.moid
-  vhba_network_moid     = each.value.network
-  vhba_name             = each.value.vhba_name
   vhba_qos_moid         = module.vhba_qos_example_1.moid
-  vhba_order            = each.value.vhba_order
   vhba_type             = "fc-initiator"
   wwpn_address_type     = "POOL"
   wwpn_lease_moid       = []
-  wwpn_pool_moid        = [each.value.wwpn_pool]
 }
 
 

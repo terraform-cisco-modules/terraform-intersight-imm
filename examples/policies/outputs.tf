@@ -163,28 +163,6 @@ output "syslog_example" {
 
 #______________________________________________
 #
-# vNIC Adapter Policy Output
-#______________________________________________
-
-output "vnic_adapter_example" {
-  value = module.vnic_adapter_example
-}
-
-output "vnic_adapter_linux_nvme_roce" {
-  value = module.vnic_adapter_linux_nvme_roce
-}
-
-output "vnic_adapter_vmware" {
-  value = module.vnic_adapter_vmware
-}
-
-output "vnic_adapter_windows" {
-  value = module.vnic_adapter_windows
-}
-
-
-#______________________________________________
-#
 # vHBA Network Policy Output
 #______________________________________________
 
@@ -204,6 +182,46 @@ output "vhba_network_example_b" {
 output "vmedia_example_1" {
   value = module.vmedia_example_1
 }
+
+#______________________________________________
+#
+# vHBAs Output
+#______________________________________________
+
+output "vhbas" {
+  value = module.vhba_loop
+}
+
+#______________________________________________
+#
+# vNICs Output
+#______________________________________________
+
+output "vnics" {
+  value = module.vnic_loop
+}
+
+#______________________________________________
+#
+# vNIC Adapter Policy Output
+#______________________________________________
+
+output "vnic_adapter_example" {
+  value = module.vnic_adapter_example
+}
+
+output "vnic_adapter_linux_nvme_roce" {
+  value = module.vnic_adapter_linux_nvme_roce
+}
+
+output "vnic_adapter_vmware" {
+  value = module.vnic_adapter_vmware
+}
+
+output "vnic_adapter_windows" {
+  value = module.vnic_adapter_windows
+}
+
 
 #______________________________________________
 #
