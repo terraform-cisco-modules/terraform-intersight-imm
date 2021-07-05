@@ -20,11 +20,11 @@ variable "org_moid" {
   type        = string
 }
 
-variable "partitions" {
-  default     = []
-  description = "List of Partitions to Assign to the Policy."
-  type        = list(map(string))
-}
+# variable "partitions" {
+#   default     = []
+#   description = "List of Partitions to Assign to the Policy."
+#   type        = list(map(string))
+# }
 
 variable "profiles" {
   default     = []

@@ -11,46 +11,33 @@ resource "intersight_sdcard_policy" "sd_card" {
     moid        = var.org_moid
     object_type = "organization.Organization"
   }
-  dynamic "partitions" {
-    for_each = var.partitions
-    content {
-      additional_properties = ""
-      type                  = partitions.value.type
-      object_type           = "sdcard.Partition"
-      virtual_drives = partitions.value.type == "OS" ? [
-        {
-          # ClassId    = "sdcard.OperatingSystem",
-          Enable     = true,
-          Name       = "Hypervisor",
-          ObjectType = "sdcard.OperatingSystem"
-        }
-        ] : [
-        {
-          # ClassId    = "sdcard.Diagnostics",
-          Enable     = true,
-          ObjectType = "sdcard.Diagnostics"
-        },
-        {
-          # ClassId    = "sdcard.Drivers",
-          Enable     = true,
-          ObjectType = "sdcard.Drivers"
-        },
-        {
-          # ClassId    = "sdcard.HostUpgradeUtility",
-          Enable     = true,
-          ObjectType = "sdcard.HostUpgradeUtility"
-        },
-        {
-          # ClassId    = "sdcard.ServerConfigurationUtility",
-          Enable     = true,
-          ObjectType = "sdcard.ServerConfigurationUtility"
-        },
-        {
-          # ClassId    = "sdcard.UserPartition",
-          Enable     = true,
-          ObjectType = "sdcard.UserPartition"
-        }
-      ]
+  partitions {
+    type        = "OS"
+    object_type = "sdcard.Partition"
+    virtual_drives {
+      additional_properties = jsonencode({ Name = "Hypervisor" })
+      enable                = true
+      object_type           = "sdcard.OperatingSystem"
+    }
+  }
+  partitions {
+    type        = "Utility"
+    object_type = "sdcard.Partition"
+    virtual_drives {
+      enable      = true
+      object_type = "sdcard.Diagnostics"
+    }
+    virtual_drives {
+      enable      = true
+      object_type = "sdcard.Drivers"
+    }
+    virtual_drives {
+      enable      = true
+      object_type = "sdcard.HostUpgradeUtility"
+    }
+    virtual_drives {
+      enable      = true
+      object_type = "sdcard.ServerConfigurationUtility"
     }
   }
   dynamic "profiles" {

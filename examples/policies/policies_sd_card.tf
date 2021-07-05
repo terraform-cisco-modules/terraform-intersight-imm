@@ -14,14 +14,6 @@ module "sd_card_example" {
   profiles    = var.profiles
   org_moid    = local.org_moid
   tags        = var.tags
-  partitions = [
-    {
-      type = "OS"
-    },
-    {
-      type = "Utility"
-    }
-  ]
 }
 
 
@@ -42,7 +34,6 @@ module "sd_card_defaults" {
   profiles    = var.profiles
   org_moid    = local.org_moid
   tags        = var.tags
-  partitions  = []
 }
 
 */
