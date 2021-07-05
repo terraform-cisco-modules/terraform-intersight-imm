@@ -9,6 +9,12 @@ variable "action" {
   type        = string
 }
 
+variable "assigned_server" {
+  default     = []
+  description = "A reference to a computePhysical resource."
+  type        = list(map(string))
+}
+
 variable "description" {
   default     = ""
   description = "Description for the Policy."
@@ -32,10 +38,10 @@ variable "policy_bucket" {
   type        = list(map(string))
 }
 
-variable "assigned_server" {
+variable "src_template" {
   default     = []
   description = "A reference to a computePhysical resource."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "tags" {

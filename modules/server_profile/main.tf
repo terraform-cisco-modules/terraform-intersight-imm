@@ -30,7 +30,7 @@ resource "intersight_server_profile" "server_profile" {
   dynamic "src_template" {
     for_each = var.src_template
     content {
-      moid = src_template.value.moid
+      moid = src_template.value
     }
   }
   dynamic "tags" {

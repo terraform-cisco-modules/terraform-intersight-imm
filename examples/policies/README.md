@@ -4,47 +4,48 @@
 
 ### Examples in this Directory
 
-* BIOS Policy
-* Boot Order Policy
-* Certificate Management Policy (Under Developement)
-* Device Connector Policy
-* Disk Group Policy
-* Ethernet Adapter Policy
-* Ethernet Network Policy (Under Developement)
-* Ethernet Network Control Policy
-* Ethernet Network Group Policy
-* Ethernet QoS Policy
-* Fibre Channel Adapter Policy (Under Developement)
-* Fibre Channel Network Policy (Under Developement)
-* Fibre Channel Network Control (Under Developement)
-* Fibre Channel Network Group (Under Developement)
-* Fibre Channel QoS (Under Developement)
-* IMC Access Policy
-* IPMI Over LAN Policy
-* iSCSI Adapter Policy
-* iSCSI Boot Policy
-* iSCSI Static Target Policy
-* LAN Connectivity Policy
-* LDAP Policy
-    LDAP Group (Under Developement)
-    LDAP Policy (Under Developement)
-    LDAP Provider (Under Developement)
-* Local User Policy
-    Local User (Under Developement)
-    Local User Policy (Under Developement)
-* Network Connectivity Policy
-* NTP Policy
-* Persistent Memory Policy (Under Developement)
-* SAN Connectivity POlicy (Under Developement)
-* SD Card Policy
-* Serial Over LAN Policy
-* SMTP Policy (Under Developement)
-* SNMP Policy
-* SSH Policy (Under Developement)
-* Storage Policy (Under Developement)
-* Syslog Policy
-* Virtual KVM Policy
-* Virtual Media Policy (Under Developement)
+* Adapter Configuration
+* BIOS
+* Boot Order
+* Certificate Management (Under Developement)
+* Device Connector
+* Disk Group
+* Ethernet Adapter
+* Ethernet Network
+* Ethernet Network Control
+* Ethernet Network Group
+* Ethernet QoS
+* Fibre Channel Adapter
+* Fibre Channel Network
+* Fibre Channel QoS
+* IMC Access
+* IPMI Over LAN
+* iSCSI Adapter
+* iSCSI Boot
+* iSCSI Static Target
+* LAN Connectivity
+    vNIC
+* LDAP
+    LDAP Group
+    LDAP Policy
+    LDAP Provider
+* Local User
+    Local User
+    Local User Policy
+* Network Connectivity
+* NTP
+* Persistent Memory
+* SAN Connectivity
+    vHBA
+* SD Card
+* Serial Over LAN
+* SMTP
+* SNMP
+* SSH
+* Storage
+* Syslog
+* Virtual KVM
+* Virtual Media
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

@@ -1,6 +1,15 @@
 #______________________________________________
 #
-# Boot Policy Output
+# BIOS Policy Output
+#______________________________________________
+
+output "bios_example" {
+  value = module.bios_example
+}
+
+#______________________________________________
+#
+# Boot Order Policy Output
 #______________________________________________
 
 output "boot_legacy_san" {
@@ -55,6 +64,15 @@ output "dns_example_2" {
 
 #______________________________________________
 #
+# IMC Access Policy Output
+#______________________________________________
+
+output "imc_access_example" {
+  value = module.imc_access_example
+}
+
+#______________________________________________
+#
 # IPMI over LAN Policy Output
 #______________________________________________
 
@@ -73,11 +91,38 @@ output "kvm_example" {
 
 #______________________________________________
 #
+# Local User Policy Output
+#______________________________________________
+
+output "local_user_policy_example" {
+  value = module.local_user_policy_example
+}
+
+#______________________________________________
+#
 # NTP Policy Output
 #______________________________________________
 
 output "ntp_example" {
   value = module.ntp_example
+}
+
+#______________________________________________
+#
+# SAN Connectivity Output
+#______________________________________________
+
+output "san_connectivity" {
+  value = module.san_connectivity
+}
+
+#______________________________________________
+#
+# SD Card Policy Output
+#______________________________________________
+
+output "sd_card_example" {
+  value = module.sd_card_example
 }
 
 #______________________________________________
@@ -91,7 +136,25 @@ output "sol_example" {
 
 #______________________________________________
 #
-# Serial over LAN Policy Output
+# SNMP Policy Output
+#______________________________________________
+
+output "snmp_example" {
+  value = module.snmp_example
+}
+
+#______________________________________________
+#
+# Storage Policy Output
+#______________________________________________
+
+output "storage_example" {
+  value = module.storage_example
+}
+
+#______________________________________________
+#
+# Syslog Policy Output
 #______________________________________________
 
 output "syslog_example" {
@@ -131,6 +194,15 @@ output "vhba_network_example_a" {
 
 output "vhba_network_example_b" {
   value = module.vhba_network_example_b
+}
+
+#______________________________________________
+#
+# Virtual Media Policy Output
+#______________________________________________
+
+output "vmedia_example_1" {
+  value = module.vmedia_example_1
 }
 
 #______________________________________________
