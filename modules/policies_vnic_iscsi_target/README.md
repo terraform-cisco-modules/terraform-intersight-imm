@@ -1,4 +1,4 @@
-# policies_vnic_iscsi_target - Intersight Ethernet (vNIC) iSCSI Target Policy Terraform Module
+# policies_vnic_iscsi_target - Intersight (vNIC) iSCSI Static Target Policy Terraform Module
 
 ## Usage
 
@@ -11,7 +11,7 @@ module "vnic_iscsi_target" {
 }
 ```
 
-This module will create an iSCSI Target Policy in Intersight.  This can be used to create Profiles and Templates that require an iSCSI Target Policy.  
+This module will create a (vNIC) iSCSI Static Target Policy in Intersight.  This can be used to create Profiles and Templates that require a (vNIC) iSCSI Static Target Policy.  
 
 These resources are consumed
 
@@ -55,5 +55,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet (vNIC) iSCSI Target Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | (vNIC) iSCSI Static Target Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

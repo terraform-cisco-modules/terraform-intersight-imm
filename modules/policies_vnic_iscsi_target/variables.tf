@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Ethernet (vNIC) iSCSI Target Policy Variables Section.
+# (vNIC) iSCSI Static Target Policy Variables Section.
 #____________________________________________________________
 
 variable "description" {

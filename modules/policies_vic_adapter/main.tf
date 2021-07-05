@@ -16,24 +16,32 @@ resource "intersight_adapter_config_policy" "vic_adapter" {
     slot_id     = var.slot_id
     dce_interface_settings = [
       {
-        fec_mode     = var.int0_fec_mode
-        interface_id = 0
-        object_type  = "adapter.DceInterfaceSettings"
+        additional_properties = ""
+        class_id              = "adapter.DceInterfaceSettings"
+        fec_mode              = var.int0_fec_mode
+        interface_id          = 0
+        object_type           = "adapter.DceInterfaceSettings"
       },
       {
-        fec_mode     = var.int1_fec_mode
-        interface_id = 1
-        object_type  = "adapter.DceInterfaceSettings"
+        additional_properties = ""
+        class_id              = "adapter.DceInterfaceSettings"
+        fec_mode              = var.int1_fec_mode
+        interface_id          = 1
+        object_type           = "adapter.DceInterfaceSettings"
       },
       {
-        fec_mode     = var.int2_fec_mode
-        interface_id = 2
-        object_type  = "adapter.DceInterfaceSettings"
+        additional_properties = ""
+        class_id              = "adapter.DceInterfaceSettings"
+        fec_mode              = var.int2_fec_mode
+        interface_id          = 2
+        object_type           = "adapter.DceInterfaceSettings"
       },
       {
-        fec_mode     = var.int3_fec_mode
-        interface_id = 3
-        object_type  = "adapter.DceInterfaceSettings"
+        additional_properties = ""
+        class_id              = "adapter.DceInterfaceSettings"
+        fec_mode              = var.int3_fec_mode
+        interface_id          = 3
+        object_type           = "adapter.DceInterfaceSettings"
       },
     ]
     eth_settings {

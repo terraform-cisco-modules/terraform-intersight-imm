@@ -59,5 +59,5 @@ variable "wwnn_address_type" {
 variable "wwnn_pool" {
   default     = []
   description = "WWNN Pool to Assign to the Policy."
-  type        = list(map(string))
+  type        = set(string)
 }

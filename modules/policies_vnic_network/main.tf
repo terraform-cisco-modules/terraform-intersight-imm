@@ -13,9 +13,10 @@ resource "intersight_vnic_eth_network_policy" "vnic_policy" {
     object_type = "organization.Organization"
   }
   vlan_settings {
-    default_vlan = var.default_vlan
-    mode         = var.mode
-    object_type  = "vnic.VlanSettings"
+    allowed_vlans = var.allowed_vlans
+    default_vlan  = var.default_vlan
+    mode          = var.mode
+    object_type   = "vnic.VlanSettings"
   }
   dynamic "tags" {
     for_each = var.tags

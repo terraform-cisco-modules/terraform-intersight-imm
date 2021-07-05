@@ -13,7 +13,7 @@ module "ldap_policy_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/policies_ldap_policy"
+  source      = "terraform-cisco-modules/imm/intersight//modules/policies_ldap_policy"
   description = "LDAP Policy Example accepting default values."
   name        = "example"
   org_moid    = local.org_moid
@@ -31,7 +31,7 @@ module "ldap_provider_server1" {
     data.intersight_organization_organization.org_moid,
     module.ldap_policy_example
   ]
-  source           = "../../modules/policies_ldap_provider"
+  source           = "terraform-cisco-modules/imm/intersight//modules/policies_ldap_provider"
   ldap_policy_moid = module.ldap_policy_example.moid
   ldap_server      = "198.18.1.10"
 }
@@ -41,7 +41,7 @@ module "ldap_provider_server2" {
     data.intersight_organization_organization.org_moid,
     module.ldap_policy_example
   ]
-  source           = "../../modules/policies_ldap_provider"
+  source           = "terraform-cisco-modules/imm/intersight//modules/policies_ldap_provider"
   ldap_policy_moid = module.ldap_policy_example.moid
   ldap_server      = "198.18.1.11"
 }
@@ -51,22 +51,22 @@ module "ldap_provider_server2" {
 # LDAP Group Examples
 #______________________________________________
 
-module "ldap_provider_group1" {
+module "ldap_group_1" {
   depends_on = [
     data.intersight_organization_organization.org_moid,
     module.ldap_policy_example
   ]
-  source           = "../../modules/policies_ldap_group"
+  source           = "terraform-cisco-modules/imm/intersight//modules/policies_ldap_group"
   ldap_group       = "server_ops"
   ldap_policy_moid = module.ldap_policy_example.moid
 }
 
-module "ldap_provider_group2" {
+module "ldap_group_2" {
   depends_on = [
     data.intersight_organization_organization.org_moid,
     module.ldap_policy_example
   ]
-  source           = "../../modules/policies_ldap_group"
+  source           = "terraform-cisco-modules/imm/intersight//modules/policies_ldap_group"
   group_role       = "admin"
   ldap_group       = "server_admins"
   ldap_policy_moid = module.ldap_policy_example.moid
@@ -84,7 +84,7 @@ module "ldap_policy_defaults" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source                     = "../../modules/policies_ldap_policy"
+  source                     = "terraform-cisco-modules/imm/intersight//modules/policies_ldap_policy"
   attribute                  = "CiscoAvPair"
   base_dn                    = "dc=example,dc=com"
   bind_dn                    = ""
@@ -120,7 +120,7 @@ module "ldap_provider_defaults" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/policies_ldap_provider"
+  source           = "terraform-cisco-modules/imm/intersight//modules/policies_ldap_provider"
   ldap_policy_moid = ""
   ldap_port        = 389
   ldap_server      = ""
@@ -136,6 +136,7 @@ module "ldap_group_defaults" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  source           = "terraform-cisco-modules/imm/intersight//modules/policies_ldap_group"
   group_role       = "readonly"
   ldap_domain      = "example.com"
   ldap_group       = ""

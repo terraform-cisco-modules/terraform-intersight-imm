@@ -17,9 +17,6 @@ resource "intersight_vnic_eth_if" "vnic" {
   eth_adapter_policy {
     moid = var.vnic_adapter_moid
   }
-  eth_network_policy {
-    moid = var.vnic_network_moid
-  }
   eth_qos_policy {
     moid = var.vnic_qos_moid
   }
@@ -36,7 +33,7 @@ resource "intersight_vnic_eth_if" "vnic" {
     id        = var.placement_slot_id
     pci_link  = var.placement_pci_link
     switch_id = var.placement_switch_id
-    uplink    = var.placement_pci_order
+    uplink    = var.placement_uplink
   }
   usnic_settings {
     cos                  = var.usnic_cos
@@ -51,34 +48,34 @@ resource "intersight_vnic_eth_if" "vnic" {
     num_sub_vnics       = var.vmq_number_sub_vnics
     vmmq_adapter_policy = var.vmq_adapter_policy_moid
   }
+  dynamic "eth_network_policy" {
+    for_each = var.vnic_network_moid
+    content {
+      moid = eth_network_policy.value
+    }
+  }
   dynamic "ip_lease" {
     for_each = var.ip_lease_moid
     content {
-      moid = ip_lease.value.moid
+      moid = ip_lease.value
     }
   }
   dynamic "iscsi_boot_policy" {
     for_each = var.iscsi_boot_policy_moid
     content {
-      moid = iscsi_boot_policy.value.moid
+      moid = iscsi_boot_policy.value
     }
   }
   dynamic "mac_lease" {
     for_each = var.mac_lease_moid
     content {
-      moid = mac_lease.value.moid
+      moid = mac_lease.value
     }
   }
   dynamic "mac_pool" {
     for_each = var.mac_pool_moid
     content {
-      moid = mac_pool.value.moid
-    }
-  }
-  dynamic "sp_nics" {
-    for_each = var.sp_nics_moid
-    content {
-      moid = sp_nics.value.moid
+      moid = mac_pool.value
     }
   }
   dynamic "tags" {

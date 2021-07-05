@@ -32,7 +32,7 @@ resource "intersight_vnic_san_connectivity_policy" "san_connectivity" {
   dynamic "wwnn_pool" {
     for_each = var.wwnn_pool
     content {
-      moid = wwnn_pool.value.moid
+      moid = wwnn_pool.value
     }
   }
 }

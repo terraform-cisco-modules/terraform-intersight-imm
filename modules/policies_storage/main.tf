@@ -13,17 +13,32 @@ resource "intersight_storage_storage_policy" "storage" {
     moid        = var.org_moid
     object_type = "organization.Organization"
   }
+  /*
   dynamic "disk_group_policies" {
     for_each = var.disk_group_policies
     content {
       additional_properties = ""
-      moid                  = disk_group_policies.value.disk_group_moid
+      moid                  = disk_group_policies.value
       object_type           = "storage.DiskGroupPolicy"
-      selector              = ""
+    }
+  }
+*/
+  dynamic "profiles" {
+    for_each = var.profiles
+    content {
+      moid        = profiles.value
+      object_type = "server.Profile"
+    }
+  }
+  dynamic "tags" {
+    for_each = var.tags
+    content {
+      key   = tags.value.key
+      value = tags.value.value
     }
   }
   dynamic "virtual_drives" {
-    for_each = var.disk_group_policies
+    for_each = var.virtual_drives
     content {
       access_policy         = virtual_drives.value.access_policy
       additional_properties = virtual_drives.value.additional_properties
@@ -40,20 +55,6 @@ resource "intersight_storage_storage_policy" "storage" {
       strip_size            = virtual_drives.value.strip_size
       vdid                  = virtual_drives.value.vdid
       write_policy          = virtual_drives.value.write_policy
-    }
-  }
-  dynamic "profiles" {
-    for_each = var.profiles
-    content {
-      moid        = profiles.value
-      object_type = "server.Profile"
-    }
-  }
-  dynamic "tags" {
-    for_each = var.tags
-    content {
-      key   = tags.value.key
-      value = tags.value.value
     }
   }
 }

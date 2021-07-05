@@ -5,5 +5,5 @@
 
 output "moid" {
   description = "Fibre Channel (vHBA) Qos Policy Managed Object ID (moid)."
-  value       = intersight_vnic_fc_qos_policy.vnic_vhba_qosqos.moid
+  value       = intersight_vnic_fc_qos_policy.vhba_qos.moid
 }

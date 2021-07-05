@@ -22,7 +22,6 @@ variable "secretkey" {
   type        = string
 }
 
-
 #__________________________________________________________
 #
 # Intersight Organization
@@ -132,6 +131,30 @@ variable "imc_ip_pool" {
   type        = string
 }
 
+
+#____________________________________________________________
+#
+# Local User Variables Section.
+#____________________________________________________________
+
+variable "user_1_password" {
+  description = "Password for Local User 1 Example."
+  sensitive   = true
+  type        = string
+}
+
+variable "user_2_password" {
+  description = "Password for Local User 2 Example."
+  sensitive   = true
+  type        = string
+}
+
+
+variable "persistent_passphrase" {
+  description = "Password for Persistent Memory Example."
+  sensitive   = true
+  type        = string
+}
 
 #____________________________________________________________
 #

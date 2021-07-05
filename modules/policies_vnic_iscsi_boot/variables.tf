@@ -31,11 +31,11 @@ variable "description" {
 variable "initiator_ip_pool" {
   default     = []
   description = "A reference to a ippoolPool resource."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "initiator_ip_source" {
-  default     = "Auto"
+  default     = "Pool"
   description = "Source Type of Initiator IP Address - DHCP/Static/Pool.\r\n * DHCP - The IP address is assigned using DHCP, if available.\r\n * Static - Static IPv4 address is assigned to the iSCSI boot interface based on the information entered in this area.\r\n * Pool - An IPv4 address is assigned to the iSCSI boot interface from the management IP address pool."
   type        = string
 }
@@ -73,7 +73,7 @@ variable "initiator_static_secondary_dns" {
 variable "iscsi_adapter_policy" {
   default     = []
   description = "A reference to a vnicIscsiAdapterPolicy resource."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "mschap_password" {
@@ -103,13 +103,13 @@ variable "org_moid" {
 variable "primary_target_policy" {
   default     = []
   description = "A reference to a vnicIscsiStaticTargetPolicy resource."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "secondary_target_policy" {
   default     = []
   description = "A reference to a vnicIscsiStaticTargetPolicy resource."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "tags" {

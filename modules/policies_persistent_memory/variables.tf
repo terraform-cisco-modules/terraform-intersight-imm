@@ -27,7 +27,7 @@ variable "management_mode" {
   type        = string
 }
 
-variable "logical_name_spaces" {
+variable "logical_namespaces" {
   default     = []
   description = "List of Profiles to Assign to the Policy."
   type        = list(map(string))
@@ -50,7 +50,7 @@ variable "profiles" {
   type        = set(string)
 }
 
-variable "retain_name_spaces" {
+variable "retain_namespaces" {
   default     = true
   description = "Persistent Memory Namespaces to be retained or not."
   type        = bool

@@ -47,7 +47,7 @@ No modules.
 | <a name="input_encryption"></a> [encryption](#input\_encryption) | If enabled, allows encryption of all Virtual Media communications. | `bool` | `false` | no |
 | <a name="input_low_power_usb"></a> [low\_power\_usb](#input\_low\_power\_usb) | If enabled, the virtual drives appear on the boot selection menu after mapping the image and rebooting the host. | `bool` | `false` | no |
 | <a name="input_mappings"></a> [mappings](#input\_mappings) | List of Properties to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"vmedia_policy"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"vmedia"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |

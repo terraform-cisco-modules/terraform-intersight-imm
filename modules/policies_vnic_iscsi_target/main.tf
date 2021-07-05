@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Intersight Ethernet (vNIC) iSCSI Target Policy
+# Intersight (vNIC) iSCSI Static Target Policy
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 

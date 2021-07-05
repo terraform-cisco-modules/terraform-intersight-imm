@@ -122,6 +122,19 @@ output "vnic_adapter_windows" {
 
 #______________________________________________
 #
+# vHBA Network Policy Output
+#______________________________________________
+
+output "vhba_network_example_a" {
+  value = module.vhba_network_example_a
+}
+
+output "vhba_network_example_b" {
+  value = module.vhba_network_example_b
+}
+
+#______________________________________________
+#
 # vNIC iSCSI Adapter Policy Output
 #______________________________________________
 

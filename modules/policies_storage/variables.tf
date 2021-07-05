@@ -9,26 +9,14 @@ variable "description" {
   type        = string
 }
 
-variable "enabled" {
-  default     = true
-  description = "Flag to Enable or Disable the Policy."
-  type        = bool
-}
-
-variable "encryption" {
-  default     = false
-  description = "If enabled, allows encryption of all Virtual Media communications."
-  type        = bool
-}
-
-variable "low_power_usb" {
-  default     = false
-  description = "If enabled, the virtual drives appear on the boot selection menu after mapping the image and rebooting the host."
-  type        = bool
-}
+# variable "disk_group_policies" {
+#   default     = []
+#   description = "List of Disk Groups to Assign to the Policy."
+#   type        = set(string)
+# }
 
 variable "name" {
-  default     = "storage_policy"
+  default     = "storage"
   description = "Name for the Policy."
   type        = string
 }
@@ -38,16 +26,16 @@ variable "org_moid" {
   type        = string
 }
 
-variable "mappings" {
-  default     = []
-  description = "List of Properties to Assign to the Policy."
-  type        = list(map(string))
-}
-
 variable "profiles" {
   default     = []
   description = "List of Profiles to Assign to the Policy."
   type        = set(string)
+}
+
+variable "retain_policy" {
+  default     = true
+  description = "Retains the virtual drives defined in policy if they exist already. If this flag is false, the existing virtual drives are removed and created again based on virtual drives in the policy."
+  type        = bool
 }
 
 variable "tags" {
@@ -55,3 +43,16 @@ variable "tags" {
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
 }
+
+variable "unused_disks" {
+  default     = "UnconfiguredGood"
+  description = "Unused Disks State is used to specify the state, unconfigured good or jbod, in which the disks that are not used in this policy should be moved.\r\n * Jbod - JBOD state where the disks start showing up to host os.\r\n * UnconfiguredGood - Unconfigured good state -ready to be added in a RAID group."
+  type        = string
+}
+
+variable "virtual_drives" {
+  default     = []
+  description = "List of Properties to Assign to the Policy."
+  type        = list(map(string))
+}
+

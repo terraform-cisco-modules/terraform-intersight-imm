@@ -24,13 +24,13 @@ variable "failover_enabled" {
 variable "ip_lease_moid" {
   default     = []
   description = "A reference to a ippoolIpLease resource."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "iscsi_boot_policy_moid" {
   default     = []
   description = "A reference to a vnicIscsiBootPolicy resource."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "lan_connectivity_moid" {
@@ -47,24 +47,18 @@ variable "mac_address_type" {
 variable "mac_lease_moid" {
   default     = []
   description = "A reference to a macpoolLease resource."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "mac_pool_moid" {
   default     = []
   description = "A reference to a macpoolPool resource."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "placement_pci_link" {
   default     = 0
   description = "The PCI Link used as transport for the virtual interface. All VIC adapters have a single PCI link except VIC 1385 which has two."
-  type        = number
-}
-
-variable "placement_pci_order" {
-  default     = 0
-  description = "Adapter port on which the virtual interface will be created."
   type        = number
 }
 
@@ -80,10 +74,16 @@ variable "placement_switch_id" {
   type        = string
 }
 
+variable "placement_uplink" {
+  default     = 0
+  description = "Adapter port on which the virtual interface will be created."
+  type        = number
+}
+
 variable "sp_nics_moid" {
   default     = []
   description = "An array of relationships to vnicEthIf resources."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "static_mac_address" {
@@ -147,6 +147,7 @@ variable "vmq_number_sub_vnics" {
 }
 
 variable "vmq_adapter_policy_moid" {
+  default     = ""
   description = "Ethernet Adapter policy to be associated with the Sub vNICs. The Transmit Queue and Receive Queue resource value of VMMQ adapter policy should be greater than or equal to the configured number of sub vNICs."
   type        = string
 }
@@ -162,8 +163,9 @@ variable "vnic_control_moid" {
 }
 
 variable "vnic_network_moid" {
+  default     = []
   description = "A reference to a vnicEthNetworkPolicy resource."
-  type        = string
+  type        = set(string)
 }
 
 variable "vnic_network_group_moid" {

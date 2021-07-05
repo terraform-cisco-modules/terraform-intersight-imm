@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Example Intersight Ethernet (vNIC) iSCSI Adapter Policy
+# Example Intersight (vNIC) iSCSI Adapter Policy
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 

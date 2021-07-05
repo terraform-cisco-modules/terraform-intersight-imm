@@ -82,7 +82,7 @@ variable "lun_queue_depth" {
 }
 
 variable "name" {
-  default     = "vnic_adapter"
+  default     = "vhba_adapter"
   description = "Name for the Policy."
   type        = string
 }

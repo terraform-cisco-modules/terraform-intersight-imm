@@ -1,4 +1,4 @@
-# policies_vnic_iscsi_adapter - Intersight Ethernet (vNIC) iSCSI Adapter Policy Terraform Module
+# policies_vnic_iscsi_adapter - Intersight (vNIC) iSCSI Adapter Policy Terraform Module
 
 ## Usage
 
@@ -54,5 +54,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet (vNIC) iSCSI Adapter Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | (vNIC) iSCSI Adapter Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -35,6 +35,7 @@ resource "intersight_vnic_fc_adapter_policy" "vhba_adapter" {
     timeout = var.plogi_timeout
   }
   rx_queue_settings {
+    nr_count  = 1
     ring_size = var.rx_ring_size
   }
   scsi_queue_settings {
@@ -42,6 +43,7 @@ resource "intersight_vnic_fc_adapter_policy" "vhba_adapter" {
     ring_size = var.scsi_io_ring_size
   }
   tx_queue_settings {
+    nr_count  = 1
     ring_size = var.tx_ring_size
   }
   dynamic "tags" {

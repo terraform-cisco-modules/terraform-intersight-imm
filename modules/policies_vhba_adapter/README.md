@@ -55,7 +55,7 @@ No modules.
 | <a name="input_io_throttle_count"></a> [io\_throttle\_count](#input\_io\_throttle\_count) | The maximum number of data or control I/O operations that can be pending for the virtual interface at one time. If this value is exceeded, the additional I/O operations wait in the queue until the number of pending I/O operations decreases and the additional operations can be processed.  Range is 1-1024. | `number` | `512` | no |
 | <a name="input_lun_count"></a> [lun\_count](#input\_lun\_count) | The maximum number of LUNs that the Fibre Channel driver will export or show. The maximum number of LUNs is usually controlled by the operating system running on the server.  Rnage is 1-1024. | `number` | `1024` | no |
 | <a name="input_lun_queue_depth"></a> [lun\_queue\_depth](#input\_lun\_queue\_depth) | The number of commands that the HBA can send and receive in a single transmission per LUN.  Range is 1-254. | `number` | `20` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"vnic_adapter"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"vhba_adapter"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_plogi_retries"></a> [plogi\_retries](#input\_plogi\_retries) | The number of times that the system tries to log in to a port after the first failure.  Range is 0-255. | `number` | `8` | no |
 | <a name="input_plogi_timeout"></a> [plogi\_timeout](#input\_plogi\_timeout) | The number of milliseconds that the system waits before it tries to log in again.  Range is 1000-255000. | `number` | `20000` | no |

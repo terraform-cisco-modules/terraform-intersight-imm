@@ -51,7 +51,7 @@ No modules.
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 | <a name="input_target_platform"></a> [target\_platform](#input\_target\_platform) | The platform for which the server profile is applicable. It can either be a server that is operating in 'Standalone' mode or which is attached to a Fabric Interconnect 'FIAttached' managed by Intersight. | `string` | `"FIAttached"` | no |
 | <a name="input_wwnn_address_type"></a> [wwnn\_address\_type](#input\_wwnn\_address\_type) | Type of allocation selected to assign a WWNN address for the server node.<br> * POOL - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface.<br> * STATIC - The user assigns a static mac/wwn address for the Virtual Interface. | `string` | `"POOL"` | no |
-| <a name="input_wwnn_pool"></a> [wwnn\_pool](#input\_wwnn\_pool) | WWNN Pool to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_wwnn_pool"></a> [wwnn\_pool](#input\_wwnn\_pool) | WWNN Pool to Assign to the Policy. | `set(string)` | `[]` | no |
 
 ## Outputs
 

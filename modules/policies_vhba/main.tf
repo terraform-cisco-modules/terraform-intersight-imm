@@ -27,25 +27,18 @@ resource "intersight_vnic_fc_if" "vhba" {
     id        = var.placement_slot_id
     pci_link  = var.placement_pci_link
     switch_id = var.placement_switch_id
-    uplink    = var.placement_pci_order
+    uplink    = var.placement_uplink
   }
   dynamic "wwpn_lease" {
     for_each = var.wwpn_lease_moid
     content {
-      moid = wwpn_lease.value.moid
+      moid = wwpn_lease.value
     }
   }
   dynamic "wwpn_pool" {
     for_each = var.wwpn_pool_moid
     content {
-      moid = wwpn_pool.value.moid
-    }
-  }
-  dynamic "tags" {
-    for_each = var.tags
-    content {
-      key   = tags.value.key
-      value = tags.value.value
+      moid = wwpn_pool.value
     }
   }
 }

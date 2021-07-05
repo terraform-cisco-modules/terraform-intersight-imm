@@ -20,7 +20,7 @@ resource "intersight_iam_end_point_user" "user" {
 resource "intersight_iam_end_point_user_role" "user_role" {
   depends_on = [
     data.intersight_iam_end_point_role.user_role,
-    intersight_iam_end_point_user.username
+    intersight_iam_end_point_user.user
   ]
   enabled  = var.user_enabled
   password = var.user_password

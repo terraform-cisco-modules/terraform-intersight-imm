@@ -34,7 +34,7 @@ variable "grace_period" {
 }
 
 variable "name" {
-  default     = "ntp_policy"
+  default     = "local_user_policy"
   description = "Name for the Policy."
   type        = string
 }

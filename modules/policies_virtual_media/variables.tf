@@ -28,7 +28,7 @@ variable "low_power_usb" {
 }
 
 variable "name" {
-  default     = "vmedia_policy"
+  default     = "vmedia"
   description = "Name for the Policy."
   type        = string
 }

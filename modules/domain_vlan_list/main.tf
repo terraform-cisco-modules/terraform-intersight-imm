@@ -7,12 +7,12 @@
 locals {
   vlan_split = length(regexall("-", var.vlan_list)) > 0 ? tolist(
     split(",", var.vlan_list)
-    ) : tolist(var.vlan_list)
+  ) : tolist(var.vlan_list)
   vlan_lists = [for s in local.vlan_split : length(regexall("-", s)) > 0 ? [
     for v in range(
       tonumber(element(split("-", s), 0)),
       (tonumber(element(split("-", s), 1)
-      ) + 1)) : tonumber(v)] : [s]
+    ) + 1)) : tonumber(v)] : [s]
   ]
   flattened_vlan_list = flatten(local.vlan_lists)
   vlan_list_set       = toset(local.flattened_vlan_list)
@@ -24,11 +24,11 @@ resource "intersight_fabric_vlan" "vlan_list" {
   is_native             = var.is_native
   name = length(regexall("^[0-9]{4}$", each.value)) > 0 ? join(
     "-vl", [var.vlan_prefix, each.value]) : length(
-      regexall("^[0-9]{3}$", each.value)) > 0 ? join(
+    regexall("^[0-9]{3}$", each.value)) > 0 ? join(
     "-vl0", [var.vlan_prefix, each.value]) : length(
-      regexall("^[0-9]{2}$", each.value)) > 0 ? join(
+    regexall("^[0-9]{2}$", each.value)) > 0 ? join(
     "-vl00", [var.vlan_prefix, each.value]) : join(
-      "-vl000", [var.vlan_prefix, each.value])
+  "-vl000", [var.vlan_prefix, each.value])
   vlan_id = each.value
   eth_network_policy {
     moid = var.vlan_policy_moid

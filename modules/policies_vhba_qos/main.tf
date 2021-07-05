@@ -10,7 +10,6 @@ resource "intersight_vnic_fc_qos_policy" "vhba_qos" {
   description         = var.description
   name                = var.name
   max_data_field_size = var.max_data_field_size # FI-Attached and Standalone
-  priority            = "FC"                    # FI-Attached
   rate_limit          = var.rate_limit          # FI-Attached and Standalone
   organization {
     moid        = var.org_moid
