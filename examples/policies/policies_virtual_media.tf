@@ -22,15 +22,15 @@ module "vmedia_example_1" {
       additional_properties   = ""
       authentication_protocol = "none"
       device_type             = "cdd"
-      file_location           = "web.example.com/ubuntu-18.04.5-server-amd64.iso"
+      file_location           = "web.example.com/VMware_ESXi_6.7.0_14320388_Custom_Cisco_6.7.3.1.iso"
       host_name               = "web.example.com"
       is_password_set         = false
       mount_options           = "RO"
       mount_protocol          = "http"
       password                = ""
-      remote_file             = "ubuntu-18.04.5-server-amd64.iso"
+      remote_file             = "VMware_ESXi_6.7.0_14320388_Custom_Cisco_6.7.3.1.iso"
       remote_path             = "/"
-      sanitized_file_location = "web.example.com/ubuntu-18.04.5-server-amd64.iso"
+      sanitized_file_location = "web.example.com/VMware_ESXi_6.7.0_14320388_Custom_Cisco_6.7.3.1.iso"
       username                = ""
       volume_name             = "IMC_DVD"
     }
