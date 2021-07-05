@@ -36,9 +36,9 @@ module "vnic_loop" {
     module.vlan_group_list,
     module.domain_vnic_qos.moid
   ]
-  source                  = "../../modules/policies_vnic_loop"
-  cdn_source              = "vnic"
-  fabric_vnic             = {
+  source     = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_loop"
+  cdn_source = "vnic"
+  fabric_vnic = {
     vNIC_1 = {
       mac_pool   = data.terraform_remote_state.pools.outputs.mac_pool_a.moid
       switch_id  = "A"
@@ -83,14 +83,14 @@ module "vnic_loop" {
       vnic_order = 5
     }
   }
-  lan_connectivity_moid   = module.lan_connectivity_example.moid
-  mac_address_type        = "POOL"
-  placement_pci_link      = 0
-  placement_uplink        = 0
-  placement_slot_id       = "MLOM"
-  vnic_adapter_moid       = module.vnic_adapter_example.moid
-  vnic_control_moid       = module.lldp_example.moid
-  vnic_qos_moid           = module.domain_vnic_qos.moid
+  lan_connectivity_moid = module.lan_connectivity_example.moid
+  mac_address_type      = "POOL"
+  placement_pci_link    = 0
+  placement_uplink      = 0
+  placement_slot_id     = "MLOM"
+  vnic_adapter_moid     = module.vnic_adapter_example.moid
+  vnic_control_moid     = module.lldp_example.moid
+  vnic_qos_moid         = module.domain_vnic_qos.moid
 }
 
 

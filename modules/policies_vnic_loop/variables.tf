@@ -11,7 +11,7 @@ variable "cdn_source" {
 
 variable "fabric_vnic" {
   description = "List of Attributes Unique to each vNIC."
-  type        = map(object({
+  type = map(object({
     mac_pool   = string
     switch_id  = string
     vlan_group = string

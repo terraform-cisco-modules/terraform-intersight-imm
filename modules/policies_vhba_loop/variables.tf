@@ -11,7 +11,7 @@ variable "persistent_lun_bindings" {
 
 variable "fabric_vhba" {
   description = "List of Attributes Unique to each vNIC."
-  type        = map(object({
+  type = map(object({
     network    = string
     switch_id  = string
     vhba_name  = string

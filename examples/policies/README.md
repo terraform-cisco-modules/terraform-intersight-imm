@@ -108,8 +108,8 @@
 | <a name="module_standalone_vnic_qos"></a> [standalone\_vnic\_qos](#module\_standalone\_vnic\_qos) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_qos | n/a |
 | <a name="module_storage_example"></a> [storage\_example](#module\_storage\_example) | terraform-cisco-modules/imm/intersight//modules/policies_storage | n/a |
 | <a name="module_syslog_example"></a> [syslog\_example](#module\_syslog\_example) | terraform-cisco-modules/imm/intersight//modules/policies_syslog | n/a |
-| <a name="module_vhba"></a> [vhba](#module\_vhba) | terraform-cisco-modules/imm/intersight//modules/policies_vhba | n/a |
 | <a name="module_vhba_adapter_example"></a> [vhba\_adapter\_example](#module\_vhba\_adapter\_example) | terraform-cisco-modules/imm/intersight//modules/policies_vhba_adapter | n/a |
+| <a name="module_vhba_loop"></a> [vhba\_loop](#module\_vhba\_loop) | terraform-cisco-modules/imm/intersight//modules/policies_vhba_loop | n/a |
 | <a name="module_vhba_network_example_2"></a> [vhba\_network\_example\_2](#module\_vhba\_network\_example\_2) | terraform-cisco-modules/imm/intersight//modules/policies_vhba_network | n/a |
 | <a name="module_vhba_network_example_a"></a> [vhba\_network\_example\_a](#module\_vhba\_network\_example\_a) | terraform-cisco-modules/imm/intersight//modules/policies_vhba_network | n/a |
 | <a name="module_vhba_network_example_b"></a> [vhba\_network\_example\_b](#module\_vhba\_network\_example\_b) | terraform-cisco-modules/imm/intersight//modules/policies_vhba_network | n/a |
@@ -120,11 +120,11 @@
 | <a name="module_vlan_group_range"></a> [vlan\_group\_range](#module\_vlan\_group\_range) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_network_group | n/a |
 | <a name="module_vmedia_example_1"></a> [vmedia\_example\_1](#module\_vmedia\_example\_1) | terraform-cisco-modules/imm/intersight//modules/policies_virtual_media | n/a |
 | <a name="module_vmedia_example_2"></a> [vmedia\_example\_2](#module\_vmedia\_example\_2) | terraform-cisco-modules/imm/intersight//modules/policies_virtual_media | n/a |
-| <a name="module_vnic"></a> [vnic](#module\_vnic) | terraform-cisco-modules/imm/intersight//modules/policies_vnic | n/a |
 | <a name="module_vnic_adapter_example"></a> [vnic\_adapter\_example](#module\_vnic\_adapter\_example) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter | n/a |
 | <a name="module_vnic_adapter_linux_nvme_roce"></a> [vnic\_adapter\_linux\_nvme\_roce](#module\_vnic\_adapter\_linux\_nvme\_roce) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter | n/a |
 | <a name="module_vnic_adapter_vmware"></a> [vnic\_adapter\_vmware](#module\_vnic\_adapter\_vmware) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter | n/a |
 | <a name="module_vnic_adapter_windows"></a> [vnic\_adapter\_windows](#module\_vnic\_adapter\_windows) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_adapter | n/a |
+| <a name="module_vnic_loop"></a> [vnic\_loop](#module\_vnic\_loop) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_loop | n/a |
 | <a name="module_vnic_network_example"></a> [vnic\_network\_example](#module\_vnic\_network\_example) | terraform-cisco-modules/imm/intersight//modules/policies_vnic_network | n/a |
 
 ## Resources
@@ -255,8 +255,6 @@
 | <a name="input_epp_profile"></a> [epp\_profile](#input\_epp\_profile) | BIOS Token for setting EPP Profile configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * Balanced Performance - Value - Balanced Performance for configuring EppProfile token.<br> * Balanced Power - Value - Balanced Power for configuring EppProfile token.<br> * Performance - Value - Performance for configuring EppProfile token.<br> * Power - Value - Power for configuring EppProfile token. | `string` | `"platform-default"` | no |
 | <a name="input_execute_disable_bit"></a> [execute\_disable\_bit](#input\_execute\_disable\_bit) | BIOS Token for setting Execute Disable Bit configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * enabled - Enables the BIOS setting.<br> * disabled - Disables the BIOS setting. | `string` | `"platform-default"` | no |
 | <a name="input_extended_apic"></a> [extended\_apic](#input\_extended\_apic) | BIOS Token for setting Local X2 Apic configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * disabled - Value - disabled for configuring ExtendedApic token.<br> * enabled - Value - enabled for configuring ExtendedApic token.<br> * X2APIC - Value - X2APIC for configuring ExtendedApic token.<br> * XAPIC - Value - XAPIC for configuring ExtendedApic token. | `string` | `"platform-default"` | no |
-| <a name="input_fabric_vhbas"></a> [fabric\_vhbas](#input\_fabric\_vhbas) | n/a | `map` | <pre>{<br>  "vHBA_1": {<br>    "network": "60e252559da7b5d569a9fa92",<br>    "switch_id": "A",<br>    "vhba_name": "vHBA-1",<br>    "vhba_order": 6,<br>    "wwpn_pool": "60d76a896962752d31ac8c3d"<br>  },<br>  "vHBA_2": {<br>    "network": "60e252549da7b5d569a9fa7e",<br>    "switch_id": "B",<br>    "vhba_name": "vHBA-2",<br>    "vhba_order": 7,<br>    "wwpn_pool": "60d76a886962752d31ac8c20"<br>  }<br>}</pre> | no |
-| <a name="input_fabric_vnics"></a> [fabric\_vnics](#input\_fabric\_vnics) | n/a | `map` | <pre>{<br>  "vNIC_1": {<br>    "mac_pool": "60d76a896962752d31ac8c2c",<br>    "switch_id": "A",<br>    "vlan_group": "60e205a56f62692d3009521f",<br>    "vnic_name": "vNIC-1",<br>    "vnic_order": 0<br>  },<br>  "vNIC_2": {<br>    "mac_pool": "60d76a896962752d31ac8c4a",<br>    "switch_id": "B",<br>    "vlan_group": "60e205a56f62692d3009521f",<br>    "vnic_name": "vNIC-2",<br>    "vnic_order": 1<br>  },<br>  "vNIC_3": {<br>    "mac_pool": "60d76a896962752d31ac8c2c",<br>    "switch_id": "A",<br>    "vlan_group": "60e205a56f62692d3009521f",<br>    "vnic_name": "vNIC-3",<br>    "vnic_order": 2<br>  },<br>  "vNIC_4": {<br>    "mac_pool": "60d76a896962752d31ac8c4a",<br>    "switch_id": "B",<br>    "vlan_group": "60e205a56f62692d3009521f",<br>    "vnic_name": "vNIC-4",<br>    "vnic_order": 3<br>  },<br>  "vNIC_5": {<br>    "mac_pool": "60d76a896962752d31ac8c2c",<br>    "switch_id": "A",<br>    "vlan_group": "60e205a56f62692d3009521f",<br>    "vnic_name": "vNIC-5",<br>    "vnic_order": 4<br>  },<br>  "vNIC_6": {<br>    "mac_pool": "60d76a896962752d31ac8c4a",<br>    "pci_order": 5,<br>    "switch_id": "B",<br>    "vlan_group": "60e205a56f62692d3009521f",<br>    "vnic_name": "vNIC-6",<br>    "vnic_order": 5<br>  }<br>}</pre> | no |
 | <a name="input_flow_control"></a> [flow\_control](#input\_flow\_control) | BIOS Token for setting Flow Control configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * none - Value - none for configuring FlowControl token.<br> * rts-cts - Value - rts-cts for configuring FlowControl token. | `string` | `"platform-default"` | no |
 | <a name="input_forge_mac"></a> [forge\_mac](#input\_forge\_mac) | Determines if the MAC forging is allowed or denied on an interface.  Options are {allow\|deny}. | `string` | `"allow"` | no |
 | <a name="input_frb2enable"></a> [frb2enable](#input\_frb2enable) | BIOS Token for setting FRB-2 Timer configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * enabled - Enables the BIOS setting.<br> * disabled - Disables the BIOS setting. | `string` | `"platform-default"` | no |
@@ -671,6 +669,7 @@
 | <a name="output_syslog_example"></a> [syslog\_example](#output\_syslog\_example) | n/a |
 | <a name="output_vhba_network_example_a"></a> [vhba\_network\_example\_a](#output\_vhba\_network\_example\_a) | n/a |
 | <a name="output_vhba_network_example_b"></a> [vhba\_network\_example\_b](#output\_vhba\_network\_example\_b) | n/a |
+| <a name="output_vhbas"></a> [vhbas](#output\_vhbas) | n/a |
 | <a name="output_vlan_group_list"></a> [vlan\_group\_list](#output\_vlan\_group\_list) | n/a |
 | <a name="output_vlan_group_range"></a> [vlan\_group\_range](#output\_vlan\_group\_range) | n/a |
 | <a name="output_vmedia_example_1"></a> [vmedia\_example\_1](#output\_vmedia\_example\_1) | n/a |
@@ -678,4 +677,5 @@
 | <a name="output_vnic_adapter_linux_nvme_roce"></a> [vnic\_adapter\_linux\_nvme\_roce](#output\_vnic\_adapter\_linux\_nvme\_roce) | n/a |
 | <a name="output_vnic_adapter_vmware"></a> [vnic\_adapter\_vmware](#output\_vnic\_adapter\_vmware) | n/a |
 | <a name="output_vnic_adapter_windows"></a> [vnic\_adapter\_windows](#output\_vnic\_adapter\_windows) | n/a |
+| <a name="output_vnics"></a> [vnics](#output\_vnics) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

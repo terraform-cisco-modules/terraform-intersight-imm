@@ -38,8 +38,8 @@ module "vhba_loop" {
     module.vhba_network_example_b,
     module.vhba_qos_example_1
   ]
-  source                = "../../modules/policies_vhba_loop"
-  fabric_vhba           = {
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_vhba_loop"
+  fabric_vhba = {
     vHBA_1 = {
       wwpn_pool  = data.terraform_remote_state.pools.outputs.wwpn_pool_a.moid
       switch_id  = "A"
