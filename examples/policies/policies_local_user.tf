@@ -13,7 +13,7 @@ module "local_user_policy_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/policies_local_user_policy"
+  source      = "terraform-cisco-modules/imm/intersight//modules/policies_local_user_policy"
   description = "Local User Policy Example; accepting default values."
   name        = "local_user_policy"
   org_moid    = local.org_moid

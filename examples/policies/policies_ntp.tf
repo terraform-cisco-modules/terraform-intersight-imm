@@ -8,7 +8,7 @@ module "ntp_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source       = "../../modules/policies_ntp"
+  source       = "terraform-cisco-modules/imm/intersight//modules/policies_ntp"
   description  = "NTP Policy Example."
   name         = "example"
   ntp_servers  = var.ntp_servers

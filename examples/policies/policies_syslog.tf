@@ -9,7 +9,7 @@ module "syslog_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/policies_syslog"
+  source          = "terraform-cisco-modules/imm/intersight//modules/policies_syslog"
   description     = "Syslog Policy Example."
   name            = "example"
   org_moid        = local.org_moid
