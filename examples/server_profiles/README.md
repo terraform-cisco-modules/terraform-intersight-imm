@@ -19,26 +19,21 @@
 | Name | Version |
 |------|---------|
 | <a name="provider_intersight"></a> [intersight](#provider\_intersight) | 1.0.11 |
+| <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ip_pool_1"></a> [ip\_pool\_1](#module\_ip\_pool\_1) | terraform-cisco-modules/imm/intersight//modules/pools_ip | n/a |
-| <a name="module_ip_pool_2"></a> [ip\_pool\_2](#module\_ip\_pool\_2) | terraform-cisco-modules/imm/intersight//modules/pools_ip | n/a |
-| <a name="module_iqn_pool"></a> [iqn\_pool](#module\_iqn\_pool) | terraform-cisco-modules/imm/intersight//modules/pools_iqn | n/a |
-| <a name="module_mac_pool_a"></a> [mac\_pool\_a](#module\_mac\_pool\_a) | terraform-cisco-modules/imm/intersight//modules/pools_mac | n/a |
-| <a name="module_mac_pool_b"></a> [mac\_pool\_b](#module\_mac\_pool\_b) | terraform-cisco-modules/imm/intersight//modules/pools_mac | n/a |
-| <a name="module_uuid_pool"></a> [uuid\_pool](#module\_uuid\_pool) | terraform-cisco-modules/imm/intersight//modules/pools_uuid | n/a |
-| <a name="module_wwnn_pool"></a> [wwnn\_pool](#module\_wwnn\_pool) | terraform-cisco-modules/imm/intersight//modules/pools_fc | n/a |
-| <a name="module_wwpn_pool_a"></a> [wwpn\_pool\_a](#module\_wwpn\_pool\_a) | terraform-cisco-modules/imm/intersight//modules/pools_fc | n/a |
-| <a name="module_wwpn_pool_b"></a> [wwpn\_pool\_b](#module\_wwpn\_pool\_b) | terraform-cisco-modules/imm/intersight//modules/pools_fc | n/a |
+| <a name="module_server_profile"></a> [server\_profile](#module\_server\_profile) | terraform-cisco-modules/imm/intersight//modules/server_profile | n/a |
+| <a name="module_server_profile_template"></a> [server\_profile\_template](#module\_server\_profile\_template) | terraform-cisco-modules/imm/intersight//modules/server_profile_template | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [intersight_organization_organization.org_moid](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/organization_organization) | data source |
+| [terraform_remote_state.policies](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 
 ## Inputs
 
@@ -65,15 +60,5 @@
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_ip_pool_1"></a> [ip\_pool\_1](#output\_ip\_pool\_1) | n/a |
-| <a name="output_ip_pool_2"></a> [ip\_pool\_2](#output\_ip\_pool\_2) | n/a |
-| <a name="output_iqn_pool"></a> [iqn\_pool](#output\_iqn\_pool) | n/a |
-| <a name="output_mac_pool_a"></a> [mac\_pool\_a](#output\_mac\_pool\_a) | n/a |
-| <a name="output_mac_pool_b"></a> [mac\_pool\_b](#output\_mac\_pool\_b) | n/a |
-| <a name="output_uuid_pool"></a> [uuid\_pool](#output\_uuid\_pool) | n/a |
-| <a name="output_wwnn_pool"></a> [wwnn\_pool](#output\_wwnn\_pool) | n/a |
-| <a name="output_wwpn_pool_a"></a> [wwpn\_pool\_a](#output\_wwpn\_pool\_a) | n/a |
-| <a name="output_wwpn_pool_b"></a> [wwpn\_pool\_b](#output\_wwpn\_pool\_b) | n/a |
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

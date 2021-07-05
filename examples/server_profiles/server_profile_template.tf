@@ -13,13 +13,13 @@ module "server_profile_template" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "terraform-cisco-modules/imm/intersight//modules/server_profile_template"
-  action          = "No-op"
-  description     = "Server Profile Template Example."
-  name            = "example_template"
-  org_moid        = local.org_moid
-  tags            = var.tags
-  policy_bucket   = [
+  source      = "terraform-cisco-modules/imm/intersight//modules/server_profile_template"
+  action      = "No-op"
+  description = "Server Profile Template Example."
+  name        = "example_template"
+  org_moid    = local.org_moid
+  tags        = var.tags
+  policy_bucket = [
     {
       # BIOS Policy
       moid        = data.terraform_remote_state.policies.outputs.bios_example.moid

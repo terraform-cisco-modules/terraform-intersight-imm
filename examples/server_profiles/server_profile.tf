@@ -19,7 +19,7 @@ module "server_profile" {
   description     = "Server Profile Example."
   name            = "example"
   org_moid        = local.org_moid
-  policy_bucket   = [
+  policy_bucket = [
     {
       # BIOS Policy
       moid        = data.terraform_remote_state.policies.outputs.bios_example.moid
@@ -91,8 +91,8 @@ module "server_profile" {
       object_type = "vmedia.Policy"
     },
   ]
-  src_template    = []
-  tags            = var.tags
+  src_template = []
+  tags         = var.tags
 }
 
 

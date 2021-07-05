@@ -640,6 +640,7 @@
 
 | Name | Description |
 |------|-------------|
+| <a name="output_bios_example"></a> [bios\_example](#output\_bios\_example) | n/a |
 | <a name="output_boot_legacy_iscsi"></a> [boot\_legacy\_iscsi](#output\_boot\_legacy\_iscsi) | n/a |
 | <a name="output_boot_legacy_san"></a> [boot\_legacy\_san](#output\_boot\_legacy\_san) | n/a |
 | <a name="output_boot_uefi_cimc_dvd"></a> [boot\_uefi\_cimc\_dvd](#output\_boot\_uefi\_cimc\_dvd) | n/a |
@@ -652,20 +653,27 @@
 | <a name="output_dns_example_1"></a> [dns\_example\_1](#output\_dns\_example\_1) | n/a |
 | <a name="output_dns_example_2"></a> [dns\_example\_2](#output\_dns\_example\_2) | n/a |
 | <a name="output_domain_vnic_qos"></a> [domain\_vnic\_qos](#output\_domain\_vnic\_qos) | n/a |
+| <a name="output_imc_access_example"></a> [imc\_access\_example](#output\_imc\_access\_example) | n/a |
 | <a name="output_ipmi_example"></a> [ipmi\_example](#output\_ipmi\_example) | n/a |
 | <a name="output_iscsi_adapter_example"></a> [iscsi\_adapter\_example](#output\_iscsi\_adapter\_example) | n/a |
 | <a name="output_iscsi_target_example"></a> [iscsi\_target\_example](#output\_iscsi\_target\_example) | n/a |
 | <a name="output_kvm_example"></a> [kvm\_example](#output\_kvm\_example) | n/a |
 | <a name="output_lan_connectivity_example"></a> [lan\_connectivity\_example](#output\_lan\_connectivity\_example) | n/a |
 | <a name="output_lldp_example"></a> [lldp\_example](#output\_lldp\_example) | n/a |
+| <a name="output_local_user_policy_example"></a> [local\_user\_policy\_example](#output\_local\_user\_policy\_example) | n/a |
 | <a name="output_ntp_example"></a> [ntp\_example](#output\_ntp\_example) | n/a |
+| <a name="output_san_connectivity"></a> [san\_connectivity](#output\_san\_connectivity) | n/a |
+| <a name="output_sd_card_example"></a> [sd\_card\_example](#output\_sd\_card\_example) | n/a |
+| <a name="output_snmp_example"></a> [snmp\_example](#output\_snmp\_example) | n/a |
 | <a name="output_sol_example"></a> [sol\_example](#output\_sol\_example) | n/a |
 | <a name="output_standalone_vnic_qos"></a> [standalone\_vnic\_qos](#output\_standalone\_vnic\_qos) | n/a |
+| <a name="output_storage_example"></a> [storage\_example](#output\_storage\_example) | n/a |
 | <a name="output_syslog_example"></a> [syslog\_example](#output\_syslog\_example) | n/a |
 | <a name="output_vhba_network_example_a"></a> [vhba\_network\_example\_a](#output\_vhba\_network\_example\_a) | n/a |
 | <a name="output_vhba_network_example_b"></a> [vhba\_network\_example\_b](#output\_vhba\_network\_example\_b) | n/a |
 | <a name="output_vlan_group_list"></a> [vlan\_group\_list](#output\_vlan\_group\_list) | n/a |
 | <a name="output_vlan_group_range"></a> [vlan\_group\_range](#output\_vlan\_group\_range) | n/a |
+| <a name="output_vmedia_example_1"></a> [vmedia\_example\_1](#output\_vmedia\_example\_1) | n/a |
 | <a name="output_vnic_adapter_example"></a> [vnic\_adapter\_example](#output\_vnic\_adapter\_example) | n/a |
 | <a name="output_vnic_adapter_linux_nvme_roce"></a> [vnic\_adapter\_linux\_nvme\_roce](#output\_vnic\_adapter\_linux\_nvme\_roce) | n/a |
 | <a name="output_vnic_adapter_vmware"></a> [vnic\_adapter\_vmware](#output\_vnic\_adapter\_vmware) | n/a |
