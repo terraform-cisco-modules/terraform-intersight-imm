@@ -5,7 +5,7 @@
 #____________________________________________________________
 
 resource "intersight_fabric_switch_profile" "switch_profile" {
-  action      = var.switch_action
+  action      = var.action
   description = var.description
   name        = var.name
   type        = var.switch_type

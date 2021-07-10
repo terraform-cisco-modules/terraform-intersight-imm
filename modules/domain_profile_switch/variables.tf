@@ -3,6 +3,12 @@
 # UCS Domain Switch Profile Variables Section.
 #____________________________________________________________
 
+variable "action" {
+  default     = "No-op"
+  description = "Action to Perform on the Switch Profile Assignment.  Options are {Deploy|No-op|Unassign}."
+  type        = string
+}
+
 variable "assigned_switch" {
   default     = []
   description = "A reference to a networkElement resource."
@@ -30,12 +36,6 @@ variable "policy_bucket" {
   default     = []
   description = "List of Policies to Assign to the Profile."
   type        = list(map(string))
-}
-
-variable "switch_action" {
-  default     = "No-op"
-  description = "Action to Perform on the Switch Profile Assignment.  Options are {Deploy|No-op|Unassign}."
-  type        = string
 }
 
 variable "switch_type" {

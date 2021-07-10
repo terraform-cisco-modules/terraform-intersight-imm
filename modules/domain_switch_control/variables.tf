@@ -16,7 +16,7 @@ variable "mac_aging_option" {
 }
 
 variable "mac_aging_time" {
-  default     = 120
+  default     = 14500
   description = "Define the MAC address aging time in seconds.  Range is between 120 to 918000, in multiples of 5, when mac_aging_option is set to Custom."
   type        = string
 }

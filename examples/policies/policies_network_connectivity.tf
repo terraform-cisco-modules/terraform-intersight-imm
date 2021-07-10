@@ -50,17 +50,17 @@ module "dns_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "terraform-cisco-modules/imm/intersight//modules/policies_network_connectivity"
-  description     = ""
-  dns_servers_v4  = var.dns_servers_v4
-  dns_servers_v6  = var.dns_servers_v6
-  dynamic_dns     = false
-  ipv6_enable     = false
-  name            = "dns"
-  org_moid        = local.org_moid
-  profiles        = []
-  tags            = var.tags
-  update_domain   = ""
+  source         = "terraform-cisco-modules/imm/intersight//modules/policies_network_connectivity"
+  description    = ""
+  dns_servers_v4 = var.dns_servers_v4
+  dns_servers_v6 = var.dns_servers_v6
+  dynamic_dns    = false
+  ipv6_enable    = false
+  name           = "dns"
+  org_moid       = local.org_moid
+  profiles       = []
+  tags           = var.tags
+  update_domain  = ""
 }
 
 */

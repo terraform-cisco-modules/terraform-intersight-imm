@@ -333,7 +333,6 @@ module "lan_uplink_port_channel_defaults" {
   ]
   source                = "terraform-cisco-modules/imm/intersight//modules/domain_uplink_lan_port_channel"
   breakout_sw_port      = 0
-  fec                   = "Auto"
   flow_control_moid     = []
   lan_uplink_pc_id      = 49
   lan_uplink_pc_ports   = [49, 50]
