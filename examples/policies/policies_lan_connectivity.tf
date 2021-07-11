@@ -34,7 +34,7 @@ module "vnic_loop" {
     module.vnic_adapter_example,
     module.lldp_example,
     module.vlan_group_list,
-    module.domain_vnic_qos.moid
+    module.domain_vnic_qos
   ]
   source     = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_loop"
   cdn_source = "vnic"
