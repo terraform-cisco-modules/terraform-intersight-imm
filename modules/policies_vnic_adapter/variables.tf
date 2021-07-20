@@ -33,6 +33,12 @@ variable "description" {
   type        = string
 }
 
+variable "geneve_enabled" {
+  default     = false
+  description = "GENEVE offload protocol allows you to create logical networks that span physical network boundaries by allowing any information to be encoded in a packet and passed between tunnel endpoints."
+  type        = bool
+}
+
 variable "interrupt_coalescing_type" {
   default     = "MIN"
   description = "Interrupt Coalescing Type. This can be one of the following:- MIN - The system waits for the time specified in the Coalescing Time field before sending another interrupt event IDLE - The system does not send an interrupt until there is a period of no activity lasting as least as long as the time specified in the Coalescing Time field.  Options are {IDLE|MIN}."

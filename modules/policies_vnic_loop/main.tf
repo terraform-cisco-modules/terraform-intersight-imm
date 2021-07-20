@@ -30,11 +30,11 @@ module "vnic_loop" {
   vmq_number_queues         = var.vmq_number_queues
   vmq_number_sub_vnics      = var.vmq_number_sub_vnics
   vmq_adapter_policy_moid   = var.vmq_adapter_policy_moid
-  vnic_adapter_moid         = var.vnic_adapter_moid
-  vnic_control_moid         = var.vnic_control_moid
+  vnic_adapter_moid         = each.value.vnic_adapter_moid
+  vnic_control_moid         = each.value.vnic_control_moid
   vnic_name                 = each.value.vnic_name
-  vnic_network_moid         = var.vnic_network_moid
-  vnic_network_group_moid   = each.value.vlan_group
+  vnic_network_moid         = each.value.vnic_network_moid
+  vnic_network_group_moid   = each.value.vnic_vlans_moid
   vnic_order                = each.value.vnic_order
-  vnic_qos_moid             = var.vnic_qos_moid
+  vnic_qos_moid             = each.value.vnic_qos_moid
 }

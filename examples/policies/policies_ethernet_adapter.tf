@@ -31,7 +31,7 @@ module "vnic_adapter_linux_nvme_roce" {
   # Completion Settings - Reduce Queue Count
   completion_queue_count = 2
   description            = "Linux NVMe RoCE vNIC Adapter Example."
-  # Interrupt Settings - Increase Interupts
+  # Interrupt Settings - Increase Interrupts
   interrupt_interrupts = 256
   # Enable RoCE
   roce_enable          = true
@@ -53,12 +53,10 @@ module "vnic_adapter_vmware" {
   # Completion Settings - Reduce Queue Count
   completion_queue_count = 2
   description            = "VMware vNIC Adapter Example."
-  # Interrupt Settings - Reduce Interupts
+  # Interrupt Settings - Reduce Interrupts
   interrupt_interrupts = 4
   # Disable Receive Side Scaling
   receive_side_scaling = false
-  # Reduce Recieve Queue Count
-  rx_queue_count = 1
   name           = "vmware"
   org_moid       = local.org_moid
   tags           = var.tags
@@ -99,7 +97,10 @@ module "vnic_adapter_defaults" {
 
   # Completion Settings
   completion_queue_count = 5
-  completion_ring_size = 1
+  completion_ring_size   = 1
+
+  # Enable GENEVE
+  geneve_enabled = false
 
   description  = "Default vNIC Adapter Example."
 
@@ -137,7 +138,7 @@ module "vnic_adapter_defaults" {
   roce_version          = 2
 
   # Recieve Settings
-  rx_queue_count  = 4
+  rx_queue_count  = 1
   rx_ring_size    = 512
 
   org_moid     = local.org_moid
@@ -149,7 +150,7 @@ module "vnic_adapter_defaults" {
   tcp_offload_rx_checksum   = true
   tcp_offload_tx_checksum   = true
 
-  # Recieve Settings
+  # Transmit Settings
   tx_queue_count  = 1
   tx_ring_size    = 256
 

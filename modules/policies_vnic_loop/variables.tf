@@ -1,3 +1,7 @@
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 #____________________________________________________________
 #
 # Ethernet (vNIC) Policy Variables Section.
@@ -12,11 +16,14 @@ variable "cdn_source" {
 variable "fabric_vnic" {
   description = "List of Attributes Unique to each vNIC."
   type = map(object({
-    mac_pool   = string
-    switch_id  = string
-    vlan_group = string
-    vnic_name  = string
-    vnic_order = number
+    mac_pool_moid     = optional(string)
+    switch_id         = optional(string)
+    vnic_adapter_moid = string
+    vnic_name         = string
+    vnic_control_moid = optional(string)
+    vnic_order        = number
+    vnic_qos_moid     = string
+    vnic_vlans_moid   = string
   }))
 }
 
@@ -142,32 +149,5 @@ variable "vmq_number_sub_vnics" {
 variable "vmq_adapter_policy_moid" {
   default     = ""
   description = "Ethernet Adapter policy to be associated with the Sub vNICs. The Transmit Queue and Receive Queue resource value of VMMQ adapter policy should be greater than or equal to the configured number of sub vNICs."
-  type        = string
-}
-
-variable "vnic_adapter_moid" {
-  description = "A reference to a vnicEthAdapterPolicy resource."
-  type        = string
-}
-
-variable "vnic_control_moid" {
-  description = "A reference to a fabricEthNetworkControlPolicy resource."
-  type        = string
-}
-
-variable "vnic_network_moid" {
-  default     = []
-  description = "A reference to a vnicEthNetworkPolicy resource."
-  type        = set(string)
-}
-
-variable "vnic_qos_moid" {
-  description = "A reference to a vnicEthQosPolicy resource."
-  type        = string
-}
-
-variable "vnic_name" {
-  default     = "vnic"
-  description = "Name of the virtual ethernet interface."
   type        = string
 }

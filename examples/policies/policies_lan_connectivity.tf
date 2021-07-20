@@ -36,61 +36,75 @@ module "vnic_loop" {
     module.vlan_group_list,
     module.domain_vnic_qos
   ]
-  source     = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_loop"
-  cdn_source = "vnic"
-  fabric_vnic = {
-    vNIC_1 = {
-      mac_pool   = data.terraform_remote_state.pools.outputs.mac_pool_a.moid
-      switch_id  = "A"
-      vlan_group = module.vlan_group_list.moid
-      vnic_name  = "vNIC-1"
-      vnic_order = 0
-    },
-    vNIC_2 = {
-      mac_pool   = data.terraform_remote_state.pools.outputs.mac_pool_b.moid
-      switch_id  = "B"
-      vlan_group = module.vlan_group_list.moid
-      vnic_name  = "vNIC-2"
-      vnic_order = 1
-    },
-    vNIC_3 = {
-      mac_pool   = data.terraform_remote_state.pools.outputs.mac_pool_a.moid
-      switch_id  = "A"
-      vlan_group = module.vlan_group_list.moid
-      vnic_name  = "vNIC-3"
-      vnic_order = 2
-    },
-    vNIC_4 = {
-      mac_pool   = data.terraform_remote_state.pools.outputs.mac_pool_b.moid
-      switch_id  = "B"
-      vlan_group = module.vlan_group_list.moid
-      vnic_name  = "vNIC-4"
-      vnic_order = 3
-    },
-    vNIC_5 = {
-      mac_pool   = data.terraform_remote_state.pools.outputs.mac_pool_a.moid
-      switch_id  = "A"
-      vlan_group = module.vlan_group_list.moid
-      vnic_name  = "vNIC-5"
-      vnic_order = 4
-    },
-    vNIC_6 = {
-      mac_pool   = data.terraform_remote_state.pools.outputs.mac_pool_b.moid
-      pci_order  = 5
-      switch_id  = "B"
-      vlan_group = module.vlan_group_list.moid
-      vnic_name  = "vNIC-6"
-      vnic_order = 5
-    }
-  }
+  source                = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_loop"
+  cdn_source            = "vnic"
   lan_connectivity_moid = module.lan_connectivity_example.moid
   mac_address_type      = "POOL"
   placement_pci_link    = 0
   placement_uplink      = 0
   placement_slot_id     = "MLOM"
-  vnic_adapter_moid     = module.vnic_adapter_example.moid
-  vnic_control_moid     = module.lldp_example.moid
-  vnic_qos_moid         = module.domain_vnic_qos.moid
+  fabric_vnic = {
+    vNIC_1 = {
+      mac_pool_moid     = data.terraform_remote_state.pools.outputs.mac_pool_a.moid
+      switch_id         = "A"
+      vnic_vlans_moid   = module.vlan_group_list.moid
+      vnic_adapter_moid = module.vnic_adapter_example.moid
+      vnic_control_moid = module.lldp_example.moid
+      vnic_name         = "vNIC-1"
+      vnic_qos_moid     = module.domain_vnic_qos.moid
+      vnic_order        = 0
+    },
+    vNIC_2 = {
+      mac_pool_moid     = data.terraform_remote_state.pools.outputs.mac_pool_b.moid
+      switch_id         = "B"
+      vnic_vlans_moid   = module.vlan_group_list.moid
+      vnic_adapter_moid = module.vnic_adapter_example.moid
+      vnic_control_moid = module.lldp_example.moid
+      vnic_name         = "vNIC-2"
+      vnic_qos_moid     = module.domain_vnic_qos.moid
+      vnic_order        = 1
+    },
+    vNIC_3 = {
+      mac_pool_moid     = data.terraform_remote_state.pools.outputs.mac_pool_a.moid
+      switch_id         = "A"
+      vnic_vlans_moid   = module.vlan_group_list.moid
+      vnic_adapter_moid = module.vnic_adapter_example.moid
+      vnic_control_moid = module.lldp_example.moid
+      vnic_name         = "vNIC-3"
+      vnic_qos_moid     = module.domain_vnic_qos.moid
+      vnic_order        = 2
+    },
+    vNIC_4 = {
+      mac_pool_moid     = data.terraform_remote_state.pools.outputs.mac_pool_b.moid
+      switch_id         = "B"
+      vnic_vlans_moid   = module.vlan_group_list.moid
+      vnic_adapter_moid = module.vnic_adapter_example.moid
+      vnic_control_moid = module.lldp_example.moid
+      vnic_name         = "vNIC-4"
+      vnic_qos_moid     = module.domain_vnic_qos.moid
+      vnic_order        = 3
+    },
+    vNIC_5 = {
+      mac_pool_moid     = data.terraform_remote_state.pools.outputs.mac_pool_a.moid
+      switch_id         = "A"
+      vnic_vlans_moid   = module.vlan_group_list.moid
+      vnic_adapter_moid = module.vnic_adapter_example.moid
+      vnic_control_moid = module.lldp_example.moid
+      vnic_name         = "vNIC-5"
+      vnic_qos_moid     = module.domain_vnic_qos.moid
+      vnic_order        = 4
+    },
+    vNIC_6 = {
+      mac_pool_moid     = data.terraform_remote_state.pools.outputs.mac_pool_b.moid
+      switch_id         = "B"
+      vnic_vlans_moid   = module.vlan_group_list.moid
+      vnic_adapter_moid = module.vnic_adapter_example.moid
+      vnic_control_moid = module.lldp_example.moid
+      vnic_name         = "vNIC-6"
+      vnic_qos_moid     = module.domain_vnic_qos.moid
+      vnic_order        = 5
+    }
+  }
 }
 
 

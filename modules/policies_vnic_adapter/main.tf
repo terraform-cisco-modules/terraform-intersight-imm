@@ -7,6 +7,7 @@
 resource "intersight_vnic_eth_adapter_policy" "vnic_adapter" {
   advanced_filter         = var.advanced_filter
   description             = var.description
+  geneve_enabled          = var.geneve_enabled
   interrupt_scaling       = var.interrupt_scaling
   name                    = var.name
   rss_settings            = var.receive_side_scaling
