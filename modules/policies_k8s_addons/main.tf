@@ -5,12 +5,12 @@
 #____________________________________________________________
 
 data "intersight_kubernetes_addon_definition" "addon" {
-  name     = var.addon
+  name = var.addon
 }
 
 resource "intersight_kubernetes_addon_policy" "addon" {
-  description    = var.description
-  name           = var.name
+  description = var.description
+  name        = var.name
   addon_configuration {
     install_strategy = var.install_strategy
     release_name     = var.release_name

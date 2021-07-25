@@ -48,7 +48,7 @@ No modules.
 | <a name="input_profile_type"></a> [profile\_type](#input\_profile\_type) | Value to Identify the Type of Profile being applied to the policy.  Options are {domain\|server} | `string` | `"server"` | no |
 | <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_remote_clients"></a> [remote\_clients](#input\_remote\_clients) | Configure up to 2 remote syslog servers. | `list(map(string))` | `[]` | no |
-| <a name="input_syslog_severity"></a> [syslog\_severity](#input\_syslog\_severity) | n/a | `string` | `"warning"` | no |
+| <a name="input_syslog_severity"></a> [syslog\_severity](#input\_syslog\_severity) | Lowest level of messages to be included in the local log.<br> * warning - Use logging level warning for logs classified as warning.<br> * emergency - Use logging level emergency for logs classified as emergency.<br> * alert - Use logging level alert for logs classified as alert.<br> * critical - Use logging level critical for logs classified as critical.<br> * error - Use logging level error for logs classified as error.<br> * notice - Use logging level notice for logs classified as notice.<br> * informational - Use logging level informational for logs classified as informational.<br> * debug - Use logging level debug for logs classified as debug. | `string` | `"warning"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs

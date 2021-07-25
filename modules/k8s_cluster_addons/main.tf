@@ -10,7 +10,7 @@ data "intersight_kubernetes_addon_policy" "addons" {
 }
 
 resource "intersight_kubernetes_cluster_addon_profile" "cluster_addon" {
-  name           = var.name
+  name = var.name
   associated_cluster {
     moid = var.cluster_moid
   }

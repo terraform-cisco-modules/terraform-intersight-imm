@@ -3,7 +3,6 @@
 # Kubernetes Cluster Addon Variables Section.
 #____________________________________________________________
 
-    moid = var.cluster_moid
 variable "addons" {
   default     = []
   description = "The Addon to add to this Kubernetes Cluster.  Options are:\r\n * ccp-monitor\r\n * kubernetes-dashboard."

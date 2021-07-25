@@ -57,9 +57,9 @@ module "vnic_adapter_vmware" {
   interrupt_interrupts = 4
   # Disable Receive Side Scaling
   receive_side_scaling = false
-  name           = "vmware"
-  org_moid       = local.org_moid
-  tags           = var.tags
+  name                 = "vmware"
+  org_moid             = local.org_moid
+  tags                 = var.tags
 }
 
 module "vnic_adapter_windows" {

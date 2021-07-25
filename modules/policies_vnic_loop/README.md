@@ -41,7 +41,7 @@ No resources.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_cdn_source"></a> [cdn\_source](#input\_cdn\_source) | Source of the CDN. It can either be user specified or be the same as the vNIC name.<br> * user - Source of the CDN is specified by the user.<br> * vnic - Source of the CDN is the same as the vNIC name. | `string` | `"vnic"` | no |
-| <a name="input_fabric_vnic"></a> [fabric\_vnic](#input\_fabric\_vnic) | List of Attributes Unique to each vNIC. | <pre>map(object({<br>    mac_pool   = string<br>    switch_id  = string<br>    vlan_group = string<br>    vnic_name  = string<br>    vnic_order = number<br>  }))</pre> | n/a | yes |
+| <a name="input_fabric_vnic"></a> [fabric\_vnic](#input\_fabric\_vnic) | List of Attributes Unique to each vNIC. | <pre>map(object({<br>    mac_pool_moid     = optional(string)<br>    switch_id         = optional(string)<br>    vnic_adapter_moid = string<br>    vnic_name         = string<br>    vnic_control_moid = optional(string)<br>    vnic_order        = number<br>    vnic_qos_moid     = string<br>    vnic_vlans_moid   = string<br>  }))</pre> | n/a | yes |
 | <a name="input_failover_enabled"></a> [failover\_enabled](#input\_failover\_enabled) | Setting this to true ensures that the traffic failover from one uplink to another auotmatically in case of an uplink failure. It is applicable for Cisco VIC adapters only which are connected to Fabric Interconnect cluster. The uplink if specified determines the primary uplink in case of a failover. | `bool` | `false` | no |
 | <a name="input_ip_lease_moid"></a> [ip\_lease\_moid](#input\_ip\_lease\_moid) | A reference to a ippoolIpLease resource. | `set(string)` | `[]` | no |
 | <a name="input_iscsi_boot_policy_moid"></a> [iscsi\_boot\_policy\_moid](#input\_iscsi\_boot\_policy\_moid) | A reference to a vnicIscsiBootPolicy resource. | `set(string)` | `[]` | no |
@@ -63,11 +63,6 @@ No resources.
 | <a name="input_vmq_multi_queue_support"></a> [vmq\_multi\_queue\_support](#input\_vmq\_multi\_queue\_support) | Enables Virtual Machine Multi-Queue feature on the virtual interface. VMMQ allows configuration of multiple I/O queues for a single VM and thus distributes traffic across multiple CPU cores in a VM. | `bool` | `false` | no |
 | <a name="input_vmq_number_queues"></a> [vmq\_number\_queues](#input\_vmq\_number\_queues) | The number of hardware Virtual Machine Queues to be allocated. The number of VMQs per adapter must be one more than the maximum number of VM NICs.  Range is 1-128. | `number` | `4` | no |
 | <a name="input_vmq_number_sub_vnics"></a> [vmq\_number\_sub\_vnics](#input\_vmq\_number\_sub\_vnics) | The number of sub vNICs to be created.  Range is 0-64. | `number` | `64` | no |
-| <a name="input_vnic_adapter_moid"></a> [vnic\_adapter\_moid](#input\_vnic\_adapter\_moid) | A reference to a vnicEthAdapterPolicy resource. | `string` | n/a | yes |
-| <a name="input_vnic_control_moid"></a> [vnic\_control\_moid](#input\_vnic\_control\_moid) | A reference to a fabricEthNetworkControlPolicy resource. | `string` | n/a | yes |
-| <a name="input_vnic_name"></a> [vnic\_name](#input\_vnic\_name) | Name of the virtual ethernet interface. | `string` | `"vnic"` | no |
-| <a name="input_vnic_network_moid"></a> [vnic\_network\_moid](#input\_vnic\_network\_moid) | A reference to a vnicEthNetworkPolicy resource. | `set(string)` | `[]` | no |
-| <a name="input_vnic_qos_moid"></a> [vnic\_qos\_moid](#input\_vnic\_qos\_moid) | A reference to a vnicEthQosPolicy resource. | `string` | n/a | yes |
 
 ## Outputs
 
