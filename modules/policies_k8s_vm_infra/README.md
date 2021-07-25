@@ -1,21 +1,21 @@
-# policies_k8s_addons - Intersight Kubernetes Addon Policy Terraform Module
+# policies_k8s_vm_infra - Intersight Kubernetes Addon Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "k8s_addons" {
+module "k8s_vm_infra" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_k8s_addons"
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_k8s_vm_infra"
 
   # omitted...
 }
 ```
 
-This module will create a Kubernetes Addon Policy in Intersight.  This can be used to Addons to Kubernetes Clusters that require Addons.  
+This module will create a Kubernetes Virtual Machine Infra Config Policy in Intersight.  This is consumed by Node Profile Policies assigned to Kubernetes Clusters.  
 
 These resources are consumed
 
-* [k8s_addons](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_addon_policy)
+* [k8s_vm_infra](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_virtual_machine_infra_config_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

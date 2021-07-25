@@ -7,3 +7,8 @@ output "moid" {
   description = "Kubernetes Addon Policy Managed Object ID (moid)."
   value       = intersight_kubernetes_addon_policy.addon.moid
 }
+
+output "name" {
+  description = "Kubernetes Addon Policy Name."
+  value       = intersight_kubernetes_addon_policy.addon.name
+}

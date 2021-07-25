@@ -17,7 +17,7 @@ resource "intersight_kubernetes_addon_policy" "addon" {
     upgrade_strategy = var.upgrade_strategy
   }
   addon_definition {
-    moid = data.intersight_kubernetes_addon_definition.addons.results.0.moid
+    moid = data.intersight_kubernetes_addon_definition.addon.results.0.moid
   }
   organization {
     moid        = var.org_moid

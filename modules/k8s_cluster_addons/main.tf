@@ -4,11 +4,6 @@
 # GUI Location: Profiles > Kubernetes Cluster Profiles > Create Kubernetes Cluster Profile
 #____________________________________________________________
 
-data "intersight_kubernetes_addon_policy" "addons" {
-  for_each = var.addons
-  name     = each.value.addon
-}
-
 resource "intersight_kubernetes_cluster_addon_profile" "cluster_addon" {
   name = var.name
   associated_cluster {
@@ -22,9 +17,9 @@ resource "intersight_kubernetes_cluster_addon_profile" "cluster_addon" {
     for_each = var.addons
     content {
       addon_policy {
-        moid = data.intersight_kubernetes_addon_policy["${addons.value.addon}"].results.0.moid
+        moid = addons.value.moid
       }
-      name = data.intersight_kubernetes_addon_policy["${addons.value.addon}"].results.0.name
+      name = addons.value.name
     }
   }
   dynamic "tags" {
