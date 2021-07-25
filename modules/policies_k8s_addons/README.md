@@ -58,4 +58,5 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Addon Policy Managed Object ID (moid). |
+| <a name="output_name"></a> [name](#output\_name) | Kubernetes Addon Policy Name. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -36,22 +36,26 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_kubernetes_cluster_addon_profile.cluster_addon](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_cluster_addon_profile) | resource |
-| [intersight_kubernetes_addon_policy.addons](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/kubernetes_addon_policy) | data source |
+| [intersight_kubernetes_node_group_profile.node_profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_node_group_profile) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_addons"></a> [addons](#input\_addons) | The Addon to add to this Kubernetes Cluster.  Options are:<br> * ccp-monitor<br> * kubernetes-dashboard. | `set(string)` | `[]` | no |
-| <a name="input_cluster_moid"></a> [cluster\_moid](#input\_cluster\_moid) | A reference to a kubernetesCluster resource. | `string` | n/a | yes |
-| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"k8s_addon"` | no |
-| <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
+| <a name="input_action"></a> [action](#input\_action) | User initiated action. i.e 'Deploy' 'Unassign' | `string` | `"Unassign"` | no |
+| <a name="input_cluster_moid"></a> [cluster\_moid](#input\_cluster\_moid) | A reference to a kubernetesClusterProfile resource. | `string` | n/a | yes |
+| <a name="input_description"></a> [description](#input\_description) | Description for the Profile. | `string` | `""` | no |
+| <a name="input_desired_size"></a> [desired\_size](#input\_desired\_size) | Desired number of nodes in this node group, same as minsize initially and is updated by the auto-scaler. | `string` | `""` | no |
+| <a name="input_ip_pool_moid"></a> [ip\_pool\_moid](#input\_ip\_pool\_moid) | MOID derived from the IP Pool that is being consumed. | `string` | n/a | yes |
+| <a name="input_max_size"></a> [max\_size](#input\_max\_size) | Maximum number of nodes desired in this node group. | `string` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"node_profile"` | no |
+| <a name="input_node_type"></a> [node\_type](#input\_node\_type) | he node type ControlPlane, Worker or ControlPlaneWorker.<br> * ControlPlane - Node will be marked as a control plane node.<br> * ControlPlaneWorker - Node will be both a controle plane and a worker.<br> * Worker - Node will be marked as a worker node. | `string` | `"Worker"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_version_moid"></a> [version\_moid](#input\_version\_moid) | MOID of the Version Policy to be assigned to the Node Profile. | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Cluster Addon Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Intersight Kubernetes Service Cluster Node Profile Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
