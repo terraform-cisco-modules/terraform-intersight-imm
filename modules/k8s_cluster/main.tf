@@ -1,4 +1,7 @@
-
+locals {
+  container_runtime_config = var.container_runtime_config != "" ? [var.container_runtime_config] : []
+  trusted_registries       = var.trusted_registries != "" ? [var.trusted_registries] : []
+}
 #____________________________________________________________
 #
 # Kubernetes Cluster Profile
@@ -54,7 +57,7 @@ resource "intersight_kubernetes_cluster_profile" "cluster" {
     }
   }
   dynamic "container_runtime_config" {
-    for_each = toset(var.container_runtime_config)
+    for_each = local.container_runtime_config
     content {
       moid = container_runtime_config.value
     }
@@ -67,7 +70,7 @@ resource "intersight_kubernetes_cluster_profile" "cluster" {
     }
   }
   dynamic "trusted_registries" {
-    for_each = toset(var.trusted_registries)
+    for_each = local.trusted_registries
     content {
       moid = trusted_registries.value
     }
