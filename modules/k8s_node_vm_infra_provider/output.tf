@@ -5,5 +5,5 @@
 
 output "moid" {
   description = "Kubernetes Virtual Machine Infrastructure Provider Policy Managed Object ID (moid)."
-  value       = intersight_kubernetes_virtual_machine_infrastructure_provider.vm_instance_type.moid
+  value       = intersight_kubernetes_virtual_machine_infrastructure_provider.k8s_vm_infra_provider.moid
 }
