@@ -12,9 +12,10 @@ resource "intersight_kubernetes_addon_policy" "addon" {
   description = var.description
   name        = var.name
   addon_configuration {
-    install_strategy = var.install_strategy
-    release_name     = var.release_name
-    upgrade_strategy = var.upgrade_strategy
+    install_strategy  = var.install_strategy
+    release_name      = var.release_name
+    release_namespace = var.release_namespace
+    upgrade_strategy  = var.upgrade_strategy
   }
   addon_definition {
     moid = data.intersight_kubernetes_addon_definition.addon.results.0.moid

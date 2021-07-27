@@ -39,9 +39,6 @@ resource "intersight_kubernetes_cluster_profile" "cluster" {
   sys_config {
     moid = var.sys_config_moid
   }
-  trusted_registries {
-    moid = var.trusted_registry_moid
-  }
   dynamic "cert_config" {
     for_each = var.cert_config
     content {
@@ -57,7 +54,7 @@ resource "intersight_kubernetes_cluster_profile" "cluster" {
     }
   }
   dynamic "container_runtime_config" {
-    for_each = var.container_runtime_config
+    for_each = toset(var.container_runtime_config)
     content {
       moid = container_runtime_config.value
     }
@@ -67,6 +64,12 @@ resource "intersight_kubernetes_cluster_profile" "cluster" {
     content {
       key   = tags.value.key
       value = tags.value.value
+    }
+  }
+  dynamic "trusted_registries" {
+    for_each = toset(var.trusted_registries)
+    content {
+      moid = trusted_registries.value
     }
   }
 }

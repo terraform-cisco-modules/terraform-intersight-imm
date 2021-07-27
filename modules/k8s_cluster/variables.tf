@@ -25,7 +25,7 @@ variable "cert_config" {
 variable "container_runtime_config" {
   default     = []
   description = "MOID for the Runtime Policy that is being consumed."
-  type        = list(map(string))
+  type        = set(string)
 }
 
 variable "description" {
@@ -41,7 +41,7 @@ variable "ip_pool_moid" {
 
 variable "load_balancer" {
   default     = 3
-  description = "Number of load balancer addresses to deploy."
+  description = "Number of load balancer addresses to deploy. Range is 1-999."
   type        = number
 }
 
@@ -89,10 +89,10 @@ variable "tags" {
   type        = list(map(string))
 }
 
-variable "trusted_registry_moid" {
-  type        = string
+variable "trusted_registries" {
+  default     = []
   description = "MOID for the Trusted Registry Policy that is being consumed."
-  default     = ""
+  type        = set(string)
 }
 
 variable "wait_for_completion" {

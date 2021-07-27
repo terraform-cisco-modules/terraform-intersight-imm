@@ -1,7 +1,7 @@
 
 #____________________________________________________________
 #
-# Intersight Kubernetes Service Cluster Node Profile Variables
+# Intersight Kubernetes Service Cluster Node Group Profile Variables
 #____________________________________________________________
 
 variable "action" {
@@ -32,6 +32,12 @@ variable "ip_pool_moid" {
   type        = string
 }
 
+variable "labels" {
+  default     = []
+  description = "Kubernetes label policy of key/value Attributes to Assign to the Node."
+  type        = list(map(string))
+}
+
 variable "max_size" {
   description = "Maximum number of nodes desired in this node group."
   type        = string
@@ -48,13 +54,15 @@ variable "node_type" {
   description = "he node type ControlPlane, Worker or ControlPlaneWorker.\r\n * ControlPlane - Node will be marked as a control plane node.\r\n * ControlPlaneWorker - Node will be both a controle plane and a worker.\r\n * Worker - Node will be marked as a worker node."
   type        = string
 }
-variable "version_moid" {
-  description = "MOID of the Version Policy to be assigned to the Node Profile."
-  type        = string
-}
 
 variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
 }
+
+variable "version_moid" {
+  description = "MOID of the Version Policy to be assigned to the Node Profile."
+  type        = string
+}
+

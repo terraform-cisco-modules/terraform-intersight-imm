@@ -46,7 +46,7 @@ variable "release_namespace" {
 
 variable "tags" {
   default     = []
-  description = "List of Tag Attributes to Assign to the Policy."
+  description = "List of key/value pair Attributes to Assign to the Policy."
   type        = list(map(string))
 }
 

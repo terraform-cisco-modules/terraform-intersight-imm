@@ -1,11 +1,11 @@
 
 #____________________________________________________________
 #
-# Intersight Kubernetes Service Cluster Node Profile
+# Intersight Kubernetes Service Cluster Node Group Profile
 # GUI Location: Profiles > Kubernetes Cluster Profiles > Create Kubernetes Cluster Profile
 #____________________________________________________________
 
-resource "intersight_kubernetes_node_group_profile" "node_profile" {
+resource "intersight_kubernetes_node_group_profile" "node_group_profile" {
   action      = var.action
   description = var.description
   name        = var.name
@@ -24,6 +24,13 @@ resource "intersight_kubernetes_node_group_profile" "node_profile" {
   cluster_profile {
     moid        = var.cluster_moid
     object_type = "kubernetes.ClusterProfile"
+  }
+  dynamic "labels" {
+    for_each = var.labels
+    content {
+      key   = labels.value.key
+      value = labels.value.value
+    }
   }
   dynamic "tags" {
     for_each = var.tags
