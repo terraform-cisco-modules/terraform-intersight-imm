@@ -23,9 +23,9 @@ variable "cert_config" {
 }
 
 variable "container_runtime_config" {
-  default     = []
+  default     = ""
   description = "MOID for the Runtime Policy that is being consumed."
-  type        = set(string)
+  type        = string
 }
 
 variable "description" {
@@ -90,9 +90,9 @@ variable "tags" {
 }
 
 variable "trusted_registries" {
-  default     = []
+  default     = ""
   description = "MOID for the Trusted Registry Policy that is being consumed."
-  type        = set(string)
+  type        = string
 }
 
 variable "wait_for_completion" {
