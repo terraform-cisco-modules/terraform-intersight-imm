@@ -9,7 +9,7 @@ variable "addons" {
   type        = list(map(string))
 }
 
-variable "cluster_moid" {
+variable "iks_cluster_moid" {
   description = "A reference to a kubernetes Cluster resource moid."
   type        = string
 }

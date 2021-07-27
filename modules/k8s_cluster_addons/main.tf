@@ -7,7 +7,7 @@
 resource "intersight_kubernetes_cluster_addon_profile" "cluster_addon" {
   name = var.name
   associated_cluster {
-    moid = var.cluster_moid
+    moid = var.iks_cluster_moid
   }
   organization {
     moid        = var.org_moid

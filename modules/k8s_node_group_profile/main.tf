@@ -22,7 +22,7 @@ resource "intersight_kubernetes_node_group_profile" "node_group_profile" {
   }
 
   cluster_profile {
-    moid        = var.cluster_moid
+    moid        = var.iks_profile_moid
     object_type = "kubernetes.ClusterProfile"
   }
   dynamic "labels" {

@@ -43,9 +43,9 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_action"></a> [action](#input\_action) | User initiated action. i.e 'Deploy' 'Unassign' | `string` | `"Unassign"` | no |
-| <a name="input_cluster_moid"></a> [cluster\_moid](#input\_cluster\_moid) | A reference to a kubernetesClusterProfile resource. | `string` | n/a | yes |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Profile. | `string` | `""` | no |
 | <a name="input_desired_size"></a> [desired\_size](#input\_desired\_size) | Desired number of nodes in this node group, same as minsize initially and is updated by the auto-scaler. | `string` | `""` | no |
+| <a name="input_iks_profile_moid"></a> [iks\_profile\_moid](#input\_iks\_profile\_moid) | A reference to a kubernetesClusterProfile resource. | `string` | n/a | yes |
 | <a name="input_ip_pool_moid"></a> [ip\_pool\_moid](#input\_ip\_pool\_moid) | MOID derived from the IP Pool that is being consumed. | `string` | n/a | yes |
 | <a name="input_labels"></a> [labels](#input\_labels) | Kubernetes label policy of key/value Attributes to Assign to the Node. | `list(map(string))` | `[]` | no |
 | <a name="input_max_size"></a> [max\_size](#input\_max\_size) | Maximum number of nodes desired in this node group. | `string` | n/a | yes |

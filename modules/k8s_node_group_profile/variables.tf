@@ -16,14 +16,14 @@ variable "description" {
   type        = string
 }
 
-variable "cluster_moid" {
-  description = "A reference to a kubernetesClusterProfile resource."
-  type        = string
-}
-
 variable "desired_size" {
   default     = ""
   description = "Desired number of nodes in this node group, same as minsize initially and is updated by the auto-scaler."
+  type        = string
+}
+
+variable "iks_profile_moid" {
+  description = "A reference to a kubernetesClusterProfile resource."
   type        = string
 }
 
