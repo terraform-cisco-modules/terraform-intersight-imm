@@ -5,5 +5,5 @@
 
 output "moid" {
   description = "Kubernetes Version Policy Managed Object ID (moid)."
-  value       = intersight_kubernetes_version.nodeos_config.moid
+  value       = intersight_kubernetes_version_policy.version.moid
 }

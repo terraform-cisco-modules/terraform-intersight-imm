@@ -9,7 +9,7 @@ data "intersight_kubernetes_version" "version" {
   kubernetes_version = join("", ["v", var.k8s_version])
 }
 
-resource "intersight_kubernetes_version" "version" {
+resource "intersight_kubernetes_version_policy" "version" {
   description = var.description
   name        = var.name
   nr_version {

@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_kubernetes_version.version](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_version) | resource |
+| [intersight_kubernetes_version_policy.version](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_version_policy) | resource |
 | [intersight_kubernetes_version.version](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/kubernetes_version) | data source |
 
 ## Inputs
