@@ -50,7 +50,7 @@ No modules.
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_release_name"></a> [release\_name](#input\_release\_name) | Name for the helm release. | `string` | `""` | no |
 | <a name="input_release_namespace"></a> [release\_namespace](#input\_release\_namespace) | Namespace for the helm release. | `string` | `""` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | List of key/value pair Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 | <a name="input_upgrade_strategy"></a> [upgrade\_strategy](#input\_upgrade\_strategy) | Addon upgrade strategy to determine whether an addon configuration is overwritten on upgrade.<br> * None - Unspecified upgrade strategy.<br> * NoAction - This choice enables No upgrades to be performed.<br> * UpgradeOnly - Attempt upgrade if chart or overrides options change, no action on upgrade failure.<br> * ReinstallOnFailure - Attempt upgrade first. Remove and install on upgrade failure.<br> * AlwaysReinstall - Always remove older release and reinstall. | `string` | `"UpgradeOnly"` | no |
 
 ## Outputs

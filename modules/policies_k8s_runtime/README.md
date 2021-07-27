@@ -36,27 +36,32 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_kubernetes_virtual_machine_infra_config_policy.vsphere](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_virtual_machine_infra_config_policy) | resource |
-| [intersight_asset_target.vsphere_target](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/asset_target) | data source |
+| [intersight_kubernetes_container_runtime_policy.runtime](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_container_runtime_policy) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"k8s_addon"` | no |
+| <a name="input_docker_bridge_cidr"></a> [docker\_bridge\_cidr](#input\_docker\_bridge\_cidr) | The CIDR for docker bridge network. This address space must not collide with other CIDRs on your networks, including the cluster's service CIDR, pod CIDR and IP Pools. | `string` | `""` | no |
+| <a name="input_docker_no_proxy"></a> [docker\_no\_proxy](#input\_docker\_no\_proxy) | Docker no proxy list, when using internet proxy. | `list(string)` | `[]` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the concrete policy. | `string` | `"k8s_runtime"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_vsphere_cluster"></a> [vsphere\_cluster](#input\_vsphere\_cluster) | Name of the cluster you wish to make part of this provider within vCenter. | `string` | n/a | yes |
-| <a name="input_vsphere_datastore"></a> [vsphere\_datastore](#input\_vsphere\_datastore) | Name of the datastore to be used with this provider. | `string` | n/a | yes |
-| <a name="input_vsphere_password"></a> [vsphere\_password](#input\_vsphere\_password) | Password of the account to be used with vCenter.  This should be the password for the account used to register vCenter with Intersight. | `string` | n/a | yes |
-| <a name="input_vsphere_portgroup"></a> [vsphere\_portgroup](#input\_vsphere\_portgroup) | Name of the portgroup(s) to be used in this provider | `list(string)` | n/a | yes |
-| <a name="input_vsphere_resource_pool"></a> [vsphere\_resource\_pool](#input\_vsphere\_resource\_pool) | Name of the resource pool to be used with this provider. | `string` | `""` | no |
-| <a name="input_vsphere_target"></a> [vsphere\_target](#input\_vsphere\_target) | Name of the vSphere Target to assign to the Policy. | `string` | n/a | yes |
+| <a name="input_proxy_http_hostname"></a> [proxy\_http\_hostname](#input\_proxy\_http\_hostname) | Hostname of the HTTP Proxy Server. | `string` | n/a | yes |
+| <a name="input_proxy_http_password"></a> [proxy\_http\_password](#input\_proxy\_http\_password) | Password for the HTTP Proxy Server, If required. | `string` | `""` | no |
+| <a name="input_proxy_http_port"></a> [proxy\_http\_port](#input\_proxy\_http\_port) | HTTP Proxy Port.  Range is 1-65535. | `number` | `8080` | no |
+| <a name="input_proxy_http_protocol"></a> [proxy\_http\_protocol](#input\_proxy\_http\_protocol) | HTTP Proxy Protocol. Options are {http\|https}. | `string` | `"http"` | no |
+| <a name="input_proxy_http_username"></a> [proxy\_http\_username](#input\_proxy\_http\_username) | The username for the HTTP Proxy. | `string` | `""` | no |
+| <a name="input_proxy_https_hostname"></a> [proxy\_https\_hostname](#input\_proxy\_https\_hostname) | HTTPS Proxy server FQDN or IP. | `string` | n/a | yes |
+| <a name="input_proxy_https_password"></a> [proxy\_https\_password](#input\_proxy\_https\_password) | Password for the HTTPS Proxy Server, If required. | `string` | `""` | no |
+| <a name="input_proxy_https_port"></a> [proxy\_https\_port](#input\_proxy\_https\_port) | HTTPS Proxy Port.  Range is 1-65535. | `number` | `8443` | no |
+| <a name="input_proxy_https_protocol"></a> [proxy\_https\_protocol](#input\_proxy\_https\_protocol) | HTTPS Proxy Protocol. Options are {http\|https}. | `string` | `"https"` | no |
+| <a name="input_proxy_https_username"></a> [proxy\_https\_username](#input\_proxy\_https\_username) | Username for the HTTPS Proxy Server. | `string` | `""` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | List of key/value pair Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Addon Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Runtime Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

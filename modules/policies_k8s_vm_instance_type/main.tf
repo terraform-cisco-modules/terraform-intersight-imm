@@ -5,11 +5,11 @@
 #____________________________________________________________
 
 resource "intersight_kubernetes_virtual_machine_instance_type" "vm_instance_type" {
-  cpu             = var.cpu
-  description     = var.description
-  disk_size       = var.disk_size
-  memory          = var.memory
-  name            = var.name
+  cpu         = var.cpu
+  description = var.description
+  disk_size   = var.disk_size
+  memory      = var.memory
+  name        = var.name
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

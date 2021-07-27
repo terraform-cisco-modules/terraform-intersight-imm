@@ -36,27 +36,24 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_kubernetes_virtual_machine_infra_config_policy.vsphere](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_virtual_machine_infra_config_policy) | resource |
-| [intersight_asset_target.vsphere_target](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/asset_target) | data source |
+| [intersight_kubernetes_sys_config_policy.nodeos_config](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_sys_config_policy) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"k8s_addon"` | no |
+| <a name="input_dns_servers_v4"></a> [dns\_servers\_v4](#input\_dns\_servers\_v4) | DNS Servers for the Kubernetes Node OS Configuration Policy. | `list(string)` | <pre>[<br>  "208.67.220.220",<br>  "208.67.222.222"<br>]</pre> | no |
+| <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Domain Name for the Kubernetes Node OS Configuration Policy. | `string` | `"example.com"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"k8s_nodeos_config"` | no |
+| <a name="input_ntp_servers"></a> [ntp\_servers](#input\_ntp\_servers) | NTP Servers for the Kubernetes Node OS Configuration Policy. | `list(string)` | <pre>[<br>  "time-a-g.nist.gov",<br>  "time-b-g.nist.gov"<br>]</pre> | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_vsphere_cluster"></a> [vsphere\_cluster](#input\_vsphere\_cluster) | Name of the cluster you wish to make part of this provider within vCenter. | `string` | n/a | yes |
-| <a name="input_vsphere_datastore"></a> [vsphere\_datastore](#input\_vsphere\_datastore) | Name of the datastore to be used with this provider. | `string` | n/a | yes |
-| <a name="input_vsphere_password"></a> [vsphere\_password](#input\_vsphere\_password) | Password of the account to be used with vCenter.  This should be the password for the account used to register vCenter with Intersight. | `string` | n/a | yes |
-| <a name="input_vsphere_portgroup"></a> [vsphere\_portgroup](#input\_vsphere\_portgroup) | Name of the portgroup(s) to be used in this provider | `list(string)` | n/a | yes |
-| <a name="input_vsphere_resource_pool"></a> [vsphere\_resource\_pool](#input\_vsphere\_resource\_pool) | Name of the resource pool to be used with this provider. | `string` | `""` | no |
-| <a name="input_vsphere_target"></a> [vsphere\_target](#input\_vsphere\_target) | Name of the vSphere Target to assign to the Policy. | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | List of key/value pair Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_timezone"></a> [timezone](#input\_timezone) | The timezone of the node's system clock. | `string` | `"Etc/GMT"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Addon Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Node OS Configuration Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -5,8 +5,8 @@
 #____________________________________________________________
 
 resource "intersight_kubernetes_virtual_machine_infrastructure_provider" "k8s_vm_infra_provider" {
-  description     = var.description
-  name            = var.name
+  description = var.description
+  name        = var.name
   infra_config_policy {
     moid = var.k8s_vm_infra_config_moid
   }

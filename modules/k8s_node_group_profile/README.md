@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_kubernetes_node_group_profile.node_profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_node_group_profile) | resource |
+| [intersight_kubernetes_node_group_profile.node_group_profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_node_group_profile) | resource |
 
 ## Inputs
 
@@ -47,6 +47,7 @@ No modules.
 | <a name="input_description"></a> [description](#input\_description) | Description for the Profile. | `string` | `""` | no |
 | <a name="input_desired_size"></a> [desired\_size](#input\_desired\_size) | Desired number of nodes in this node group, same as minsize initially and is updated by the auto-scaler. | `string` | `""` | no |
 | <a name="input_ip_pool_moid"></a> [ip\_pool\_moid](#input\_ip\_pool\_moid) | MOID derived from the IP Pool that is being consumed. | `string` | n/a | yes |
+| <a name="input_labels"></a> [labels](#input\_labels) | Kubernetes label policy of key/value Attributes to Assign to the Node. | `list(map(string))` | `[]` | no |
 | <a name="input_max_size"></a> [max\_size](#input\_max\_size) | Maximum number of nodes desired in this node group. | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"node_profile"` | no |
 | <a name="input_node_type"></a> [node\_type](#input\_node\_type) | he node type ControlPlane, Worker or ControlPlaneWorker.<br> * ControlPlane - Node will be marked as a control plane node.<br> * ControlPlaneWorker - Node will be both a controle plane and a worker.<br> * Worker - Node will be marked as a worker node. | `string` | `"Worker"` | no |
@@ -57,5 +58,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Intersight Kubernetes Service Cluster Node Profile Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Intersight Kubernetes Service Cluster Node Group Profile Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

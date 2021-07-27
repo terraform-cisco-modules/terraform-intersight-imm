@@ -29,7 +29,7 @@ variable "dns_servers_v4" {
 variable "domain_name" {
   default     = "example.com"
   description = "Domain Name for the Kubernetes Node OS Configuration Policy."
-  type        = list(string)
+  type        = string
 }
 
 variable "ntp_servers" {

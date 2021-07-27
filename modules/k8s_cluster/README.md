@@ -45,10 +45,10 @@ No modules.
 | <a name="input_action"></a> [action](#input\_action) | Action for cluster. i.e 'Deploy' 'Unassign' | `string` | `"Unassign"` | no |
 | <a name="input_addon_configuration"></a> [addon\_configuration](#input\_addon\_configuration) | Addon configuration settings that are specific to a single cluster. | `list(map(string))` | `[]` | no |
 | <a name="input_cert_config"></a> [cert\_config](#input\_cert\_config) | Certificates and keys that are used to configure a Kubernetescluster. If user does not specify any Certificates or Keys,system generated certificates will be used to configure the cluster. | `list(map(string))` | `[]` | no |
-| <a name="input_container_runtime_config"></a> [container\_runtime\_config](#input\_container\_runtime\_config) | MOID for the Runtime Policy that is being consumed. | `list(map(string))` | `[]` | no |
+| <a name="input_container_runtime_config"></a> [container\_runtime\_config](#input\_container\_runtime\_config) | MOID for the Runtime Policy that is being consumed. | `set(string)` | `[]` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Profile. | `string` | `""` | no |
 | <a name="input_ip_pool_moid"></a> [ip\_pool\_moid](#input\_ip\_pool\_moid) | MOID derived from the IP Pool that is being consumed. | `string` | n/a | yes |
-| <a name="input_load_balancer"></a> [load\_balancer](#input\_load\_balancer) | Number of load balancer addresses to deploy. | `number` | `3` | no |
+| <a name="input_load_balancer"></a> [load\_balancer](#input\_load\_balancer) | Number of load balancer addresses to deploy. Range is 1-999. | `number` | `3` | no |
 | <a name="input_master_vip"></a> [master\_vip](#input\_master\_vip) | VIP for the cluster Kubernetes API server. If this is empty and a cluster IP pool is specified, it will be allocated from the IP pool. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"k8s_cluster"` | no |
 | <a name="input_net_config_moid"></a> [net\_config\_moid](#input\_net\_config\_moid) | MOID for the Network Config Policy that is being consumed. | `string` | n/a | yes |
@@ -57,7 +57,7 @@ No modules.
 | <a name="input_ssh_user"></a> [ssh\_user](#input\_ssh\_user) | SSH Username for node login. | `string` | `"iksadmin"` | no |
 | <a name="input_sys_config_moid"></a> [sys\_config\_moid](#input\_sys\_config\_moid) | MOID for the System Config Policy that is being consumed. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_trusted_registry_moid"></a> [trusted\_registry\_moid](#input\_trusted\_registry\_moid) | MOID for the Trusted Registry Policy that is being consumed. | `string` | `""` | no |
+| <a name="input_trusted_registries"></a> [trusted\_registries](#input\_trusted\_registries) | MOID for the Trusted Registry Policy that is being consumed. | `set(string)` | `[]` | no |
 | <a name="input_wait_for_completion"></a> [wait\_for\_completion](#input\_wait\_for\_completion) | Wait for cluster completion true/false | `bool` | `false` | no |
 
 ## Outputs
