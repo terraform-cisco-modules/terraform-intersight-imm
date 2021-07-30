@@ -48,6 +48,14 @@ resource "intersight_snmp_policy" "snmp" {
     privacy_type     = "AES"
     security_level   = var.user_1_security_level
   }
+  snmp_users {
+    auth_password    = var.user_2_auth_password
+    auth_type        = var.user_2_auth_type
+    name             = var.user_2_name
+    privacy_password = var.user_2_privacy_password
+    privacy_type     = "AES"
+    security_level   = var.user_2_security_level
+  }
   dynamic "tags" {
     for_each = var.tags
     content {
