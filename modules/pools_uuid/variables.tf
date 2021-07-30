@@ -28,7 +28,7 @@ variable "name" {
 }
 
 variable "prefix" {
-  default     = "123e4567-e89b-42d3"
+  default     = "000025B5-0000-0000"
   description = "Prefix to assign to the UUID Pool."
   type        = string
 }

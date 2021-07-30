@@ -6,8 +6,8 @@
 
 resource "intersight_fabric_fc_network_policy" "vsan_policy" {
   description     = var.description
-  name            = var.name
   enable_trunking = var.enable_trunking
+  name            = var.name
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

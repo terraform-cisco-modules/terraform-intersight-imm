@@ -10,7 +10,7 @@ variable "description" {
 }
 
 variable "lacp_rate" {
-  default     = "fast"
+  default     = "normal"
   description = "Flag used to indicate whether LACP PDUs are to be sent 'fast', i.e., every 1 second.\r\n * normal - The normal timeout rate is 30 seconds.\r\n * fast - The fast timeout rate is 1 second."
   type        = string
 }
