@@ -61,3 +61,9 @@ variable "type" {
   description = "Defines the type of the profile. Accepted values are 'instance' or 'template'."
   type        = string
 }
+
+variable "wait_for_completion" {
+  default     = false
+  description = "This model object can trigger workflows. Use this option to wait for all running workflows to reach a complete state."
+  type        = bool
+}

@@ -5,11 +5,12 @@
 #____________________________________________________________
 
 resource "intersight_server_profile" "server_profile" {
-  action          = var.action
-  description     = var.description
-  name            = var.name
-  target_platform = var.target_platform
-  type            = var.type
+  action              = var.action
+  description         = var.description
+  name                = var.name
+  target_platform     = var.target_platform
+  type                = var.type
+  wait_for_completion = var.wait_for_completion
   organization {
     object_type = "organization.Organization"
     moid        = var.org_moid
@@ -17,7 +18,8 @@ resource "intersight_server_profile" "server_profile" {
   dynamic "assigned_server" {
     for_each = var.assigned_server
     content {
-      moid = assigned_server.value.moid
+      moid        = assigned_server.value.moid
+      object_type = assigned_server.value.object_type
     }
   }
   dynamic "policy_bucket" {
