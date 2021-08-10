@@ -53,7 +53,6 @@ resource "intersight_storage_storage_policy" "storage" {
       read_policy           = virtual_drives.value.read_policy
       size                  = virtual_drives.value.size
       strip_size            = virtual_drives.value.strip_size
-      vdid                  = virtual_drives.value.vdid
       write_policy          = virtual_drives.value.write_policy
     }
   }

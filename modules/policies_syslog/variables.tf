@@ -38,9 +38,19 @@ variable "remote_clients" {
   type        = list(map(string))
 }
 
-variable "syslog_severity" {
+variable "local_min_severity" {
   default     = "warning"
-  description = "Lowest level of messages to be included in the local log.\r\n * warning - Use logging level warning for logs classified as warning.\r\n * emergency - Use logging level emergency for logs classified as emergency.\r\n * alert - Use logging level alert for logs classified as alert.\r\n * critical - Use logging level critical for logs classified as critical.\r\n * error - Use logging level error for logs classified as error.\r\n * notice - Use logging level notice for logs classified as notice.\r\n * informational - Use logging level informational for logs classified as informational.\r\n * debug - Use logging level debug for logs classified as debug."
+  description = <<-EOT
+  Lowest level of messages to be included in the local log.
+  * warning - Use logging level warning for logs classified as warning.
+  * emergency - Use logging level emergency for logs classified as emergency.
+  * alert - Use logging level alert for logs classified as alert.
+  * critical - Use logging level critical for logs classified as critical.
+  * error - Use logging level error for logs classified as error.
+  * notice - Use logging level notice for logs classified as notice.
+  * informational - Use logging level informational for logs classified as informational.
+  * debug - Use logging level debug for logs classified as debug.
+  EOT
   type        = string
 }
 

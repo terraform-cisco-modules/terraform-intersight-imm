@@ -46,7 +46,7 @@ variable "profiles" {
 
 variable "ssh_port" {
   default     = 2400
-  description = "SSH Port to Assign to the Policy.  Options are between 1024-65535."
+  description = "SSH Port to Assign to the Policy.  Range is between 1024-65535."
   type        = string
 }
 

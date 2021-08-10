@@ -6,7 +6,7 @@
 
 resource "intersight_access_policy" "imc_access" {
   description = var.description
-  inband_vlan = var.inband_mgmt_vlan
+  inband_vlan = var.inband_vlan
   name        = var.name
   address_type {
     enable_ip_v4 = var.ipv4_enable

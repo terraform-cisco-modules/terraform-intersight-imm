@@ -1,15 +1,16 @@
 #____________________________________________________________
 #
-# Intersight IPMI over LAN Policy
-# GUI Location: Policies > Create Policy
+# Intersight Power Policy
+# GUI Location: Configure > Policies > Create Policy > Power
 #____________________________________________________________
 
-resource "intersight_ipmioverlan_policy" "ipmi" {
-  description           = var.description
-  enabled               = var.enabled
-  encryption_key        = var.encryption_key
-  privilege             = var.privilege
-  name                  = var.name
+resource "intersight_power_policy" "power" {
+  allocated_budget    = var.allocated_budget
+  description         = var.description
+  name                = var.name
+  power_profiling     = var.power_profiling
+  power_restore_state = var.power_restore_state
+  redundancy_mode     = var.redundancy_mode
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

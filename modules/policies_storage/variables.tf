@@ -46,7 +46,11 @@ variable "tags" {
 
 variable "unused_disks" {
   default     = "UnconfiguredGood"
-  description = "Unused Disks State is used to specify the state, unconfigured good or jbod, in which the disks that are not used in this policy should be moved.\r\n * Jbod - JBOD state where the disks start showing up to host os.\r\n * UnconfiguredGood - Unconfigured good state -ready to be added in a RAID group."
+  description = <<-EOT
+  Unused Disks State is used to specify the state, unconfigured good or jbod, in which the disks that are not used in this policy should be moved.
+  * Jbod - JBOD state where the disks start showing up to host os.
+  * UnconfiguredGood - Unconfigured good state -ready to be added in a RAID group.
+  EOT
   type        = string
 }
 

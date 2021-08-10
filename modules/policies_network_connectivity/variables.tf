@@ -11,13 +11,13 @@ variable "description" {
 
 variable "dns_servers_v4" {
   default     = ["208.67.220.220", "208.67.222.222"]
-  description = "List of IPv4 DNS Servers for this Pool."
+  description = "List of IPv4 DNS Servers for this DNS Policy."
   type        = list(string)
 }
 
 variable "dns_servers_v6" {
   default     = []
-  description = "List of IPv6 DNS Servers for this Pool."
+  description = "List of IPv6 DNS Servers for this DNS Policy."
   type        = list(string)
 }
 

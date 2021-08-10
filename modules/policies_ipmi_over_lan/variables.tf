@@ -22,12 +22,6 @@ variable "encryption_key" {
   type        = string
 }
 
-variable "is_encryption_key_set" {
-  default     = false
-  description = "Indicates whether the value of the 'encryptionKey' property has been set."
-  type        = bool
-}
-
 variable "privilege" {
   default     = "admin"
   description = "The highest privilege level that can be assigned to an IPMI session on a server.\r\n* admin - Privilege to perform all actions available through IPMI.\r\n* user - Privilege to perform some functions through IPMI but restriction on performing administrative tasks.\r\n* read-only - Privilege to view information throught IPMI but restriction on making any changes."

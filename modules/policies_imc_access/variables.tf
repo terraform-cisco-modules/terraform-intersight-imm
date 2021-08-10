@@ -9,9 +9,9 @@ variable "description" {
   type        = string
 }
 
-variable "inband_mgmt_vlan" {
+variable "inband_vlan" {
   default     = 1
-  description = "VLAN ID to Assign as the Inband Management VLAN for IMC Access"
+  description = "VLAN ID to Assign as the Inband Management VLAN for IMC Access."
   type        = number
 }
 
