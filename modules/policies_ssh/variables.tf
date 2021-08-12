@@ -34,7 +34,7 @@ variable "profiles" {
 
 variable "ssh_port" {
   default     = 22
-  description = "Port used for secure shell access."
+  description = "Port used for secure shell access.  Valid range is between 1-65535."
   type        = number
 }
 
@@ -46,6 +46,6 @@ variable "tags" {
 
 variable "timeout" {
   default     = 1800
-  description = "Number of seconds to wait before the system considers a SSH request to have timed out."
+  description = "Number of seconds to wait before the system considers a SSH request to have timed out.  Valid range is between 60-10800."
   type        = number
 }

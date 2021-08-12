@@ -17,7 +17,14 @@ variable "enabled" {
 
 variable "min_severity" {
   default     = "critical"
-  description = "Minimum fault severity level to receive email notifications. Email notifications are sent for all faults whose severity is equal to or greater than the chosen level.\r\n * critical - Minimum severity to report is critical.\r\n * condition - Minimum severity to report is informational.\r\n * warning - Minimum severity to report is warning.\r\n * minor - Minimum severity to report is minor.\r\n * major - Minimum severity to report is major."
+  description = <<-EOT
+  Minimum fault severity level to receive email notifications. Email notifications are sent for all faults whose severity is equal to or greater than the chosen level.
+    * critical - Minimum severity to report is critical.
+    * condition - Minimum severity to report is informational.
+    * warning - Minimum severity to report is warning.
+    * minor - Minimum severity to report is minor.
+    * major - Minimum severity to report is major.
+  EOT
   type        = string
 }
 
@@ -46,7 +53,7 @@ variable "sender_email" {
 
 variable "smtp_port" {
   default     = 25
-  description = "Port number used by the SMTP server for outgoing SMTP communication."
+  description = "Port number used by the SMTP server for outgoing SMTP communication.  Valid range is between 1-65535."
   type        = number
 }
 

@@ -65,7 +65,7 @@ variable "snmp_port" {
 
 variable "snmp_traps" {
   default     = []
-  description = "List of Profiles to Assign to the Policy."
+  description = "List of SNMP Trap Destinations to Assign to the Policy."
   type        = list(map(string))
 }
 
