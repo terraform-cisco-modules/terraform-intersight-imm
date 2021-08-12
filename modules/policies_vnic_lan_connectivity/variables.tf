@@ -46,7 +46,11 @@ variable "placement_mode" {
 
 variable "target_platform" {
   default     = "FIAttached"
-  description = "The platform for which the server profile is applicable. It can either be a server that is operating in 'Standalone' mode or which is attached to a Fabric Interconnect 'FIAttached' managed by Intersight."
+  description = <<-EOT
+  The platform for which the server profile is applicable. It can either be:
+  * Standalone - a server that is operating independently
+  * FIAttached - A Server attached to a Intersight Managed Domain.
+  EOT
   type        = string
 }
 

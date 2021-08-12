@@ -5,11 +5,11 @@
 #____________________________________________________________
 
 resource "intersight_ipmioverlan_policy" "ipmi" {
-  description           = var.description
-  enabled               = var.enabled
-  encryption_key        = var.encryption_key
-  privilege             = var.privilege
-  name                  = var.name
+  description    = var.description
+  enabled        = var.enabled
+  encryption_key = var.encryption_key
+  privilege      = var.privilege
+  name           = var.name
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

@@ -1,9 +1,3 @@
-locals {
-  #  vlan_list = var.list_type == "range" ? [for s in range(var.vlan_start,var.vlan_stop): tonumber(s)] : var.vlan_list
-  vlan_stop = var.list_type == "range" ? var.vlan_stop - 1 : null
-  vlan_list = var.list_type == "range" ? "${var.vlan_start}-${local.vlan_stop}" : join(",", var.vlan_list)
-}
-
 #____________________________________________________________
 #
 # Intersight Ethernet Network Group (VLAN Group) Policy
@@ -19,7 +13,7 @@ resource "intersight_fabric_eth_network_group_policy" "vlan_group" {
   }
   vlan_settings {
     native_vlan   = var.native_vlan
-    allowed_vlans = local.vlan_list
+    allowed_vlans = var.vlan_list
   }
   dynamic "tags" {
     for_each = var.tags

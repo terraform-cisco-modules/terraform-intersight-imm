@@ -43,7 +43,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_burst"></a> [burst](#input\_burst) | The burst traffic, in bytes, allowed on the vNIC.  Value can be between 1024-1000000. | `number` | `1024` | no |
-| <a name="input_cos"></a> [cos](#input\_cos) | Class of Service to be associated to the traffic on the virtual interface.  Value can be between 0-6. | `number` | `0` | no |
+| <a name="input_cos"></a> [cos](#input\_cos) | Class of Service to be associated to the traffic on the virtual interface.  Value can be between 0-6. For FIAttached this should always be 0. | `number` | `0` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
 | <a name="input_mtu"></a> [mtu](#input\_mtu) | The Maximum Transmission Unit (MTU) or packet size that the virtual interface accepts.  Value can be between 1500-9000. | `number` | `1500` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"vnic_qos"` | no |

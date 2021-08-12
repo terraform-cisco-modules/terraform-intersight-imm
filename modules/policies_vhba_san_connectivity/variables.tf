@@ -52,7 +52,11 @@ variable "tags" {
 
 variable "wwnn_address_type" {
   default     = "POOL"
-  description = "Type of allocation selected to assign a WWNN address for the server node.\r\n * POOL - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface.\r\n * STATIC - The user assigns a static mac/wwn address for the Virtual Interface."
+  description = <<-EOT
+  Type of allocation selected to assign a WWNN address for the server node.
+    * POOL - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface.
+    * STATIC - The user assigns a static mac/wwn address for the Virtual Interface.
+  EOT
   type        = string
 }
 

@@ -48,7 +48,7 @@ No modules.
 | <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_retain_policy"></a> [retain\_policy](#input\_retain\_policy) | Retains the virtual drives defined in policy if they exist already. If this flag is false, the existing virtual drives are removed and created again based on virtual drives in the policy. | `bool` | `true` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_unused_disks"></a> [unused\_disks](#input\_unused\_disks) | Unused Disks State is used to specify the state, unconfigured good or jbod, in which the disks that are not used in this policy should be moved.<br> * Jbod - JBOD state where the disks start showing up to host os.<br> * UnconfiguredGood - Unconfigured good state -ready to be added in a RAID group. | `string` | `"UnconfiguredGood"` | no |
+| <a name="input_unused_disks"></a> [unused\_disks](#input\_unused\_disks) | Unused Disks State is used to specify the state, unconfigured good or jbod, in which the disks that are not used in this policy should be moved.<br>* Jbod - JBOD state where the disks start showing up to host os.<br>* UnconfiguredGood - Unconfigured good state -ready to be added in a RAID group. | `string` | `"UnconfiguredGood"` | no |
 | <a name="input_virtual_drives"></a> [virtual\_drives](#input\_virtual\_drives) | List of Properties to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs

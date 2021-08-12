@@ -46,7 +46,7 @@ No modules.
 | <a name="input_description"></a> [description](#input\_description) | Description for the UUID Pool. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the UUID Pool. | `string` | `"uuid_pool"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to assign to the UUID Pool. | `string` | `"123e4567-e89b-42d3"` | no |
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to assign to the UUID Pool. | `string` | `"000025B5-0000-0000"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 | <a name="input_uuid_suffix_blocks"></a> [uuid\_suffix\_blocks](#input\_uuid\_suffix\_blocks) | List of UUID's Suffix Parameters to Assign to the UUID Pool. | `list(map(any))` | `[]` | no |
 

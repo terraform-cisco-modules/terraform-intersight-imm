@@ -27,7 +27,7 @@ variable "user_policy_moid" {
 
 variable "user_role" {
   default     = "readonly"
-  description = "The Role to Assign to the User.  Valid Options are {admin|readonly|user}"
+  description = "The Role to Assign to the User.  Valid Options are {admin|readonly|user}."
   type        = string
 }
 

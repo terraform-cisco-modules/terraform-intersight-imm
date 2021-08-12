@@ -54,5 +54,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_domain_cluster_moid"></a> [domain\_cluster\_moid](#output\_domain\_cluster\_moid) | UCS Server Profile Template Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | UCS Server Profile Template Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -40,7 +40,11 @@ variable "lan_connectivity_moid" {
 
 variable "mac_address_type" {
   default     = "POOL"
-  description = "Type of allocation selected to assign a MAC address for the vnic.\r\n * POOL - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface.\r\n * STATIC - The user assigns a static mac/wwn address for the Virtual Interface."
+  description = <<-EOT
+  Type of allocation selected to assign a MAC address for the vnic.
+  * POOL - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface.
+  * STATIC - The user assigns a static mac/wwn address for the Virtual Interface.
+  EOT
   type        = string
 }
 
@@ -100,13 +104,13 @@ variable "tags" {
 
 variable "usnic_cos" {
   default     = 5
-  description = "Class of Service to be used for traffic on the usNIC."
+  description = "Class of Service to be used for traffic on the usNIC.  Valid Range is 0-6."
   type        = number
 }
 
 variable "usnic_count" {
   default     = 0
-  description = "Number of usNIC interfaces to be created.  Range is 0-255"
+  description = "Number of usNIC interfaces to be created.  Range is 0-255."
   type        = number
 }
 
@@ -162,6 +166,12 @@ variable "vnic_control_moid" {
   type        = string
 }
 
+variable "vnic_name" {
+  default     = "vnic"
+  description = "Name of the virtual ethernet interface."
+  type        = string
+}
+
 variable "vnic_network_moid" {
   default     = []
   description = "A reference to a vnicEthNetworkPolicy resource."
@@ -181,11 +191,5 @@ variable "vnic_order" {
 
 variable "vnic_qos_moid" {
   description = "A reference to a vnicEthQosPolicy resource."
-  type        = string
-}
-
-variable "vnic_name" {
-  default     = "vnic"
-  description = "Name of the virtual ethernet interface."
   type        = string
 }

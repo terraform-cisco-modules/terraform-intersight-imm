@@ -45,7 +45,6 @@ No modules.
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to Enable or Disable the Policy. | `bool` | `true` | no |
 | <a name="input_encryption_key"></a> [encryption\_key](#input\_encryption\_key) | The encryption key to use for IPMI communication. It should have an even number of hexadecimal characters and not exceed 40 characters. | `string` | `""` | no |
-| <a name="input_is_encryption_key_set"></a> [is\_encryption\_key\_set](#input\_is\_encryption\_key\_set) | Indicates whether the value of the 'encryptionKey' property has been set. | `bool` | `false` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"ipmi"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_privilege"></a> [privilege](#input\_privilege) | The highest privilege level that can be assigned to an IPMI session on a server.<br>* admin - Privilege to perform all actions available through IPMI.<br>* user - Privilege to perform some functions through IPMI but restriction on performing administrative tasks.<br>* read-only - Privilege to view information throught IPMI but restriction on making any changes. | `string` | `"admin"` | no |

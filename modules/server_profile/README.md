@@ -52,10 +52,12 @@ No modules.
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 | <a name="input_target_platform"></a> [target\_platform](#input\_target\_platform) | The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight.<br> * FIAttached - Servers which are connected to a Fabric Interconnect that is managed by Intersight.<br> * Standalone - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected. | `string` | `"FIAttached"` | no |
 | <a name="input_type"></a> [type](#input\_type) | Defines the type of the profile. Accepted values are 'instance' or 'template'. | `string` | `"instance"` | no |
+| <a name="input_wait_for_completion"></a> [wait\_for\_completion](#input\_wait\_for\_completion) | This model object can trigger workflows. Use this option to wait for all running workflows to reach a complete state. | `bool` | `false` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_domain_cluster_moid"></a> [domain\_cluster\_moid](#output\_domain\_cluster\_moid) | UCS Server Profile Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | UCS Server Profile Managed Object ID (moid). |
+| <a name="output_name"></a> [name](#output\_name) | UCS Server Profile Name. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

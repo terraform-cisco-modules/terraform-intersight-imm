@@ -11,7 +11,7 @@ variable "burst" {
 
 variable "cos" {
   default     = 0
-  description = "Class of Service to be associated to the traffic on the virtual interface.  Value can be between 0-6."
+  description = "Class of Service to be associated to the traffic on the virtual interface.  Value can be between 0-6. For FIAttached this should always be 0."
   type        = number
 }
 

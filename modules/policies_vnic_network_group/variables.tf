@@ -26,28 +26,10 @@ variable "org_moid" {
   type        = string
 }
 
-variable "list_type" {
-  default     = "list"
-  description = "Variable to Specify if the desire is for a range or list of vlans.  Options are {list|range}"
-  type        = string
-}
-
 variable "vlan_list" {
-  default     = [1, 2, 3, 4, 5]
+  default     = "1-2,4-5"
   description = "List of VLAN's to Add to the VLAN Group Policy.  Use this if list_type is set to \"list\"."
-  type        = list(string)
-}
-
-variable "vlan_start" {
-  default     = 1
-  description = "Staring VLAN ID if list_type is set to \"range\"."
-  type        = number
-}
-
-variable "vlan_stop" {
-  default     = 10
-  description = "Staring VLAN ID if list_type is set to \"range\"."
-  type        = number
+  type        = string
 }
 
 variable "tags" {

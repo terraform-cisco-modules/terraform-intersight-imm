@@ -51,7 +51,7 @@ No modules.
 | <a name="input_placement_mode"></a> [placement\_mode](#input\_placement\_mode) | The mode used for placement of vNICs on network adapters. It can either be auto or custom. | `string` | `"custom"` | no |
 | <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_target_platform"></a> [target\_platform](#input\_target\_platform) | The platform for which the server profile is applicable. It can either be a server that is operating in 'Standalone' mode or which is attached to a Fabric Interconnect 'FIAttached' managed by Intersight. | `string` | `"FIAttached"` | no |
+| <a name="input_target_platform"></a> [target\_platform](#input\_target\_platform) | The platform for which the server profile is applicable. It can either be:<br>* Standalone - a server that is operating independently<br>* FIAttached - A Server attached to a Intersight Managed Domain. | `string` | `"FIAttached"` | no |
 
 ## Outputs
 
