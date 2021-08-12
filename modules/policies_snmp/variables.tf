@@ -40,7 +40,12 @@ variable "profiles" {
 
 variable "snmp_access" {
   default     = "Full"
-  description = "Controls access to the information in the inventory tables. Applicable only for SNMPv1 and SNMPv2c users.\r\n * Disabled - Blocks access to the information in the inventory tables.\r\n * Limited - Partial access to read the information in the inventory tables.\r\n * Full - Full access to read the information in the inventory tables."
+  description = <<-EOT
+  Controls access to the information in the inventory tables. Applicable only for SNMPv1 and SNMPv2c users.
+    * Disabled - Blocks access to the information in the inventory tables.
+    * Full - Full access to read the information in the inventory tables.
+    * Limited - Partial access to read the information in the inventory tables.
+  EOT
   type        = string
 }
 
@@ -65,13 +70,13 @@ variable "snmp_port" {
 
 variable "snmp_traps" {
   default     = []
-  description = "List of Profiles to Assign to the Policy."
+  description = "List of SNMP Trap Destinations to Assign to the Policy."
   type        = list(map(string))
 }
 
 variable "snmp_users" {
   default     = []
-  description = "List of Profiles to Assign to the Policy."
+  description = "List of SNMP Users to Assign to the Policy."
   type        = list(map(string))
 }
 
