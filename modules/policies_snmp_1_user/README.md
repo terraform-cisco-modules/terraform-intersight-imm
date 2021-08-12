@@ -52,7 +52,7 @@ No modules.
 | <a name="input_snmp_community"></a> [snmp\_community](#input\_snmp\_community) | The default SNMPv1, SNMPv2c community name or SNMPv3 username to include on any trap messages sent to the SNMP host. The name can be 18 characters long. | `string` | `""` | no |
 | <a name="input_snmp_engine_id"></a> [snmp\_engine\_id](#input\_snmp\_engine\_id) | Unique string to identify the device for administration purpose. This is generated from the SNMP Input Engine ID if it is already defined, else it is derived from the BMC serial number. | `string` | `""` | no |
 | <a name="input_snmp_port"></a> [snmp\_port](#input\_snmp\_port) | Port on which Cisco IMC SNMP agent runs. Enter a value between 1-65535. Reserved ports not allowed (22, 23, 80, 123, 389, 443, 623, 636, 2068, 3268, 3269).  Default is 161. | `number` | `161` | no |
-| <a name="input_snmp_traps"></a> [snmp\_traps](#input\_snmp\_traps) | List of Profiles to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_snmp_traps"></a> [snmp\_traps](#input\_snmp\_traps) | List of SNMP Trap Destinations to Assign to the Policy. | `list(map(string))` | `[]` | no |
 | <a name="input_system_contact"></a> [system\_contact](#input\_system\_contact) | Contact person responsible for the SNMP implementation. Enter a string up to 64 characters, such as an email address or a name and telephone number. | `string` | `""` | no |
 | <a name="input_system_location"></a> [system\_location](#input\_system\_location) | Location of host on which the SNMP agent (server) runs. | `string` | `""` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |

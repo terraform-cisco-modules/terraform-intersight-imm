@@ -23,7 +23,12 @@ variable "bind_dn" {
 
 variable "bind_method" {
   default     = "LoginCredentials"
-  description = "Authentication method to access LDAP servers.\r\n * Anonymous - Requires no username and password. If this option is selected and the LDAP server is configured for Anonymous logins, then the user gains access.\r\n * ConfiguredCredentials - Requires a known set of credentials to be specified for the initial bind process. If the initial bind process succeeds, then the distinguished name (DN) of the user name is queried and re-used for the re-binding process. If the re-binding process fails, then the user is denied access.\r\n * LoginCredentials - Requires the user credentials. If the bind process fails, then user is denied access."
+  description = <<-EOT
+  Authentication method to access LDAP servers.
+    * Anonymous - Requires no username and password. If this option is selected and the LDAP server is configured for Anonymous logins, then the user gains access.
+    * ConfiguredCredentials - Requires a known set of credentials to be specified for the initial bind process. If the initial bind process succeeds, then the distinguished name (DN) of the user name is queried and re-used for the re-binding process. If the re-binding process fails, then the user is denied access.
+    * LoginCredentials - Requires the user credentials. If the bind process fails, then user is denied access.
+  EOT
   type        = string
 }
 
@@ -89,7 +94,12 @@ variable "nested_group_search_depth" {
 
 variable "nr_source" {
   default     = "Extracted"
-  description = "Source of the domain name used for the DNS SRV request.\r\n * Configured - The configured-search domain.\r\n * ConfiguredExtracted - The domain name extracted from the login ID than the configured-search domain.\r\n * Extracted - The domain name extracted-domain from the login ID."
+  description = <<-EOT
+  Source of the domain name used for the DNS SRV request.
+    * Configured - The configured-search domain.
+    * ConfiguredExtracted - The domain name extracted from the login ID than the configured-search domain.
+    * Extracted - The domain name extracted-domain from the login ID."
+  EOT
   type        = string
 }
 
@@ -137,6 +147,10 @@ variable "timeout" {
 
 variable "user_search_precedence" {
   default     = "LocalUserDb"
-  description = "Search precedence between local user database and LDAP user database.\r\n * LocalUserDb - Precedence is given to local user database while searching.\r\n * LDAPUserDb - Precedence is given to LADP user database while searching."
+  description = <<-EOT
+  Search precedence between local user database and LDAP user database.
+    * LocalUserDb - Precedence is given to local user database while searching.
+    * LDAPUserDb - Precedence is given to LADP user database while searching.
+  EOT
   type        = string
 }

@@ -10,8 +10,8 @@ resource "intersight_memory_persistent_memory_policy" "persistent_memory" {
   name              = var.name
   retain_namespaces = var.retain_namespaces
   goals {
-    object_type            = "memory.PersistentMemoryGoal"
     memory_mode_percentage = var.goals_memory_percentage
+    object_type            = "memory.PersistentMemoryGoal"
     persistent_memory_type = var.goals_persistent_memory_type
     socket_id              = "All Sockets"
   }
