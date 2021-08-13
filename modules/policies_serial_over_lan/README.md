@@ -42,8 +42,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_baud_rate"></a> [baud\_rate](#input\_baud\_rate) | Baud Rate to Assign to the Policy.  Options are {9600\|19200\|38400\|57600\|115200}. | `string` | `9600` | no |
-| <a name="input_com_port"></a> [com\_port](#input\_com\_port) | Communications Port to Assign to the Policy.  Options are {com0\|com1}. | `string` | `"com0"` | no |
+| <a name="input_baud_rate"></a> [baud\_rate](#input\_baud\_rate) | Baud Rate to Assign to the Policy.  Options are:<br>* 9600<br>* 19200<br>* 38400<br>* 57600<br>* 115200 | `string` | `9600` | no |
+| <a name="input_com_port"></a> [com\_port](#input\_com\_port) | Communications Port to Assign to the Policy.  Options are:<br>* com0<br>* com1 | `string` | `"com0"` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to Enable or Disable the Policy. | `bool` | `true` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"sol"` | no |

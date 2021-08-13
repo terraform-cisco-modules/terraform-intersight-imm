@@ -48,7 +48,7 @@ No modules.
 | <a name="input_user_enabled"></a> [user\_enabled](#input\_user\_enabled) | Enables the user account on the endpoint. | `bool` | `true` | no |
 | <a name="input_user_password"></a> [user\_password](#input\_user\_password) | Valid login password of the user. | `string` | n/a | yes |
 | <a name="input_user_policy_moid"></a> [user\_policy\_moid](#input\_user\_policy\_moid) | A reference to a iamEndPointUserPolicy resource. | `string` | n/a | yes |
-| <a name="input_user_role"></a> [user\_role](#input\_user\_role) | The Role to Assign to the User.  Valid Options are {admin\|readonly\|user}. | `string` | `"readonly"` | no |
+| <a name="input_user_role"></a> [user\_role](#input\_user\_role) | The Role to Assign to the User.  Valid Options are:<br>* admin<br>* readonly<br>* user | `string` | `"readonly"` | no |
 | <a name="input_username"></a> [username](#input\_username) | Name of the user to be created on the endpoint. It can be any string that adheres to the following constraints. It can have alphanumeric characters, dots, underscores and hyphen. It cannot be more than 16 characters. | `string` | n/a | yes |
 
 ## Outputs

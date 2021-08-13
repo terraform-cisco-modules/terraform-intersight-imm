@@ -43,7 +43,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_iqn_allocation_type"></a> [iqn\_allocation\_type](#input\_iqn\_allocation\_type) | Allocation Type of iSCSI Qualified Name.  Options are {None\|Pool\|Static}. | `string` | `"None"` | no |
+| <a name="input_iqn_allocation_type"></a> [iqn\_allocation\_type](#input\_iqn\_allocation\_type) | Allocation Type of iSCSI Qualified Name.  Options are:<br>* None<br>* Pool<br>* Static | `string` | `"None"` | no |
 | <a name="input_iqn_pool"></a> [iqn\_pool](#input\_iqn\_pool) | IQN Pool to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_iqn_static_name"></a> [iqn\_static\_name](#input\_iqn\_static\_name) | User provided static iSCSI Qualified Name (IQN) for use as initiator identifiers by iSCSI vNICs. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"lan_connectivity"` | no |

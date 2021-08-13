@@ -44,7 +44,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
 | <a name="input_ip_address"></a> [ip\_address](#input\_ip\_address) | The IPv4 address assigned to the iSCSI target. | `string` | `""` | no |
-| <a name="input_lun"></a> [lun](#input\_lun) | The LUN parameters associated with an iSCSI target. This complex property has following sub-properties:<br> * bootable: Specifies LUN is bootable. true or false.<br> * lun\_id: The Identifier of the LUN. | `list(map(string))` | `[]` | no |
+| <a name="input_lun"></a> [lun](#input\_lun) | The LUN parameters associated with an iSCSI target. This complex property has following sub-properties:<br>* bootable - Specifies LUN is bootable. true or false.<br>* lun\_id - The Identifier of the LUN. | `list(map(string))` | `[]` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"vnic_iscsi_target"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_port"></a> [port](#input\_port) | The port associated with the iSCSI target. | `number` | `0` | no |

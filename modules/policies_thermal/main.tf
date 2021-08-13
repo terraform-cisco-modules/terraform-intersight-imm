@@ -5,9 +5,9 @@
 #____________________________________________________________
 
 resource "intersight_thermal_policy" "thermal" {
-  description         = var.description
-  fan_control_mode    = var.fan_control_mode
-  name                = var.name
+  description      = var.description
+  fan_control_mode = var.fan_control_mode
+  name             = var.name
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

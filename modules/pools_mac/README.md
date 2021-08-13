@@ -42,7 +42,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_assignment_order"></a> [assignment\_order](#input\_assignment\_order) | Assignment order decides the order in which the next identifier is allocated.<br> * sequential - Identifiers are assigned in a sequential order.<br>* default - Assignment order is decided by the system. | `string` | `"default"` | no |
+| <a name="input_assignment_order"></a> [assignment\_order](#input\_assignment\_order) | Assignment order decides the order in which the next identifier is allocated.<br>* sequential - Identifiers are assigned in a sequential order.<br>* default - Assignment order is decided by the system. | `string` | `"default"` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the MAC Address Pool. | `string` | `""` | no |
 | <a name="input_mac_blocks"></a> [mac\_blocks](#input\_mac\_blocks) | List of MAC Address Configuration Parameters to Assign to the MAC Pool. | `list(map(string))` | `[]` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the MAC Pool. | `string` | `"mac_pool"` | no |

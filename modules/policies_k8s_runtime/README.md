@@ -50,12 +50,12 @@ No modules.
 | <a name="input_proxy_http_hostname"></a> [proxy\_http\_hostname](#input\_proxy\_http\_hostname) | Hostname of the HTTP Proxy Server. | `string` | n/a | yes |
 | <a name="input_proxy_http_password"></a> [proxy\_http\_password](#input\_proxy\_http\_password) | Password for the HTTP Proxy Server, If required. | `string` | `""` | no |
 | <a name="input_proxy_http_port"></a> [proxy\_http\_port](#input\_proxy\_http\_port) | HTTP Proxy Port.  Range is 1-65535. | `number` | `8080` | no |
-| <a name="input_proxy_http_protocol"></a> [proxy\_http\_protocol](#input\_proxy\_http\_protocol) | HTTP Proxy Protocol. Options are {http\|https}. | `string` | `"http"` | no |
+| <a name="input_proxy_http_protocol"></a> [proxy\_http\_protocol](#input\_proxy\_http\_protocol) | HTTP Proxy Protocol. Options are:<br>* http<br>* https | `string` | `"http"` | no |
 | <a name="input_proxy_http_username"></a> [proxy\_http\_username](#input\_proxy\_http\_username) | The username for the HTTP Proxy. | `string` | `""` | no |
 | <a name="input_proxy_https_hostname"></a> [proxy\_https\_hostname](#input\_proxy\_https\_hostname) | HTTPS Proxy server FQDN or IP. | `string` | n/a | yes |
 | <a name="input_proxy_https_password"></a> [proxy\_https\_password](#input\_proxy\_https\_password) | Password for the HTTPS Proxy Server, If required. | `string` | `""` | no |
 | <a name="input_proxy_https_port"></a> [proxy\_https\_port](#input\_proxy\_https\_port) | HTTPS Proxy Port.  Range is 1-65535. | `number` | `8443` | no |
-| <a name="input_proxy_https_protocol"></a> [proxy\_https\_protocol](#input\_proxy\_https\_protocol) | HTTPS Proxy Protocol. Options are {http\|https}. | `string` | `"https"` | no |
+| <a name="input_proxy_https_protocol"></a> [proxy\_https\_protocol](#input\_proxy\_https\_protocol) | HTTPS Proxy Protocol. Options are:<br>* http<br>* https | `string` | `"https"` | no |
 | <a name="input_proxy_https_username"></a> [proxy\_https\_username](#input\_proxy\_https\_username) | Username for the HTTPS Proxy Server. | `string` | `""` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of key/value pair Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 

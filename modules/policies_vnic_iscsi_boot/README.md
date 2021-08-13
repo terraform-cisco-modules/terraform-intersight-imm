@@ -47,7 +47,7 @@ No modules.
 | <a name="input_chap_user_id"></a> [chap\_user\_id](#input\_chap\_user\_id) | Chap User Id, if doing chap authentication. | `string` | `""` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
 | <a name="input_initiator_ip_pool"></a> [initiator\_ip\_pool](#input\_initiator\_ip\_pool) | A reference to a ippoolPool resource. | `set(string)` | `[]` | no |
-| <a name="input_initiator_ip_source"></a> [initiator\_ip\_source](#input\_initiator\_ip\_source) | Source Type of Initiator IP Address - DHCP/Static/Pool.<br> * DHCP - The IP address is assigned using DHCP, if available.<br> * Static - Static IPv4 address is assigned to the iSCSI boot interface based on the information entered in this area.<br> * Pool - An IPv4 address is assigned to the iSCSI boot interface from the management IP address pool. | `string` | `"Pool"` | no |
+| <a name="input_initiator_ip_source"></a> [initiator\_ip\_source](#input\_initiator\_ip\_source) | Source Type of Initiator IP Address - DHCP/Static/Pool.<br>* DHCP - The IP address is assigned using DHCP, if available.<br>* Static - Static IPv4 address is assigned to the iSCSI boot interface based on the information entered in this area.<br>* Pool - An IPv4 address is assigned to the iSCSI boot interface from the management IP address pool. | `string` | `"Pool"` | no |
 | <a name="input_initiator_static_gateway"></a> [initiator\_static\_gateway](#input\_initiator\_static\_gateway) | IP address of the default IPv4 gateway. | `string` | `""` | no |
 | <a name="input_initiator_static_ip"></a> [initiator\_static\_ip](#input\_initiator\_static\_ip) | Static IP address provided for iSCSI Initiator. | `string` | `""` | no |
 | <a name="input_initiator_static_netmask"></a> [initiator\_static\_netmask](#input\_initiator\_static\_netmask) | A subnet mask is a 32-bit number that masks an IP address and divides the IP address into network address and host address. | `string` | `""` | no |
@@ -61,7 +61,7 @@ No modules.
 | <a name="input_primary_target_policy"></a> [primary\_target\_policy](#input\_primary\_target\_policy) | A reference to a vnicIscsiStaticTargetPolicy resource. | `set(string)` | `[]` | no |
 | <a name="input_secondary_target_policy"></a> [secondary\_target\_policy](#input\_secondary\_target\_policy) | A reference to a vnicIscsiStaticTargetPolicy resource. | `set(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_target_source_type"></a> [target\_source\_type](#input\_target\_source\_type) | Source Type of Targets - Auto/Static.<br> * Auto - Type indicates that the system selects the target interface automatically during iSCSI boot.<br> * Static - Type indicates that static target interface is assigned to iSCSI boot. | `string` | `"Auto"` | no |
+| <a name="input_target_source_type"></a> [target\_source\_type](#input\_target\_source\_type) | Source Type of Targets - Auto/Static.<br>* Auto - Type indicates that the system selects the target interface automatically during iSCSI boot.<br>* Static - Type indicates that static target interface is assigned to iSCSI boot. | `string` | `"Auto"` | no |
 
 ## Outputs
 

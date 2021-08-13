@@ -43,7 +43,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_group_role"></a> [group\_role](#input\_group\_role) | The Role to Assign to the LDAP Group.  Valid Options are {admin\|readonly\|user} | `string` | `"readonly"` | no |
+| <a name="input_group_role"></a> [group\_role](#input\_group\_role) | The Role to Assign to the LDAP Group.  Valid Options are:<br>* admin<br>* readonly<br>* user | `string` | `"readonly"` | no |
 | <a name="input_ldap_domain"></a> [ldap\_domain](#input\_ldap\_domain) | LDAP server domain the Group resides in. | `string` | `"example.com"` | no |
 | <a name="input_ldap_group"></a> [ldap\_group](#input\_ldap\_group) | LDAP Group name in the LDAP server database. | `string` | n/a | yes |
 | <a name="input_ldap_policy_moid"></a> [ldap\_policy\_moid](#input\_ldap\_policy\_moid) | A reference to a iamLdapPolicy resource. | `string` | n/a | yes |

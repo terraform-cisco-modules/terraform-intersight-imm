@@ -319,9 +319,6 @@ variable "timezone" {
       var.timezone == "Pacific/Wake" ||
       var.timezone == "Pacific/Wallis"
     )
-    error_message = <<-EOT
-    Please Validate that you have input a valid timezone. For a List of supported timezones see the following URL.
-     - https://github.com/terraform-cisco-modules/terraform-intersight-imm/blob/master/modules/policies_ntp/README.md
-    EOT
+    error_message = "Please Validate that you have input a valid timezone. For a List of supported timezones see the following URL.\r\n- https://github.com/terraform-cisco-modules/terraform-intersight-imm/blob/master/modules/policies_ntp/README.md."
   }
 }

@@ -43,7 +43,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_lacp_rate"></a> [lacp\_rate](#input\_lacp\_rate) | Flag used to indicate whether LACP PDUs are to be sent 'fast', i.e., every 1 second.<br> * normal - The normal timeout rate is 30 seconds.<br> * fast - The fast timeout rate is 1 second. | `string` | `"normal"` | no |
+| <a name="input_lacp_rate"></a> [lacp\_rate](#input\_lacp\_rate) | Flag used to indicate whether LACP PDUs are to be sent 'fast', i.e., every 1 second.<br>* normal - The normal timeout rate is 30 seconds.<br>* fast - The fast timeout rate is 1 second. | `string` | `"normal"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"link_aggregation"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_suspend_individual"></a> [suspend\_individual](#input\_suspend\_individual) | Flag tells the switch whether to suspend the port if it didn’t receive LACP PDU. | `bool` | `false` | no |

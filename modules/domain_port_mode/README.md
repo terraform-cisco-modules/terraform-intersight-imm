@@ -42,7 +42,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_custom_mode"></a> [custom\_mode](#input\_custom\_mode) | Custom Port Mode specified for the port range.<br> * FibreChannel - Fibre Channel Port Types.<br> * BreakoutEthernet10G - Breakout Ethernet 10G Port Type.<br> * BreakoutEthernet25G - Breakout Ethernet 25G Port Type. | `string` | `"FibreChannel"` | no |
+| <a name="input_custom_mode"></a> [custom\_mode](#input\_custom\_mode) | Custom Port Mode specified for the port range.<br>* FibreChannel - Fibre Channel Port Types.<br>* BreakoutEthernet10G - Breakout Ethernet 10G Port Type.<br>* BreakoutEthernet25G - Breakout Ethernet 25G Port Type. | `string` | `"FibreChannel"` | no |
 | <a name="input_port_id_end"></a> [port\_id\_end](#input\_port\_id\_end) | Ending range of the Port Identifier. | `number` | `4` | no |
 | <a name="input_port_id_start"></a> [port\_id\_start](#input\_port\_id\_start) | Starting range of the Port Identifier. | `number` | `1` | no |
 | <a name="input_port_policy_moid"></a> [port\_policy\_moid](#input\_port\_policy\_moid) | A reference to a fabricPortPolicy resource. | `string` | n/a | yes |

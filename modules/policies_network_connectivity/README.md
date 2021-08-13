@@ -49,7 +49,7 @@ No modules.
 | <a name="input_ipv6_enable"></a> [ipv6\_enable](#input\_ipv6\_enable) | Flag to Enable or Disable IPv6 on the Policy. | `bool` | `false` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"dns"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_profile_type"></a> [profile\_type](#input\_profile\_type) | Value to Identify the Type of Profile being applied to the policy.  Options are {domain\|server} | `string` | `"server"` | no |
+| <a name="input_profile_type"></a> [profile\_type](#input\_profile\_type) | Value to Identify the Type of Profile being applied to the policy.  Options are:<br>* domain<br>* server | `string` | `"server"` | no |
 | <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 | <a name="input_update_domain"></a> [update\_domain](#input\_update\_domain) | Name of the Domain to Update when using Dynamic DNS for the Policy. | `string` | `""` | no |

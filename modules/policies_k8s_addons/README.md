@@ -43,15 +43,15 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_addon"></a> [addon](#input\_addon) | The Addon to add to this Policy.  Options are:<br> * ccp-monitor<br> * kubernetes-dashboard. | `string` | `""` | no |
+| <a name="input_addon"></a> [addon](#input\_addon) | The Addon to add to this Policy.  Options are:<br>* ccp-monitor<br>* kubernetes-dashboard. | `string` | `""` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_install_strategy"></a> [install\_strategy](#input\_install\_strategy) | Addon install strategy to determine whether an addon is installed if not present.<br> * None - Unspecified install strategy.<br> * NoAction - No install action performed.<br> * InstallOnly - Only install in green field. No action in case of failure or removal.<br> * Always - Attempt install if chart is not already installed. | `string` | `"Always"` | no |
+| <a name="input_install_strategy"></a> [install\_strategy](#input\_install\_strategy) | Addon install strategy to determine whether an addon is installed if not present.<br>* Always - Attempt install if chart is not already installed.<br>* InstallOnly - Only install in green field. No action in case of failure or removal.<br>* NoAction - No install action performed.<br>* None - Unspecified install strategy. | `string` | `"Always"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"k8s_addon"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_release_name"></a> [release\_name](#input\_release\_name) | Name for the helm release. | `string` | `""` | no |
 | <a name="input_release_namespace"></a> [release\_namespace](#input\_release\_namespace) | Namespace for the helm release. | `string` | `""` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of key/value pair Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_upgrade_strategy"></a> [upgrade\_strategy](#input\_upgrade\_strategy) | Addon upgrade strategy to determine whether an addon configuration is overwritten on upgrade.<br> * None - Unspecified upgrade strategy.<br> * NoAction - This choice enables No upgrades to be performed.<br> * UpgradeOnly - Attempt upgrade if chart or overrides options change, no action on upgrade failure.<br> * ReinstallOnFailure - Attempt upgrade first. Remove and install on upgrade failure.<br> * AlwaysReinstall - Always remove older release and reinstall. | `string` | `"UpgradeOnly"` | no |
+| <a name="input_upgrade_strategy"></a> [upgrade\_strategy](#input\_upgrade\_strategy) | Addon upgrade strategy to determine whether an addon configuration is overwritten on upgrade.<br>* AlwaysReinstall - Always remove older release and reinstall.<br>* None - Unspecified upgrade strategy.<br>* NoAction - This choice enables No upgrades to be performed.<br>* ReinstallOnFailure - Attempt upgrade first. Remove and install on upgrade failure.<br>* UpgradeOnly - Attempt upgrade if chart or overrides options change, no action on upgrade failure. | `string` | `"UpgradeOnly"` | no |
 
 ## Outputs
 
