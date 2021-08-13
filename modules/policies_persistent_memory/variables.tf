@@ -19,8 +19,8 @@ variable "goals_persistent_memory_type" {
   default     = "app-direct"
   description = <<-EOT
   Type of the Persistent Memory configuration where the Persistent Memory Modules are combined in an interleaved set or not.
-    * app-direct - The App Direct interleaved Persistent Memory type.
-    * app-direct-non-interleaved - The App Direct non-interleaved Persistent Memory type.
+  * app-direct - The App Direct interleaved Persistent Memory type.
+  * app-direct-non-interleaved - The App Direct non-interleaved Persistent Memory type.
   EOT
   type        = string
 }
@@ -29,8 +29,8 @@ variable "management_mode" {
   default     = "configured-from-intersight"
   description = <<-EOT
   Management Mode of the policy. This can be either Configured from Intersight or Configured from Operating System.
-    * configured-from-intersight - The Persistent Memory Modules are configured from Intersight thorugh Persistent Memory policy.
-    * configured-from-operating-system - The Persistent Memory Modules are configured from operating system thorugh OS tools.
+  * configured-from-intersight - The Persistent Memory Modules are configured from Intersight thorugh Persistent Memory policy.
+  * configured-from-operating-system - The Persistent Memory Modules are configured from operating system thorugh OS tools.
   EOT
   type        = string
 }

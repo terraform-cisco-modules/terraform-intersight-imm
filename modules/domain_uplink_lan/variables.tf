@@ -11,7 +11,12 @@ variable "breakout_sw_port" {
 
 variable "fec" {
   default     = "Auto"
-  description = "Forward error correction configuration for the port.\r\n * Auto - Forward error correction option 'Auto'.\r\n * Cl91 - Forward error correction option 'cl91'.\r\n * Cl74 - Forward error correction option 'cl74'."
+  description = <<-EOT
+  Forward error correction configuration for the port.
+  * Auto - Forward error correction option 'Auto'.
+  * Cl91 - Forward error correction option 'cl91'.
+  * Cl74 - Forward error correction option 'cl74'.
+  EOT
   type        = string
 }
 
@@ -29,7 +34,15 @@ variable "lan_uplink_port_list" {
 
 variable "lan_uplink_speed" {
   default     = "Auto"
-  description = "Admin configured speed for the port.\r\n * Auto - Admin configurable speed AUTO ( default ).\r\n * 1Gbps - Admin configurable speed 1Gbps.\r\n * 10Gbps - Admin configurable speed 10Gbps.\r\n * 25Gbps - Admin configurable speed 25Gbps.\r\n * 40Gbps - Admin configurable speed 40Gbps.\r\n * 100Gbps - Admin configurable speed 100Gbps."
+  description = <<-EOT
+  Admin configured speed for the port.
+  * Auto - Admin configurable speed AUTO ( default ).
+  * 1Gbps - Admin configurable speed 1Gbps.
+  * 10Gbps - Admin configurable speed 10Gbps.
+  * 25Gbps - Admin configurable speed 25Gbps.
+  * 40Gbps - Admin configurable speed 40Gbps.
+  * 100Gbps - Admin configurable speed 100Gbps.
+  EOT
   type        = string
 }
 

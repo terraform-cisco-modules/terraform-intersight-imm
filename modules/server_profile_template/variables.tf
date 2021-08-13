@@ -5,7 +5,12 @@
 
 variable "action" {
   default     = "No-op"
-  description = "Action to Perform on the Switch Profile Assignment.  Options are {Deploy|No-op|Unassign}."
+  description = <<-EOT
+  Action to Perform on the Chassis Profile Assignment.  Options are:
+    * Deploy
+    * No-op
+    * Unassign
+  EOT
   type        = string
 }
 
@@ -34,7 +39,11 @@ variable "policy_bucket" {
 
 variable "target_platform" {
   default     = "FIAttached"
-  description = "The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight.\r\n * FIAttached - Servers which are connected to a Fabric Interconnect that is managed by Intersight.\r\n * Standalone - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected."
+  description = <<-EOT
+  The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight.
+    * FIAttached - Servers which are connected to a Fabric Interconnect that is managed by Intersight.
+    * Standalone - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected.
+  EOT
   type        = string
 }
 

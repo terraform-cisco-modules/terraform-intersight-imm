@@ -25,9 +25,9 @@ variable "placement_switch_id" {
   default     = "None"
   description = <<-EOT
   The fabric port to which the vhbas will be associated.
-    * A - Fabric A of the FI cluster.
-    * B - Fabric B of the FI cluster.
-    * None - Fabric Id is not set to either A or B for the standalone case where the server is not connected to Fabric Interconnects.
+  * A - Fabric A of the FI cluster.
+  * B - Fabric B of the FI cluster.
+  * None - Fabric Id is not set to either A or B for the standalone case where the server is not connected to Fabric Interconnects.
   EOT
   type        = string
 }
@@ -80,17 +80,21 @@ variable "vhba_type" {
   default     = "fc-initiator"
   description = <<-EOT
   VHBA Type configuration for SAN Connectivity Policy. This configuration is supported only on Cisco VIC 14XX series and higher series of adapters.
-    * fc-initiator - The default value set for vHBA Type Configuration. Fc-initiator specifies vHBA as a consumer of storage. Enables SCSI commands to transfer data and status information between host and target storage systems.\
-    * fc-nvme-initiator - Fc-nvme-initiator specifies vHBA as a consumer of storage. Enables NVMe-based message commands to transfer data and status information between host and target storage systems.
-    * fc-nvme-target - Fc-nvme-target specifies vHBA as a provider of storage volumes to initiators. Enables NVMe-based message commands to transfer data and status information between host and target storage systems. Currently tech-preview, only enabled with an asynchronous driver.
-    * fc-target - Fc-target specifies vHBA as a provider of storage volumes to initiators. Enables SCSI commands to transfer data and status information between host and target storage systems. fc-target is enabled only with an asynchronous driver.
+  * fc-initiator - The default value set for vHBA Type Configuration. Fc-initiator specifies vHBA as a consumer of storage. Enables SCSI commands to transfer data and status information between host and target storage systems.\
+  * fc-nvme-initiator - Fc-nvme-initiator specifies vHBA as a consumer of storage. Enables NVMe-based message commands to transfer data and status information between host and target storage systems.
+  * fc-nvme-target - Fc-nvme-target specifies vHBA as a provider of storage volumes to initiators. Enables NVMe-based message commands to transfer data and status information between host and target storage systems. Currently tech-preview, only enabled with an asynchronous driver.
+  * fc-target - Fc-target specifies vHBA as a provider of storage volumes to initiators. Enables SCSI commands to transfer data and status information between host and target storage systems. fc-target is enabled only with an asynchronous driver.
   EOT
   type        = string
 }
 
 variable "wwpn_address_type" {
   default     = "POOL"
-  description = "Type of allocation selected to assign a WWPN address to the vhba.\r\n * POOL - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface.\r\n * STATIC - The user assigns a static mac/wwn address for the Virtual Interface."
+  description = <<-EOT
+  Type of allocation selected to assign a WWPN address to the vhba.
+  * POOL - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface.
+  * STATIC - The user assigns a static mac/wwn address for the Virtual Interface.
+  EOT
   type        = string
 }
 

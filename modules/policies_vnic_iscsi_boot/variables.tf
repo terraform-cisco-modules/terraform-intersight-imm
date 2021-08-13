@@ -36,7 +36,12 @@ variable "initiator_ip_pool" {
 
 variable "initiator_ip_source" {
   default     = "Pool"
-  description = "Source Type of Initiator IP Address - DHCP/Static/Pool.\r\n * DHCP - The IP address is assigned using DHCP, if available.\r\n * Static - Static IPv4 address is assigned to the iSCSI boot interface based on the information entered in this area.\r\n * Pool - An IPv4 address is assigned to the iSCSI boot interface from the management IP address pool."
+  description = <<-EOT
+  Source Type of Initiator IP Address - DHCP/Static/Pool.
+  * DHCP - The IP address is assigned using DHCP, if available.
+  * Static - Static IPv4 address is assigned to the iSCSI boot interface based on the information entered in this area.
+  * Pool - An IPv4 address is assigned to the iSCSI boot interface from the management IP address pool.
+  EOT
   type        = string
 }
 
@@ -120,6 +125,10 @@ variable "tags" {
 
 variable "target_source_type" {
   default     = "Auto"
-  description = "Source Type of Targets - Auto/Static.\r\n * Auto - Type indicates that the system selects the target interface automatically during iSCSI boot.\r\n * Static - Type indicates that static target interface is assigned to iSCSI boot."
+  description = <<-EOT
+  Source Type of Targets - Auto/Static.
+  * Auto - Type indicates that the system selects the target interface automatically during iSCSI boot.
+  * Static - Type indicates that static target interface is assigned to iSCSI boot.
+  EOT
   type        = string
 }

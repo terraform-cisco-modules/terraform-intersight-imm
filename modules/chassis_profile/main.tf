@@ -1,10 +1,10 @@
 #____________________________________________________________
 #
-# Intersight UCS Server Profile Resource
-# GUI Location: Profiles > UCS Server Profile > Create
+# Intersight UCS Chassis Profile Resource
+# GUI Location: Profiles > UCS Chassis Profile > Create
 #____________________________________________________________
 
-resource "intersight_server_profile" "server_profile" {
+resource "intersight_chassis_profile" "chassis_profile" {
   action              = var.action
   description         = var.description
   name                = var.name
@@ -15,11 +15,11 @@ resource "intersight_server_profile" "server_profile" {
     object_type = "organization.Organization"
     moid        = var.org_moid
   }
-  dynamic "assigned_server" {
-    for_each = var.assigned_server
+  dynamic "assigned_chassis" {
+    for_each = var.assigned_chassis
     content {
-      moid        = assigned_server.value.moid
-      object_type = assigned_server.value.object_type
+      moid        = assigned_chassis.value.moid
+      object_type = assigned_chassis.value.object_type
     }
   }
   dynamic "policy_bucket" {

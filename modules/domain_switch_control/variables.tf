@@ -11,7 +11,12 @@ variable "description" {
 
 variable "mac_aging_option" {
   default     = "Default"
-  description = "his specifies one of the option to configure the MAC address aging time.\r\n * Default - This option sets the default MAC address aging time to 14500 seconds for End Host mode.\r\n * Custom - This option allows the the user to configure the MAC address aging time on the switch. For Switch Model UCS-FI-6454 or higher, the valid range is 120 to 918000 seconds and the switch will set the lower multiple of 5 of the given time.\r\n * Never - This option disables the MAC address aging process and never allows the MAC address entries to get removed from the table."
+  description = <<-EOT
+  his specifies one of the option to configure the MAC address aging time.
+  * Custom - This option allows the the user to configure the MAC address aging time on the switch. For Switch Model UCS-FI-6454 or higher, the valid range is 120 to 918000 seconds and the switch will set the lower multiple of 5 of the given time.
+  * Default - This option sets the default MAC address aging time to 14500 seconds for End Host mode.
+  * Never - This option disables the MAC address aging process and never allows the MAC address entries to get removed from the table.
+  EOT
   type        = string
 }
 
@@ -52,7 +57,11 @@ variable "udld_message_interval" {
 
 variable "udld_recovery_action" {
   default     = "none"
-  description = "UDLD recovery when enabled, attempts to bring an UDLD error-disabled port out of reset.\r\n * none - No action is taken when a port has been disabled.\r\n * reset - The switch will attempt to bring a UDLD error-disabled port back online."
+  description = <<-EOT
+  UDLD recovery when enabled, attempts to bring an UDLD error-disabled port out of reset.
+  * none - No action is taken when a port has been disabled.
+  * reset - The switch will attempt to bring a UDLD error-disabled port back online.
+  EOT
   type        = string
 }
 

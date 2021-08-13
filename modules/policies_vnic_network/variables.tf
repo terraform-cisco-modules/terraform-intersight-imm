@@ -34,7 +34,11 @@ variable "org_moid" {
 
 variable "mode" {
   default     = "TRUNK"
-  description = "Option to determine if the port can carry single VLAN (Access) or multiple VLANs (Trunk) traffic.\r\n * ACCESS - An access port carries traffic only for a single VLAN on the interface.\r\n * TRUNK - A trunk port can have two or more VLANs configured on the interface. It can carry traffic for several VLANs simultaneously."
+  description = <<-EOT
+  Option to determine if the port can carry single VLAN (Access) or multiple VLANs (Trunk) traffic.
+  * ACCESS - An access port carries traffic only for a single VLAN on the interface.
+  * TRUNK - A trunk port can have two or more VLANs configured on the interface. It can carry traffic for several VLANs simultaneously.
+  EOT
   type        = string
 }
 

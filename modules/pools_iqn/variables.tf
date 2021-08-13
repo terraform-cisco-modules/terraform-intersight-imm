@@ -5,7 +5,11 @@
 
 variable "assignment_order" {
   default     = "default"
-  description = "Assignment order decides the order in which the next identifier is allocated.\r\n * sequential - Identifiers are assigned in a sequential order.\r\n* default - Assignment order is decided by the system."
+  description = <<-EOT
+  Assignment order decides the order in which the next identifier is allocated.
+  * sequential - Identifiers are assigned in a sequential order.
+  * default - Assignment order is decided by the system.
+  EOT
   type        = string
 }
 
@@ -23,7 +27,12 @@ variable "iqn_prefix" {
 
 variable "iqn_suffix_blocks" {
   default     = []
-  description = "List of IQN Pool Parameters to Assign to the IQN Pool.\r\n * from: Starting IQN Address.\r\n * size: Size of the IQN Pool.\r\n * suffix: Suffix to assign to the IQN Pool."
+  description = <<-EOT
+  List of IQN Pool Parameters to Assign to the IQN Pool.
+  * from: Starting IQN Address.
+  * size: Size of the IQN Pool.
+  * suffix: Suffix to assign to the IQN Pool.
+  EOT
   type        = list(map(string))
 }
 

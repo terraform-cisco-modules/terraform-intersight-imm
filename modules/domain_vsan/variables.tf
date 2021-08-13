@@ -5,7 +5,11 @@
 
 variable "default_zoning" {
   default     = "Disabled"
-  description = "Enables or Disables the default zoning state.\r\n * Enabled - Admin configured Enabled State.\r\n * Disabled - Admin configured Disabled State."
+  description = <<-EOT
+  Enables or Disables the default zoning state.
+  * Enabled - Admin configured Enabled State.
+  * Disabled - Admin configured Disabled State.
+  EOT
   type        = string
 }
 

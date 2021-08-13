@@ -51,7 +51,12 @@ variable "name" {
 
 variable "node_type" {
   default     = "Worker"
-  description = "he node type ControlPlane, Worker or ControlPlaneWorker.\r\n * ControlPlane - Node will be marked as a control plane node.\r\n * ControlPlaneWorker - Node will be both a controle plane and a worker.\r\n * Worker - Node will be marked as a worker node."
+  description = <<-EOT
+  The node type ControlPlane, Worker or ControlPlaneWorker.
+  * ControlPlane - Node will be marked as a control plane node.
+  * ControlPlaneWorker - Node will be both a controle plane and a worker.
+  * Worker - Node will be marked as a worker node.
+  EOT
   type        = string
 }
 

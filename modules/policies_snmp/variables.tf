@@ -28,7 +28,12 @@ variable "org_moid" {
 
 variable "profile_type" {
   default     = "server"
-  description = "Value to Identify the Type of Profile being applied to the policy.  Options are {chassis|domain|server}"
+  description = <<-EOT
+  Value to Identify the Type of Profile being applied to the policy.  Options are:
+  * chassis
+  * domain
+  * server
+  EOT
   type        = string
 }
 
@@ -42,9 +47,9 @@ variable "snmp_access" {
   default     = "Full"
   description = <<-EOT
   Controls access to the information in the inventory tables. Applicable only for SNMPv1 and SNMPv2c users.
-    * Disabled - Blocks access to the information in the inventory tables.
-    * Full - Full access to read the information in the inventory tables.
-    * Limited - Partial access to read the information in the inventory tables.
+  * Disabled - Blocks access to the information in the inventory tables.
+  * Full - Full access to read the information in the inventory tables.
+  * Limited - Partial access to read the information in the inventory tables.
   EOT
   type        = string
 }

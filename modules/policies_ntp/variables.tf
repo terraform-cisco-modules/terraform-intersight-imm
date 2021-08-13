@@ -41,7 +41,11 @@ variable "org_moid" {
 
 variable "profile_type" {
   default     = "server"
-  description = "Value to Identify the Type of Profile being applied to the policy.  Options are {domain|server}"
+  description = <<-EOT
+  Value to Identify the Type of Profile being applied to the policy.  Options are:
+  * domain
+  * server
+  EOT
   type        = string
 }
 
@@ -315,6 +319,9 @@ variable "timezone" {
       var.timezone == "Pacific/Wake" ||
       var.timezone == "Pacific/Wallis"
     )
-    error_message = "Please Validate that you have input a valid timezone. For a List of supported timezones see the following URL.\r\n https://github.com/terraform-cisco-modules/terraform-intersight-imm/blob/master/modules/policies_ntp/README.md."
+    error_message = <<-EOT
+    Please Validate that you have input a valid timezone. For a List of supported timezones see the following URL.
+     - https://github.com/terraform-cisco-modules/terraform-intersight-imm/blob/master/modules/policies_ntp/README.md
+    EOT
   }
 }

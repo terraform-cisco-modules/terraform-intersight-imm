@@ -5,13 +5,24 @@
 
 variable "baud_rate" {
   default     = 9600
-  description = "Baud Rate to Assign to the Policy.  Options are {9600|19200|38400|57600|115200}."
+  description = <<-EOT
+  Baud Rate to Assign to the Policy.  Options are:
+  * 9600
+  * 19200
+  * 38400
+  * 57600
+  * 115200
+  EOT
   type        = string
 }
 
 variable "com_port" {
   default     = "com0"
-  description = "Communications Port to Assign to the Policy.  Options are {com0|com1}."
+  description = <<-EOT
+  Communications Port to Assign to the Policy.  Options are:
+  * com0
+  * com1
+  EOT
   type        = string
 }
 

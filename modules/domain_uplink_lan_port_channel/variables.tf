@@ -29,7 +29,15 @@ variable "lan_uplink_pc_id" {
 
 variable "lan_uplink_speed" {
   default     = "Auto"
-  description = "Admin configured speed for the port.\r\n * Auto - Admin configurable speed AUTO ( default ).\r\n * 1Gbps - Admin configurable speed 1Gbps.\r\n * 10Gbps - Admin configurable speed 10Gbps.\r\n * 25Gbps - Admin configurable speed 25Gbps.\r\n * 40Gbps - Admin configurable speed 40Gbps.\r\n * 100Gbps - Admin configurable speed 100Gbps."
+  description = <<-EOT
+  Admin configured speed for the port.
+  * Auto - Admin configurable speed AUTO ( default ).
+  * 1Gbps - Admin configurable speed 1Gbps.
+  * 10Gbps - Admin configurable speed 10Gbps.
+  * 25Gbps - Admin configurable speed 25Gbps.
+  * 40Gbps - Admin configurable speed 40Gbps.
+  * 100Gbps - Admin configurable speed 100Gbps.
+  EOT
   type        = string
 }
 

@@ -24,7 +24,12 @@ variable "encryption_key" {
 
 variable "privilege" {
   default     = "admin"
-  description = "The highest privilege level that can be assigned to an IPMI session on a server.\r\n* admin - Privilege to perform all actions available through IPMI.\r\n* user - Privilege to perform some functions through IPMI but restriction on performing administrative tasks.\r\n* read-only - Privilege to view information throught IPMI but restriction on making any changes."
+  description = <<-EOT
+  The highest privilege level that can be assigned to an IPMI session on a server.
+  * admin - Privilege to perform all actions available through IPMI.
+  * user - Privilege to perform some functions through IPMI but restriction on performing administrative tasks.
+  * read-only - Privilege to view information throught IPMI but restriction on making any changes.
+  EOT
   type        = string
 }
 

@@ -1,16 +1,13 @@
 #____________________________________________________________
 #
-# Intersight Power Policy
-# GUI Location: Configure > Policies > Create Policy > Power
+# Intersight Thermal Policy
+# GUI Location: Configure > Policies > Create Policy > Thermal
 #____________________________________________________________
 
-resource "intersight_power_policy" "power" {
-  allocated_budget    = var.allocated_budget
+resource "intersight_thermal_policy" "thermal" {
   description         = var.description
+  fan_control_mode    = var.fan_control_mode
   name                = var.name
-  power_profiling     = var.power_profiling
-  power_restore_state = var.power_restore_state
-  redundancy_mode     = var.redundancy_mode
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
@@ -19,7 +16,7 @@ resource "intersight_power_policy" "power" {
     for_each = var.profiles
     content {
       moid        = profiles.value
-      object_type = var.profile_type == "chassis" ? "chassis.Profile" : "server.Profile"
+      object_type = "chassis.Profile"
     }
   }
   dynamic "tags" {

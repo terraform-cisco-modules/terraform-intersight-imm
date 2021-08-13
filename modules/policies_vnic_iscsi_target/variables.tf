@@ -23,7 +23,11 @@ variable "name" {
 
 variable "lun" {
   default     = []
-  description = "The LUN parameters associated with an iSCSI target. This complex property has following sub-properties:\r\n * bootable: Specifies LUN is bootable. true or false.\r\n * lun_id: The Identifier of the LUN."
+  description = <<-EOT
+  The LUN parameters associated with an iSCSI target. This complex property has following sub-properties:
+  * bootable - Specifies LUN is bootable. true or false.
+  * lun_id - The Identifier of the LUN.
+  EOT
   type        = list(map(string))
 }
 

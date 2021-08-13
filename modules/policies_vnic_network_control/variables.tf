@@ -17,7 +17,11 @@ variable "description" {
 
 variable "forge_mac" {
   default     = "allow"
-  description = "Determines if the MAC forging is allowed or denied on an interface.  Options are {allow|deny}."
+  description = <<-EOT
+  Determines if the MAC forging is allowed or denied on an interface.  Options are:
+  * allow
+  * deny
+  EOT
   type        = string
 }
 
@@ -35,7 +39,11 @@ variable "lldp_transmit" {
 
 variable "mac_registration_mode" {
   default     = "nativeVlanOnly"
-  description = "Determines the MAC addresses that have to be registered with the switch.  Options are {allVlans|nativeVlanOnly}."
+  description = <<-EOT
+  Determines the MAC addresses that have to be registered with the switch.  Options are:
+  allVlans
+  nativeVlanOnly
+  EOT
   type        = string
 }
 
@@ -47,7 +55,12 @@ variable "name" {
 
 variable "uplink_fail_action" {
   default     = "linkDown"
-  description = "Determines the state of the virtual interface (vethernet / vfc) on the switch when a suitable uplink is not pinned.  Options are {linkDown|warning}.  Important! If the Action on Uplink is set to Warning, the switch will not fail over if uplink connectivity is lost."
+  description = <<-EOT
+  Determines the state of the virtual interface (vethernet / vfc) on the switch when a suitable uplink is not pinned.  Options are:
+  * linkDown
+  * warning
+  Important! If the Action on Uplink is set to Warning, the switch will not fail over if uplink connectivity is lost.
+  EOT
   type        = string
 }
 

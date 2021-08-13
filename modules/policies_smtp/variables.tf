@@ -19,11 +19,11 @@ variable "min_severity" {
   default     = "critical"
   description = <<-EOT
   Minimum fault severity level to receive email notifications. Email notifications are sent for all faults whose severity is equal to or greater than the chosen level.
-    * critical - Minimum severity to report is critical.
-    * condition - Minimum severity to report is informational.
-    * warning - Minimum severity to report is warning.
-    * minor - Minimum severity to report is minor.
-    * major - Minimum severity to report is major.
+  * critical - Minimum severity to report is critical.
+  * condition - Minimum severity to report is informational.
+  * warning - Minimum severity to report is warning.
+  * minor - Minimum severity to report is minor.
+  * major - Minimum severity to report is major.
   EOT
   type        = string
 }

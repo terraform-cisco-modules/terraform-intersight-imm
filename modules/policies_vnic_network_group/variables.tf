@@ -28,7 +28,7 @@ variable "org_moid" {
 
 variable "vlan_list" {
   default     = "1-2,4-5"
-  description = "List of VLAN's to Add to the VLAN Group Policy.  Use this if list_type is set to \"list\"."
+  description = "List of VLAN's to Add to the VLAN Group Policy."
   type        = string
 }
 

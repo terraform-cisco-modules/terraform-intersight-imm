@@ -29,7 +29,15 @@ variable "mtu" {
 
 variable "priority" {
   default     = "Best Effort"
-  description = "The priortity matching the System QoS specified in the fabric profile.  Options are {Platinum|Gold|Silver|Bronze|Best Effort|FC}."
+  description = <<-EOT
+  The priortity matching the System QoS specified in the fabric profile.  Options are:
+  * Platinum
+  * Gold
+  * Silver
+  * Bronze
+  * Best Effort
+  * FC
+  EOT
   type        = string
 }
 

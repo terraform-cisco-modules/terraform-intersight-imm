@@ -1,22 +1,15 @@
 #____________________________________________________________
 #
-# Optional Variables is an experimental attribute.
-# Turning on experimental features until this is
-# supported by default.
-#____________________________________________________________
-
-# terraform {
-#   experiments = [module_variable_optional_attrs]
-# }
-
-#____________________________________________________________
-#
 # Fibre-Channel Variables Section.
 #____________________________________________________________
 
 variable "assignment_order" {
   default     = "default"
-  description = "Assignment order decides the order in which the next identifier is allocated.\r\n * sequential - Identifiers are assigned in a sequential order.\r\n* default - Assignment order is decided by the system."
+  description = <<-EOT
+  Assignment order decides the order in which the next identifier is allocated.
+  * sequential - Identifiers are assigned in a sequential order.
+  * default - Assignment order is decided by the system.
+  EOT
   type        = string
 }
 

@@ -11,7 +11,12 @@ variable "description" {
 
 variable "device_model" {
   default     = "UCS-FI-6454"
-  description = "This field specifies the device model that this Port Policy is being configured for.\r\n * UCS-FI-6454 - The standard 4th generation UCS Fabric Interconnect with 54 ports.\r\n * UCS-FI-64108 - The expanded 4th generation UCS Fabric Interconnect with 108 ports.\r\n * unknown - Unknown device type, usage is TBD."
+  description = <<-EOT
+  This field specifies the device model that this Port Policy is being configured for.
+  * UCS-FI-6454 - The standard 4th generation UCS Fabric Interconnect with 54 ports.
+  * UCS-FI-64108 - The expanded 4th generation UCS Fabric Interconnect with 108 ports.
+  * unknown - Unknown device type, usage is TBD.
+  EOT
   type        = string
 }
 

@@ -1,33 +1,33 @@
 #____________________________________________________________
 #
-# UCS Server Profile Variables Section.
+# UCS Chassis Profile Variables Section.
 #____________________________________________________________
 
 variable "action" {
   default     = "No-op"
   description = <<-EOT
   Action to Perform on the Chassis Profile Assignment.  Options are:
-    * Deploy
-    * No-op
-    * Unassign
+  * Deploy
+  * No-op
+  * Unassign
   EOT
   type        = string
 }
 
-variable "assigned_server" {
+variable "assigned_chassis" {
   default     = []
-  description = "A reference to a computePhysical resource."
+  description = "A reference to a equipmentChassis resource."
   type        = list(map(string))
 }
 
 variable "description" {
   default     = ""
-  description = "Description for the Policy."
+  description = "Description for the Profile."
   type        = string
 }
 
 variable "name" {
-  default     = "server_profile"
+  default     = "chassis_profile"
   description = "Name for the Profile."
   type        = string
 }
@@ -58,9 +58,8 @@ variable "tags" {
 variable "target_platform" {
   default     = "FIAttached"
   description = <<-EOT
-  The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight.
-    * FIAttached - Servers which are connected to a Fabric Interconnect that is managed by Intersight.
-    * Standalone - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected.
+  The platform for which the chassis profile is applicable. It can either be a chassis that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight.
+  * FIAttached - Chassis which are connected to a Fabric Interconnect that is managed by Intersight.
   EOT
   type        = string
 }
@@ -69,8 +68,8 @@ variable "type" {
   default     = "instance"
   description = <<-EOT
   Defines the type of the profile. Accepted values are:
-    * instance
-    * template
+  * instance
+  * template
   EOT
   type        = string
 }

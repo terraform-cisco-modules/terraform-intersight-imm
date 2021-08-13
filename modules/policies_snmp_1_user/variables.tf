@@ -28,7 +28,12 @@ variable "org_moid" {
 
 variable "profile_type" {
   default     = "server"
-  description = "Value to Identify the Type of Profile being applied to the policy.  Options are {chassis|domain|server}"
+  description = <<-EOT
+  Value to Identify the Type of Profile being applied to the policy.  Options are:
+  * chassis
+  * domain
+  * server
+  EOT
   type        = string
 }
 
@@ -40,7 +45,12 @@ variable "profiles" {
 
 variable "snmp_access" {
   default     = "Full"
-  description = "Controls access to the information in the inventory tables. Applicable only for SNMPv1 and SNMPv2c users.\r\n * Disabled - Blocks access to the information in the inventory tables.\r\n * Limited - Partial access to read the information in the inventory tables.\r\n * Full - Full access to read the information in the inventory tables."
+  description = <<-EOT
+  Controls access to the information in the inventory tables. Applicable only for SNMPv1 and SNMPv2c users.
+  * Disabled - Blocks access to the information in the inventory tables.
+  * Limited - Partial access to read the information in the inventory tables.
+  * Full - Full access to read the information in the inventory tables.
+  EOT
   type        = string
 }
 
@@ -115,7 +125,17 @@ variable "user_1_auth_password" {
 
 variable "user_1_auth_type" {
   default     = "SHA"
-  description = "Authorization protocol for authenticating the user.  Currently Options are {MD5|SHA}.  In the future these options will be added.\r\n * NA - Authentication protocol is not applicable.\r\n * MD5 - MD5 protocol is used to authenticate SNMP user.\r\n * SHA - SHA protocol is used to authenticate SNMP user.\r\n * SHA-224 - SHA-224 protocol is used to authenticate SNMP user.\r\n * SHA-256 - SHA-256 protocol is used to authenticate SNMP user.\r\n * SHA-384 - SHA-384 protocol is used to authenticate SNMP user.\r\n * SHA-512 - SHA-512 protocol is used to authenticate SNMP user."
+  description = <<-EOT
+  Authorization protocol for authenticating the user.  Currently Options are:
+  * MD5
+  * SHA
+  In the future these options will be added.
+  * NA - Authentication protocol is not applicable.
+  * SHA-224 - SHA-224 protocol is used to authenticate SNMP user.
+  * SHA-256 - SHA-256 protocol is used to authenticate SNMP user.
+  * SHA-384 - SHA-384 protocol is used to authenticate SNMP user.
+  * SHA-512 - SHA-512 protocol is used to authenticate SNMP user.
+  EOT
   type        = string
 }
 
@@ -133,7 +153,11 @@ variable "user_1_privacy_password" {
 
 variable "user_1_security_level" {
   default     = "AuthPriv"
-  description = "Security mechanism used for communication between agent and manager.\r\n * AuthNoPriv - The user requires an authorization password but not a privacy password.\r\n * AuthPriv - The user requires both an authorization password and a privacy password.\r\n * NoAuthNoPriv - The user does not require an authorization or privacy password."
+  description = <<-EOT
+  Security mechanism used for communication between agent and manager.
+  * AuthNoPriv - The user requires an authorization password but not a privacy password.
+  * AuthPriv - The user requires both an authorization password and a privacy password.
+  * NoAuthNoPriv - The user does not require an authorization or privacy password.
+  EOT
   type        = string
 }
-

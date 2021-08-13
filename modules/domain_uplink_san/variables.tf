@@ -11,7 +11,11 @@ variable "breakout_sw_port" {
 
 variable "fill_pattern" {
   default     = "Idle"
-  description = "Fill pattern to differentiate the configs in NPIV.\r\n * Idle - Fc Fill Pattern type Idle.\r\n * Arbff - Fc Fill Pattern type Arbff."
+  description = <<-EOT
+  Fill pattern to differentiate the configs in NPIV.
+  * Arbff - Fc Fill Pattern type Arbff.
+  * Idle - Fc Fill Pattern type Idle.
+  EOT
   type        = string
 }
 
@@ -23,7 +27,13 @@ variable "san_uplink_port_list" {
 
 variable "san_uplink_speed" {
   default     = "16Gbps"
-  description = "Admin configured speed for the port.\r\n * Auto - Admin configurable speed AUTO ( default ).\r\n * 8Gbps - Admin configurable speed 8Gbps.\r\n * 16Gbps - Admin configurable speed 16Gbps.\r\n * 32Gbps - Admin configurable speed 32Gbps."
+  description = <<-EOT
+  Admin configured speed for the port.
+  * Auto - Admin configurable speed AUTO ( default ).
+  * 8Gbps - Admin configurable speed 8Gbps.
+  * 16Gbps - Admin configurable speed 16Gbps.
+  * 32Gbps - Admin configurable speed 32Gbps.
+  EOT
   type        = string
 }
 

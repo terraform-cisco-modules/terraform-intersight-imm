@@ -22,7 +22,11 @@ variable "org_moid" {
 
 variable "profile_type" {
   default     = "server"
-  description = "Value to Identify the Type of Profile being applied to the policy.  Options are {domain|server}"
+  description = <<-EOT
+  Value to Identify the Type of Profile being applied to the policy.  Options are:
+  * domain
+  * server
+  EOT
   type        = string
 }
 

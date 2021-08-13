@@ -11,7 +11,12 @@ variable "description" {
 
 variable "iqn_allocation_type" {
   default     = "None"
-  description = "Allocation Type of iSCSI Qualified Name.  Options are {None|Pool|Static}."
+  description = <<-EOT
+  Allocation Type of iSCSI Qualified Name.  Options are:
+  * None
+  * Pool
+  * Static
+  EOT
   type        = string
 }
 

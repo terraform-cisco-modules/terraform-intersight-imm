@@ -23,7 +23,11 @@ variable "cidr_service" {
 
 variable "cni_type" {
   default     = "Calico"
-  description = "Supported CNI type. Currently we only support Calico.\r\n* Calico - Calico CNI plugin as described in https://github.com/projectcalico/cni-plugin.\r\n* Aci - Cisco ACI Container Network Interface plugin."
+  description = <<-EOT
+  Supported CNI type. Currently we only support Calico.
+  * Calico - Calico CNI plugin as described in https://github.com/projectcalico/cni-plugin.
+  * Aci - Cisco ACI Container Network Interface plugin.
+  EOT
   type        = string
 }
 

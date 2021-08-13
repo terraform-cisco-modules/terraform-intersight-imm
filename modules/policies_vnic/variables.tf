@@ -11,7 +11,11 @@ variable "cdn_name" {
 
 variable "cdn_source" {
   default     = "vnic"
-  description = "Source of the CDN. It can either be user specified or be the same as the vNIC name.\r\n * user - Source of the CDN is specified by the user.\r\n * vnic - Source of the CDN is the same as the vNIC name."
+  description = <<-EOT
+  Source of the CDN. It can either be user specified or be the same as the vNIC name.
+  * user - Source of the CDN is specified by the user.
+  * vnic - Source of the CDN is the same as the vNIC name.
+  EOT
   type        = string
 }
 
@@ -74,7 +78,12 @@ variable "placement_slot_id" {
 
 variable "placement_switch_id" {
   default     = "None"
-  description = "The fabric port to which the vNICs will be associated.\r\n * A - Fabric A of the FI cluster.\r\n * B - Fabric B of the FI cluster.\r\n * None - Fabric Id is not set to either A or B for the standalone case where the server is not connected to Fabric Interconnects. The value 'None' should be used."
+  description = <<-EOT
+  The fabric port to which the vNICs will be associated.
+  * A - Fabric A of the FI cluster.
+  * B - Fabric B of the FI cluster.
+  * None - Fabric Id is not set to either A or B for the standalone case where the server is not connected to Fabric Interconnects. The value 'None' should be used.
+  EOT
   type        = string
 }
 

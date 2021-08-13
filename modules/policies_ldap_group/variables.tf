@@ -5,7 +5,12 @@
 
 variable "group_role" {
   default     = "readonly"
-  description = "The Role to Assign to the LDAP Group.  Valid Options are {admin|readonly|user}"
+  description = <<-EOT
+  The Role to Assign to the LDAP Group.  Valid Options are:
+  * admin
+  * readonly
+  * user
+  EOT
   type        = string
 }
 

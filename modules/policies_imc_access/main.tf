@@ -25,7 +25,7 @@ resource "intersight_access_policy" "imc_access" {
     for_each = var.profiles
     content {
       moid        = profiles.value
-      object_type = var.profile_type == "domain" ? "chassis.Profile" : "server.Profile"
+      object_type = var.profile_type == "chassis" ? "chassis.Profile" : var.profile_type == "domain" ? "fabric.SwitchProfile" : "server.Profile"
     }
   }
   dynamic "tags" {

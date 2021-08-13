@@ -41,7 +41,11 @@ variable "geneve_enabled" {
 
 variable "interrupt_coalescing_type" {
   default     = "MIN"
-  description = "Interrupt Coalescing Type. This can be one of the following:- MIN - The system waits for the time specified in the Coalescing Time field before sending another interrupt event IDLE - The system does not send an interrupt until there is a period of no activity lasting as least as long as the time specified in the Coalescing Time field.  Options are {IDLE|MIN}."
+  description = <<-EOT
+  Interrupt Coalescing Type. This can be one of the following:- MIN - The system waits for the time specified in the Coalescing Time field before sending another interrupt event IDLE - The system does not send an interrupt until there is a period of no activity lasting as least as long as the time specified in the Coalescing Time field.  Options are:
+  * IDLE
+  * MIN
+  EOT
   type        = string
 }
 
@@ -53,7 +57,13 @@ variable "interrupt_interrupts" {
 
 variable "interrupt_mode" {
   default     = "MSIx"
-  description = "The preferred driver interrupt mode. This can be one of the following:- MSIx - Message Signaled Interrupts (MSI) with the optional extension. MSI - MSI only. INTx - PCI INTx interrupts. MSIx is the recommended option.\r\n * INTx - Line-based interrupt (INTx) mechanism similar to the one used in Legacy systems.\r\n * MSI - Message Signaled Interrupt (MSI) mechanism that treats messages as interrupts.\r\n * MSIx - Message Signaled Interrupt (MSI) mechanism with the optional extension (MSIx). MSIx is the recommended and default option."
+  description = <<-EOT
+  The preferred driver interrupt mode. This can be one of the following:
+  * INTx - Line-based interrupt (INTx) mechanism similar to the one used in Legacy systems.
+  * MSI - Message Signaled Interrupt (MSI) mechanism that treats messages as interrupts.
+  * MSIx - Message Signaled Interrupt (MSI) mechanism with the optional extension (MSIx).
+  MSIx is the recommended and default option.
+  EOT
   type        = string
 }
 
@@ -94,7 +104,14 @@ variable "receive_side_scaling" {
 
 variable "roce_cos" {
   default     = 5
-  description = "The Class of Service for RoCE on this virtual interface.  Options are {1|2|4|5|6}."
+  description = <<-EOT
+  The Class of Service for RoCE on this virtual interface.  Options are:
+  * 1
+  * 2
+  * 4
+  * 5
+  * 6
+  EOT
   type        = number
 }
 
@@ -124,7 +141,11 @@ variable "roce_resource_groups" {
 
 variable "roce_version" {
   default     = 1
-  description = "Configure RDMA over Converged Ethernet (RoCE) version on the virtual interface. Only RoCEv1 is supported on Cisco VIC 13xx series adapters and only RoCEv2 is supported on Cisco VIC 14xx series adapters.  Options are 1 or 2."
+  description = <<-EOT
+  Configure RDMA over Converged Ethernet (RoCE) version on the virtual interface. Only RoCEv1 is supported on Cisco VIC 13xx series adapters and only RoCEv2 is supported on Cisco VIC 14xx series adapters.  Options are:
+  * 1
+  * 2
+  EOT
   type        = number
 }
 

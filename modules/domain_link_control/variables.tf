@@ -17,13 +17,21 @@ variable "name" {
 
 variable "udld_admin_state" {
   default     = "Enabled"
-  description = "Admin configured UDLD State for this port.\r\n * Disabled - Admin configured Disabled State.\r\n * Enabled - Admin configured Enabled State."
+  description = <<-EOT
+  Admin configured UDLD State for this port.
+  * Disabled - Admin configured Disabled State.
+  * Enabled - Admin configured Enabled State.
+  EOT
   type        = string
 }
 
 variable "udld_mode" {
   default     = "normal"
-  description = "Admin configured UDLD Mode for this port.* normal - Admin configured 'normal' UDLD mode.* aggressive - Admin configured 'aggressive' UDLD mode."
+  description = <<-EOT
+  Admin configured UDLD Mode for this port.
+  * normal - Admin configured 'normal' UDLD mode.
+  * aggressive - Admin configured 'aggressive' UDLD mode.
+  EOT
   type        = string
 }
 

@@ -5,7 +5,12 @@
 
 variable "custom_mode" {
   default     = "FibreChannel"
-  description = "Custom Port Mode specified for the port range.\r\n * FibreChannel - Fibre Channel Port Types.\r\n * BreakoutEthernet10G - Breakout Ethernet 10G Port Type.\r\n * BreakoutEthernet25G - Breakout Ethernet 25G Port Type."
+  description = <<-EOT
+  Custom Port Mode specified for the port range.
+  * FibreChannel - Fibre Channel Port Types.
+  * BreakoutEthernet10G - Breakout Ethernet 10G Port Type.
+  * BreakoutEthernet25G - Breakout Ethernet 25G Port Type.
+  EOT
   type        = string
 }
 

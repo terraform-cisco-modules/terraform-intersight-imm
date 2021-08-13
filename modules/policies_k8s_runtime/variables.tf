@@ -58,7 +58,11 @@ variable "proxy_http_port" {
 
 variable "proxy_http_protocol" {
   default     = "http"
-  description = " HTTP Proxy Protocol. Options are {http|https}."
+  description = <<-EOT
+  HTTP Proxy Protocol. Options are:
+  * http
+  * https
+  EOT
   type        = string
 }
 
@@ -88,7 +92,11 @@ variable "proxy_https_port" {
 
 variable "proxy_https_protocol" {
   default     = "https"
-  description = "HTTPS Proxy Protocol. Options are {http|https}."
+  description = <<-EOT
+  HTTPS Proxy Protocol. Options are:
+  * http
+  * https
+  EOT
   type        = string
 }
 

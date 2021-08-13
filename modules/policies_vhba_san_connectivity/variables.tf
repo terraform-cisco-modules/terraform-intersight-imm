@@ -22,7 +22,11 @@ variable "org_moid" {
 
 variable "placement_mode" {
   default     = "custom"
-  description = "The mode used for placement of vNICs on network adapters. It can either be Auto or Custom.\r\n * auto - The placement of the vNICs / vHBAs on network adapters is automatically determined by the system.\r\n * custom - The placement of the vNICs / vHBAs on network adapters is manually chosen by the user."
+  description = <<-EOT
+  The mode used for placement of vNICs on network adapters. It can either be Auto or Custom.
+  * auto - The placement of the vNICs / vHBAs on network adapters is automatically determined by the system.
+  * custom - The placement of the vNICs / vHBAs on network adapters is manually chosen by the user.
+  EOT
   type        = string
 }
 
@@ -54,8 +58,8 @@ variable "wwnn_address_type" {
   default     = "POOL"
   description = <<-EOT
   Type of allocation selected to assign a WWNN address for the server node.
-    * POOL - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface.
-    * STATIC - The user assigns a static mac/wwn address for the Virtual Interface.
+  * POOL - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface.
+  * STATIC - The user assigns a static mac/wwn address for the Virtual Interface.
   EOT
   type        = string
 }

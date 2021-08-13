@@ -25,9 +25,9 @@ variable "bind_method" {
   default     = "LoginCredentials"
   description = <<-EOT
   Authentication method to access LDAP servers.
-    * Anonymous - Requires no username and password. If this option is selected and the LDAP server is configured for Anonymous logins, then the user gains access.
-    * ConfiguredCredentials - Requires a known set of credentials to be specified for the initial bind process. If the initial bind process succeeds, then the distinguished name (DN) of the user name is queried and re-used for the re-binding process. If the re-binding process fails, then the user is denied access.
-    * LoginCredentials - Requires the user credentials. If the bind process fails, then user is denied access.
+  * Anonymous - Requires no username and password. If this option is selected and the LDAP server is configured for Anonymous logins, then the user gains access.
+  * ConfiguredCredentials - Requires a known set of credentials to be specified for the initial bind process. If the initial bind process succeeds, then the distinguished name (DN) of the user name is queried and re-used for the re-binding process. If the re-binding process fails, then the user is denied access.
+  * LoginCredentials - Requires the user credentials. If the bind process fails, then user is denied access.
   EOT
   type        = string
 }
@@ -96,9 +96,9 @@ variable "nr_source" {
   default     = "Extracted"
   description = <<-EOT
   Source of the domain name used for the DNS SRV request.
-    * Configured - The configured-search domain.
-    * ConfiguredExtracted - The domain name extracted from the login ID than the configured-search domain.
-    * Extracted - The domain name extracted-domain from the login ID."
+  * Configured - The configured-search domain.
+  * ConfiguredExtracted - The domain name extracted from the login ID than the configured-search domain.
+  * Extracted - The domain name extracted-domain from the login ID."
   EOT
   type        = string
 }
@@ -149,8 +149,8 @@ variable "user_search_precedence" {
   default     = "LocalUserDb"
   description = <<-EOT
   Search precedence between local user database and LDAP user database.
-    * LocalUserDb - Precedence is given to local user database while searching.
-    * LDAPUserDb - Precedence is given to LADP user database while searching.
+  * LocalUserDb - Precedence is given to local user database while searching.
+  * LDAPUserDb - Precedence is given to LADP user database while searching.
   EOT
   type        = string
 }
