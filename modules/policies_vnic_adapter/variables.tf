@@ -123,7 +123,7 @@ variable "roce_resource_groups" {
 }
 
 variable "roce_version" {
-  default     = 2
+  default     = 1
   description = "Configure RDMA over Converged Ethernet (RoCE) version on the virtual interface. Only RoCEv1 is supported on Cisco VIC 13xx series adapters and only RoCEv2 is supported on Cisco VIC 14xx series adapters.  Options are 1 or 2."
   type        = number
 }

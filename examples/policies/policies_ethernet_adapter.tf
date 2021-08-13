@@ -135,10 +135,10 @@ module "vnic_adapter_defaults" {
   roce_memory_regions   = 0
   roce_queue_pairs      = 0
   roce_resource_groups  = 0
-  roce_version          = 2
+  roce_version          = 1
 
   # Recieve Settings
-  rx_queue_count  = 1
+  rx_queue_count  = 4
   rx_ring_size    = 512
 
   org_moid     = local.org_moid
