@@ -38,7 +38,11 @@ variable "org_moid" {
 
 variable "pool_purpose" {
   default     = "WWPN"
-  description = "What type of Fiber-Channel Pool is this.  Options are {WWNN|WWPN}."
+  description = <<-EOT
+  What type of Fiber-Channel Pool is this.  Options are:
+  * WWNN
+  * WWPN
+  EOT
   type        = string
 }
 

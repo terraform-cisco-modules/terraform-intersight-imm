@@ -18,8 +18,7 @@ resource "intersight_chassis_profile" "chassis_profile" {
   dynamic "assigned_chassis" {
     for_each = var.assigned_chassis
     content {
-      moid        = assigned_chassis.value.moid
-      object_type = assigned_chassis.value.object_type
+      moid = assigned_chassis.value.moid
     }
   }
   dynamic "policy_bucket" {

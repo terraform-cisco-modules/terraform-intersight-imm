@@ -47,7 +47,7 @@ No modules.
 | <a name="input_id_blocks"></a> [id\_blocks](#input\_id\_blocks) | List of WWxN's Configuration Parameters to Assign to the Fiber-Channel Pool. | `list(map(string))` | `[]` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Fiber-Channel Pool. | `string` | `"fc_pool"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_pool_purpose"></a> [pool\_purpose](#input\_pool\_purpose) | What type of Fiber-Channel Pool is this.  Options are {WWNN\|WWPN}. | `string` | `"WWPN"` | no |
+| <a name="input_pool_purpose"></a> [pool\_purpose](#input\_pool\_purpose) | What type of Fiber-Channel Pool is this.  Options are:<br>* WWNN<br>* WWPN | `string` | `"WWPN"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs
