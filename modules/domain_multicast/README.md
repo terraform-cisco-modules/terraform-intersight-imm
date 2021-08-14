@@ -46,8 +46,8 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"multicast"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_querier_ip"></a> [querier\_ip](#input\_querier\_ip) | IP Address of the IGMP Querier to Assign to the VLAN through this Policy. | `string` | `""` | no |
-| <a name="input_querier_state"></a> [querier\_state](#input\_querier\_state) | dministrative state of the IGMP Querier for the VLANs Assigned to this Policy. | `string` | `"Disabled"` | no |
-| <a name="input_snooping_state"></a> [snooping\_state](#input\_snooping\_state) | Administrative State for Snoooping for the VLANs Assigned to this Policy. | `string` | `"Enabled"` | no |
+| <a name="input_querier_state"></a> [querier\_state](#input\_querier\_state) | Administrative state of the IGMP Querier for the VLANs Assigned to this Policy.  Options are:<br>* Disabled - (Default)<br>* Enabled | `string` | `"Disabled"` | no |
+| <a name="input_snooping_state"></a> [snooping\_state](#input\_snooping\_state) | Administrative State for Snooping for the VLANs Assigned to this Policy.<br>* Disabled<br>* Enabled - (Default) | `string` | `"Enabled"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs

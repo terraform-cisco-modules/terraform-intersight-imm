@@ -28,13 +28,21 @@ variable "querier_ip" {
 
 variable "querier_state" {
   default     = "Disabled"
-  description = "dministrative state of the IGMP Querier for the VLANs Assigned to this Policy."
+  description = <<-EOT
+  Administrative state of the IGMP Querier for the VLANs Assigned to this Policy.  Options are:
+  * Disabled - (Default)
+  * Enabled
+  EOT
   type        = string
 }
 
 variable "snooping_state" {
   default     = "Enabled"
-  description = "Administrative State for Snoooping for the VLANs Assigned to this Policy."
+  description = <<-EOT
+  Administrative State for Snooping for the VLANs Assigned to this Policy.
+  * Disabled
+  * Enabled - (Default)
+  EOT
   type        = string
 }
 
