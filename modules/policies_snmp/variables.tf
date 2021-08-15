@@ -134,6 +134,7 @@ variable "user_1_auth_type" {
 }
 
 variable "user_1_name" {
+  default     = ""
   description = "Username. Must have a minimum of 1 and and a maximum of 31 characters."
   type        = string
 }
@@ -180,6 +181,7 @@ variable "user_2_auth_type" {
 }
 
 variable "user_2_name" {
+  default     = ""
   description = "Username. Must have a minimum of 1 and and a maximum of 31 characters."
   type        = string
 }
