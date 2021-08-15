@@ -42,15 +42,15 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_action"></a> [action](#input\_action) | Action to Perform on the Chassis Profile Assignment.  Options are:<br>  * Deploy<br>  * No-op<br>  * Unassign | `string` | `"No-op"` | no |
+| <a name="input_action"></a> [action](#input\_action) | Action to Perform on the Chassis Profile Assignment.  Options are:<br>* Deploy<br>* No-op<br>* Unassign | `string` | `"No-op"` | no |
 | <a name="input_assigned_server"></a> [assigned\_server](#input\_assigned\_server) | A reference to a computePhysical resource. | `list(map(string))` | `[]` | no |
-| <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
+| <a name="input_description"></a> [description](#input\_description) | Description to Assign to the Profile. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Profile. | `string` | `"server_profile"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_policy_bucket"></a> [policy\_bucket](#input\_policy\_bucket) | List of Policies to Assign to the Profile. | `list(map(string))` | `[]` | no |
 | <a name="input_src_template"></a> [src\_template](#input\_src\_template) | A reference to a policyAbstractProfile resource.. | `set(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_target_platform"></a> [target\_platform](#input\_target\_platform) | The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight.<br>  * FIAttached - Servers which are connected to a Fabric Interconnect that is managed by Intersight.<br>  * Standalone - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected. | `string` | `"FIAttached"` | no |
+| <a name="input_target_platform"></a> [target\_platform](#input\_target\_platform) | The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight.<br>* FIAttached - Servers which are connected to a Fabric Interconnect that is managed by Intersight.<br>* Standalone - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected. | `string` | `"FIAttached"` | no |
 | <a name="input_type"></a> [type](#input\_type) | Defines the type of the profile. Accepted values are:<br>  * instance<br>  * template | `string` | `"instance"` | no |
 | <a name="input_wait_for_completion"></a> [wait\_for\_completion](#input\_wait\_for\_completion) | This model object can trigger workflows. Use this option to wait for all running workflows to reach a complete state. | `bool` | `false` | no |
 

@@ -31,7 +31,7 @@ variable "lan_uplink_speed" {
   default     = "Auto"
   description = <<-EOT
   Admin configured speed for the port.
-  * Auto - Admin configurable speed AUTO ( default ).
+  * Auto - Admin configurable speed Auto.
   * 1Gbps - Admin configurable speed 1Gbps.
   * 10Gbps - Admin configurable speed 10Gbps.
   * 25Gbps - Admin configurable speed 25Gbps.

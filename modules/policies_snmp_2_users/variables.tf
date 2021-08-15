@@ -104,18 +104,6 @@ variable "tags" {
   type        = list(map(string))
 }
 
-variable "v2_enabled" {
-  default     = true
-  description = "State of the SNMPv2c on the endpoint. If enabled, the endpoint sends SNMPv2c properties to the designated host."
-  type        = bool
-}
-
-variable "v3_enabled" {
-  default     = true
-  description = "State of the SNMPv3 on the endpoint. If enabled, the endpoint sends SNMPv3 properties to the designated host."
-  type        = bool
-}
-
 variable "user_1_auth_password" {
   default     = ""
   description = "Authorization password for the user."
@@ -208,3 +196,14 @@ variable "user_2_security_level" {
   type        = string
 }
 
+variable "v2_enabled" {
+  default     = true
+  description = "State of the SNMPv2c on the endpoint. If enabled, the endpoint sends SNMPv2c properties to the designated host."
+  type        = bool
+}
+
+variable "v3_enabled" {
+  default     = true
+  description = "State of the SNMPv3 on the endpoint. If enabled, the endpoint sends SNMPv3 properties to the designated host."
+  type        = bool
+}

@@ -7,9 +7,9 @@ variable "action" {
   default     = "No-op"
   description = <<-EOT
   Action to Perform on the Chassis Profile Assignment.  Options are:
-    * Deploy
-    * No-op
-    * Unassign
+  * Deploy
+  * No-op
+  * Unassign
   EOT
   type        = string
 }
@@ -22,7 +22,7 @@ variable "assigned_server" {
 
 variable "description" {
   default     = ""
-  description = "Description for the Policy."
+  description = "Description to Assign to the Profile."
   type        = string
 }
 
@@ -59,8 +59,8 @@ variable "target_platform" {
   default     = "FIAttached"
   description = <<-EOT
   The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight.
-    * FIAttached - Servers which are connected to a Fabric Interconnect that is managed by Intersight.
-    * Standalone - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected.
+  * FIAttached - Servers which are connected to a Fabric Interconnect that is managed by Intersight.
+  * Standalone - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected.
   EOT
   type        = string
 }
