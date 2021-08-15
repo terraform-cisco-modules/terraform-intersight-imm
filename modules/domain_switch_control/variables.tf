@@ -12,7 +12,7 @@ variable "description" {
 variable "mac_aging_option" {
   default     = "Default"
   description = <<-EOT
-  his specifies one of the option to configure the MAC address aging time.
+  This specifies one of the option to configure the MAC address aging time.
   * Custom - This option allows the the user to configure the MAC address aging time on the switch. For Switch Model UCS-FI-6454 or higher, the valid range is 120 to 918000 seconds and the switch will set the lower multiple of 5 of the given time.
   * Default - This option sets the default MAC address aging time to 14500 seconds for End Host mode.
   * Never - This option disables the MAC address aging process and never allows the MAC address entries to get removed from the table.

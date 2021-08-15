@@ -110,6 +110,98 @@ variable "tags" {
   type        = list(map(string))
 }
 
+variable "user_1_auth_password" {
+  default     = ""
+  description = "Authorization password for the user."
+  sensitive   = true
+  type        = string
+}
+
+variable "user_1_auth_type" {
+  default     = "SHA"
+  description = <<-EOT
+  Authorization protocol for authenticating the user.  Currently Options are:
+  * MD5
+  * SHA
+  In the future these options will be added.
+  * NA - Authentication protocol is not applicable.
+  * SHA-224 - SHA-224 protocol is used to authenticate SNMP user.
+  * SHA-256 - SHA-256 protocol is used to authenticate SNMP user.
+  * SHA-384 - SHA-384 protocol is used to authenticate SNMP user.
+  * SHA-512 - SHA-512 protocol is used to authenticate SNMP user.
+  EOT
+  type        = string
+}
+
+variable "user_1_name" {
+  description = "Username. Must have a minimum of 1 and and a maximum of 31 characters."
+  type        = string
+}
+
+variable "user_1_privacy_password" {
+  default     = ""
+  description = "Privacy password for the user."
+  sensitive   = true
+  type        = string
+}
+
+variable "user_1_security_level" {
+  default     = "AuthPriv"
+  description = <<-EOT
+  Security mechanism used for communication between agent and manager.
+  * AuthNoPriv - The user requires an authorization password but not a privacy password.
+  * AuthPriv - The user requires both an authorization password and a privacy password.
+  * NoAuthNoPriv - The user does not require an authorization or privacy password.
+  EOT
+  type        = string
+}
+
+variable "user_2_auth_password" {
+  default     = ""
+  description = "Authorization password for the user."
+  sensitive   = true
+  type        = string
+}
+
+variable "user_2_auth_type" {
+  default     = "SHA"
+  description = <<-EOT
+  Authorization protocol for authenticating the user.  Currently Options are:
+  * MD5
+  * SHA
+  In the future these options will be added.
+  * NA - Authentication protocol is not applicable.
+  * SHA-224 - SHA-224 protocol is used to authenticate SNMP user.
+  * SHA-256 - SHA-256 protocol is used to authenticate SNMP user.
+  * SHA-384 - SHA-384 protocol is used to authenticate SNMP user.
+  * SHA-512 - SHA-512 protocol is used to authenticate SNMP user.
+  EOT
+  type        = string
+}
+
+variable "user_2_name" {
+  description = "Username. Must have a minimum of 1 and and a maximum of 31 characters."
+  type        = string
+}
+
+variable "user_2_privacy_password" {
+  default     = ""
+  description = "Privacy password for the user."
+  sensitive   = true
+  type        = string
+}
+
+variable "user_2_security_level" {
+  default     = "AuthPriv"
+  description = <<-EOT
+  Security mechanism used for communication between agent and manager.
+  * AuthNoPriv - The user requires an authorization password but not a privacy password.
+  * AuthPriv - The user requires both an authorization password and a privacy password.
+  * NoAuthNoPriv - The user does not require an authorization or privacy password.
+  EOT
+  type        = string
+}
+
 variable "v2_enabled" {
   default     = true
   description = "State of the SNMPv2c on the endpoint. If enabled, the endpoint sends SNMPv2c properties to the designated host."
