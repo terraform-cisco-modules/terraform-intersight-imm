@@ -3,24 +3,6 @@
 # UCS Domain VLANs Variables Section.
 #____________________________________________________________
 
-variable "apikey" {
-  description = "Intersight API Key."
-  sensitive   = true
-  type        = string
-}
-
-variable "endpoint" {
-  default     = "https://intersight.com"
-  description = "Intersight URL."
-  type        = string
-}
-
-variable "secretkey" {
-  description = "Intersight Secret Key."
-  sensitive   = true
-  type        = string
-}
-
 variable "auto_allow_on_uplinks" {
   default     = true
   description = "Used to determine whether this VLAN will be allowed on all uplink ports and PCs in this FI."
