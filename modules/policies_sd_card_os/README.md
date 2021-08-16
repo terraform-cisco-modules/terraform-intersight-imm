@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_sdcard_policy.sd_card](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/sdcard_policy) | resource |
+| [intersight_sdcard_policy.os](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/sdcard_policy) | resource |
 
 ## Inputs
 
