@@ -3,6 +3,24 @@
 # UCS Domain VLANs Variables Section.
 #____________________________________________________________
 
+variable "apikey" {
+  description = "Intersight API Key."
+  sensitive   = true
+  type        = string
+}
+
+variable "endpoint" {
+  default     = "https://intersight.com"
+  description = "Intersight URL."
+  type        = string
+}
+
+variable "secretkey" {
+  description = "Intersight Secret Key."
+  sensitive   = true
+  type        = string
+}
+
 variable "auto_allow_on_uplinks" {
   default     = true
   description = "Used to determine whether this VLAN will be allowed on all uplink ports and PCs in this FI."
@@ -26,9 +44,22 @@ variable "tags" {
   type        = list(map(string))
 }
 
-variable "vlan_list" {
-  description = "List of VLAN ID's to add to a VLAN Policy.  This string can contain ranges and comma seperated values.  Like \"2-10,21-30\""
-  type        = string
+variable "vlan_map" {
+  description = <<-EOT
+  This VLAN Map should contain key/value pairs of prefix and vlan_id.  In Example:
+  vlan_map = [
+    {
+      prefix  = "test"
+      vlan_id = 123
+    },
+    {
+      prefix  = "test"
+      vlan_id = 124
+    }
+  ]
+  This will be configured as test-vl0123 and test-vl0124 in intersight.
+  EOT
+  type    = list(map(string))
 }
 
 variable "vlan_prefix" {
