@@ -62,12 +62,6 @@ variable "vlan_map" {
   type    = list(map(string))
 }
 
-variable "vlan_prefix" {
-  default     = "VLAN"
-  description = "Prefix Name for VLANs."
-  type        = string
-}
-
 variable "vlan_policy_moid" {
   description = "VLAN Policy (Ethernet Network Policy) moid."
   type        = string
