@@ -4,21 +4,12 @@
 # GUI Location: Policies > Create Policy
 #____________________________________________________________
 
-resource "intersight_sdcard_policy" "sd_card" {
+resource "intersight_sdcard_policy" "utility" {
   description = var.description
   name        = var.name
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
-  }
-  partitions {
-    type        = "OS"
-    object_type = "sdcard.Partition"
-    virtual_drives {
-      additional_properties = jsonencode({ Name = "Hypervisor" })
-      enable                = var.enable_os
-      object_type           = "sdcard.OperatingSystem"
-    }
   }
   partitions {
     type        = "Utility"
