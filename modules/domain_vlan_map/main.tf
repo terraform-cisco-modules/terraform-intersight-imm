@@ -5,7 +5,7 @@
 #____________________________________________________________
 
 resource "intersight_fabric_vlan" "vlan_map" {
-  for_each              = {for k, v in var.vlan_map : k => v }
+  for_each              = { for k, v in var.vlan_map : k => v }
   auto_allow_on_uplinks = var.auto_allow_on_uplinks
   is_native             = var.is_native
   name = length(regexall("^[0-9]{4}$", each.value.vlan_id)) > 0 ? join("-vl", [

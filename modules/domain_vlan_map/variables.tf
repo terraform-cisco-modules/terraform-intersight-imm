@@ -59,7 +59,7 @@ variable "vlan_map" {
   ]
   This will be configured as test-vl0123 and test-vl0124 in intersight.
   EOT
-  type    = list(map(string))
+  type        = list(map(string))
 }
 
 variable "vlan_policy_moid" {
