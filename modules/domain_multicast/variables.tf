@@ -20,9 +20,15 @@ variable "org_moid" {
   type        = string
 }
 
-variable "querier_ip" {
+variable "querier_ip_address" {
   default     = ""
   description = "IP Address of the IGMP Querier to Assign to the VLAN through this Policy."
+  type        = string
+}
+
+variable "querier_ip_address_peer" {
+  default     = ""
+  description = "Used to define the IGMP Querier IP address of the peer switch."
   type        = string
 }
 

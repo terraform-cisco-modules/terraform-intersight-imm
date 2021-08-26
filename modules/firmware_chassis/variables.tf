@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# SD Card Policy Variables Section.
+# Chassis Firmware Variables Section.
 #____________________________________________________________
 
 variable "auth_password_direct" {
