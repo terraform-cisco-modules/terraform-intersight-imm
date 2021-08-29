@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight Storage SD Card Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight SD Card Policy
+# GUI Location: Policies > Create Policy > SD Card
+#__________________________________________________________________
 
 resource "intersight_sdcard_policy" "os" {
   description = var.description

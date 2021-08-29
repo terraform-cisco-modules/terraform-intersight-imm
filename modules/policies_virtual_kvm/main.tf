@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight KVM Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Virtual KVM Policy
+# GUI Location: Policies > Create Policy > Virtual KVM
+#__________________________________________________________________
 
 resource "intersight_kvm_policy" "kvm" {
   description               = var.description

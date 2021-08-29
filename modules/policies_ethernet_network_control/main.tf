@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight Ethernet (vNIC) Network Control Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Ethernet Network Control Policy
+# GUI Location: Policies > Create Policy > Ethernet Network Control
+#__________________________________________________________________
 
 resource "intersight_fabric_eth_network_control_policy" "vnic_control" {
   cdp_enabled           = var.cdp_enabled

@@ -1,9 +1,9 @@
 #____________________________________________________________
 #
-# Collect the moid of the (vNIC) iSCSI Boot Policy
+# Collect the moid of the iSCSI Boot Policy
 #____________________________________________________________
 
 output "moid" {
-  description = "(vNIC) iSCSI Boot Policy Managed Object ID (moid)."
-  value       = intersight_vnic_iscsi_boot_policy.vnic_iscsi_boot.moid
+  description = "iSCSI Boot Policy Managed Object ID (moid)."
+  value       = intersight_vnic_iscsi_boot_policy.iscsi_boot.moid
 }

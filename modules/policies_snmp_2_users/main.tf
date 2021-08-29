@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight SNMP Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > SNMP
+#__________________________________________________________________
 
 resource "intersight_snmp_policy" "snmp" {
   description             = var.description

@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight LDAP Provider
-# GUI Location: Policies > Create Policy > LDAP
-#____________________________________________________________
+# Intersight LDAP Policy - Server
+# GUI Location: Policies > Create Policy > LDAP Policy > Server
+#__________________________________________________________________
 
 resource "intersight_iam_ldap_provider" "ldap_provider" {
   ldap_policy {

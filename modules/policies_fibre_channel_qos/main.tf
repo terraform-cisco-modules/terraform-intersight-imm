@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight Fibre Channel (vHBA) Qos Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Fibre Channel QoS Policy
+# GUI Location: Policies > Create Policy > Fibre Channel QoS
+#__________________________________________________________________
 
 resource "intersight_vnic_fc_qos_policy" "vhba_qos" {
   burst               = var.burst # FI-Attached

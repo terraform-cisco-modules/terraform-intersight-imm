@@ -1,11 +1,11 @@
-# policies_vnic_iscsi_boot - Intersight (vNIC) iSCSI Boot Policy Terraform Module
+# policies_iscsi_boot - Intersight (vNIC) iSCSI Boot Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vnic_iscsi_boot" {
+module "iscsi_boot" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_iscsi_boot"
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_iscsi_boot"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an iSCSI Boot Policy in Intersight.  This can be used to
 
 These resources are consumed
 
-* [vnic_iscsi_boot](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_boot_policy)
+* [iscsi_boot](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_boot_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

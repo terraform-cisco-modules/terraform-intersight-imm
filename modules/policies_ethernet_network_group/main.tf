@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight Ethernet Network Group (VLAN Group) Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Ethernet Network Group Policy
+# GUI Location: Policies > Create Policy > Ethernet Network Group
+#__________________________________________________________________
 
 resource "intersight_fabric_eth_network_group_policy" "vlan_group" {
   description = var.description

@@ -1,9 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# This Policy is for Standalone UCS Servers
 # Intersight Ethernet Network Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > Ethernet Network
+#__________________________________________________________________
 
 resource "intersight_vnic_eth_network_policy" "vnic_policy" {
   description = var.description

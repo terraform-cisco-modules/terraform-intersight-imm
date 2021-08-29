@@ -1,10 +1,10 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight (vNIC) iSCSI Boot Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight iSCSI Boot Policy
+# GUI Location: Policies > Create Policy > iSCSI Boot
+#__________________________________________________________________
 
-resource "intersight_vnic_iscsi_boot_policy" "vnic_iscsi_boot" {
+resource "intersight_vnic_iscsi_boot_policy" "iscsi_boot" {
   auto_targetvendor_name = var.auto_targetvendor_name
   chap = [
     {

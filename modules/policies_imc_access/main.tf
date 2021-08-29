@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight IMC Access Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > IMC Access
+#__________________________________________________________________
 
 resource "intersight_access_policy" "imc_access" {
   description = var.description

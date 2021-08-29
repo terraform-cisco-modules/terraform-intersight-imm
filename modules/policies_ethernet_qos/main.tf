@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight Ethernet (vNIC) Qos Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Ethernet QoS Policy
+# GUI Location: Policies > Create Policy > Ethernet QoS
+#__________________________________________________________________
 
 resource "intersight_vnic_eth_qos_policy" "vnic_qos" {
   description    = var.description

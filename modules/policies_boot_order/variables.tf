@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Boot Policy Variables Section.
+# Boot Order Policy Variables Section.
 #____________________________________________________________
 
 variable "boot_mode" {

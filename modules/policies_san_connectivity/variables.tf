@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Ethernet (vHBA) SAN Connectivity Policy Variables Section.
+# Ethernet SAN Connectivity Policy Variables Section.
 #____________________________________________________________
 
 variable "description" {

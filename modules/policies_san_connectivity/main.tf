@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight SAN Connectivity Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > SAN Connectivity
+#__________________________________________________________________
 
 resource "intersight_vnic_san_connectivity_policy" "san_connectivity" {
   description         = var.description

@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight Syslog Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > Syslog
+#__________________________________________________________________
 
 resource "intersight_syslog_policy" "syslog" {
   description = var.description

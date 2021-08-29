@@ -3,7 +3,7 @@
 ## Usage
 
 ```hcl
-module "boot_policy" {
+module "boot_order" {
 
   source = "terraform-cisco-modules/imm/intersight//modules/policies_boot_order"
 
@@ -15,7 +15,7 @@ This module will create a Boot Order Policy in Intersight.  This can be used to 
 
 These resources are consumed
 
-* [boot_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/boot_precision_policy)
+* [boot_order](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/boot_precision_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

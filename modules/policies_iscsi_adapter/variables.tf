@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# (vNIC) iSCSI Adapter Policy Variables Section.
+# iSCSI Adapter Policy Variables Section.
 #____________________________________________________________
 
 variable "connection_time_out" {

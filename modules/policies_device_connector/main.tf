@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight Device Connector Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > Device Connector
+#__________________________________________________________________
 
 resource "intersight_deviceconnector_policy" "device_connector" {
   description     = var.description

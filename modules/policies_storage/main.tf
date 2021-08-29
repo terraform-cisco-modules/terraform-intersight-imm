@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight Storage Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > Storage
+#__________________________________________________________________
 
 resource "intersight_storage_storage_policy" "storage" {
   description                  = var.description

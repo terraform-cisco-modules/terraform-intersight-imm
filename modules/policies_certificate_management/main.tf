@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight Certificate Management Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > Certificate Management
+#__________________________________________________________________
 
 resource "intersight_certificatemanagement_policy" "certificates" {
   description = var.description

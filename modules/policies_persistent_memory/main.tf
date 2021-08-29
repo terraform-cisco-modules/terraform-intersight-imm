@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight Persistent Memory Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > Persistent Memory
+#__________________________________________________________________
 
 resource "intersight_memory_persistent_memory_policy" "persistent_memory" {
   description       = var.description

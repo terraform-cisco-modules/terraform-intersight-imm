@@ -1,8 +1,8 @@
-#____________________________________________________________
+#____________________________________________________________________
 #
-# Intersight LDAP Group
-# GUI Location: Policies > Create Policy > LDAP
-#____________________________________________________________
+# Intersight LDAP Policy > Add New LDAP Group
+# GUI Location: Policies > Create Policy > LDAP > Add New LDAP Group
+#____________________________________________________________________
 
 data "intersight_iam_end_point_role" "group_role" {
   name = var.group_role

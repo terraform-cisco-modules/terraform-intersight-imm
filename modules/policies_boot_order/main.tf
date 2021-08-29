@@ -1,10 +1,10 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight Boot Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Boot Order Policy
+# GUI Location: Policies > Create Policy > Boot Order
+#__________________________________________________________________
 
-resource "intersight_boot_precision_policy" "boot" {
+resource "intersight_boot_precision_policy" "boot_order" {
   configured_boot_mode     = var.boot_mode
   description              = var.description
   enforce_uefi_secure_boot = var.boot_secure

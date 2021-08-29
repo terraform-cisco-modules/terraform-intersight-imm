@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight BIOS Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > BIOS
+#__________________________________________________________________
 
 resource "intersight_bios_policy" "bios" {
   description = var.description

@@ -1,10 +1,10 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight (vNIC) iSCSI Adapter Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight iSCSI Adapter Policy
+# GUI Location: Policies > Create Policy > iSCSI Adapter
+#__________________________________________________________________
 
-resource "intersight_vnic_iscsi_adapter_policy" "vnic_iscsi_adapter" {
+resource "intersight_vnic_iscsi_adapter_policy" "iscsi_adapter" {
   connection_time_out  = var.connection_time_out
   description          = var.description
   dhcp_timeout         = var.dhcp_timeout

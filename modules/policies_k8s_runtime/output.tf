@@ -1,9 +1,0 @@
-#________________________________________________________________
-#
-# Collect the moid of the Kubernetes Runtime Policy
-#________________________________________________________________
-
-output "moid" {
-  description = "Kubernetes Runtime Policy Managed Object ID (moid)."
-  value       = intersight_kubernetes_container_runtime_policy.runtime.moid
-}

@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight LAN Connectivity Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > LAN Connectivity
+#__________________________________________________________________
 
 resource "intersight_vnic_lan_connectivity_policy" "lan_connectivity" {
   description         = var.description

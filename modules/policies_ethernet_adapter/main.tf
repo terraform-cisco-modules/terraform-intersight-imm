@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight Ethernet (vNIC) Adapter Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Ethernet Adapter Policy
+# GUI Location: Policies > Create Policy > Ethernet Adapter
+#__________________________________________________________________
 
 resource "intersight_vnic_eth_adapter_policy" "vnic_adapter" {
   advanced_filter         = var.advanced_filter

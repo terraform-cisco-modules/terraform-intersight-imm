@@ -1,11 +1,11 @@
-# policies_vnic_iscsi_adapter - Intersight (vNIC) iSCSI Adapter Policy Terraform Module
+# policies_iscsi_adapter - Intersight iSCSI Adapter Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vnic_iscsi_adapter" {
+module "iscsi_adapter" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_iscsi_adapter"
+  source = "terraform-cisco-modules/imm/intersight//modules/policies_iscsi_adapter"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an iSCSI Adapter Policy in Intersight.  This can be used
 
 These resources are consumed
 
-* [vnic_iscsi_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_adapter_policy)
+* [iscsi_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_adapter_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

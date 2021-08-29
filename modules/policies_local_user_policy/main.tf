@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight Local User Password Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Local User Policy
+# GUI Location: Policies > Create Policy > Local User
+#__________________________________________________________________
 
 resource "intersight_iam_end_point_user_policy" "password_policy" {
   description = var.description

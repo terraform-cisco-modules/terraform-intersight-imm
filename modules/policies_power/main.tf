@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight Power Policy
-# GUI Location: Configure > Policies > Create Policy > Power
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > Power
+#__________________________________________________________________
 
 resource "intersight_power_policy" "power" {
   allocated_budget    = var.allocated_budget

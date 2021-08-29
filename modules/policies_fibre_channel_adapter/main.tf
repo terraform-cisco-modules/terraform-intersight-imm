@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight Fibre Channel (vHBA) Adapter Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Fibre Channel Adapter Policy
+# GUI Location: Policies > Create Policy > Fibre Channel Adapter
+#__________________________________________________________________
 
 resource "intersight_vnic_fc_adapter_policy" "vhba_adapter" {
   description                 = var.description

@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight SMTP Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > SMTP
+#__________________________________________________________________
 
 resource "intersight_smtp_policy" "smtp" {
   description     = var.description

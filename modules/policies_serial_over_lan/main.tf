@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight Serial over LAN Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > Serial over LAN
+#__________________________________________________________________
 
 resource "intersight_sol_policy" "sol" {
   baud_rate   = var.baud_rate

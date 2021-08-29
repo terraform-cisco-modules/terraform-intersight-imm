@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight vMedia Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Virtual Media Policy
+# GUI Location: Policies > Create Policy > Virtual Media
+#__________________________________________________________________
 
 resource "intersight_vmedia_policy" "vmedia" {
   description   = var.description

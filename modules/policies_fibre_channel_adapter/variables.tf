@@ -10,7 +10,7 @@ variable "description" {
 }
 
 variable "error_detection_timeout" {
-  default     = 20000
+  default     = 2000
   description = "Error Detection Timeout, also referred to as EDTOV, is the number of milliseconds to wait before the system assumes that an error has occurred."
   type        = number
 }

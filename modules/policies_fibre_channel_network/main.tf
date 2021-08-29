@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight Fibre Channel Network Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > Fibre Channel Network
+#__________________________________________________________________
 
 resource "intersight_vnic_fc_network_policy" "vhba_policy" {
   description = var.description

@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Ethernet (vNIC) iSCSI Boot Policy Variables Section.
+# Ethernet iSCSI Boot Policy Variables Section.
 #____________________________________________________________
 
 variable "auto_targetvendor_name" {

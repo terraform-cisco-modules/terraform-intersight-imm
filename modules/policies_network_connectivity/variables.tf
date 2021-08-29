@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Network Connectivity (DNS) Policy Variables Section.
+# Network Connectivity Policy Variables Section.
 #____________________________________________________________
 
 variable "description" {

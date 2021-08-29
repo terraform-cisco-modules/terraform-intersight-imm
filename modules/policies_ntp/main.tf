@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight NTP Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > NTP
+#__________________________________________________________________
 
 resource "intersight_ntp_policy" "ntp" {
   description = var.description

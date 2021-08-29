@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Intersight Network Connectivity (DNS) Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Network Connectivity Policy
+# GUI Location: Policies > Create Policy > Network Connectivity
+#__________________________________________________________________
 
 /*
   IPv6 is enabled because this is the only way that the provider allows the

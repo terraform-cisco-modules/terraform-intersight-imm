@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight IPMI over LAN Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > IPMI over LAN
+#__________________________________________________________________
 
 resource "intersight_ipmioverlan_policy" "ipmi" {
   description    = var.description

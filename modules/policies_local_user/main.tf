@@ -1,8 +1,8 @@
-#____________________________________________________________
+#____________________________________________________________________
 #
-# Intersight Local User Password Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight Local User - Add New User
+# GUI Location: Policies > Create Policy > Local User > Add New User
+#____________________________________________________________________
 
 data "intersight_iam_end_point_role" "user_role" {
   name = var.user_role

@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight SSH Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > SSH
+#__________________________________________________________________
 
 resource "intersight_ssh_policy" "ssh" {
   description = var.description

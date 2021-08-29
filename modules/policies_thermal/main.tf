@@ -1,8 +1,8 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
 # Intersight Thermal Policy
-# GUI Location: Configure > Policies > Create Policy > Thermal
-#____________________________________________________________
+# GUI Location: Policies > Create Policy > Thermal
+#__________________________________________________________________
 
 resource "intersight_thermal_policy" "thermal" {
   description      = var.description
