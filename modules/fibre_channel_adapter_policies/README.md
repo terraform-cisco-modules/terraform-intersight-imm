@@ -1,21 +1,21 @@
-# policies_vhba_adapter - Intersight Fibre Channel (vHBA) Adapter Policy Terraform Module
+# fibre_channel_adapter_policies - Intersight Fibre Channel Adapter Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vhba_adapter" {
+module "fibre_channel_adapter" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vhba_adapter"
+  source = "terraform-cisco-modules/imm/intersight//modules/fibre_channel_adapter_policies"
 
   # omitted...
 }
 ```
 
-This module will create an Fibre Channel (vHBA) Adapter Policy in Intersight.  This can be used to create Profiles and Templates that require a Fibre Channel Adapter Policy.  
+This module will create an Fibre Channel Adapter Policy in Intersight.  This can be used to create Profiles and Templates that require a Fibre Channel Adapter Policy.  
 
 These resources are consumed
 
-* [vhba_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_adapter_policy)
+* [Fibre Channel Adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_adapter_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -43,7 +43,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_error_detection_timeout"></a> [error\_detection\_timeout](#input\_error\_detection\_timeout) | Error Detection Timeout, also referred to as EDTOV, is the number of milliseconds to wait before the system assumes that an error has occurred. | `number` | `20000` | no |
+| <a name="input_error_detection_timeout"></a> [error\_detection\_timeout](#input\_error\_detection\_timeout) | Error Detection Timeout, also referred to as EDTOV, is the number of milliseconds to wait before the system assumes that an error has occurred. | `number` | `2000` | no |
 | <a name="input_error_recovery_enabled"></a> [error\_recovery\_enabled](#input\_error\_recovery\_enabled) | Enables Fibre Channel Error recovery. | `bool` | `false` | no |
 | <a name="input_error_recovery_io_retry_count"></a> [error\_recovery\_io\_retry\_count](#input\_error\_recovery\_io\_retry\_count) | The number of times an I/O request to a port is retried because the port is busy before the system decides the port is unavailable.  Range is 0-255. | `number` | `8` | no |
 | <a name="input_error_recovery_io_retry_timeout"></a> [error\_recovery\_io\_retry\_timeout](#input\_error\_recovery\_io\_retry\_timeout) | The number of seconds the adapter waits before aborting the pending command and resending the same IO request. Range is 1-59. | `number` | `5` | no |
@@ -70,5 +70,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Fibre Channel (vNIC) Adapter Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Fibre Channel Adapter Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

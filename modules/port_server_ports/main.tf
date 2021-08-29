@@ -1,6 +1,6 @@
 #_____________________________________________________________________
 #
-# Intersight Port Policy - Server
+# Intersight Port Policy - Server Ports
 # GUI Location: Policies > Create Policy > Port > Port Roles > Server
 #_____________________________________________________________________
 

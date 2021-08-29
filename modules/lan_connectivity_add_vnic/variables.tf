@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Ethernet (vNIC) Policy Variables Section.
+# LAN Connectivity - Add vNIC Variables Section.
 #____________________________________________________________
 
 variable "cdn_name" {

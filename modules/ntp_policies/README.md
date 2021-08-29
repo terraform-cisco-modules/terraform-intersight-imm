@@ -1,11 +1,11 @@
-# policies_ntp - Intersight NTP Policy Terraform Module
+# ntp_policies - Intersight NTP Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "ntp_policy" {
+module "ntp_policies" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_ntp"
+  source = "terraform-cisco-modules/imm/intersight//modules/ntp_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a NTP Policy in Intersight.  This can be used to create 
 
 These resources are consumed
 
-* [ntp_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/ntp_policy)
+* [NTP Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/ntp_policy)
 
 ### Supported Timezones
 

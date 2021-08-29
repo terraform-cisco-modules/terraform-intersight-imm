@@ -1,21 +1,21 @@
-# policies_kubernetes_nodeos_configuration - Intersight Kubernetes Node OS Configuration Policy Terraform Module
+# nodeos_configuration_policies - Intersight Node OS Configuration Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "kubernetes_nodeos_configuration" {
+module "nodeos_configuration" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_kubernetes_nodeos_configuration"
+  source = "terraform-cisco-modules/imm/intersight//modules/nodeos_configuration_policies"
 
   # omitted...
 }
 ```
 
-This module will create a Kubernetes Node OS Configuration Policy in Intersight.  This is consumed by Node Profile Policies assigned to Kubernetes Clusters.  
+This module will create a Node OS Configuration Policy in Intersight.  This is consumed by Node Profile Policies assigned to Kubernetes Clusters.  
 
 These resources are consumed
 
-* [kubernetes_nodeos_configuration](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_sys_config_policy)
+* [NodeOS Configuration](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_sys_config_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

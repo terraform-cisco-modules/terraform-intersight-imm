@@ -1,11 +1,11 @@
-# policies_port_ethernet_uplink_port_channel - Intersight Port Policy - Ethernet Uplink Port Channel Terraform Module
+# port_ethernet_uplink_port_channel - Intersight Port Policy - Ethernet Uplink Port Channel Terraform Module
 
 ## Usage
 
 ```hcl
 module "ethernet_uplink_port_channel" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_port_ethernet_uplink_port_channel"
+  source = "terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink_port_channel"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will Configure a UCS Domain Ethernet Uplink Port Channel and Assign 
 
 These resources are consumed
 
-* [ethernet_uplink_port_channel](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_uplink_pc_role)
+* [Ethernet Uplink Port Channel](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_uplink_pc_role)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

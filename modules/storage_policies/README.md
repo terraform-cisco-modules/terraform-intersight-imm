@@ -1,11 +1,11 @@
-# policies_storage - Intersight Storage Policy Terraform Module
+# storage_policies - Intersight Storage Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "storage_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_storage"
+  source = "terraform-cisco-modules/imm/intersight//modules/storage_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Storage Policy in Intersight.  This can be used to cre
 
 These resources are consumed
 
-* [storage_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/storage_storage_policy)
+* [Storage Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/storage_storage_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

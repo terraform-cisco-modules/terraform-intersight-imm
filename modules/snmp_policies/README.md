@@ -1,11 +1,11 @@
-# policies_snmp - Intersight SNMP Policy Terraform Module
+# snmp_policies - Intersight SNMP Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "imc_snmp_policy" {
+module "snmp_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_snmp"
+  source = "terraform-cisco-modules/imm/intersight//modules/snmp_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an SNMP Policy in Intersight.  This can be used to creat
 
 These resources are consumed
 
-* [snmp_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/snmp_policy)
+* [SNMP Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/snmp_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

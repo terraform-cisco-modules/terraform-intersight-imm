@@ -1,11 +1,11 @@
-# policies_virtual_machine_instance_type - Intersight Virtual Machine Instance Type Policy Terraform Module
+# virtual_machine_instance_type - Intersight Virtual Machine Instance Type Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "virtual_machine_instance_type" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_virtual_machine_instance_type"
+  source = "terraform-cisco-modules/imm/intersight//modules/virtual_machine_instance_type"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Virtual Machine Instance Type Policy in Intersight.  T
 
 These resources are consumed
 
-* [virtual_machine_instance_type](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_virtual_machine_instance_type)
+* [Virtual Machine Instance Type](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_virtual_machine_instance_type)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

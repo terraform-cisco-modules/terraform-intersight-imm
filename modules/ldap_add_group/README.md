@@ -1,11 +1,11 @@
-# policies_ldap_group - Intersight LDAP Group Terraform Module
+# ldap_add_group - Intersight LDAP - Add New LDAP Group Terraform Module
 
 ## Usage
 
 ```hcl
-module "ldap_group" {
+module "ldap_add_group" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_ldap_group"
+  source = "terraform-cisco-modules/imm/intersight//modules/ldap_add_group"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will assign an LDAP Group to a LDAP Policy in Intersight.
 
 These resources are consumed
 
-* [ldap_group](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_ldap_group)
+* [LDAP Group](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_ldap_group)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

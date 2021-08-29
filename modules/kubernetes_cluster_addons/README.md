@@ -1,22 +1,22 @@
 
-# Intersight Kubernetes Cluster - Add-ons Terraform Module
+# kubernetes_cluster_addons - Intersight Kubernetes Cluster - Add-ons Terraform Module
 
 ## Usage
 
 ```hcl
 module "kubernetes_cluster_addons" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/profiles_kubernetes_cluster_addons"
+  source = "terraform-cisco-modules/imm/intersight//modules/kubernetes_cluster_addons"
 
   # omitted...
 }
 ```
 
-This module will assign a Kubernetes Addon Policies to an Intersight Kubernetes Service Cluster in Intersight.  
+This module will assign a Add-ons Policies to an Intersight Kubernetes Cluster in Intersight.  
 
 These resources are consumed
 
-* [kubernetes_cluster_addons](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_cluster_addon_profile)
+* [Kubernetes Cluster Add-ons](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_cluster_addon_profile)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

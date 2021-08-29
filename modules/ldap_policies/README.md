@@ -1,11 +1,11 @@
-# policies_ldap - Intersight LDAP Policy Terraform Module
+# ldap_policies - Intersight LDAP Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "ldap" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_ldap"
+  source = "terraform-cisco-modules/imm/intersight//modules/ldap_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a LDAP Policy in Intersight.  This can be used to create
 
 These resources are consumed
 
-* [ldap](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_ldap_policy)
+* [LDAP](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_ldap_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_iam_ldap_policy.ldap_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_ldap_policy) | resource |
+| [intersight_iam_ldap_policy.ldap](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_ldap_policy) | resource |
 
 ## Inputs
 

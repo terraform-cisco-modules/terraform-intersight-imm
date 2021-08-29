@@ -1,11 +1,11 @@
-# policies_port_server - Intersight UCS Domain Port Policy - Server Ports Terraform Module
+# port_server_ports - Intersight UCS Domain Port Policy - Server Ports Terraform Module
 
 ## Usage
 
 ```hcl
 module "server_ports" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_port_server"
+  source = "terraform-cisco-modules/imm/intersight//modules/port_server_ports"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will Configure Server Ports in a UCS Domain Port Policy.
 
 These resources are consumed
 
-* [server_ports](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_server_role)
+* [Server Ports](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_server_role)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

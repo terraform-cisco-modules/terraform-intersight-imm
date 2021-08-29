@@ -1,11 +1,11 @@
-# policies_flow_control - Intersight Flow Control Policy Terraform Module
+# flow_control_policies - Intersight Flow Control Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "flow_control" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_flow_control"
+  source = "terraform-cisco-modules/imm/intersight//modules/flow_control_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Flow Control Policy in Intersight.  This can be used t
 
 These resources are consumed
 
-* [flow_control](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_flow_control_policy)
+* [Flow Control](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_flow_control_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

@@ -1,11 +1,11 @@
-# pools_iqn - Intersight IQN Pool Terraform Module
+# iqn_pools - Intersight IQN Pool Terraform Module
 
 ## Usage
 
 ```hcl
-module "iqn_pool" {
+module "iqn_pools" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/pools_iqn"
+  source = "terraform-cisco-modules/imm/intersight//modules/iqn_pools"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an IQN Pool in Intersight.  This can be used to create S
 
 These resources are created
 
-* [iqn_pool](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iqnpool_pool)
+* [IQN Pools](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iqnpool_pool)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

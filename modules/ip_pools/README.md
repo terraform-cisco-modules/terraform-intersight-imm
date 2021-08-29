@@ -1,11 +1,11 @@
-# pools_ip - Intersight IP Pool Terraform Module
+# ip_pools - Intersight IP Pool Terraform Module
 
 ## Usage
 
 ```hcl
-module "ip_pool" {
+module "ip_pools" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/pools_ip"
+  source = "terraform-cisco-modules/imm/intersight//modules/ip_pools"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an IP Pool in Intersight.  This can be used to create IM
 
 These resources are created
 
-* [ippool](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/ippool_pool)
+* [IP Pools](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/ippool_pool)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

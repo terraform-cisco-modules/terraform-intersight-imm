@@ -1,11 +1,11 @@
-# policies_power - Intersight Power Policy Terraform Module
+# power_policies - Intersight Power Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "power_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_power"
+  source = "terraform-cisco-modules/imm/intersight//modules/power_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Power Policy in Intersight.  This can be used to creat
 
 These resources are consumed
 
-* [power_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/power_policy)
+* [Power Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/power_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

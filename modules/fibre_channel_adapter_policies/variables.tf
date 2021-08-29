@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Ethernet (vHBA) Adapter Policy Variables Section.
+# Fibre Channel Adapter Policy Variables Section.
 #____________________________________________________________
 
 variable "description" {

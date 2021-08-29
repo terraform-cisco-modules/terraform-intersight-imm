@@ -10,7 +10,7 @@ data "intersight_kubernetes_version" "version" {
 }
 
 resource "intersight_kubernetes_version_policy" "version" {
-  depends_on  = [
+  depends_on = [
     data.intersight_kubernetes_version.version
   ]
   description = var.description

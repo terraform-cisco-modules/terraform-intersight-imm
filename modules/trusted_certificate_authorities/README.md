@@ -1,11 +1,11 @@
-# policies_kubernetes_trusted_certificate_authorities - Intersight Kubernetes Trusted Certificate Authorities Policy Terraform Module
+# trusted_certificate_authorities - Intersight Trusted Certificate Authorities Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "trusted_certificate_authorities" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_kubernetes_trusted_certificate_authorities"
+  source = "terraform-cisco-modules/imm/intersight//modules/trusted_certificate_authorities"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Kubernetes Trusted Registries Policy in Intersight.  T
 
 These resources are consumed
 
-* [trusted_certificate_authorities](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_trusted_registries_policy)
+* [Trusted Certificate Authorities](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_trusted_registries_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -53,5 +53,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Trusted Registries Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Trusted Certificate Authorities Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

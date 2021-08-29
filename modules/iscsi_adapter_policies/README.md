@@ -1,11 +1,11 @@
-# policies_iscsi_adapter - Intersight iSCSI Adapter Policy Terraform Module
+# iscsi_adapter_policies - Intersight iSCSI Adapter Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "iscsi_adapter" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_iscsi_adapter"
+  source = "terraform-cisco-modules/imm/intersight//modules/iscsi_adapter_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an iSCSI Adapter Policy in Intersight.  This can be used
 
 These resources are consumed
 
-* [iscsi_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_adapter_policy)
+* [iSCSI Adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_adapter_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_vnic_iscsi_adapter_policy.vnic_iscsi_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_adapter_policy) | resource |
+| [intersight_vnic_iscsi_adapter_policy.iscsi_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_adapter_policy) | resource |
 
 ## Inputs
 
@@ -54,5 +54,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | (vNIC) iSCSI Adapter Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | iSCSI Adapter Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

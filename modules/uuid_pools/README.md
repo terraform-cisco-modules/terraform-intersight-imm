@@ -1,11 +1,11 @@
-# pools_uuid - Intersight UUID Pool Terraform Module
+# uuid_pools - Intersight UUID Pool Terraform Module
 
 ## Usage
 
 ```hcl
 module "uuid_pool" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/pools_uuid"
+  source = "terraform-cisco-modules/imm/intersight//modules/uuid_pools"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a UUID Pool in Intersight.  This can be used to create S
 
 These resources are consumed:
 
-* [uuidpool](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/uuidpool_pool)
+* [UUID Pool](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/uuidpool_pool)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

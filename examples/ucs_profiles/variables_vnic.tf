@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Ethernet (vNIC) Adapter Policy Variables Section.
+# Ethernet Adapter Policy Variables Section.
 #____________________________________________________________
 
 variable "advanced_filter" {
@@ -216,97 +216,7 @@ variable "uplink_failback_timeout" {
 
 #____________________________________________________________
 #
-# Ethernet (vNIC) iSCSI Adapter Policy Variables Section.
-#____________________________________________________________
-
-variable "connection_time_out" {
-  default     = 15
-  description = "The number of seconds to wait until Cisco UCS assumes that the initial login has failed and the iSCSI adapter is unavailable.  Range is 0-255."
-  type        = number
-}
-
-variable "dhcp_timeout" {
-  default     = 60
-  description = "The number of seconds to wait before the initiator assumes that the DHCP server is unavailable.  Range is 60-300."
-  type        = number
-}
-
-variable "lun_busy_retry_count" {
-  default     = 15
-  description = "The number of times to retry the connection in case of a failure during iSCSI LUN discovery.  Range is 0-60."
-  type        = number
-}
-
-
-#____________________________________________________________
-#
-# Ethernet (vNIC) iSCSI Target Policy Variables Section.
-#____________________________________________________________
-
-variable "ip_address" {
-  default     = ""
-  description = "The IPv4 address assigned to the iSCSI target."
-  type        = string
-}
-
-variable "lun" {
-  default     = []
-  description = "The LUN parameters associated with an iSCSI target. This complex property has following sub-properties:\r\n * bootable: Specifies LUN is bootable. true or false.\r\n * lun_id: The Identifier of the LUN."
-  type        = list(map(string))
-}
-
-variable "port" {
-  default     = 0
-  description = "The port associated with the iSCSI target."
-  type        = number
-}
-
-variable "target_name" {
-  default     = ""
-  description = "Qualified Name (IQN) or Extended Unique Identifier (EUI) name of the iSCSI target."
-  type        = string
-}
-
-
-#____________________________________________________________
-#
-# Ethernet (vNIC) LAN Connectivity Policy Variables Section.
-#____________________________________________________________
-
-variable "iqn_allocation_type" {
-  default     = "None"
-  description = "Allocation Type of iSCSI Qualified Name.  Options are {None|Pool|Static}."
-  type        = string
-}
-
-variable "iqn_pool" {
-  default     = []
-  description = "IQN Pool to Assign to the Policy."
-  type        = set(string)
-}
-
-variable "iqn_static_name" {
-  default     = ""
-  description = "User provided static iSCSI Qualified Name (IQN) for use as initiator identifiers by iSCSI vNICs."
-  type        = string
-}
-
-variable "placement_mode" {
-  default     = "custom"
-  description = "The mode used for placement of vNICs on network adapters. It can either be auto or custom."
-  type        = string
-}
-
-variable "target_platform" {
-  default     = "FIAttached"
-  description = "The platform for which the server profile is applicable. It can either be a server that is operating in 'Standalone' mode or which is attached to a Fabric Interconnect 'FIAttached' managed by Intersight."
-  type        = string
-}
-
-
-#____________________________________________________________
-#
-# Ethernet (vNIC) Network Control Policy Variables Section.
+# Ethernet Network Control Policy Variables Section.
 #____________________________________________________________
 
 variable "cdp_enabled" {
@@ -348,7 +258,7 @@ variable "uplink_fail_action" {
 
 #______________________________________________________________
 #
-# Ethernet (vNIC) Network Group (VLAN Group) Policy Variables.
+# Ethernet Network Group (VLAN Group) Policy Variables.
 #______________________________________________________________
 
 variable "native_vlan" {
@@ -383,7 +293,7 @@ variable "vlan_stop" {
 
 #____________________________________________________________
 #
-# Ethernet (vNIC) Qos Policy Variables Section.
+# Ethernet Qos Policy Variables Section.
 #____________________________________________________________
 
 variable "burst" {
@@ -420,4 +330,94 @@ variable "trust_host_cos" {
   default     = false
   description = "Enables usage of the Class of Service provided by the operating system."
   type        = bool
+}
+
+
+#____________________________________________________________
+#
+# iSCSI Adapter Policy Variables Section.
+#____________________________________________________________
+
+variable "connection_time_out" {
+  default     = 15
+  description = "The number of seconds to wait until Cisco UCS assumes that the initial login has failed and the iSCSI adapter is unavailable.  Range is 0-255."
+  type        = number
+}
+
+variable "dhcp_timeout" {
+  default     = 60
+  description = "The number of seconds to wait before the initiator assumes that the DHCP server is unavailable.  Range is 60-300."
+  type        = number
+}
+
+variable "lun_busy_retry_count" {
+  default     = 15
+  description = "The number of times to retry the connection in case of a failure during iSCSI LUN discovery.  Range is 0-60."
+  type        = number
+}
+
+
+#____________________________________________________________
+#
+# iSCSI Target Policy Variables Section.
+#____________________________________________________________
+
+variable "ip_address" {
+  default     = ""
+  description = "The IPv4 address assigned to the iSCSI target."
+  type        = string
+}
+
+variable "lun" {
+  default     = []
+  description = "The LUN parameters associated with an iSCSI target. This complex property has following sub-properties:\r\n * bootable: Specifies LUN is bootable. true or false.\r\n * lun_id: The Identifier of the LUN."
+  type        = list(map(string))
+}
+
+variable "port" {
+  default     = 0
+  description = "The port associated with the iSCSI target."
+  type        = number
+}
+
+variable "target_name" {
+  default     = ""
+  description = "Qualified Name (IQN) or Extended Unique Identifier (EUI) name of the iSCSI target."
+  type        = string
+}
+
+
+#____________________________________________________________
+#
+# LAN Connectivity Policy Variables Section.
+#____________________________________________________________
+
+variable "iqn_allocation_type" {
+  default     = "None"
+  description = "Allocation Type of iSCSI Qualified Name.  Options are {None|Pool|Static}."
+  type        = string
+}
+
+variable "iqn_pool" {
+  default     = []
+  description = "IQN Pool to Assign to the Policy."
+  type        = set(string)
+}
+
+variable "iqn_static_name" {
+  default     = ""
+  description = "User provided static iSCSI Qualified Name (IQN) for use as initiator identifiers by iSCSI vNICs."
+  type        = string
+}
+
+variable "placement_mode" {
+  default     = "custom"
+  description = "The mode used for placement of vNICs on network adapters. It can either be auto or custom."
+  type        = string
+}
+
+variable "target_platform" {
+  default     = "FIAttached"
+  description = "The platform for which the server profile is applicable. It can either be a server that is operating in 'Standalone' mode or which is attached to a Fabric Interconnect 'FIAttached' managed by Intersight."
+  type        = string
 }

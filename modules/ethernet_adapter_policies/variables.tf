@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Ethernet (vNIC) Adapter Policy Variables Section.
+# Ethernet Adapter Policy Variables Section.
 #____________________________________________________________
 
 variable "advanced_filter" {

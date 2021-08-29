@@ -1,11 +1,11 @@
-# policies_dns - Intersight Network Connectivity (DNS) Policy Terraform Module
+# network_connectivity_policies - Intersight Network Connectivity Policy (DNS) Terraform Module
 
 ## Usage
 
 ```hcl
-module "dns_policy" {
+module "network_connectivity" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_dns"
+  source = "terraform-cisco-modules/imm/intersight//modules/network_connectivity_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Network Connectivity (DNS) Policy in Intersight.  This
 
 These resources are consumed
 
-* [network_connectivity](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/networkconfig_policy)
+* [Network Connectivity](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/networkconfig_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -58,5 +58,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Network Connecivity (DNS) Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Network Connecivity Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

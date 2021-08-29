@@ -1,11 +1,11 @@
-# policies_link_control - Intersight Link Control Policy Terraform Module
+# link_control_policies - Intersight Link Control Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "link_control" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_link_control"
+  source = "terraform-cisco-modules/imm/intersight//modules/link_control_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Link Control Policy in Intersight.  This can be used t
 
 These resources are consumed
 
-* [link_control](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_link_control_policy)
+* [Link Control](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_link_control_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

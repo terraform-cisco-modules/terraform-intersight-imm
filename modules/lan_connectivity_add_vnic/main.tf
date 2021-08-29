@@ -1,8 +1,8 @@
-#____________________________________________________________
+#______________________________________________________________________
 #
-# Intersight Ethernet (vNIC) Policy
-# GUI Location: Policies > Create Policy
-#____________________________________________________________
+# Intersight LAN Connectivity - Add vNIC
+# GUI Location: Policies > Create Policy > LAN Connectivity > Add vNIC
+#______________________________________________________________________
 
 resource "intersight_vnic_eth_if" "vnic" {
   failover_enabled   = var.failover_enabled

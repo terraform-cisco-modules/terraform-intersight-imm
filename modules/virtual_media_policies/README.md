@@ -1,11 +1,11 @@
-# policies_vmedia - Intersight Virtual Media Policy Terraform Module
+# virtual_media_policies - Intersight Virtual Media Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vmedia_policy" {
+module "virtual_media" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vmedia"
+  source = "terraform-cisco-modules/imm/intersight//modules/virtual_media_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a vMedia Policy in Intersight.  This can be used to crea
 
 These resources are consumed
 
-* [vmedia_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vmedia_policy)
+* [Virtual Media Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vmedia_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

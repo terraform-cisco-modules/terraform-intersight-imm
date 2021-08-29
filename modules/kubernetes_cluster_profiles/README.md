@@ -1,11 +1,11 @@
-# Intersight Kubernetes Cluster Profile Terraform Module
+# kubernetes_cluster_profiles - Intersight Kubernetes Cluster Profile Terraform Module
 
 ## Usage
 
 ```hcl
-module "kubernetes_clusters" {
+module "kubernetes_cluster_profile" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/profiles_kubernetes_clusters"
+  source = "terraform-cisco-modules/imm/intersight//modules/kubernetes_cluster_profiles"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will Create a Intersight Kubernetes Service Cluster in Intersight.
 
 These resources are consumed
 
-* [kubernetes_clusters](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_cluster_profile)
+* [Kubernetes Cluster Profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_cluster_profile)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

@@ -1,21 +1,21 @@
-# policies_vhba_qos - Intersight Fibre Channel (vHBA) Qos Policy Terraform Module
+# fibre_channel_qos_policies - Intersight Fibre Channel Qos Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vhba_qos" {
+module "fibre_channel_qos" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vhba_qos"
+  source = "terraform-cisco-modules/imm/intersight//modules/fibre_channel_qos_policies"
 
   # omitted...
 }
 ```
 
-This module will create an Fibre Channel (vHBA) Qos Policy in Intersight.  This can be used to create Profiles and Templates that require a Fibre Channel Qos Policy.  
+This module will create an Fibre Channel Qos Policy in Intersight.  This can be used to create Profiles and Templates that require a Fibre Channel Qos Policy.  
 
 These resources are consumed
 
-* [vhba_qos](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_qos_policy)
+* [Fibre Channel QoS](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_qos_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -55,5 +55,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Fibre Channel (vHBA) Qos Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Fibre Channel Qos Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

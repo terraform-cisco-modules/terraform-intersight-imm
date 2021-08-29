@@ -1,11 +1,11 @@
-# policies_lan_connectivity - Intersight LAN Connectivity Policy Terraform Module
+# lan_connectivity_policies - Intersight LAN Connectivity Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "lan_connectivity" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_lan_connectivity"
+  source = "terraform-cisco-modules/imm/intersight//modules/lan_connectivity_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a LAN Connectivity Policy in Intersight.  This can be us
 
 These resources are consumed
 
-* [lan_connectivity](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_lan_connectivity_policy)
+* [LAN Connectivity](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_lan_connectivity_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

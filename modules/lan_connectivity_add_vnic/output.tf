@@ -1,9 +1,9 @@
 #________________________________________________________________
 #
-# Collect the moid of the Ethernet (vNIC) Policy
+# Collect the moid of the LAN Connectivity - Add vNIC Policy
 #________________________________________________________________
 
 output "moid" {
-  description = "Ethernet (vNIC) Policy Managed Object ID (moid)."
+  description = "LAN Connectivity - Add vNIC Managed Object ID (moid)."
   value       = intersight_vnic_eth_if.vnic.moid
 }

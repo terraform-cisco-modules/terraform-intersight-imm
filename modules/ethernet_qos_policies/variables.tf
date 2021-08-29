@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Ethernet (vNIC) Qos Policy Variables Section.
+# Ethernet Qos Policy Variables Section.
 #____________________________________________________________
 
 variable "burst" {

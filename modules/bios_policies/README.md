@@ -3,7 +3,7 @@
 ## Usage
 
 ```hcl
-module "bios_policies" {
+module "bios" {
 
   source = "terraform-cisco-modules/imm/intersight//modules/bios_policies"
 
@@ -15,7 +15,7 @@ This module will create a BIOS Policy in Intersight.  This can be used to create
 
 These resources are consumed
 
-* [bios_policies](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/bios_policy)
+* [BIOS](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/bios_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

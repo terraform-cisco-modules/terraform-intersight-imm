@@ -1,11 +1,11 @@
-# policies_serial_over_lan - Intersight Serial over LAN Policy Terraform Module
+# serial_over_lan_policies - Intersight Serial over LAN Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "sol_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_serial_over_lan"
+  source = "terraform-cisco-modules/imm/intersight//modules/serial_over_lan_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Serial over LAN Policy in Intersight.  This can be use
 
 These resources are consumed
 
-* [sol_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/sol_policy)
+* [Serial over LAN](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/sol_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

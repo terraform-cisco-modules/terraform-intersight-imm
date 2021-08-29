@@ -1,11 +1,11 @@
-# policies_thermal - Intersight Thermal Policy Terraform Module
+# thermal_policies - Intersight Thermal Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "thermal_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_thermal"
+  source = "terraform-cisco-modules/imm/intersight//modules/thermal_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Thermal Policy in Intersight.  This can be used to cre
 
 These resources are consumed
 
-* [thermal_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/thermal_policy)
+* [Thermal Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/thermal_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

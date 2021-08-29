@@ -1,7 +1,7 @@
 
 #__________________________________________________________________________________________
 #
-# Intersight Kubernetes Cluster - Node Group Profile
+# Intersight Kubernetes - Node Group Profiles
 # GUI Location: Profiles > Kubernetes Cluster Profiles > Create Kubernetes Cluster Profile
 #__________________________________________________________________________________________
 

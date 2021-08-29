@@ -1,21 +1,21 @@
-# policies_vhba - Intersight Fibre Channel (vHBA) Qos Policy Terraform Module
+# san_connectivity_add_vhba - Intersight SAN Connectivity - Add vHBA Terraform Module
 
 ## Usage
 
 ```hcl
-module "vhba" {
+module "add_vhba" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vhba"
+  source = "terraform-cisco-modules/imm/intersight//modules/san_connectivity_add_vhba"
 
   # omitted...
 }
 ```
 
-This module will create an Fibre Channel (vHBA) Policy in Intersight.  This can be used to create Profiles and Templates that require a vHBA Policy.  
+This module will Add a vHBA to a SAN Connectivity Policy in Intersight.  This can be used to create Profiles and Templates that require a vHBA Policy.  
 
 These resources are consumed
 
-* [vhba](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_if)
+* [SAN Connectivity - Add vHBA](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_if)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

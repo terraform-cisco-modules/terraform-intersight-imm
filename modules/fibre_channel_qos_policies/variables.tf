@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Fibre Channel (vHBA) Qos Policy Variables Section.
+# Fibre Channel Qos Policy Variables Section.
 #____________________________________________________________
 
 variable "burst" {

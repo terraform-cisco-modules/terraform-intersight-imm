@@ -1,11 +1,11 @@
-# pools_mac - Intersight MAC Address Pool Terraform Module
+# mac_pools - Intersight MAC Address Pool Terraform Module
 
 ## Usage
 
 ```hcl
 module "mac_pool" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/pools_mac"
+  source = "terraform-cisco-modules/imm/intersight//modules/mac_pools"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a MAC Address Pool in Intersight.  This can be used to c
 
 These resources are consumed:
 
-* [macpool](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/macpool_pool)
+* [MAC Address Pool](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/macpool_pool)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

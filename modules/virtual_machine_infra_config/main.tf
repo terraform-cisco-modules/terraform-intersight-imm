@@ -9,7 +9,7 @@ data "intersight_asset_target" "vsphere_target" {
 }
 
 resource "intersight_kubernetes_virtual_machine_infra_config_policy" "vsphere" {
-  depends_on  = [
+  depends_on = [
     data.intersight_asset_target.vsphere_target
   ]
   description = var.description

@@ -1,11 +1,11 @@
-# policies_port - Intersight Port Policy Terraform Module
+# port_policies - Intersight Port Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "port_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_port"
+  source = "terraform-cisco-modules/imm/intersight//modules/port_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a UCS Domain Port Policy in Intersight.  This can be use
 
 These resources are consumed
 
-* [port_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_port_policy)
+* [Port Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_port_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

@@ -1,11 +1,11 @@
-# policies_ipmi_over_lan - Intersight IPMI over LAN Policy Terraform Module
+# ipmi_over_lan_policies - Intersight IPMI over LAN Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "ipmi_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_ipmi_over_lan"
+  source = "terraform-cisco-modules/imm/intersight//modules/ipmi_over_lan_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a IPMI over LAN Policy in Intersight.  This can be used 
 
 These resources are consumed
 
-* [ipmi_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/ipmioverlan_policy)
+* [IPMI over LAN Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/ipmioverlan_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

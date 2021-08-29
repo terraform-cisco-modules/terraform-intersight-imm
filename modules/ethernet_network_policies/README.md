@@ -1,4 +1,4 @@
-# policies_vnic_network - Intersight vNIC Network Policy Terraform Module
+# ethernet_network_policies - Intersight Ethernet Network Policy Terraform Module
 
 ## Usage
 

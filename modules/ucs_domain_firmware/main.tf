@@ -1,10 +1,10 @@
 locals {
   model = data.intersight_network_element_summary.fi_a.results.0.model
   image_name = length(
-      regexall("(64108|6454)", local.model)
+    regexall("(64108|6454)", local.model)
     ) > 0 ? join(".", [join(".", ["ucs-6400-k9-bundle-infra", replace(replace(var.software_version, "(", "."), ")", "")]), "A.bin"]) : length(
-      regexall("(UCS-FI-6332)", local.model)
-    ) > 0 ? join(".", [join(".", ["ucs-6300-k9-bundle-infra", replace(replace(var.software_version, "(", "."), ")", "")]), "A.bin"]) : ""
+    regexall("(UCS-FI-6332)", local.model)
+  ) > 0 ? join(".", [join(".", ["ucs-6300-k9-bundle-infra", replace(replace(var.software_version, "(", "."), ")", "")]), "A.bin"]) : ""
 }
 
 data "intersight_network_element_summary" "fi_a" {
@@ -34,7 +34,7 @@ resource "intersight_firmware_switch_upgrade" "upgrade" {
     data.intersight_network_element_summary.fi_b
   ]
   direct_download {
-    http_server   {
+    http_server {
       location_link = var.http_image_url
       mount_options = var.http_mount_options
       object_type   = "firmware.HttpServer"
@@ -88,7 +88,7 @@ resource "intersight_firmware_switch_upgrade" "upgrade" {
     username      = var.auth_username_filesrv
   }
   skip_estimate_impact = var.skip_estimate_impact
-  upgrade_type = var.upgrade_type
+  upgrade_type         = var.upgrade_type
   dynamic "tags" {
     for_each = var.tags
     content {

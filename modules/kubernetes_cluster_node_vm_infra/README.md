@@ -5,7 +5,7 @@
 ```hcl
 module "kubernetes_cluster_node_vm_infra" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/profiles_kubernetes_cluster_node_vm_infra"
+  source = "terraform-cisco-modules/imm/intersight//modules/kubernetes_cluster_node_vm_infra"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Kubernetes Virtual Machine Infrastructure Provider Pol
 
 These resources are consumed
 
-* [kubernetes_cluster_node_vm_infra](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_virtual_machine_infrastructure_provider)
+* [Kubernetes Virtual Machine Infrastructure Provider](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_virtual_machine_infrastructure_provider)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

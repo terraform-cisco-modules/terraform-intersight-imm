@@ -1,11 +1,11 @@
-# profiles_ucs_switch - Intersight UCS Domain Switch Profile Terraform Module
+# ucs_domain_switch - Intersight UCS Domain Profile - Switch Profile Terraform Module
 
 ## Usage
 
 ```hcl
-module "ucs_switch_profile" {
+module "ucs_domain_switch" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/profiles_ucs_switch"
+  source = "terraform-cisco-modules/imm/intersight//modules/ucs_domain_switch"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a UCS Domain Switch Profile in Intersight.  This can be 
 
 These resources are created
 
-* [ucs_switch_profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_switch_profile)
+* [UCS Domain Profile - Switch Profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_switch_profile)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -55,5 +55,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | UCS Domain Switch Profile Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | UCS Domain Profile - Switch Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

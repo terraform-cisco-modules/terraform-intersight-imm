@@ -1,11 +1,11 @@
-# firmware_server - Intersight Server Firmware Upgrade Terraform Module
+# ucs_chassis_firmware - Intersight UCS Chassis Firmware Management Terraform Module
 
 ## Usage
 
 ```hcl
-module "upgrade_server" {
+module "ucs_chassis_firmware" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/firmware_server"
+  source = "terraform-cisco-modules/imm/intersight//modules/ucs_chassis_firmware"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will upgrade a Server.
 
 These resources are consumed
 
-* [server_upgrade](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/firmware_upgrade)
+* [Chassis Firmware](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/firmware_upgrade)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -36,26 +36,40 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_sdcard_policy.sd_card](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/sdcard_policy) | resource |
+| [intersight_firmware_chassis_upgrade.upgrade](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/firmware_chassis_upgrade) | resource |
+| [intersight_equipment_chassis.chassis](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/equipment_chassis) | data source |
+| [intersight_firmware_distributable.image](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/firmware_distributable) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_enable_diagnostics"></a> [enable\_diagnostics](#input\_enable\_diagnostics) | Flag to Enable the Diagnostics Utility Partition.<br>* When two cards are present in the Cisco FlexFlash controller and Operating System is chosen in the SD card policy, the configured OS partition is mirrored. If only single card is available in the Cisco FlexFlash controller, the configured OS partition is non-RAID. The utility partitions are always set as non-RAID.<br>* Note:<br>  - This policy is currently not supported on M6 servers.<br>  - You can enable up to two utility virtual drives on M5 servers, and any number of supported utility virtual drives on M4 servers.<br>  - Diagnostics is supported only for the M5 servers.<br>  - UserPartition drives can be renamed only on the M4 servers.<br>  - FlexFlash configuration is not supported on C460 M4 servers.<br>  - For the Operating System+Utility mode, the M4 servers require two FlexFlash cards, and the M5 servers require at least 1 FlexFlash + 1 FlexUtil card. | `bool` | `false` | no |
-| <a name="input_enable_drivers"></a> [enable\_drivers](#input\_enable\_drivers) | Flag to Enable the Drivers Utility Partition.<br>* When two cards are present in the Cisco FlexFlash controller and Operating System is chosen in the SD card policy, the configured OS partition is mirrored. If only single card is available in the Cisco FlexFlash controller, the configured OS partition is non-RAID. The utility partitions are always set as non-RAID.<br>* Note:<br>  - This policy is currently not supported on M6 servers.<br>  - You can enable up to two utility virtual drives on M5 servers, and any number of supported utility virtual drives on M4 servers.<br>  - Diagnostics is supported only for the M5 servers.<br>  - UserPartition drives can be renamed only on the M4 servers.<br>  - FlexFlash configuration is not supported on C460 M4 servers.<br>  - For the Operating System+Utility mode, the M4 servers require two FlexFlash cards, and the M5 servers require at least 1 FlexFlash + 1 FlexUtil card. | `bool` | `false` | no |
-| <a name="input_enable_huu"></a> [enable\_huu](#input\_enable\_huu) | Flag to Enable the HostUpgradeUtility Utility Partition.<br>* When two cards are present in the Cisco FlexFlash controller and Operating System is chosen in the SD card policy, the configured OS partition is mirrored. If only single card is available in the Cisco FlexFlash controller, the configured OS partition is non-RAID. The utility partitions are always set as non-RAID.<br>* Note:<br>  - This policy is currently not supported on M6 servers.<br>  - You can enable up to two utility virtual drives on M5 servers, and any number of supported utility virtual drives on M4 servers.<br>  - Diagnostics is supported only for the M5 servers.<br>  - UserPartition drives can be renamed only on the M4 servers.<br>  - FlexFlash configuration is not supported on C460 M4 servers.<br>  - For the Operating System+Utility mode, the M4 servers require two FlexFlash cards, and the M5 servers require at least 1 FlexFlash + 1 FlexUtil card. | `bool` | `false` | no |
-| <a name="input_enable_os"></a> [enable\_os](#input\_enable\_os) | Flag to Enable the OperatingSystem Partition.<br>* When two cards are present in the Cisco FlexFlash controller and Operating System is chosen in the SD card policy, the configured OS partition is mirrored. If only single card is available in the Cisco FlexFlash controller, the configured OS partition is non-RAID. The utility partitions are always set as non-RAID.<br>* Note:<br>  - This policy is currently not supported on M6 servers.<br>  - You can enable up to two utility virtual drives on M5 servers, and any number of supported utility virtual drives on M4 servers.<br>  - Diagnostics is supported only for the M5 servers.<br>  - UserPartition drives can be renamed only on the M4 servers.<br>  - FlexFlash configuration is not supported on C460 M4 servers.<br>  - For the Operating System+Utility mode, the M4 servers require two FlexFlash cards, and the M5 servers require at least 1 FlexFlash + 1 FlexUtil card. | `bool` | `false` | no |
-| <a name="input_enable_scu"></a> [enable\_scu](#input\_enable\_scu) | Flag to Enable the ServerConfigurationUtility Utility Partition.<br>* When two cards are present in the Cisco FlexFlash controller and Operating System is chosen in the SD card policy, the configured OS partition is mirrored. If only single card is available in the Cisco FlexFlash controller, the configured OS partition is non-RAID. The utility partitions are always set as non-RAID.<br>* Note:<br>  - This policy is currently not supported on M6 servers.<br>  - You can enable up to two utility virtual drives on M5 servers, and any number of supported utility virtual drives on M4 servers.<br>  - Diagnostics is supported only for the M5 servers.<br>  - UserPartition drives can be renamed only on the M4 servers.<br>  - FlexFlash configuration is not supported on C460 M4 servers.<br>  - For the Operating System+Utility mode, the M4 servers require two FlexFlash cards, and the M5 servers require at least 1 FlexFlash + 1 FlexUtil card. | `bool` | `false` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"sd_card"` | no |
-| <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
+| <a name="input_auth_password_direct"></a> [auth\_password\_direct](#input\_auth\_password\_direct) | Password for Direct Download Authentication. | `string` | `""` | no |
+| <a name="input_auth_password_filesrv"></a> [auth\_password\_filesrv](#input\_auth\_password\_filesrv) | Password for File Server Authentication. | `string` | `""` | no |
+| <a name="input_auth_username_direct"></a> [auth\_username\_direct](#input\_auth\_username\_direct) | Username for Direct Download Authentication. | `string` | `""` | no |
+| <a name="input_auth_username_filesrv"></a> [auth\_username\_filesrv](#input\_auth\_username\_filesrv) | Username for File Server Authentication. | `string` | `""` | no |
+| <a name="input_cifs_file_location"></a> [cifs\_file\_location](#input\_cifs\_file\_location) | The location to the image file. The accepted format is:<br> - IP-or-hostname/folder1/folder2/…/imageFile | `string` | `""` | no |
+| <a name="input_cifs_mount_options"></a> [cifs\_mount\_options](#input\_cifs\_mount\_options) | Mount option (Authentication Protocol) as configured on the CIFS Server. Example:ntlmv2.<br>* none - The default authentication protocol is decided by the endpoint.<br>* ntlm - The external CIFS server is configured with ntlm as the authentication protocol.<br>* ntlmi - Mount options of CIFS file server is ntlmi.<br>* ntlmv2 - Mount options of CIFS file server is ntlmv2.<br>* ntlmv2i - Mount options of CIFS file server is ntlmv2i.<br>* ntlmssp - Mount options of CIFS file server is ntlmssp.<br>* ntlmsspi - Mount options of CIFS file server is ntlmsspi. | `string` | `"none"` | no |
+| <a name="input_exclude_component_list"></a> [exclude\_component\_list](#input\_exclude\_component\_list) | An Array of Elements to Exclude from the Upgrade Proceedure. | `set(string)` | `[]` | no |
+| <a name="input_file_server"></a> [file\_server](#input\_file\_server) | Location of the image in user software repository. | `string` | `""` | no |
+| <a name="input_http_image_url"></a> [http\_image\_url](#input\_http\_image\_url) | HTTP/HTTPS link to the image. For a successful upgrade, the remote share server must have network connectivity with the CIMC of the selected devices.  Accepted formats are:<br> - http[s]://server-hostname/share/image<br> - http[s]://serverip/share/image | `string` | `""` | no |
+| <a name="input_http_mount_options"></a> [http\_mount\_options](#input\_http\_mount\_options) | Mount option as configured on the HTTP server. Empty if nothing is configured. | `string` | `""` | no |
+| <a name="input_image_source"></a> [image\_source](#input\_image\_source) | Source type referring the image to be downloaded from CCO or from a local HTTPS server.<br>* cisco - Image to be downloaded from Cisco software repository.<br>* localHttp - Image to be downloaded from a https server. | `string` | `"cisco"` | no |
+| <a name="input_map_type"></a> [map\_type](#input\_map\_type) | File server protocols such as CIFS, NFS, WWW for HTTP (S) that hosts the image.<br>* cifs - File server protocol used is CIFS.<br>* nfs - File server protocol used is NFS.<br>* www - File server protocol used is WWW. | `string` | `"www"` | no |
+| <a name="input_nfs_file_location"></a> [nfs\_file\_location](#input\_nfs\_file\_location) | The location to the image file. The accepted format is:<br> - IP-or-hostname/folder1/folder2/…/imageFile | `string` | `""` | no |
+| <a name="input_nfs_mount_options"></a> [nfs\_mount\_options](#input\_nfs\_mount\_options) | Mount option as configured on the NFS Server. For example:nolock. | `string` | `""` | no |
+| <a name="input_serial"></a> [serial](#input\_serial) | Serial Number of a Server. | `string` | n/a | yes |
+| <a name="input_skip_estimate_impact"></a> [skip\_estimate\_impact](#input\_skip\_estimate\_impact) | User has the option to skip the estimate impact calculation. | `bool` | `false` | no |
+| <a name="input_software_version"></a> [software\_version](#input\_software\_version) | Version of UCS Software to Apply to the environment. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_upgrade_type"></a> [upgrade\_type](#input\_upgrade\_type) | Desired upgrade mode to choose either direct download based upgrade or network share upgrade.<br>* direct\_upgrade - Upgrade mode is direct download.<br>* network\_upgrade - Upgrade mode is network upgrade. | `string` | `"direct_upgrade"` | no |
+| <a name="input_upgradeoption_direct"></a> [upgradeoption\_direct](#input\_upgradeoption\_direct) | Option to control the upgrade, e.g., sd\_upgrade\_mount\_only - download the image into sd and upgrade wait for the server on-next boot.<br>* chassis\_upgrade\_full - Direct upgrade chassis upgrade full.<br>* download\_only - Direct upgrade image download only.<br>* sd\_upgrade\_mount\_only - Direct upgrade SD upgrade mount only.<br>* sd\_download\_only - Direct upgrade SD download only.<br>* sd\_upgrade\_only - Direct upgrade SD upgrade only.<br>* sd\_upgrade\_full - Direct upgrade SD upgrade full.<br>* upgrade\_full - The upgrade downloads or mounts the image, and reboots immediately for an upgrade.<br>* upgrade\_mount\_only - The upgrade downloads or mounts the image. The upgrade happens in next reboot. | `string` | `"sd_upgrade_only"` | no |
+| <a name="input_upgradeoption_filesrv"></a> [upgradeoption\_filesrv](#input\_upgradeoption\_filesrv) | Option to control the upgrade operation.  Options are:<br>* nw\_upgrade\_full - Mount the image and immediately run the upgrade.  Network upgrade option for full upgrade.<br>* nw\_upgrade\_mount\_only - Mount the image from a file server and run the upgrade on the next boot.  Network upgrade mount only. | `string` | `"nw_upgrade_full"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Storage SD Card Policy Managed Object ID (moid). |
+| <a name="output_chassis"></a> [chassis](#output\_chassis) | n/a |
+| <a name="output_intersight_firmware_distributable"></a> [intersight\_firmware\_distributable](#output\_intersight\_firmware\_distributable) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

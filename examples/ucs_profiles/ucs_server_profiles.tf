@@ -12,16 +12,16 @@
 module "ucs_server_profile" {
   depends_on = [
     data.intersight_organization_organization.org_moid,
-      module.bios_example,
-      module.boot_uefi_local_disk,
-      module.ipmi_example,
-      module.imc_access_example,
-      module.lan_connectivity_example,
-      module.local_user_policy_example,
-      module.san_connectivity,
-      module.sd_card_example,
-      module.sol_example,
-      module.snmp_example
+    module.bios_example,
+    module.boot_uefi_local_disk,
+    module.ipmi_example,
+    module.imc_access_example,
+    module.lan_connectivity_example,
+    module.local_user_policy_example,
+    module.san_connectivity,
+    module.sd_card_example,
+    module.sol_example,
+    module.snmp_example
   ]
   source          = "terraform-cisco-modules/imm/intersight//modules/profiles_ucs_server"
   action          = "No-op"

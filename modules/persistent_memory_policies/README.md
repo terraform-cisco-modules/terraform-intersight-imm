@@ -1,11 +1,11 @@
-# policies_persistent_memory - Intersight Persistent Memory Policy Terraform Module
+# persistent_memory_policies - Intersight Persistent Memory Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "persistent_memory" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_persistent_memory"
+  source = "terraform-cisco-modules/imm/intersight//modules/persistent_memory_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Persistent Memory Policy in Intersight.  This can be u
 
 These resources are consumed
 
-* [persistent_memory](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/memory_persistent_memory_policy)
+* [Persistent Memory](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/memory_persistent_memory_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

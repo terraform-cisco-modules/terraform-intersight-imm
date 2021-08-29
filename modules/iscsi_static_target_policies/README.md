@@ -1,21 +1,21 @@
-# policies_iscsi_static_target - Intersight iSCSI Static Target Policy Terraform Module
+# iscsi_static_target_policies - Intersight iSCSI Static Target Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "iscsi_static_target" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_iscsi_static_target"
+  source = "terraform-cisco-modules/imm/intersight//modules/iscsi_static_target_policies"
 
   # omitted...
 }
 ```
 
-This module will create a (vNIC) iSCSI Static Target Policy in Intersight.  This can be used to create Profiles and Templates that require a (vNIC) iSCSI Static Target Policy.  
+This module will create a iSCSI Static Target Policy in Intersight.  This can be used to create Profiles and Templates that require a iSCSI Static Target Policy.  
 
 These resources are consumed
 
-* [iscsi_static_target](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_static_target_policy)
+* [iSCSI Static Target](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_static_target_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_vnic_iscsi_static_target_policy.vnic_iscsi_target](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_static_target_policy) | resource |
+| [intersight_vnic_iscsi_static_target_policy.iscsi_static_target](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_static_target_policy) | resource |
 
 ## Inputs
 
@@ -55,5 +55,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | (vNIC) iSCSI Static Target Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | iSCSI Static Target Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -458,11 +458,6 @@ variable "multicast_moid" {
   type        = string
 }
 
-variable "vlan_list" {
-  default = "1-10,21-30"
-  type    = string
-}
-
 variable "vlan_prefix" {
   default     = "VLAN"
   description = "Prefix Name for VLANs."

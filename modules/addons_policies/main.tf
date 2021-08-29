@@ -9,7 +9,7 @@ data "intersight_kubernetes_addon_definition" "addons" {
 }
 
 resource "intersight_kubernetes_addon_policy" "addons" {
-  depends_on  = [
+  depends_on = [
     data.intersight_kubernetes_addon_definition.addons
   ]
   description = var.description

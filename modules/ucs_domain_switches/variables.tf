@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# UCS Domain Switch Profile Variables Section.
+# UCS Domain Profile - Switch Profile Variables Section.
 #____________________________________________________________
 
 variable "action" {

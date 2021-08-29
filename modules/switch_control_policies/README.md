@@ -1,11 +1,11 @@
-# policies_switch_control - Intersight Switch Control Policy Terraform Module
+# switch_control_policies - Intersight Switch Control Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "switch_control" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_switch_control"
+  source = "terraform-cisco-modules/imm/intersight//modules/switch_control_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Switch Control Policy in Intersight.  This can be used
 
 These resources are consumed
 
-* [switch_control](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_switch_control_policy)
+* [Switch Control](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_switch_control_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

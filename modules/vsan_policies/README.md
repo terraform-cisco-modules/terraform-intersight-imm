@@ -1,11 +1,11 @@
-# policies_vsan - Intersight UCS VSAN Policy Terraform Module
+# vsan_policies - Intersight VSAN Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "vsan" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vsan"
+  source = "terraform-cisco-modules/imm/intersight//modules/vsan_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a VSAN Policy in Intersight.  This can be UCS Domain Pro
 
 These resources are consumed
 
-* [vsan](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_fc_network_policy)
+* [VSAN Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_fc_network_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -53,5 +53,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Domain VSAN Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | VSAN Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

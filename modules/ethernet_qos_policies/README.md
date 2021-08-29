@@ -1,21 +1,21 @@
-# policies_vnic_qos - Intersight Ethernet (vNIC) Qos Policy Terraform Module
+# ethernet_qos_policies - Intersight Ethernet Qos Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vnic_qos" {
+module "ethernet_qos" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_qos"
+  source = "terraform-cisco-modules/imm/intersight//modules/ethernet_qos_policies"
 
   # omitted...
 }
 ```
 
-This module will create an Ethernet (vNIC) Qos Policy in Intersight.  This can be used to create Profiles and Templates that require a Ethernet Qos Policy.  
+This module will create an Ethernet Qos Policy in Intersight.  This can be used to create Profiles and Templates that require a Ethernet Qos Policy.  
 
 These resources are consumed
 
-* [vnic_qos](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_eth_qos_policy)
+* [Ethernet QoS](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_eth_qos_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -57,5 +57,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet (vNIC) Qos Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet Qos Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

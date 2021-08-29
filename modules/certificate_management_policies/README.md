@@ -1,11 +1,11 @@
-# policies_certificate_management - Intersight Certificate Management Policy Terraform Module
+# certificate_management_policies - Intersight Certificate Management Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "certificates" {
+module "certificate_management" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_certificate_management"
+  source = "terraform-cisco-modules/imm/intersight//modules/certificate_management_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Certificate Management Policy in Intersight.  This can
 
 These resources are consumed
 
-* [certificates](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/certificatemanagement_policy)
+* [Certificate Management](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/certificatemanagement_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

@@ -1,11 +1,11 @@
-# policies_smtp - Intersight SMTP Policy Terraform Module
+# smtp_policies - Intersight SMTP Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "smtp_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_smtp"
+  source = "terraform-cisco-modules/imm/intersight//modules/smtp_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an SMTP Policy in Intersight.  This can be used to creat
 
 These resources are consumed
 
-* [smtp_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/smtp_policy)
+* [SMTP Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/smtp_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

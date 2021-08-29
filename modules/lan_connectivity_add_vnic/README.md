@@ -1,21 +1,21 @@
-# policies_vnic - Intersight Ethernet (vNIC) Qos Policy Terraform Module
+# lan_connectivity_add_vnic - Intersight LAN Connectivity - Add vNIC Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vnic" {
+module "add_vnic" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vnic"
+  source = "terraform-cisco-modules/imm/intersight//modules/lan_connectivity_add_vnic"
 
   # omitted...
 }
 ```
 
-This module will create an Ethernet (vNIC) Policy in Intersight.  This can be used to create Profiles and Templates that require a vNIC Policy.  
+This module will Add a vNIC to a LAN Connectivity Policy in Intersight.  This can be used to create Profiles and Templates that require a vNIC.  
 
 These resources are consumed
 
-* [vnic](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_eth_if)
+* [LAN Connectivity - Add vNIC](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_eth_if)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -79,5 +79,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet (vNIC) Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | LAN Connectivity - Add vNIC Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -1,21 +1,21 @@
-# profiles_ucs_domain - Intersight UCS Domain Profile Terraform Module
+# ucs_domain_profiles - Intersight UCS Domain Profile Terraform Module
 
 ## Usage
 
 ```hcl
 module "ucs_domain_profile" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/profiles_ucs_domain"
+  source = "terraform-cisco-modules/imm/intersight//modules/ucs_domain_profiles"
 
   # omitted...
 }
 ```
 
-This module will create a UCS Domain Cluster Profile in Intersight.  This can be assigned to IMM Domains.  
+This module will create a UCS Domain Profile in Intersight.  This can be assigned to IMM Domains.  
 
 These resources are created
 
-* [ucs_domain_profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_switch_cluster_profile)
+* [UCS Domain Profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_switch_cluster_profile)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_fabric_switch_cluster_profile.domain_cluster](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_switch_cluster_profile) | resource |
+| [intersight_fabric_switch_cluster_profile.domain_profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_switch_cluster_profile) | resource |
 
 ## Inputs
 

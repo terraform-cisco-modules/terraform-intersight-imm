@@ -1,11 +1,11 @@
-# policies_local_user - Intersight Local User Policy Terraform Module
+# local_user_policies - Intersight Local User Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "local_user" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_local_user"
+  source = "terraform-cisco-modules/imm/intersight//modules/local_user_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Local User Policy in Intersight.  This can be used to 
 
 These resources are consumed
 
-* [local_user](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_end_point_user_policy)
+* [Local User](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_end_point_user_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_iam_end_point_user_policy.password_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_end_point_user_policy) | resource |
+| [intersight_iam_end_point_user_policy.user_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_end_point_user_policy) | resource |
 
 ## Inputs
 

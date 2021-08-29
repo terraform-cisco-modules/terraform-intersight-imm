@@ -1,11 +1,11 @@
-# policies_port_mode - Intersight UCS Domain Port Policy - Mode Terraform Module
+# port_mode - Intersight UCS Domain Port Policy - Port Mode Terraform Module
 
 ## Usage
 
 ```hcl
 module "port_mode" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_port_mode"
+  source = "terraform-cisco-modules/imm/intersight//modules/port_mode"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will Configure the Port Mode of a Port Policy in Intersight.
 
 These resources are consumed
 
-* [port_mode](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_port_mode)
+* [Port Mode](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_port_mode)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -53,5 +53,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | UCS Domain Port Mode Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | UCS Domain Port Policy > Mode Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -1,11 +1,11 @@
-# policies_sd_card_utility - Intersight Storage SD Card Policy Terraform Module
+# sd_card_policies_utility - Intersight Storage SD Card Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "sd_card_utility" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_sd_card_utility"
+  source = "terraform-cisco-modules/imm/intersight//modules/sd_card_policies_utility"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Storage SD Card Policy with only the Utility Partiion 
 
 These resources are consumed
 
-* [sdcard_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/sdcard_policy)
+* [SD Card](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/sdcard_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

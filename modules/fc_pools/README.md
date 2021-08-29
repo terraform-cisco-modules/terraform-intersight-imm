@@ -1,21 +1,21 @@
-# pools_fc - Intersight WWxN Pools Terraform Module
+# fc_pools - Intersight WWxN Pools Terraform Module
 
 ## Usage
 
 ```hcl
-module "fc_pool" {
+module "wwxn_pools" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/pools_fc"
+  source = "terraform-cisco-modules/imm/intersight//modules/fc_pools"
 
   # omitted...
 }
 ```
 
-This module will create a WWxN Pool in Intersight.  This can be used to create Service Profiles and Service Templates that require a WWxN Pool.  
+This module will create a WWNN/WWPN Pool in Intersight.  This can be used to create Service Profiles and Service Templates that require a WWxN Pool.  
 
 These resources are consumed:
 
-* [macpool](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/macpool_pool)
+* [WWxN Pools](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fcpool_pool)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

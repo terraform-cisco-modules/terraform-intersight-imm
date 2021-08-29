@@ -1,21 +1,21 @@
-# templates_ucs_server - Intersight UCS Server Profile Template Terraform Module
+# ucs_server_templates - Intersight UCS Server Template Terraform Module
 
 ## Usage
 
 ```hcl
 module "ucs_server_template" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/templates_ucs_server"
+  source = "terraform-cisco-modules/imm/intersight//modules/ucs_server_templates"
 
   # omitted...
 }
 ```
 
-This module will create a UCS Server Profile Template in Intersight.  This can be assigned to Fabric Attached Servers or Standalone Servers.  
+This module will create a UCS Server Template in Intersight.  This can be assigned to Fabric Attached Servers or Standalone Servers.  
 
 These resources are created
 
-* [ucs_server_template](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/server_profile_template)
+* [UCS Server Template](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/server_profile_template)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

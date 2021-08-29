@@ -1,11 +1,11 @@
-# policies_vnic_network_group - Intersight Ethernet Network Group Policy (VLAN Group) Terraform Module
+# ethernet_network_group_policies - Intersight Ethernet Network Group Policy (VLAN Group) Terraform Module
 
 ## Usage
 
 ```hcl
-module "vlan_group" {
+module "ethernet_network_group" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_network_group"
+  source = "terraform-cisco-modules/imm/intersight//modules/ethernet_network_group_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an Ethernet Network Group Policy (VLAN Group) in Intersi
 
 These resources are consumed
 
-* [vlan_group](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_eth_network_group_policy)
+* [Ethernet Network Group](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_eth_network_group_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

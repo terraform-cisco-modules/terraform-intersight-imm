@@ -1,11 +1,11 @@
-# policies_link_aggregation - Intersight Link Aggregation Policy Terraform Module
+# link_aggregation_policies - Intersight Link Aggregation Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "link_aggregation" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_link_aggregation"
+  source = "terraform-cisco-modules/imm/intersight//modules/link_aggregation_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Link Aggregation Policy in Intersight.  This can be us
 
 These resources are consumed
 
-* [link_aggregation](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_link_aggregation_policy)
+* [Link Aggregation](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_link_aggregation_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

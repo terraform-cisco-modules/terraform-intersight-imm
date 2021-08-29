@@ -1,21 +1,21 @@
-# policies_snmp - Intersight SNMP Policy Terraform Module
+# snmp_policies_2_users - Intersight SNMP Policy - with 2 Users Terraform Module
 
 ## Usage
 
 ```hcl
-module "imc_snmp_policy" {
+module "snmp_policy_with_2_users" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_snmp"
+  source = "terraform-cisco-modules/imm/intersight//modules/snmp_policies_2_users"
 
   # omitted...
 }
 ```
 
-This module will create an SNMP Policy in Intersight.  This can be used to create Domains, Profiles, and Templates that require an SNMP Policy.  
+This module will create an SNMP Policy in Intersight with 2 Users.  This can be used to create Domains, Profiles, and Templates that require an SNMP Policy.  
 
 These resources are consumed
 
-* [snmp_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/snmp_policy)
+* [SNMP Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/snmp_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

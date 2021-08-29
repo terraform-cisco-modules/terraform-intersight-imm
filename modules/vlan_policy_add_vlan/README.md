@@ -1,11 +1,11 @@
-# policies_vlan_add_vlan - Intersight UCS Domain Fabric VLAN Terraform Module
+# vlan_policy_add_vlan - Intersight VLAN Policy - Add VLAN Terraform Module
 
 ## Usage
 
 ```hcl
 module "vlan_add_vlan" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vlan_add_vlan"
+  source = "terraform-cisco-modules/imm/intersight//modules/vlan_policy_add_vlan"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will Add VLANs to a VLAN Policy in Intersight.
 
 These resources are consumed
 
-* [vlan](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/fabric_vlan)
+* [VLAN Policy - Add VLAN](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/fabric_vlan)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -54,5 +54,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_vlan"></a> [vlan](#output\_vlan) | Fabric VLAN Managed Object ID (moid). |
+| <a name="output_vlan"></a> [vlan](#output\_vlan) | VLAN Policy > Add VLANs Attributes. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

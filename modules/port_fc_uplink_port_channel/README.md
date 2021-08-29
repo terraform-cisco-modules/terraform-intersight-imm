@@ -1,11 +1,11 @@
-# policies_port_fc_uplink_port_channel - Intersight Port Policy - FC Uplink Port Channel Terraform Module
+# port_fc_uplink_port_channel - Intersight Port Policy - FC Uplink Port Channel Terraform Module
 
 ## Usage
 
 ```hcl
 module "fc_uplink_port_channel" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_port_fc_uplink_port_channel"
+  source = "terraform-cisco-modules/imm/intersight//modules/port_fc_uplink_port_channel"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will Configure a UCS Domain Fibre Channel Uplink Port Channel and As
 
 These resources are consumed
 
-* [fc_uplink_port_channel](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_uplink_pc_role)
+* [FC Uplink Port Channel](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_uplink_pc_role)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

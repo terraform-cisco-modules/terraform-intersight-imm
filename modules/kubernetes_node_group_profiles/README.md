@@ -1,11 +1,11 @@
-# Intersight Kubernetes Cluster - Node Group Profile Terraform Module
+# kubernetes_node_group_profiles - Intersight Kubernetes Cluster - Node Group Profile Terraform Module
 
 ## Usage
 
 ```hcl
-module "kubernetes_node_groups" {
+module "kubernetes_node_group_profiles" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/profiles_kubernetes_node_groups"
+  source = "terraform-cisco-modules/imm/intersight//modules/kubernetes_node_group_profiles"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will Create a Intersight Kubernetes Service Cluster Node Group Profi
 
 These resources are consumed
 
-* [kubernetes_node_groups](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_node_group_profile)
+* [Kubernetes Node Group Profiles](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_node_group_profile)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

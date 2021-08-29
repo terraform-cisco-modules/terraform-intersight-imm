@@ -1,11 +1,11 @@
-# policies_ssh - Intersight SSH Policy Terraform Module
+# ssh_policies - Intersight SSH Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "ssh_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_ssh"
+  source = "terraform-cisco-modules/imm/intersight//modules/ssh_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an SSH Policy in Intersight.  This can be used to create
 
 These resources are consumed
 
-* [ssh_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/ssh_policy)
+* [SSH Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/ssh_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

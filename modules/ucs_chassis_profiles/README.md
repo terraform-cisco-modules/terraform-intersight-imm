@@ -1,21 +1,21 @@
-# profiles_ucs_chassis - Intersight UCS Chassis Profile Terraform Module
+# ucs_chassis_profiles - Intersight UCS Chassis Profile Terraform Module
 
 ## Usage
 
 ```hcl
 module "ucs_chassis_profile" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/profiles_ucs_chassis"
+  source = "terraform-cisco-modules/imm/intersight//modules/ucs_chassis_profiles"
 
   # omitted...
 }
 ```
 
-This module will create a UCS Server Profile in Intersight.  This can be assigned to Fabric Attached Servers or Standalone Servers.  
+This module will create a UCS Chassis Profile in Intersight.  
 
 These resources are created
 
-* [ucs_chassis_profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/chassis_profile)
+* [UCS Chassis Profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/chassis_profile)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

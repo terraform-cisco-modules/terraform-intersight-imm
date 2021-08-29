@@ -1,11 +1,11 @@
-# policies_imc_access - Intersight IMC Access Policy Terraform Module
+# imc_access_policies - Intersight IMC Access Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "imc_access_policy" {
+module "imc_access" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_imc_access"
+  source = "terraform-cisco-modules/imm/intersight//modules/imc_access_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a IMC Access Policy in Intersight.  This can be used to 
 
 These resources are consumed
 
-* [access_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/access_policy)
+* [IMC Access](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/access_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

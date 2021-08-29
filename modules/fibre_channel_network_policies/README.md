@@ -1,21 +1,21 @@
-# policies_vhba_network - Intersight vNIC Network Policy Terraform Module
+# fibre_channel_network_policies - Intersight Fibre Channel Network Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "vhba_policy" {
+module "fibre_channel_network" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vhba_network"
+  source = "terraform-cisco-modules/imm/intersight//modules/fibre_channel_network_policies"
 
   # omitted...
 }
 ```
 
-This module will create an Fibre Channel Network Policy in Intersight.  This Policy is for Standalone UCS Rackmount Servers that require a Fibre Channel (vNIC) Network Policy.  
+This module will create an Fibre Channel Network Policy in Intersight.  This Policy is for Standalone UCS Rackmount Servers that require a Fibre Channel Network Policy.  
 
 These resources are consumed
 
-* [vhba_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_network_policy)
+* [Fibre Channel Network](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_fc_network_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

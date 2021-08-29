@@ -1,11 +1,11 @@
-# policies_san_connectivity - Intersight SAN Connectivity Policy Terraform Module
+# san_connectivity_policies - Intersight SAN Connectivity Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "san_connectivity" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_san_connectivity"
+  source = "terraform-cisco-modules/imm/intersight//modules/san_connectivity_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a SAN Connectivity Policy in Intersight.  This can be us
 
 These resources are consumed
 
-* [san_connectivity](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_san_connectivity_policy)
+* [SAN Connectivity](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_san_connectivity_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

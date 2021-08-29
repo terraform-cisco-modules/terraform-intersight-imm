@@ -1,11 +1,11 @@
-# policies_virtual_machine_infra_config - Intersight Kubernetes Addon Policy Terraform Module
+# virtual_machine_infra_config - Intersight Virtual Machine Infra Config Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "virtual_machine_infra_config" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_virtual_machine_infra_config"
+  source = "terraform-cisco-modules/imm/intersight//modules/virtual_machine_infra_config"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Kubernetes Virtual Machine Infra Config Policy in Inte
 
 These resources are consumed
 
-* [virtual_machine_infra_config](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_virtual_machine_infra_config_policy)
+* [Virtual Machine Infra Config](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_virtual_machine_infra_config_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -58,5 +58,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Addon Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Virtull Machine Infra Config Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -1,11 +1,11 @@
-# policies_device_connector - Intersight Device Connector Policy Terraform Module
+# device_connector_policies - Intersight Device Connector Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "device_connector" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_device_connector"
+  source = "terraform-cisco-modules/imm/intersight//modules/device_connector_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Device Connector Policy in Intersight.  This can be us
 
 These resources are consumed
 
-* [device_connector](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/deviceconnector_policy)
+* [Device Connector](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/deviceconnector_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

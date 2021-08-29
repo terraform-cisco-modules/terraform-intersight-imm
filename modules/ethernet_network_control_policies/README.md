@@ -1,11 +1,11 @@
-# policies_vnic_network_control - Intersight Ethernet Network Control Policy Terraform Module
+# ethernet_network_control_policies - Intersight Ethernet Network Control Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "network_control" {
+module "ethernet_network_control" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vnic_network_control"
+  source = "terraform-cisco-modules/imm/intersight//modules/ethernet_network_control_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an Ethernet (vNIC) Network Control Policy in Intersight.
 
 These resources are consumed
 
-* [network_control](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_eth_network_control_policy)
+* [Ethernet Network Control](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_eth_network_control_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -57,5 +57,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet (vNIC) Network Control Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet Network Control Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

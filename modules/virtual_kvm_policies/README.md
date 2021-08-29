@@ -1,11 +1,11 @@
-# policies_virtual_kvm - Intersight Virtual KVM Policy Terraform Module
+# virtual_kvm_policies - Intersight Virtual KVM Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "kvm_policy" {
+module "virtual_kvm" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_virtual_kvm"
+  source = "terraform-cisco-modules/imm/intersight//modules/virtual_kvm_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a KVM Policy in Intersight.  This can be used to create 
 
 These resources are consumed
 
-* [kvm_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kvm_policy)
+* [Virtual KVM](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kvm_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

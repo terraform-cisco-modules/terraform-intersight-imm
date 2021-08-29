@@ -1,11 +1,11 @@
-# policies_vsan_add_vsan - Intersight VSAN Policy - Add VSAN Terraform Module
+# vsan_policy_add_vsan - Intersight VSAN Policy - Add VSAN Terraform Module
 
 ## Usage
 
 ```hcl
 module "vsan_add_vsan" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vsan_add_vsan"
+  source = "terraform-cisco-modules/imm/intersight//modules/vsan_policy_add_vsan"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will add a VSAN to a VSAN Policy in Intersight.
 
 These resources are consumed
 
-* [vsan_add_vsan](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_vsan)
+* [VSAN Policy - Add VSAN](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_vsan)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -53,5 +53,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Fabric VSAN Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | VSAN Policy - Add VSAN Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

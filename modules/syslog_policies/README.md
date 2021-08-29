@@ -1,11 +1,11 @@
-# policies_syslog - Intersight Syslog Policy Terraform Module
+# syslog_policies - Intersight Syslog Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "syslog_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_syslog"
+  source = "terraform-cisco-modules/imm/intersight//modules/syslog_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Syslog Policy in Intersight.  This can be used to crea
 
 These resources are consumed
 
-* [syslog_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/syslog_policy)
+* [Syslog Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/syslog_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

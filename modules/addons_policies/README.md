@@ -36,8 +36,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_kubernetes_addon_policy.addon](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_addon_policy) | resource |
-| [intersight_kubernetes_addon_definition.addon](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/kubernetes_addon_definition) | data source |
+| [intersight_kubernetes_addon_policy.addons](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_addon_policy) | resource |
+| [intersight_kubernetes_addon_definition.addons](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/kubernetes_addon_definition) | data source |
 
 ## Inputs
 
@@ -57,6 +57,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Addon Policy Managed Object ID (moid). |
-| <a name="output_name"></a> [name](#output\_name) | Kubernetes Addon Policy Name. |
+| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Add-ons Policy Managed Object ID (moid). |
+| <a name="output_name"></a> [name](#output\_name) | Kubernetes Add-ons Policy Name. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

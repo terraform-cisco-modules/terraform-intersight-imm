@@ -1,11 +1,11 @@
-# policies_kubernetes_version - Intersight Kubernetes Version Policy Terraform Module
+# kubernetes_version_policies - Intersight Kubernetes Version Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "kubernetes_version" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_kubernetes_version"
+  source = "terraform-cisco-modules/imm/intersight//modules/kubernetes_version_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Kubernetes Version Policy in Intersight.  This is cons
 
 These resources are consumed
 
-* [kubernetes_version](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_version_policy)
+* [Kubernetes Version](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_version_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

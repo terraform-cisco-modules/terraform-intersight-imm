@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# Collect the moid of the Ethernet (vNIC) Adapter Policy
+# Collect the moid of the Ethernet Adapter Policy
 #____________________________________________________________
 
 output "moid" {

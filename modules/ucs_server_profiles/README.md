@@ -1,11 +1,11 @@
-# profiles_ucs_server - Intersight UCS Server Profile Terraform Module
+# ucs_server_profiles - Intersight UCS Server Profile Terraform Module
 
 ## Usage
 
 ```hcl
-module "ucs_server_profiles" {
+module "ucs_server_profile" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/profiles_ucs_server"
+  source = "terraform-cisco-modules/imm/intersight//modules/ucs_server_profiles"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a UCS Server Profile in Intersight.  This can be assigne
 
 These resources are created
 
-* [ucs_server_profiles](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/server_profile)
+* [UCS Server Profile](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/server_profile)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

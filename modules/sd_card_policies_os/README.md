@@ -1,11 +1,11 @@
-# policies_sd_card_os - Intersight Storage SD Card Policy Terraform Module
+# sd_card_policies_os - Intersight Storage SD Card Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "sd_card_os" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_sd_card_os"
+  source = "terraform-cisco-modules/imm/intersight//modules/sd_card_policies_os"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Storage SD Card Policy with only the Operation System 
 
 These resources are consumed
 
-* [sdcard_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/sdcard_policy)
+* [SD Card](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/sdcard_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

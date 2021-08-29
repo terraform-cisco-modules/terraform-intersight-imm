@@ -1,11 +1,11 @@
-# policies_kubernetes_network_cidr - Intersight Kubernetes Network CIDR Policy Terraform Module
+# network_cidr_policies - Intersight Kubernetes Network CIDR Policy Terraform Module
 
 ## Usage
 
 ```hcl
-module "kubernetes_network_cidr" {
+module "network_cidr" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_kubernetes_network_cidr"
+  source = "terraform-cisco-modules/imm/intersight//modules/network_cidr_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Kubernetes Network CIDR Policy in Intersight.  This is
 
 These resources are consumed
 
-* [kubernetes_network_cidr](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_network_policy)
+* [Kubernetes Network CIDR](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_network_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

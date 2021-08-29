@@ -1,11 +1,11 @@
-# policies_system_qos - Intersight System QoS Policy Terraform Module
+# system_qos_policies - Intersight System QoS Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "system_qos_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_system_qos"
+  source = "terraform-cisco-modules/imm/intersight//modules/system_qos_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a System QoS Policy in Intersight.  This can be used to 
 
 These resources are consumed
 
-* [system_qos_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_system_qos_policy)
+* [System QoS](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_system_qos_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

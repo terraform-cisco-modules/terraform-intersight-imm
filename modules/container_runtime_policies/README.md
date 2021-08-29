@@ -1,11 +1,11 @@
-# policies_container_runtime - Intersight Container Runtime Policy Terraform Module
+# container_runtime_policies - Intersight Container Runtime Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "container_runtime" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_container_runtime"
+  source = "terraform-cisco-modules/imm/intersight//modules/container_runtime_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Container Runtime Policy in Intersight.  This is consu
 
 These resources are consumed
 
-* [container_runtime](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_container_runtime_policy)
+* [Container Runtime](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/kubernetes_container_runtime_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -63,5 +63,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Runtime Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Kubernetes Container Runtime Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

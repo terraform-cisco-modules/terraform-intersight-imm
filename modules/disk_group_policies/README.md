@@ -1,11 +1,11 @@
-# policies_disk_group - Intersight Disk Group Policy Terraform Module
+# disk_group_policies - Intersight Disk Group Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "disk_group" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_disk_group"
+  source = "terraform-cisco-modules/imm/intersight//modules/disk_group_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a Disk Group Policy in Intersight.  This can be used to 
 
 These resources are consumed
 
-* [disk_group](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/storage_disk_group_policy)
+* [Disk Group](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/storage_disk_group_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

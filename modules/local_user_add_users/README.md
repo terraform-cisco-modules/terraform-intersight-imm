@@ -1,11 +1,11 @@
-# policies_local_user_users - Intersight Local User Terraform Module
+# local_user_add_users - Intersight Local User - Add User Terraform Module
 
 ## Usage
 
 ```hcl
-module "local_user_add_user" {
+module "add_user" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_local_user_users"
+  source = "terraform-cisco-modules/imm/intersight//modules/local_user_add_users"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will Add a Local User to a Local User Policy in Intersight.
 
 These resources are consumed
 
-* [local_user_add_user](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_end_point_user)
+* [Local Users - Add User](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_end_point_user)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

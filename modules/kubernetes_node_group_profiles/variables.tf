@@ -1,7 +1,7 @@
 
 #____________________________________________________________
 #
-# Intersight Kubernetes Service Cluster Node Group Profile Variables
+# Intersight Kubernetes Cluster Node Group Profiles Variables
 #____________________________________________________________
 
 variable "action" {

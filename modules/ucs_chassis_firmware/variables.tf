@@ -150,7 +150,7 @@ variable "upgrade_type" {
 }
 
 variable "upgradeoption_direct" {
-  default     = "sd_upgrade_only"
+  default = "sd_upgrade_only"
   # default     = "chassis_upgrade_full"
   description = <<-EOT
   Option to control the upgrade, e.g., sd_upgrade_mount_only - download the image into sd and upgrade wait for the server on-next boot.

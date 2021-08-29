@@ -1,6 +1,6 @@
 #______________________________________________________________
 #
-# Ethernet (vNIC) Network Group (VLAN Group) Policy Variables.
+# Ethernet Network Group (VLAN Group) Policy Variables.
 #______________________________________________________________
 
 variable "description" {

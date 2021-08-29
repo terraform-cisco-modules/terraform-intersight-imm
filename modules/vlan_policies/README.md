@@ -1,11 +1,11 @@
-# policies_vlan - Intersight VLAN Policy Terraform Module
+# vlan_policies - Intersight VLAN Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "vlan_policy" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_vlan"
+  source = "terraform-cisco-modules/imm/intersight//modules/vlan_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create a VLAN Policy in Intersight.  This can be UCS Domain Pro
 
 These resources are consumed
 
-* [vlan_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_eth_network_policy)
+* [VLAN Policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_eth_network_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_fabric_eth_network_policy.vlan_policy](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_eth_network_policy) | resource |
+| [intersight_fabric_eth_network_policy.vlan](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_eth_network_policy) | resource |
 
 ## Inputs
 
@@ -52,5 +52,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Domain VLAN Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | VLAN Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

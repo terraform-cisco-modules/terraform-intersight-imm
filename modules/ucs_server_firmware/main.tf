@@ -1,12 +1,12 @@
 locals {
-  model = data.intersight_compute_physical_summary.server.results.0.model
+  model          = data.intersight_compute_physical_summary.server.results.0.model
   image_category = length(regexall("B200", local.model)) > 0 ? "B-Series" : "C-Series"
   image_name = length(
-      regexall("B200", local.model)
+    regexall("B200", local.model)
     ) > 0 ? join(
-      ".", [join(".", ["ucs-k9-bundle-b-series", replace(replace(var.software_version, "(", "."), ")", "")]), "B.bin"]
+    ".", [join(".", ["ucs-k9-bundle-b-series", replace(replace(var.software_version, "(", "."), ")", "")]), "B.bin"]
     ) : join(
-      ".", [join(".", ["ucs-k9-bundle-c-series", replace(replace(var.software_version, "(", "."), ")", "")]), "C.bin"])
+  ".", [join(".", ["ucs-k9-bundle-c-series", replace(replace(var.software_version, "(", "."), ")", "")]), "C.bin"])
   server_object = length(regexall("B200", local.model)) > 0 ? "compute.Blade" : "compute.Blade"
 }
 
@@ -37,7 +37,7 @@ resource "intersight_firmware_upgrade" "upgrade" {
     data.intersight_firmware_distributable.image
   ]
   direct_download {
-    http_server   {
+    http_server {
       location_link = var.http_image_url
       mount_options = var.http_mount_options
       object_type   = "firmware.HttpServer"
@@ -75,7 +75,7 @@ resource "intersight_firmware_upgrade" "upgrade" {
     username      = var.auth_username_filesrv
   }
   skip_estimate_impact = var.skip_estimate_impact
-  upgrade_type = var.upgrade_type
+  upgrade_type         = var.upgrade_type
   server {
     additional_properties = ""
     class_id              = "mo.MoRef"

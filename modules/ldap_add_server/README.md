@@ -1,21 +1,21 @@
-# policies_ldap_provider - Intersight LDAP Provider Terraform Module
+# ldap_add_server - Intersight LDAP - Add Server Terraform Module
 
 ## Usage
 
 ```hcl
 module "ldap_provider" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_ldap_provider"
+  source = "terraform-cisco-modules/imm/intersight//modules/ldap_add_server"
 
   # omitted...
 }
 ```
 
-This module will add an LDAP Provider to a LDAP Policy in Intersight.
+This module will add an LDAP Server to a LDAP Policy in Intersight.
 
 These resources are consumed
 
-* [ldap_provider](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_ldap_provider)
+* [LDAP Server](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/iam_ldap_provider)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

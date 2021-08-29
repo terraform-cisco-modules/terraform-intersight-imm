@@ -15,120 +15,158 @@
 * Create UCS Domain Profiles and attach Fabric Interconnect clusters to the profiles.
 * Create Service Profiles and Templates and deploy physical infrastructure.
 
-### Create Pools
+### Intersight Firmware Management
+
+This set of modules support managing firmware on the following Hardware Types:
+
+1. UCS Chassis Firmware.  See Module ucs_chassis_firmware and the example in the examples/firmware directory of ucs_chassis_firmware.tf.
+
+2. UCS Domain Firmware.  See Module ucs_domain_firmware and the example in the examples/firmware directory of ucs_domain_firmware.tf.
+
+3. UCS Server Firmware.  See Module ucs_server_firmware and the example in the examples/firmware directory of ucs_server_firmware.tf.
+
+### Intersight Pools
 
 This set of modules support creating the following Pool Types:
 
-1. FC Pools.  Fibre-Channel Pools are for creating WWPN and WWNN pools.  See Module pools_fc and the example in the examples/pools directory.
+1. FC Pools.  Fibre-Channel Pools are for creating WWPN and WWNN pools.  See Module fc_pools and the example in the examples/pools directory.
 
-2. IP Pools.  See Module pools_ip and the example in the examples/pools directory.
+2. IP Pools.  See Module ip_pools and the example in the examples/pools directory.
 
-3. IQN Pools.  See Module pools_iqn and the example in the examples/pools directory.
+3. IQN Pools.  See Module iqn_pools and the example in the examples/pools directory.
 
-4. MAC Pools.  See Module pools_mac and the example in the examples/pools directory.
+4. MAC Pools.  See Module mac_pools and the example in the examples/pools directory.
 
-5. UUID Pools.  See Module pools_uuid and the example in the examples/pools directory.
+5. UUID Pools.  See Module uuid_pools and the example in the examples/pools directory.
 
-### Create Policies
+### Intersight Policies
 
 This set of modules support creating the following Policy Types:
 
-1. Adapter Configuration.  See Module policies_vic_adapter and the example in the examples/policies directory of policies_adapter_configuration.tf.
+1. Adapter Configuration.  See Module adapter_configuration_policies and the example in the examples/ucs_profiles directory of adapter_configuration_policies.tf.
 
-2. BIOS.  See Module policies_bios and the example in the examples/policies directory of policies_bios.tf.
+2. Add-Ons.  See Module addons_policies and the example in the examples/kuberetes_cluster directory of addons_policies.tf.
 
-3. Boot Order.  See Module policies_boot_order and the example in the examples/policies directory of policies_boot_order.tf.
+3. BIOS.  See Module bios_policies and the example in the examples/ucs_profiles directory of bios_policies.tf.
 
-4. Certificate Management (Under Developement).  See Module policies_certificate_management and the example in the examples/policies directory of policies_certificate_mananagement.tf.
+4. Boot Order.  See Module boot_order_policies and the example in the examples/ucs_profiles directory of boot_order_policies.tf.
 
-5. Device Connector.  See Module policies_device_connector and the example in the examples/policies directory of policies_device_connector.tf.
+5. Certificate Management (Under Developement).  See Module certificate_management_policies and the example in the examples/ucs_profiles directory of certificate_management_policies.tf.
 
-6. Disk Group.  See Module policies_disk_group and the example in the examples/policies directory of policies_disk_group.tf.
+6. Container Runtime.  See Module container_runtime_policies and the example in the examples/ucs_profiles directory of container_runtime_policies.tf.
 
-7. Ethernet Adapter.  See Module policies_vnic_adapter and the example in the examples/policies directory of policies_ethernet_adapter.tf.
+7. Device Connector.  See Module device_connector_policies and the example in the examples/ucs_profiles directory of device_connector_policies.tf.
 
-8. Ethernet Network.  See Module policies_vnic_network and the example in the examples/policies directory of policies_ethernet_network.tf.
+8. Disk Group.  See Module disk_group_policies and the example in the examples/ucs_profiles directory of disk_group_policies.tf.
 
-9. Ethernet Network Control.  See Module policies_vnic_network_control and the example in the examples/policies directory of policies_ethernet_network_control.tf.
+9. Ethernet Adapter.  See Module ethernet_adapter_policies and the example in the examples/ucs_profiles directory of ethernet_adapter_policies.tf.
 
-10. Ethernet Network Group.  See Module policies_vnic_network_group and the example in the examples/policies directory of policies_ethernet_network_group.tf.
+10. Ethernet Network.  See Module ethernet_network_policies and the example in the examples/ucs_profiles directory of ethernet_network_policies.tf.
 
-11. Ethernet QoS.  See Module policies_vnic_qos and the example in the examples/policies directory of policies_ethernet_qos.tf.
+11. Ethernet Network Control.  See Module ethernet_network_control_policies and the example in the examples/ucs_profiles directory of ethernet_network_control_policies.tf.
 
-12. Fibre Channel Adapter.  See Module policies_vhba_adapter and the example in the examples/policies directory of policies_fibre_channel_adapter.tf.
+12. Ethernet Network Group.  See Module ethernet_network_group_policies and the example in the examples/ucs_profiles directory of ethernet_network_group_policies.tf.
 
-13. Fibre Channel Network.  See Module policies_vhba_network and the example in the examples/policies directory of policies_fibre_channel_network.tf.
+13. Ethernet QoS.  See Module ethernet_qos_policies and the example in the examples/ucs_profiles directory of ethernet_qos_policies.tf.
 
-14. Fibre Channel QoS.  See Module policies_vhba_qos and the example in the examples/policies directory of policies_fibre_channel_qos.tf.
+14. Fibre Channel Adapter.  See Module fibre_channel_adapter_policies and the example in the examples/ucs_profiles directory of fibre_channel_adapter_policies.tf.
 
-15. IMC Access.  See Module policies_imc_access and the example in the examples/policies directory of policies_imc_access.tf.
+15. Fibre Channel Network.  See Module fibre_channel_network_policies and the example in the examples/ucs_profiles directory of fibre_channel_network_policies.tf.
 
-16. IPMI Over LAN.  See Module policies_ipmi_over_lan and the example in the examples/policies directory of policies_ipmi_over_lan.tf.
+16. Fibre Channel QoS.  See Module fibre_channel_qos_policies and the example in the examples/ucs_profiles directory of fibre_channel_qos_policies.tf.
 
-17. iSCSI Adapter.  See Module policies_vnic_iscsi_adapter and the example in the examples/policies directory of policies_iscsi_adapter.tf.
+17. IMC Access.  See Module imc_access_policies and the example in the examples/ucs_profiles directory of imc_access_policies.tf.
 
-18. iSCSI Boot.  See Module policies_iscsi_boot and the example in the examples/policies directory of policies_iscsi_boot.tf.
+18. Flow Control.  See Module domain_flow_control and the example in the examples/ucs_profiles directory of flow_control_policies.tf.
 
-19. iSCSI Static Target.  See Module policies_vnic_iscsi_target and the example in the examples/policies directory of policies_iscsi_static_target.tf.
+19. IPMI Over LAN.  See Module ipmi_over_lan_policies and the example in the examples/ucs_profiles directory of ipmi_over_lan_policies.tf.
 
-20. LAN Connectivity.  See Modules policies_vnic_lan_connectivity, policies_vnic, and the example in the examples/policies directory of policies_lan_connectivity.tf.
+20. iSCSI Adapter.  See Module iscsi_adapter_policies and the example in the examples/ucs_profiles directory of iscsi_adapter_policies.tf.
 
-21. LDAP.  See Modules policies_ldap_group, policies_ldap_policy, policies_ldap_provider, and the example in the examples/policies directory of policies_ldap.tf.
+21. iSCSI Boot.  See Module iscsi_boot_policies and the example in the examples/ucs_profiles directory of iscsi_boot_policies.tf.
 
-22. Local User.  See Modules policies_local_group, policies_local_user, policies_user_policy, and the example in the examples/policies directory of policies_local_user.tf.
+22. iSCSI Static Target.  See Module iscsi_static_target_policies and the example in the examples/ucs_profiles directory of iscsi_static_target_policies.tf.
 
-23. Network Connectivity.  See Module policies_network_connectivity and the example in the examples/policies directory of policies_network_connectivity.tf.
+23. Kubernetes Cluster Add-Ons.  See Module kubernetes_cluster_addons and the example in the examples/kuberetes_cluster directory of kubernetes_cluster_profiles.tf.
 
-24. NTP.  See Module policies_ntp and the example in the examples/policies directory of policies_ntp.tf.
+24. Kubernetes Cluster Node VM Infra.  See Module kubernetes_cluster_node_vm_infra and the example in the examples/kuberetes_cluster directory of kubernetes_cluster_profiles.tf.
 
-25. Persistent Memory.  See Module policies_persistent_memory and the example in the examples/policies directory of policies_persistent_memory.tf.
+25. Kubernetes Node Group Profiles.  See Module kubernetes_node_group_profiles and the example in the examples/kuberetes_cluster directory of kubernetes_cluster_profiles.tf.
 
-26. SAN Connectivity.  See Module policies_vhba_san_connectivity, policies_vhba and the example in the examples/policies directory of policies_san_connectivity.tf.
+26. Kubernetes Cluster Add-Ons.  See Module kubernetes_version_policies and the example in the examples/kuberetes_cluster directory of kubernetes_version_policies.tf.
 
-27. SD Card.  See Module policies_sd_card and the example in the examples/policies directory of policies_sd_card.tf.
+27. LAN Connectivity.  See Modules lan_connectivity_policies, lan_connectivity_add_vnic, and the example in the examples/ucs_profiles directory of lan_connectivity_policies.tf.
 
-28. Serial over LAN.  See Module policies_serial_over_lan and the example in the examples/policies directory of policies_serial_over_lan.tf.
+28. LDAP.  See Modules ldap_add_group, ldap_add_server, ldap_policies, and the example in the examples/ucs_profiles directory of ldap_policies.tf.
 
-29. SMTP.  See Module policies_smtp and the example in the examples/policies directory of policies_smtp.tf.
+29. Link Aggregation.  See Module domain_link_aggregation and the example in the examples/ucs_profiles directory of link_aggregation_policies.tf.
 
-30. SNMP.  See Module policies_snmp and the example in the examples/policies directory of policies_snmp.tf.
+30. Link Control.  See Module link_control_policies and the example in the examples/ucs_profiles directory of link_control_policies.tf.
 
-31. SSH.  See Module policies_ssh and the example in the examples/policies directory of policies_ssh.tf.
+31. Local User.  See Modules local_user_add_users, local_user_policies, and the example in the examples/ucs_profiles directory of local_user_policies.tf.
 
-32. Storage.  See Module policies_storage and the example in the examples/policies directory of policies_storage.tf.
+32. Multicast.  See Module multicast_policies and the example in the examples/ucs_profiles directory of multicast_policies.tf.
 
-33. Syslog.  See Module policies_syslog and the example in the examples/policies directory of policies_syslog.tf.
+33. Network CIDR.  See Module network_cidr_policies and the example in the examples/kuberetes_cluster directory of network_cidr_policies.tf.
 
-34. Virtual KVM.  See Module policies_virtual_kvm and the example in the examples/policies directory of policies_virtual_kvm.tf.
+34. Network Connectivity.  See Module network_connectivity_policies and the example in the examples/ucs_profiles directory of network_connectivity_policies.tf.
 
-35. Virtual Media.  See Module policies_virtual_media and the example in the examples/policies directory of policies_virtual_media.tf.
+35. NodeOS Configuration.  See Module nodeos_configuration_policies and the example in the examples/kuberetes_cluster directory of nodeos_configuration_policies.tf.
 
-Domain Specific Policies
+36. NTP.  See Module ntp_policies and the example in the examples/ucs_profiles directory of ntp_policies.tf.
 
-1. Flow Control.  See Module domain_flow_control and the example in the examples/domain directory of domain_flow_control.tf.
+37. Persistent Memory.  See Module persistent_memory_policies and the example in the examples/ucs_profiles directory of persistent_memory_policies.tf.
 
-2. Link Aggregation.  See Module domain_link_aggregation and the example in the examples/domain directory of domain_link_aggregation.tf.
+38. Port.  See Modules port_policies, port_ethernet_uplink, port_ethernet_uplink_port_channel, port_fc_uplink, port_fc_uplink_port_channel, port_mode, port_server_ports,  and the examples in the examples/ucs_profiles directory of port_policies.tf.
 
-3. Link Control.  See Module domain_link_control and the example in the examples/domain directory of domain_link_control.tf.
+39. Power.  See Module power_policies and the example in the examples/ucs_profiles directory of power_policies.tf.
 
-4. Multicast.  See Module domain_multicast and the example in the examples/domain directory of domain_multicast.tf.
+40. SAN Connectivity.  See Module san_connectivity_policies, san_connectivity_add_vhba and the example in the examples/ucs_profiles directory of san_connectivity_policies.tf.
 
-5. Port.  See Modules domain_port_mode, domain_port_policy, domain_port_server, domain_uplink_lan, domain_uplink_lan_port_channel, domain_uplink_san, domain_uplink_san_port_channel,  and the examples in the examples/domain directory of domain_port.tf.
+41. SD Card.  See Modules sd_card_policies, sd_card_policies_os, and sd_card_policies_utility and the examples in the examples/ucs_profiles directory of sd_card_policies.tf.
 
-6. Switch Control.  See Module domain_switch_control and the example in the examples/domain directory of domain_switch_control.tf.
+42. Serial over LAN.  See Module serial_over_lan_policies and the example in the examples/ucs_profiles directory of serial_over_lan_policies.tf.
 
-7. System QoS.  See Module domain_system_qos and the example in the examples/domain directory of domain_system_qos.tf.
+43. SMTP.  See Module smtp_policies and the example in the examples/ucs_profiles directory of smtp_policies.tf.
 
-8. VLAN.  See Module domain_vlan, domain_vlan_policy, and the example in the examples/domain directory of domain_vlan.tf.
+44. SNMP.  See Modules snmp_policies, snmp_policies_1_user, snmp_policies_2_users and the examples in the examples/ucs_profiles directory of snmp_policies.tf.
 
-9. VSAN.  See Module domain_vsan, domain_vsan_policy, and the example in the examples/domain directory of domain_vsan.tf.
+45. SSH.  See Module ssh_policies and the example in the examples/ucs_profiles directory of ssh_policies.tf.
 
-### Deploy UCS Domains in IMM Mode
+46. Storage.  See Module storage_policies and the example in the examples/ucs_profiles directory of storage_policies.tf.
 
-1. UCS Domain Profile.  See Modules domain_profile_switch, domain_profile_cluster, and the example in the examples/domain directory of domain_profile.tf.
+47. Switch Control.  See Module switch_control_policies and the example in the examples/ucs_profiles directory of switch_control_policies.tf.
 
-### Create UCS Service Profiles and Templates and Assign to physical Servers
+48. Syslog.  See Module syslog_policies and the example in the examples/ucs_profiles directory of syslog_policies.tf.
 
-1. Server Profile.  See Module server_profile, and the example in the examples/server_profile directory.
+49. System QoS.  See Module system_qos_policies and the example in the examples/ucs_profiles directory of system_qos_policies.tf.
 
-2. Server Profile Template.  See Module server_profile_template, and the example in the examples/server_profile directory.
+50. Thermal.  See Module thermal_policies and the example in the examples/ucs_profiles directory of thermal_policies.tf.
+
+51. Trusted Certificate Authorities.  See Module trusted_certificate_authorities and the example in the examples/kuberetes_cluster directory of trusted_certificate_authorities.tf.
+
+52. Virtual KVM.  See Module virtual_kvm_policies and the example in the examples/ucs_profiles directory of virtual_kvm_policies.tf.
+
+53. Virtual Machine Infra Config.  See Module virtual_machine_infra_config and the example in the examples/kuberetes_cluster directory of virtual_machine_infra_config.tf.
+
+54. Virtual Machine Instance Type.  See Module virtual_machine_instance_type and the example in the examples/kuberetes_cluster directory of virtual_machine_instance_type.tf.
+
+55. Virtual Media.  See Module virtual_media_policies and the example in the examples/ucs_profiles directory of virtual_media_policies.tf.
+
+56. VLAN.  See Modules vlan_policies, vlan_policy_add_vlan, vlan_policy_add_vlan_list, vlan_policy_add_vlan_map, and the example in the examples/ucs_profiles directory of vlan_policies.tf.
+
+57. VSAN.  See Modules vsan_policies, vsan_policy_add_vsan, and the example in the examples/ucs_profiles directory of vsan_policies.tf.
+
+### Intersight Profiles and Templates
+
+This set of modules support creating the following Profile Types:
+
+1. Kubernetes Cluster Profile. See Module kubernetes_cluster_profiles, and the example in the examples/kuberetes_cluster directory of kubernetes_cluster_profiles.tf.
+
+2. UCS Chassis Profile. See Module ucs_chassis_profiles, and the example in the examples/ucs_profiles directory of ucs_chassis_profiles.tf.
+
+3. UCS Domain Profile. See Modules ucs_domain_profiles, ucs_domain_switches, and the example in the examples/ucs_profiles directory of ucs_domain_profiles.tf.
+
+4. UCS Server Profile. See Module ucs_server_profiles, and the example in the examples/ucs_profiles directory of ucs_server_profiles.tf.
+
+5. UCS Server Template. See Module ucs_server_templates, and the example in the examples/ucs_profiles directory of ucs_server_templates.tf.

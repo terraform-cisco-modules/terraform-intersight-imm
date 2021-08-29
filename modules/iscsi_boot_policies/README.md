@@ -1,11 +1,11 @@
-# policies_iscsi_boot - Intersight (vNIC) iSCSI Boot Policy Terraform Module
+# iscsi_boot_policies - Intersight iSCSI Boot Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "iscsi_boot" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_iscsi_boot"
+  source = "terraform-cisco-modules/imm/intersight//modules/iscsi_boot_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an iSCSI Boot Policy in Intersight.  This can be used to
 
 These resources are consumed
 
-* [iscsi_boot](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_boot_policy)
+* [iSCSI Boot](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_boot_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_vnic_iscsi_boot_policy.vnic_iscsi_boot](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_boot_policy) | resource |
+| [intersight_vnic_iscsi_boot_policy.iscsi_boot](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_iscsi_boot_policy) | resource |
 
 ## Inputs
 
@@ -67,5 +67,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | (vNIC) iSCSI Boot Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | iSCSI Boot Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

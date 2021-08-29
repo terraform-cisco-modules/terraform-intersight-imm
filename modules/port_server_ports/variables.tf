@@ -1,6 +1,6 @@
 #____________________________________________________________
 #
-# UCS Domain Server Port Policy Variables Section.
+# UCS Domain Port Policy - Server Port Variables Section.
 #____________________________________________________________
 
 variable "breakout_sw_port" {

@@ -1,11 +1,11 @@
-# policies_port_fc_uplink - Intersight Port Policy - FC Uplink Terraform Module
+# port_fc_uplink - Intersight Port Policy - FC Uplink Terraform Module
 
 ## Usage
 
 ```hcl
 module "fc_uplink" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_port_fc_uplink"
+  source = "terraform-cisco-modules/imm/intersight//modules/port_fc_uplink"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will Configure a FC Uplink in a UCS Domain Port Policy
 
 These resources are consumed
 
-* [fc_uplink](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_san_uplink_policy)
+* [FC Uplink](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_san_uplink_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_fabric_fc_uplink_role.san_uplink](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_fc_uplink_role) | resource |
+| [intersight_fabric_fc_uplink_role.uplink](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_fc_uplink_role) | resource |
 
 ## Inputs
 
@@ -55,5 +55,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | SAN Uplink Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Port Policy > FC Uplink Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
