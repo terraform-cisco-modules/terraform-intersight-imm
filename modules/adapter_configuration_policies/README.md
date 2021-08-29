@@ -1,11 +1,11 @@
-# policies_adapter_configuration - Intersight Adapter Configuration Policy Terraform Module
+# adapter_configuration_policies - Intersight Adapter Configuration Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "adapter_configuration" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_adapter_configuration"
+  source = "terraform-cisco-modules/imm/intersight//modules/adapter_configuration_policies"
 
   # omitted...
 }
@@ -15,7 +15,7 @@ This module will create an Adapter Configuration Policy in Intersight.  This can
 
 These resources are consumed
 
-* [adapter_configuration](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/adapter_config_policy)
+* [Adapter Configuration](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/adapter_config_policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

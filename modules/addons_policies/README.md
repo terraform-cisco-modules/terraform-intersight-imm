@@ -1,11 +1,11 @@
-# policies_addons - Intersight Add-ons Policy Terraform Module
+# addons_policies - Intersight Add-ons Policy Terraform Module
 
 ## Usage
 
 ```hcl
 module "addons" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/policies_addons"
+  source = "terraform-cisco-modules/imm/intersight//modules/addons_policies"
 
   # omitted...
 }
