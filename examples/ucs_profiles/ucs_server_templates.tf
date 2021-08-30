@@ -15,19 +15,19 @@ module "ucs_server_profile_template" {
     module.bios_example,
     module.boot_uefi_local_disk,
     module.ipmi_example,
-    module.outputs.imc_access_example,
+    module.imc_access_example,
     module.lan_connectivity_example,
-    module.outputs.local_user_policy_example,
+    module.local_user_policy_example,
     module.san_connectivity,
     module.sd_card_example,
     module.sol_example,
     module.snmp_example,
-    module.storage_example,
+    # module.storage_example,
     module.syslog_example,
     module.kvm_example,
     module.vmedia_example_1
   ]
-  source      = "terraform-cisco-modules/imm/intersight//modules/templates_ucs_server"
+  source      = "../../modules/ucs_server_templates"
   action      = "No-op"
   description = "Server Profile Template Example."
   name        = "example_template"
@@ -51,7 +51,7 @@ module "ucs_server_profile_template" {
     },
     {
       # IMC Access Policy
-      moid        = module.outputs.imc_access_example.moid
+      moid        = module.imc_access_example.moid
       object_type = "access.Policy"
     },
     {
@@ -61,7 +61,7 @@ module "ucs_server_profile_template" {
     },
     {
       # Local user Policy
-      moid        = module.outputs.local_user_policy_example.moid
+      moid        = module.local_user_policy_example.moid
       object_type = "iam.EndPointUserPolicy"
     },
     {
@@ -84,11 +84,11 @@ module "ucs_server_profile_template" {
       moid        = module.snmp_example.moid
       object_type = "snmp.Policy"
     },
-    {
-      # Storage Policy
-      moid        = module.storage_example.moid
-      object_type = "storage.StoragePolicy"
-    },
+    # {
+    #   # Storage Policy
+    #   moid        = module.storage_example.moid
+    #   object_type = "storage.StoragePolicy"
+    # },
     {
       # Syslog Policy
       moid        = module.syslog_example.moid
@@ -119,7 +119,7 @@ module "server_profile_template_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "terraform-cisco-modules/imm/intersight//modules/templates_ucs_server"
+  source          = "../../modules/ucs_server_templates"
   action          = var.action
   description     = ""
   name            = "server_profile_template"

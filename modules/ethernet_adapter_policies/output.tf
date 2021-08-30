@@ -4,6 +4,6 @@
 #____________________________________________________________
 
 output "moid" {
-  description = "Ethernet (vNIC) Adapter Policy Managed Object ID (moid)."
-  value       = intersight_vnic_eth_adapter_policy.vnic_adapter.moid
+  description = "Ethernet Adapter Policy Managed Object ID (moid)."
+  value       = intersight_vnic_eth_adapter_policy.ethernet_adapter.moid
 }

@@ -6,15 +6,15 @@
 
 resource "intersight_access_policy" "imc_access" {
   description = var.description
-  inband_vlan = var.inband_vlan
+  inband_vlan = var.inband_vlan_id
   name        = var.name
   address_type {
-    enable_ip_v4 = var.ipv4_enable
-    enable_ip_v6 = var.ipv6_enable
+    enable_ip_v4 = var.enable_ipv4
+    enable_ip_v6 = var.enable_ipv6
     object_type  = "access.AddressType"
   }
   inband_ip_pool {
-    moid        = var.imc_ip_pool
+    moid        = var.inband_ip_pool
     object_type = "ippool.Pool"
   }
   organization {

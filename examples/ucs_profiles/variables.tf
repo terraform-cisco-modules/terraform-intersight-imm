@@ -52,13 +52,13 @@ variable "dns_servers_v6" {
   type        = list(string)
 }
 
-variable "ipv4_enable" {
+variable "enable_ipv4" {
   default     = true
   description = "Flag to Enable or Disable the IPv4 Address Family for Poliices."
   type        = bool
 }
 
-variable "ipv6_enable" {
+variable "enable_ipv6" {
   default     = false
   description = "Flag to Enable or Disable the IPv6 Address Family for Poliices."
   type        = bool

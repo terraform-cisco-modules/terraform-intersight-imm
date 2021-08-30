@@ -148,9 +148,9 @@ output "snmp_example" {
 # Storage Policy Output
 #______________________________________________
 
-output "storage_example" {
-  value = module.storage_example
-}
+# output "storage_example" {
+#   value = module.storage_example
+# }
 
 #______________________________________________
 #
@@ -188,38 +188,30 @@ output "vmedia_example_1" {
 # vHBAs Output
 #______________________________________________
 
-output "vhbas" {
-  value = module.vhba_loop
-}
-
 #______________________________________________
 #
 # vNICs Output
 #______________________________________________
-
-output "vnics" {
-  value = module.vnic_loop
-}
 
 #______________________________________________
 #
 # vNIC Adapter Policy Output
 #______________________________________________
 
-output "vnic_adapter_example" {
-  value = module.vnic_adapter_example
+output "ethernet_adapter_example" {
+  value = module.ethernet_adapter_example
 }
 
-output "vnic_adapter_linux_nvme_roce" {
-  value = module.vnic_adapter_linux_nvme_roce
+output "ethernet_adapter_linux_nvme_roce" {
+  value = module.ethernet_adapter_linux_nvme_roce
 }
 
-output "vnic_adapter_vmware" {
-  value = module.vnic_adapter_vmware
+output "ethernet_adapter_vmware" {
+  value = module.ethernet_adapter_vmware
 }
 
-output "vnic_adapter_windows" {
-  value = module.vnic_adapter_windows
+output "ethernet_adapter_windows" {
+  value = module.ethernet_adapter_windows
 }
 
 
@@ -270,12 +262,12 @@ output "lldp_example" {
 # vNIC QoS Policy Output
 #______________________________________________
 
-output "domain_vnic_qos" {
-  value = module.domain_vnic_qos
+output "ethernet_qos" {
+  value = module.ethernet_qos
 }
 
-output "standalone_vnic_qos" {
-  value = module.standalone_vnic_qos
+output "standalone_ethernet_qos" {
+  value = module.standalone_ethernet_qos
 }
 
 #______________________________________________
@@ -283,8 +275,8 @@ output "standalone_vnic_qos" {
 # vNIC VLAN Group Policy Output
 #______________________________________________
 
-output "vlan_group_range" {
-  value = module.vlan_group_range
+output "vlan_group" {
+  value = module.vlan_group
 }
 
 output "vlan_group_list" {

@@ -74,7 +74,7 @@ variable "user_2_password" {
 
 variable "persistent_passphrase" {
   description = "Password for Persistent Memory Example."
-  sensitive   = true
+  sensitive   = false
   type        = string
 }
 

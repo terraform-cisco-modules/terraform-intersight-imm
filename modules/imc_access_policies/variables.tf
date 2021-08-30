@@ -9,25 +9,25 @@ variable "description" {
   type        = string
 }
 
-variable "inband_vlan" {
-  default     = 1
-  description = "VLAN ID to Assign as the Inband Management VLAN for IMC Access."
-  type        = number
-}
-
-variable "ipv4_enable" {
+variable "enable_ipv4" {
   default     = true
   description = "Flag to Enable or Disable the IPv4 Address Family for Poliices."
   type        = bool
 }
 
-variable "ipv6_enable" {
+variable "enable_ipv6" {
   default     = false
   description = "Flag to Enable or Disable the IPv6 Address Family for Poliices."
   type        = bool
 }
 
-variable "imc_ip_pool" {
+variable "inband_vlan_id" {
+  default     = 1
+  description = "VLAN ID to Assign as the Inband Management VLAN for IMC Access."
+  type        = number
+}
+
+variable "inband_ip_pool" {
   default     = ""
   description = "moid of an IP Pool to Assign to the IMC Access Policy."
 }

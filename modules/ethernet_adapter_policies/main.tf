@@ -4,7 +4,7 @@
 # GUI Location: Policies > Create Policy > Ethernet Adapter
 #__________________________________________________________________
 
-resource "intersight_vnic_eth_adapter_policy" "vnic_adapter" {
+resource "intersight_vnic_eth_adapter_policy" "ethernet_adapter" {
   advanced_filter         = var.advanced_filter
   description             = var.description
   geneve_enabled          = var.geneve_enabled
