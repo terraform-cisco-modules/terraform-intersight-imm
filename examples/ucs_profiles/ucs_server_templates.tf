@@ -27,7 +27,7 @@ module "ucs_server_profile_template" {
     module.kvm_example,
     module.vmedia_example_1
   ]
-  source      = "../../modules/ucs_server_templates"
+  source      = "terraform-cisco-modules/imm/intersight//modules/ucs_server_templates"
   action      = "No-op"
   description = "Server Profile Template Example."
   name        = "example_template"
@@ -119,7 +119,7 @@ module "server_profile_template_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/ucs_server_templates"
+  source          = "terraform-cisco-modules/imm/intersight//modules/ucs_server_templates"
   action          = var.action
   description     = ""
   name            = "server_profile_template"

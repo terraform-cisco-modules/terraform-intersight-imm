@@ -13,7 +13,7 @@ module "san_connectivity" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/san_connectivity_policies"
+  source              = "terraform-cisco-modules/imm/intersight//modules/san_connectivity_policies"
   description         = "vHBA LAN Connectivity Example."
   name                = "example"
   static_wwnn_address = ""
@@ -42,7 +42,7 @@ module "san_connectivity_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/san_connectivity_policies"
+  source              = "terraform-cisco-modules/imm/intersight//modules/san_connectivity_policies"
   description         = ""
   name                = "san_connectivity"
   placement_mode      = "custom"
@@ -65,7 +65,7 @@ module "vhba_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                  = "../../modules/san_connectivity_add_vhba"
+  source                  = "terraform-cisco-modules/imm/intersight//modules/san_connectivity_add_vhba"
   persistent_lun_bindings = false
   placement_pci_link      = 0
   placement_slot_id       = "MLOM"

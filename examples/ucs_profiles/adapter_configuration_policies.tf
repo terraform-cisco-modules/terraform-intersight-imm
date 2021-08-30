@@ -8,7 +8,7 @@ module "adapter_configuration_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/adapter_configuration_policies"
+  source              = "terraform-cisco-modules/imm/intersight//modules/adapter_configuration_policies"
   description         = "Adapter Configuration Example."
   name                = "example"
   org_moid            = local.org_moid

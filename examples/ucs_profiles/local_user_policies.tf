@@ -13,7 +13,7 @@ module "local_user_policy_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/local_user_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/local_user_policies"
   description = "Local User Policy Example; accepting default values."
   name        = "local_user_policy"
   org_moid    = local.org_moid
@@ -32,7 +32,7 @@ module "local_user_1" {
     data.intersight_organization_organization.org_moid,
     module.local_user_policy_example
   ]
-  source           = "../../modules/local_user_add_users"
+  source           = "terraform-cisco-modules/imm/intersight//modules/local_user_add_users"
   org_moid         = local.org_moid
   user_enabled     = true
   user_password    = var.user_1_password
@@ -46,7 +46,7 @@ module "local_user_2" {
     data.intersight_organization_organization.org_moid,
     module.local_user_policy_example
   ]
-  source           = "../../modules/local_user_add_users"
+  source           = "terraform-cisco-modules/imm/intersight//modules/local_user_add_users"
   org_moid         = local.org_moid
   user_enabled     = true
   user_password    = var.user_2_password
@@ -67,7 +67,7 @@ module "local_user_policy_defaults" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source                   = "../../modules/local_user_policies"
+  source                   = "terraform-cisco-modules/imm/intersight//modules/local_user_policies"
   description              = ""
   enable_password_expiry   = false
   enforce_strong_password  = true
@@ -92,7 +92,7 @@ module "local_user_defaults" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/local_user_add_users"
+  source           = "terraform-cisco-modules/imm/intersight//modules/local_user_add_users"
   org_moid         = local.org_moid
   password         = **no default, required attribute**
   user_enabled     = true

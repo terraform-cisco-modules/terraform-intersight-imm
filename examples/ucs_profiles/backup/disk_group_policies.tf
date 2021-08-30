@@ -8,7 +8,7 @@ module "disk_group_example_raid1" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/disk_group_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/disk_group_policies"
   description = "Disk Group Policy Example for Raid 1."
   name        = "example_raid1"
   raid_level  = "Raid1"
@@ -23,7 +23,7 @@ module "disk_group_example_raid5" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/disk_group_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/disk_group_policies"
   description = "Disk Group Policy Example for Raid 5."
   name        = "example_raid5"
   raid_level  = "Raid5"
@@ -49,7 +49,7 @@ module "disk_group_example_raid10" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/disk_group_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/disk_group_policies"
   description = "Disk Group Policy Example for Raid 10 with Hot Spares."
   name        = "example_raid10"
   raid_level  = "Raid10"
@@ -89,7 +89,7 @@ module "sd_card_defaults" {
   depends_on  = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/disk_group_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/disk_group_policies"
   description = ""
   name        = "sd_card"
   profiles    = var.profiles

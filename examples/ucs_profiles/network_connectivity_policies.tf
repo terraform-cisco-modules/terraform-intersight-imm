@@ -9,7 +9,7 @@ module "dns_example_1" {
     module.ucs_domain_profile_a_example,
     module.ucs_domain_profile_b_example
   ]
-  source         = "../../modules/network_connectivity_policies"
+  source         = "terraform-cisco-modules/imm/intersight//modules/network_connectivity_policies"
   description    = "Network Connectivity (DNS) Policy Example."
   dns_servers_v4 = var.dns_servers_v4
   name           = "example_1"
@@ -27,7 +27,7 @@ module "dns_example_2" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source         = "../../modules/network_connectivity_policies"
+  source         = "terraform-cisco-modules/imm/intersight//modules/network_connectivity_policies"
   description    = "Network Connectivity (DNS) Policy Example with IPv6."
   dns_servers_v4 = var.dns_servers_v4
   dns_servers_v6 = var.dns_servers_v6
@@ -51,7 +51,7 @@ module "dns_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source         = "../../modules/network_connectivity_policies"
+  source         = "terraform-cisco-modules/imm/intersight//modules/network_connectivity_policies"
   description    = ""
   dns_servers_v4 = var.dns_servers_v4
   dns_servers_v6 = var.dns_servers_v6

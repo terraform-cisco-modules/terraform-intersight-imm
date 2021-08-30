@@ -10,7 +10,7 @@ module "snmp_example" {
     module.ucs_domain_profile_a_example,
     module.ucs_domain_profile_a_example
   ]
-  source       = "../../modules/snmp_policies"
+  source       = "terraform-cisco-modules/imm/intersight//modules/snmp_policies"
   description  = "SNMP Policy Example."
   name         = "example"
   org_moid     = local.org_moid
@@ -75,7 +75,7 @@ module "syslog_defaults" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/snmp_policies"
+  source          = "terraform-cisco-modules/imm/intersight//modules/snmp_policies"
   description     = ""
   enabled         = true
   engine_id       = ""

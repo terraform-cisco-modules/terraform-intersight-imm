@@ -23,7 +23,7 @@ module "ucs_server_profile" {
     module.sol_example,
     module.snmp_example
   ]
-  source          = "../../modules/ucs_server_profiles"
+  source          = "terraform-cisco-modules/imm/intersight//modules/ucs_server_profiles"
   action          = "No-op"
   assigned_server = []
   description     = "Server Profile Example."
@@ -117,7 +117,7 @@ module "ucs_server_profile_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/ucs_server_profiles"
+  source          = "terraform-cisco-modules/imm/intersight//modules/ucs_server_profiles"
   action          = var.action
   assigned_server = []
   description     = ""

@@ -8,7 +8,7 @@ module "link_aggregation_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/link_aggregation_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/link_aggregation_policies"
   description = "Link Aggregation Policy Example."
   lacp_rate   = "normal"
   name        = "example"
@@ -28,7 +28,7 @@ module "link_aggregation_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/link_aggregation_policies"
+  source              = "terraform-cisco-modules/imm/intersight//modules/link_aggregation_policies"
   description         = ""
   lacp_rate           = "fast"
   suspend_individual  = false

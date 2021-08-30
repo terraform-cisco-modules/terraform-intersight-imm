@@ -10,7 +10,7 @@ module "system_qos_example_1" {
     module.ucs_domain_profile_a_example,
     module.ucs_domain_profile_b_example
   ]
-  source      = "../../modules/system_qos_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/system_qos_policies"
   classes     = []
   description = "System QoS Default Example."
   name        = "example"
@@ -28,7 +28,7 @@ module "system_qos_example_2" {
     module.ucs_domain_profile_a_example,
     module.ucs_domain_profile_b_example
   ]
-  source      = "../../modules/system_qos_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/system_qos_policies"
   description = "System QoS Default Example."
   name        = "example"
   org_moid    = local.org_moid
@@ -113,7 +113,7 @@ module "system_qos_default" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source       = "../../modules/system_qos_policies"
+  source       = "terraform-cisco-modules/imm/intersight//modules/system_qos_policies"
   classes      = []
   description  = "System QoS Default Example."
   name         = "system_qos_default"

@@ -8,7 +8,7 @@ module "imc_access_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source         = "../../modules/imc_access_policies"
+  source         = "terraform-cisco-modules/imm/intersight//modules/imc_access_policies"
   description    = "IMC Access Policy Example."
   inband_vlan_id = 1101
   name           = "example"
@@ -31,7 +31,7 @@ module "imc_access_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source         = "../../modules/imc_access_policies"
+  source         = "terraform-cisco-modules/imm/intersight//modules/imc_access_policies"
   description    = ""
   enable_ipv4    = true
   enable_ipv6    = false

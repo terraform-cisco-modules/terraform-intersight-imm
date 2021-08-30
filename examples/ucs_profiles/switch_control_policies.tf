@@ -10,7 +10,7 @@ module "switch_control_example" {
     module.ucs_domain_profile_a_example,
     module.ucs_domain_profile_b_example
   ]
-  source               = "../../modules/switch_control_policies"
+  source               = "terraform-cisco-modules/imm/intersight//modules/switch_control_policies"
   description          = "Switch Control Policy Example."
   name                 = "example"
   mac_aging_option     = "Custom"
@@ -37,7 +37,7 @@ module "switch_control_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/switch_control_policies"
+  source                = "terraform-cisco-modules/imm/intersight//modules/switch_control_policies"
   description           = ""
   name                  = "switch_control"
   mac_aging_option      = "Default"

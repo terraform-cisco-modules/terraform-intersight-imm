@@ -8,7 +8,7 @@ module "flow_control_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/flow_control_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/flow_control_policies"
   description = "Flow Control Policy Example."
   name        = "example"
   org_moid    = local.org_moid
@@ -27,7 +27,7 @@ module "flow_control_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                      = "../../modules/flow_control_policies"
+  source                      = "terraform-cisco-modules/imm/intersight//modules/flow_control_policies"
   description                 = ""
   priority_flow_control_mode  = "auto"
   receive_direction           = "Disabled"

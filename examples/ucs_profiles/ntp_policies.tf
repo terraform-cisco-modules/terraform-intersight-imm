@@ -9,7 +9,7 @@ module "ntp_example" {
     module.ucs_domain_profile_a_example,
     module.ucs_domain_profile_b_example
   ]
-  source       = "../../modules/ntp_policies"
+  source       = "terraform-cisco-modules/imm/intersight//modules/ntp_policies"
   description  = "NTP Policy Example."
   name         = "example"
   ntp_servers  = var.ntp_servers
@@ -34,7 +34,7 @@ module "ntp_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                    = "../../modules/ntp_policies"
+  source                    = "terraform-cisco-modules/imm/intersight//modules/ntp_policies"
   description               = ""
   enabled                   = true
   name                      = "ntp"

@@ -9,7 +9,7 @@ module "vsan_policy_example_a" {
     data.intersight_organization_organization.org_moid,
     module.ucs_domain_profile_b_example
   ]
-  source      = "../../modules/vsan_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/vsan_policies"
   description = "Fabric A VSAN Policy Example."
   name        = "example_fabric_a"
   org_moid    = local.org_moid
@@ -22,7 +22,7 @@ module "vsan_policy_example_b" {
     data.intersight_organization_organization.org_moid,
     module.ucs_domain_profile_b_example
   ]
-  source      = "../../modules/vsan_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/vsan_policies"
   description = "Fabric B VSAN Policy Example."
   name        = "example_fabric_b"
   org_moid    = local.org_moid
@@ -43,7 +43,7 @@ module "vsan_example_a" {
     data.intersight_organization_organization.org_moid,
     module.vsan_policy_example_a
   ]
-  source           = "../../modules/vsan_policy_add_vsan"
+  source           = "terraform-cisco-modules/imm/intersight//modules/vsan_policy_add_vsan"
   vsan_policy_moid = module.vsan_policy_example_a.moid
   vsan_prefix      = "example-a"
   vsan_list = {
@@ -68,7 +68,7 @@ module "vsan_example_b" {
     data.intersight_organization_organization.org_moid,
     module.vsan_policy_example_b
   ]
-  source           = "../../modules/vsan_policy_add_vsan"
+  source           = "terraform-cisco-modules/imm/intersight//modules/vsan_policy_add_vsan"
   vsan_policy_moid = module.vsan_policy_example_b.moid
   vsan_prefix      = "example-b"
   vsan_list = {
@@ -95,7 +95,7 @@ module "vsan_policy_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/vsan_policies"
+  source          = "terraform-cisco-modules/imm/intersight//modules/vsan_policies"
   description     = ""
   enable_trunking = false
   name            = "vsan_policy"
@@ -114,7 +114,7 @@ module "vsan_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/vsan_policy_add_vsan"
+  source                = "terraform-cisco-modules/imm/intersight//modules/vsan_policy_add_vsan"
   default_zoning        = "Disabled"
   fc_zone_sharing_mode  = ""
   name_prefix           = "vsan"

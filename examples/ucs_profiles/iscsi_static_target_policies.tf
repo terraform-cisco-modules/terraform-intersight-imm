@@ -8,7 +8,7 @@ module "iscsi_target_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/iscsi_static_target_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/iscsi_static_target_policies"
   description = "vNIC iSCSI Target Example."
   ip_address  = "198.18.0.1"
   name        = "example"
@@ -39,7 +39,7 @@ module "iscsi_target_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/iscsi_static_target_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/iscsi_static_target_policies"
   description = ""
   ip_address  = ""
   name        = "vnic_iscsi_target"

@@ -13,7 +13,7 @@ module "ip_pool_1" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/ip_pools"
+  source           = "terraform-cisco-modules/imm/intersight//modules/ip_pools"
   assignment_order = "sequential"
   description      = "IP Pool 1 Example."
   dns_servers_v4   = var.dns_servers_v4
@@ -61,7 +61,7 @@ module "ip_pool_2" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/ip_pools"
+  source           = "terraform-cisco-modules/imm/intersight//modules/ip_pools"
   assignment_order = "sequential"
   description      = "IP Pool 2 Example."
   dns_servers_v4   = var.dns_servers_v4
@@ -93,7 +93,7 @@ module "ip_pool_default" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/ip_pools"
+  source              = "terraform-cisco-modules/imm/intersight//modules/ip_pools"
   assignment_order    = "default"
   description         = ""
   dns_servers_v4      = var.dns_servers_v4

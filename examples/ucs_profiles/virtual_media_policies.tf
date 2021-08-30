@@ -8,7 +8,7 @@ module "vmedia_example_1" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source        = "../../modules/virtual_media_policies"
+  source        = "terraform-cisco-modules/imm/intersight//modules/virtual_media_policies"
   description   = "Virtual Media Policy Example."
   enabled       = true
   encryption    = false
@@ -41,7 +41,7 @@ module "vmedia_example_2" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source        = "../../modules/virtual_media_policies"
+  source        = "terraform-cisco-modules/imm/intersight//modules/virtual_media_policies"
   description   = "Virtual Media Policy Example 2."
   enabled       = true
   encryption    = false
@@ -64,7 +64,7 @@ module "vmedia_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source        = "../../modules/virtual_media_policies"
+  source        = "terraform-cisco-modules/imm/intersight//modules/virtual_media_policies"
   description   = ""
   enabled       = true
   encryption    = false

@@ -13,7 +13,7 @@ module "lan_connectivity_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/lan_connectivity_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/lan_connectivity_policies"
   description = "vNIC LAN Connectivity Example."
   name        = "example"
   org_moid    = local.org_moid
@@ -40,7 +40,7 @@ module "lan_connectivity_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/lan_connectivity_policies"
+  source              = "terraform-cisco-modules/imm/intersight//modules/lan_connectivity_policies"
   description         = ""
   iqn_allocation_type = "None"
   iqn_pool            = []
@@ -62,7 +62,7 @@ module "vnic_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                    = "../../modules/policies_vnic"
+  source                    = "terraform-cisco-modules/imm/intersight//modules/policies_vnic"
   cdn_name                  = ""    # Consistent Device Naming Section
   cdn_source                = "vnic"
   failover_enabled          = false

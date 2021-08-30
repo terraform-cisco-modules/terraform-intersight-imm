@@ -18,7 +18,7 @@ module "bios_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/bios_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/bios_policies"
   description = "Example BIOS Policy."
   name        = "example"
   org_moid    = local.org_moid
@@ -67,7 +67,7 @@ module "bios_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source        = "../../modules/bios_policies"
+  source        = "terraform-cisco-modules/imm/intersight//modules/bios_policies"
   description                           = ""
   name                                  = "bios"
   org_moid                              = local.org_moid

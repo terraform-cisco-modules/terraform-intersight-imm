@@ -27,15 +27,15 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ip_pool_1"></a> [ip\_pool\_1](#module\_ip\_pool\_1) | ../../modules/pools_ip | n/a |
-| <a name="module_ip_pool_2"></a> [ip\_pool\_2](#module\_ip\_pool\_2) | ../../modules/pools_ip | n/a |
-| <a name="module_iqn_pool"></a> [iqn\_pool](#module\_iqn\_pool) | ../../modules/pools_iqn | n/a |
-| <a name="module_mac_pool_a"></a> [mac\_pool\_a](#module\_mac\_pool\_a) | ../../modules/pools_mac | n/a |
-| <a name="module_mac_pool_b"></a> [mac\_pool\_b](#module\_mac\_pool\_b) | ../../modules/pools_mac | n/a |
-| <a name="module_uuid_pool"></a> [uuid\_pool](#module\_uuid\_pool) | ../../modules/pools_uuid | n/a |
-| <a name="module_wwnn_pool"></a> [wwnn\_pool](#module\_wwnn\_pool) | ../../modules/pools_fc | n/a |
-| <a name="module_wwpn_pool_a"></a> [wwpn\_pool\_a](#module\_wwpn\_pool\_a) | ../../modules/pools_fc | n/a |
-| <a name="module_wwpn_pool_b"></a> [wwpn\_pool\_b](#module\_wwpn\_pool\_b) | ../../modules/pools_fc | n/a |
+| <a name="module_ip_pool_1"></a> [ip\_pool\_1](#module\_ip\_pool\_1) | terraform-cisco-modules/imm/intersight//modules/pools_ip | n/a |
+| <a name="module_ip_pool_2"></a> [ip\_pool\_2](#module\_ip\_pool\_2) | terraform-cisco-modules/imm/intersight//modules/pools_ip | n/a |
+| <a name="module_iqn_pool"></a> [iqn\_pool](#module\_iqn\_pool) | terraform-cisco-modules/imm/intersight//modules/pools_iqn | n/a |
+| <a name="module_mac_pool_a"></a> [mac\_pool\_a](#module\_mac\_pool\_a) | terraform-cisco-modules/imm/intersight//modules/pools_mac | n/a |
+| <a name="module_mac_pool_b"></a> [mac\_pool\_b](#module\_mac\_pool\_b) | terraform-cisco-modules/imm/intersight//modules/pools_mac | n/a |
+| <a name="module_uuid_pool"></a> [uuid\_pool](#module\_uuid\_pool) | terraform-cisco-modules/imm/intersight//modules/pools_uuid | n/a |
+| <a name="module_wwnn_pool"></a> [wwnn\_pool](#module\_wwnn\_pool) | terraform-cisco-modules/imm/intersight//modules/pools_fc | n/a |
+| <a name="module_wwpn_pool_a"></a> [wwpn\_pool\_a](#module\_wwpn\_pool\_a) | terraform-cisco-modules/imm/intersight//modules/pools_fc | n/a |
+| <a name="module_wwpn_pool_b"></a> [wwpn\_pool\_b](#module\_wwpn\_pool\_b) | terraform-cisco-modules/imm/intersight//modules/pools_fc | n/a |
 
 ## Resources
 

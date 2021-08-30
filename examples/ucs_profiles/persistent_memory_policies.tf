@@ -8,7 +8,7 @@ module "persistent_memory_example_1" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source            = "../../modules/persistent_memory_policies"
+  source            = "terraform-cisco-modules/imm/intersight//modules/persistent_memory_policies"
   description       = "Persistent Memory Policy Example."
   name              = "example"
   org_moid          = local.org_moid
@@ -38,7 +38,7 @@ module "persistent_memory_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                       = "../../modules/persistent_memory_policies"
+  source                       = "terraform-cisco-modules/imm/intersight//modules/persistent_memory_policies"
   description                  = ""
   goals_memory_percentage      = 0
   goals_persistent_memory_type = "app-direct"

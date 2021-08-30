@@ -8,7 +8,7 @@ module "smtp_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/smtp_policies"
+  source          = "terraform-cisco-modules/imm/intersight//modules/smtp_policies"
   description     = "SMTP Policy Example."
   name            = "example"
   org_moid        = local.org_moid
@@ -30,7 +30,7 @@ module "smtp_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/smtp_policies"
+  source          = "terraform-cisco-modules/imm/intersight//modules/smtp_policies"
   description     = ""
   enabled         = true
   min_severity    = "critical"

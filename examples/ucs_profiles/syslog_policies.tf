@@ -9,7 +9,7 @@ module "syslog_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source             = "../../modules/syslog_policies"
+  source             = "terraform-cisco-modules/imm/intersight//modules/syslog_policies"
   description        = "Syslog Policy Example."
   local_min_severity = "warning"
   name               = "example"
@@ -49,7 +49,7 @@ module "syslog_defaults" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source          = "../../modules/syslog_policies"
+  source          = "terraform-cisco-modules/imm/intersight//modules/syslog_policies"
   description     = ""
   name            = "syslog"
   org_moid        = local.org_moid

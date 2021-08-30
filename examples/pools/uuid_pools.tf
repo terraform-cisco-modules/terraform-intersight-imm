@@ -13,7 +13,7 @@ module "uuid_pool" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/uuid_pools"
+  source           = "terraform-cisco-modules/imm/intersight//modules/uuid_pools"
   assignment_order = "sequential"
   description      = "Example UUID Pool."
   name             = "uuid_pool"
@@ -38,7 +38,7 @@ module "uuid_default" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/uuid_pools"
+  source              = "terraform-cisco-modules/imm/intersight//modules/uuid_pools"
   assignment_order    = "default"
   description         = ""
   name                = "default"

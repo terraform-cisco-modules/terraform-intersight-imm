@@ -9,7 +9,7 @@ module "fibre_channel_qos_example_1" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/fibre_channel_qos_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/fibre_channel_qos_policies"
   description = "FI Attached vHBA QoS Example"
   name        = "example_1"
   org_moid    = local.org_moid
@@ -21,7 +21,7 @@ module "fibre_channel_qos_example_2" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/fibre_channel_qos_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/fibre_channel_qos_policies"
   description = "Standalone vHBA QoS Example"
   name        = "example_2"
   org_moid    = local.org_moid
@@ -39,7 +39,7 @@ module "fibre_channel_qos_defaults" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/fibre_channel_qos_policies"
+  source              = "terraform-cisco-modules/imm/intersight//modules/fibre_channel_qos_policies"
   burst               = 1024        # FI-Attached
   cos                 = 3           # Standalone
   description         = ""

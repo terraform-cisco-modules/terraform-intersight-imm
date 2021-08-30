@@ -10,7 +10,7 @@ module "iscsi_boot_example" {
     module.iscsi_adapter_example,
     module.iscsi_target_example,
   ]
-  source                  = "../../modules/iscsi_boot_policies"
+  source                  = "terraform-cisco-modules/imm/intersight//modules/iscsi_boot_policies"
   auto_targetvendor_name  = ""
   description             = "vNIC iSCSI Boot Example."
   initiator_ip_pool       = [data.terraform_remote_state.pools.outputs.ip_pool_1.moid]
@@ -38,7 +38,7 @@ module "iscsi_target_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                         = "../../modules/iscsi_boot_policies"
+  source                         = "terraform-cisco-modules/imm/intersight//modules/iscsi_boot_policies"
   auto_targetvendor_name         = ""
   chap_password                  = ""
   chap_user_id                   = ""

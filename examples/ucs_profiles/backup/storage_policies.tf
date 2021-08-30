@@ -9,7 +9,7 @@ module "storage_example" {
     data.intersight_organization_organization.org_moid,
     module.disk_group_example_raid5
   ]
-  source        = "../../modules/storage_policies"
+  source        = "terraform-cisco-modules/imm/intersight//modules/storage_policies"
   description   = "Storage Policy Example."
   name          = "example"
   org_moid      = local.org_moid
@@ -48,7 +48,7 @@ module "vmedia_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source        = "../../modules/storage_policies"
+  source        = "terraform-cisco-modules/imm/intersight//modules/storage_policies"
   description   = ""
   name          = "storage"
   org_moid      = local.org_moid

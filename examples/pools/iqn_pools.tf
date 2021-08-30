@@ -7,7 +7,7 @@ module "iqn_pool" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/iqn_pools"
+  source           = "terraform-cisco-modules/imm/intersight//modules/iqn_pools"
   assignment_order = "sequential"
   description      = "IQN Pool Example."
   name             = "example"
@@ -35,7 +35,7 @@ module "iqn_pool_default" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source            = "../../modules/iqn_pools"
+  source            = "terraform-cisco-modules/imm/intersight//modules/iqn_pools"
   assignment_order  = "default"
   description       = ""
   name              = "default"

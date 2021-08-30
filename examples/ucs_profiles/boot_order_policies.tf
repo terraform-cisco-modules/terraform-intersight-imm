@@ -13,7 +13,7 @@ module "boot_legacy_iscsi" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/boot_order_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/boot_order_policies"
   boot_mode   = "Legacy"
   description = "Legacy iSCSI Boot Example."
   name        = "example_legacy_iscsi"
@@ -40,7 +40,7 @@ module "boot_legacy_san" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/boot_order_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/boot_order_policies"
   boot_mode   = "Legacy"
   description = "Legacy SAN Boot Example."
   name        = "example_legacy_san"
@@ -68,7 +68,7 @@ module "boot_uefi_cimc_dvd" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/boot_order_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/boot_order_policies"
   boot_secure = true
   description = "UEFI CIMC DVD Boot Example."
   name        = "example_uefi_cimc_dvd"
@@ -89,7 +89,7 @@ module "boot_uefi_iscsi" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/boot_order_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/boot_order_policies"
   boot_secure = true
   description = "UEFI iSCSI Boot Example."
   name        = "example_uefi_iscsi"
@@ -123,7 +123,7 @@ module "boot_uefi_kvm_dvd" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/boot_order_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/boot_order_policies"
   boot_secure = true
   description = "UEFI KVM DVD Boot Example."
   name        = "example_uefi_kvm_dvd"
@@ -144,7 +144,7 @@ module "boot_uefi_local_disk" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/boot_order_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/boot_order_policies"
   boot_secure = true
   description = "UEFI Local Disk Boot Example."
   name        = "example_uefi_local_disk"
@@ -165,7 +165,7 @@ module "boot_uefi_san" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/boot_order_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/boot_order_policies"
   boot_secure = true
   description = "UEFI SAN Boot Example."
   name        = "example_uefi_san"
@@ -208,7 +208,7 @@ module "boot_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source        = "../../modules/boot_order_policies"
+  source        = "terraform-cisco-modules/imm/intersight//modules/boot_order_policies"
   boot_mode     = "Uefi"
   boot_secure   = false
   description   = ""

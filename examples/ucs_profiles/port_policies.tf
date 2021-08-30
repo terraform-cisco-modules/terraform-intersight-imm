@@ -14,7 +14,7 @@ module "port_policy_example_a" {
     data.intersight_organization_organization.org_moid,
     module.ucs_domain_profile_a_example
   ]
-  source       = "../../modules/port_policies"
+  source       = "terraform-cisco-modules/imm/intersight//modules/port_policies"
   description  = "Port Policy Example."
   device_model = "UCS-FI-64108"
   name         = "example_a"
@@ -28,7 +28,7 @@ module "port_policy_example_b" {
     data.intersight_organization_organization.org_moid,
     module.ucs_domain_profile_b_example
   ]
-  source       = "../../modules/port_policies"
+  source       = "terraform-cisco-modules/imm/intersight//modules/port_policies"
   description  = "Port Policy Example."
   device_model = "UCS-FI-64108"
   name         = "example_b"
@@ -48,7 +48,7 @@ module "port_mode_example_a" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_a
   ]
-  source           = "../../modules/port_mode"
+  source           = "terraform-cisco-modules/imm/intersight//modules/port_mode"
   custom_mode      = "FibreChannel"
   port_policy_moid = module.port_policy_example_a.moid
   tags             = var.tags
@@ -59,7 +59,7 @@ module "port_mode_example_b" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_b
   ]
-  source           = "../../modules/port_mode"
+  source           = "terraform-cisco-modules/imm/intersight//modules/port_mode"
   custom_mode      = "FibreChannel"
   port_policy_moid = module.port_policy_example_b.moid
   tags             = var.tags
@@ -76,7 +76,7 @@ module "server_port_example_a1" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_a
   ]
-  source = "../../modules/port_server_ports"
+  source = "terraform-cisco-modules/imm/intersight//modules/port_server_ports"
   # Using the default port_list in this example of "5-18"
   port_policy_moid = module.port_policy_example_a.moid
   # Accepting the default slot id of 1
@@ -88,7 +88,7 @@ module "server_port_example_a2" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_a
   ]
-  source           = "../../modules/port_server_ports"
+  source           = "terraform-cisco-modules/imm/intersight//modules/port_server_ports"
   port_list        = "19-20,22-24"
   port_policy_moid = module.port_policy_example_a.moid
   tags             = var.tags
@@ -99,7 +99,7 @@ module "server_port_example_b1" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_b
   ]
-  source = "../../modules/port_server_ports"
+  source = "terraform-cisco-modules/imm/intersight//modules/port_server_ports"
   # Using the default port_list in this example of "5-18"
   port_policy_moid = module.port_policy_example_b.moid
   # Accepting the default slot id of 1
@@ -111,7 +111,7 @@ module "server_port_example_b2" {
     data.intersight_organization_organization.org_moid,
     module.port_policy_example_b
   ]
-  source           = "../../modules/port_server_ports"
+  source           = "terraform-cisco-modules/imm/intersight//modules/port_server_ports"
   port_list        = "19-20,22-24"
   port_policy_moid = module.port_policy_example_b.moid
   tags             = var.tags
@@ -131,7 +131,7 @@ module "ethernet_uplink_port_channel_example_a" {
     module.link_control_example,
     module.port_policy_example_a
   ]
-  source                = "../../modules/port_ethernet_uplink_port_channel"
+  source                = "terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink_port_channel"
   flow_control_moid     = [module.flow_control_example.moid]
   lan_uplink_pc_id      = 97
   lan_uplink_pc_ports   = [97, 98]
@@ -149,7 +149,7 @@ module "ethernet_uplink_port_channel_example_b" {
     module.link_control_example,
     module.port_policy_example_b
   ]
-  source                = "../../modules/port_ethernet_uplink_port_channel"
+  source                = "terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink_port_channel"
   flow_control_moid     = [module.flow_control_example.moid]
   lan_uplink_pc_id      = 97
   lan_uplink_pc_ports   = [97, 98]
@@ -172,7 +172,7 @@ module "ethenret_uplink_example_a" {
     module.link_control_example,
     module.port_policy_example_a
   ]
-  source               = "../../modules/port_ethernet_uplink"
+  source               = "terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink"
   flow_control_moid    = [module.flow_control_example.moid]
   lan_uplink_port_list = [99]
   link_control_moid    = [module.link_control_example.moid]
@@ -187,7 +187,7 @@ module "ethernet_uplink_example_b" {
     module.link_control_example,
     module.port_policy_example_b
   ]
-  source               = "../../modules/port_ethernet_uplink"
+  source               = "terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink"
   flow_control_moid    = [module.flow_control_example.moid]
   lan_uplink_port_list = [99]
   link_control_moid    = [module.link_control_example.moid]
@@ -207,7 +207,7 @@ module "fc_uplink_port_channel_example_a" {
     module.port_mode_example_a,
     module.port_policy_example_a
   ]
-  source              = "../../modules/port_fc_uplink_port_channel"
+  source              = "terraform-cisco-modules/imm/intersight//modules/port_fc_uplink_port_channel"
   san_uplink_pc_id    = 1
   san_uplink_pc_ports = [1, 2]
   port_policy_moid    = module.port_policy_example_a.moid
@@ -221,7 +221,7 @@ module "fc_uplink_port_channel_example_b" {
     module.port_mode_example_b,
     module.port_policy_example_b
   ]
-  source              = "../../modules/port_fc_uplink_port_channel"
+  source              = "terraform-cisco-modules/imm/intersight//modules/port_fc_uplink_port_channel"
   san_uplink_pc_id    = 1
   san_uplink_pc_ports = [1, 2]
   port_policy_moid    = module.port_policy_example_b.moid
@@ -241,7 +241,7 @@ module "fc_uplink_example_a" {
     module.port_mode_example_a,
     module.port_policy_example_a
   ]
-  source               = "../../modules/port_fc_uplink"
+  source               = "terraform-cisco-modules/imm/intersight//modules/port_fc_uplink"
   san_uplink_port_list = [3]
   port_policy_moid     = module.port_policy_example_a.moid
   vsan_id              = 500
@@ -254,7 +254,7 @@ module "san_uplink_example_b" {
     module.port_mode_example_b,
     module.port_policy_example_b
   ]
-  source               = "../../modules/port_fc_uplink"
+  source               = "terraform-cisco-modules/imm/intersight//modules/port_fc_uplink"
   san_uplink_port_list = [3]
   port_policy_moid     = module.port_policy_example_b.moid
   vsan_id              = 600
@@ -273,7 +273,7 @@ module "port_policy_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source       = "../../modules/port_policies"
+  source       = "terraform-cisco-modules/imm/intersight//modules/port_policies"
   description  = ""
   device_model = "UCS-FI-6454"
   name         = "port_policy"
@@ -292,7 +292,7 @@ module "port_mode_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source           = "../../modules/port_mode"
+  source           = "terraform-cisco-modules/imm/intersight//modules/port_mode"
   custom_mode      = FibreChannel
   port_id_end      = 4
   port_id_start    = 1
@@ -311,7 +311,7 @@ module "server_port_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source            = "../../modules/port_server_ports"
+  source            = "terraform-cisco-modules/imm/intersight//modules/port_server_ports"
   port_list         = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
   port_list_type    = "list"
   port_policy_moid  = ""
@@ -331,7 +331,7 @@ module "lan_uplink_port_channel_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/port_ethernet_uplink_port_channel"
+  source                = "terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink_port_channel"
   breakout_sw_port      = 0
   flow_control_moid     = []
   lan_uplink_pc_id      = 49
@@ -354,7 +354,7 @@ module "lan_uplink_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/port_ethernet_uplink"
+  source                = "terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink"
   breakout_sw_port      = 0
   fec                   = "Auto"
   flow_control_moid     = []
@@ -375,7 +375,7 @@ module "san_uplink_port_channel_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "../../modules/port_fc_uplink_port_channel"
+  source              = "terraform-cisco-modules/imm/intersight//modules/port_fc_uplink_port_channel"
   breakout_sw_port    = 0
   fill_pattern        = "Idle"
   san_uplink_pc_id    = 1
@@ -395,7 +395,7 @@ module "san_uplink_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/port_fc_uplink"
+  source                = "terraform-cisco-modules/imm/intersight//modules/port_fc_uplink"
   breakout_sw_port      = 0
   fill_pattern          = var.fill_pattern
   san_uplink_port_list  = [1]

@@ -8,7 +8,7 @@ module "vhba_adapter_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source      = "../../modules/fibre_channel_adapter_policies"
+  source      = "terraform-cisco-modules/imm/intersight//modules/fibre_channel_adapter_policies"
   description = "vHBA Adapter Policy Example."
   name        = "vhba_adapter"
   org_moid    = local.org_moid
@@ -26,7 +26,7 @@ module "vhba_adapter_defaults" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source                           = "../../modules/fibre_channel_adapter_policies"
+  source                           = "terraform-cisco-modules/imm/intersight//modules/fibre_channel_adapter_policies"
   description                      = ""
   error_detection_timeout          = 20000
   error_recovery_enabled           = false

@@ -8,7 +8,7 @@ module "cdp_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/ethernet_network_control_policies"
+  source                = "terraform-cisco-modules/imm/intersight//modules/ethernet_network_control_policies"
   cdp_enabled           = true
   description           = "vNIC Network Control Policy Example - CDP Eanbled."
   mac_registration_mode = "allVlans"
@@ -21,7 +21,7 @@ module "lldp_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/ethernet_network_control_policies"
+  source                = "terraform-cisco-modules/imm/intersight//modules/ethernet_network_control_policies"
   description           = "vNIC Network Control Policy Example - LLDP Enabled."
   mac_registration_mode = "allVlans"
   lldp_receive          = true
@@ -45,7 +45,7 @@ module "ethernet_network_control_defaults" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source                = "../../modules/ethernet_network_control_policies"
+  source                = "terraform-cisco-modules/imm/intersight//modules/ethernet_network_control_policies"
   cdp_enabled           = false
   description           = "vNIC Network Control Policy Example."
   forge_mac             = "allow"
