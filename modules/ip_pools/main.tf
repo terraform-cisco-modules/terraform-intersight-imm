@@ -20,8 +20,8 @@ resource "intersight_ippool_pool" "ip_pool" {
     content {
       gateway       = ip_v4_config.value.gateway
       netmask       = ip_v4_config.value.netmask
-      primary_dns   = length(var.dns_servers_v4) > 0 ? var.dns_servers_v4[0] : null
-      secondary_dns = length(var.dns_servers_v4) > 1 ? var.dns_servers_v4[1] : null
+      primary_dns   = ip_v4_config.value.primary_dns != null ? ip_v4_config.value.primary_dns : null
+      secondary_dns = ip_v4_config.value.secondary_dns != null ? ip_v4_config.value.secondary_dns : null
     }
   }
   dynamic "ip_v6_blocks" {
@@ -37,8 +37,8 @@ resource "intersight_ippool_pool" "ip_pool" {
     content {
       gateway       = ip_v6_config.value.gateway
       prefix        = ip_v6_config.value.prefix
-      primary_dns   = length(var.dns_servers_v6) > 0 ? var.dns_servers_v6[0] : null
-      secondary_dns = length(var.dns_servers_v6) > 1 ? var.dns_servers_v6[1] : null
+      primary_dns   = ip_v6_config.value.primary_dns != null ? ip_v6_config.value.primary_dns : "::"
+      secondary_dns = ip_v6_config.value.secondary_dns != null ? ip_v6_config.value.secondary_dns : "::"
     }
   }
   organization {

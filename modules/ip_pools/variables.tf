@@ -1,3 +1,7 @@
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 #____________________________________________________________
 #
 # IP Pool Variables Section.
@@ -19,17 +23,17 @@ variable "description" {
   type        = string
 }
 
-variable "dns_servers_v4" {
-  default     = []
-  description = "List of IPv4 DNS Servers for this Pool."
-  type        = list(string)
-}
-
-variable "dns_servers_v6" {
-  default     = []
-  description = "List of IPv6 DNS Servers for this Pool."
-  type        = list(string)
-}
+# variable "dns_servers_v4" {
+#   default     = []
+#   description = "List of IPv4 DNS Servers for this Pool."
+#   type        = list(string)
+# }
+#
+# variable "dns_servers_v6" {
+#   default     = []
+#   description = "List of IPv6 DNS Servers for this Pool."
+#   type        = list(string)
+# }
 
 variable "ipv4_block" {
   default     = []
@@ -37,10 +41,29 @@ variable "ipv4_block" {
   type        = list(map(string))
 }
 
+# variable "ipv4_config" {
+#   default     = []
+#   description = "List of IPv4 Configuration Parameters to Assign to the IP Pool."
+#   type        = list(map(string))
+# }
+
 variable "ipv4_config" {
-  default     = []
-  description = "List of IPv4 Configuration Parameters to Assign to the IP Pool."
-  type        = list(map(string))
+  default     = {}
+  description = <<-EOT
+  List of IPv4 Addresses to Assign to the IP Pool.
+  * gateway - Gateway of the Subnet
+  * netmask - Netmask of the Subnet in X.X.X.X format
+  * primary_dns = Primary DNS Server to Assign to the Pool
+  * secondary_dns = Secondary DNS Server to Assign to the Pool
+  EOT
+  type        = map(object(
+    {
+      gateway       = string
+      netmask       = string
+      primary_dns   = optional(string)
+      secondary_dns = optional(string)
+    }
+  ))
 }
 
 variable "ipv6_block" {
@@ -50,9 +73,22 @@ variable "ipv6_block" {
 }
 
 variable "ipv6_config" {
-  default     = []
-  description = "List of IPv6 Configuration Parameters to Assign to the IP Pool."
-  type        = list(map(string))
+  default     = {}
+  description = <<-EOT
+  List of IPv6 Configuration Parameters to Assign to the IP Pool.
+  * gateway - Gateway of the Subnet
+  * prefix - Prefix of the Subnet in Integer format
+  * primary_dns = Primary DNS Server to Assign to the Pool
+  * secondary_dns = Secondary DNS Server to Assign to the Pool
+  EOT
+  type        = map(object(
+    {
+      gateway       = string
+      prefix        = number
+      primary_dns   = optional(string)
+      secondary_dns = optional(string)
+    }
+  ))
 }
 
 variable "name" {
