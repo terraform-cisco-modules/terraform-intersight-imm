@@ -19,20 +19,24 @@ variable "fc_zone_sharing_mode" {
   type        = string
 }
 
-variable "fcoe_vlan_id" {
-  description = "FCoE VLAN Identifier to Assign to the VSAN Policy."
-  type        = number
-}
-
 variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
 }
 
-variable "vsan_id" {
-  description = "VSAN Identifier to Assign to the VSAN Policy."
-  type        = number
+variable "vsan_list" {
+  default = {}
+  type = map(object({
+    fcoe_vlan = number
+    vsan_id   = number
+  }))
+}
+
+variable "vsan_prefix" {
+  default     = "VLAN"
+  description = "Prefix Name for VSANs."
+  type        = string
 }
 
 variable "vsan_policy_moid" {

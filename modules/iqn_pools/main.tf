@@ -12,9 +12,10 @@ resource "intersight_iqnpool_pool" "iqn_pool" {
   dynamic "iqn_suffix_blocks" {
     for_each = var.iqn_suffix_blocks
     content {
-      from   = iqn_suffix_blocks.value.starting_iqn
-      size   = iqn_suffix_blocks.value.pool_size
+      from   = iqn_suffix_blocks.value.from
       suffix = iqn_suffix_blocks.value.suffix
+      size   = iqn_suffix_blocks.value.size
+      # to     = iqn_suffix_blocks.value.to
     }
   }
   organization {

@@ -9,7 +9,7 @@ variable "auto_allow_on_uplinks" {
   type        = bool
 }
 
-variable "is_native" {
+variable "native_vlan" {
   default     = false
   description = "Used to determine if this VLAN should be untagged on the interfaces."
   type        = bool
@@ -26,15 +26,9 @@ variable "tags" {
   type        = list(map(string))
 }
 
-variable "vlan" {
-  default = "1"
-  type    = string
-}
-
-variable "vlan_prefix" {
-  default     = "VLAN"
-  description = "Prefix Name for VLANs."
-  type        = string
+variable "vlan_id" {
+  description = "VLAN Identifier to Assign to the VLAN Policy."
+  type        = number
 }
 
 variable "vlan_policy_moid" {

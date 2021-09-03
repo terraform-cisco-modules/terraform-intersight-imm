@@ -23,12 +23,12 @@ module "ip_pool_1" {
   tags             = var.tags
   ipv4_block = [
     {
-      pool_size   = 31
-      starting_ip = "198.18.1.32"
+      from = "198.18.1.32"
+      to   = "198.18.1.63"
     },
     {
-      pool_size   = 31
-      starting_ip = "198.18.1.64"
+      from = "198.18.1.64"
+      to   = "198.18.1.95"
     }
   ]
   ipv4_config = [
@@ -39,8 +39,9 @@ module "ip_pool_1" {
   ]
   ipv6_block = [
     {
-      pool_size   = 31
-      starting_ip = "2001:002:1::32"
+      from = "2001:002:1::32"
+      size = 31
+      # to   = "2001:002:1::63"
     }
   ]
   ipv6_config = [
@@ -70,8 +71,8 @@ module "ip_pool_2" {
   tags             = var.tags
   ipv4_block = [
     {
-      pool_size   = 31
-      starting_ip = "198.18.2.32"
+      from = "198.18.2.32"
+      to   = "198.18.2.63"
     }
   ]
   ipv4_config = [

@@ -11,8 +11,8 @@ resource "intersight_ippool_pool" "ip_pool" {
   dynamic "ip_v4_blocks" {
     for_each = var.ipv4_block
     content {
-      from = ip_v4_blocks.value.starting_ip
-      size = ip_v4_blocks.value.pool_size
+      from = ip_v4_blocks.value.from
+      to   = ip_v4_blocks.value.to
     }
   }
   dynamic "ip_v4_config" {
@@ -27,8 +27,9 @@ resource "intersight_ippool_pool" "ip_pool" {
   dynamic "ip_v6_blocks" {
     for_each = var.ipv6_block
     content {
-      from = ip_v6_blocks.value.starting_ip
-      size = ip_v6_blocks.value.pool_size
+      from = ip_v6_blocks.value.from
+      size = ip_v6_blocks.value.size
+      # to   = ip_v6_blocks.value.to
     }
   }
   dynamic "ip_v6_config" {

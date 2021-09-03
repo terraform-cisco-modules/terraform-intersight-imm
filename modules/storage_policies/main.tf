@@ -6,23 +6,24 @@
 
 resource "intersight_storage_storage_policy" "storage" {
   description                  = var.description
+  global_hot_spares            = var.global_hot_spares
   name                         = var.name
-  retain_policy_virtual_drives = var.retain_policy
-  unused_disks_state           = var.unused_disks
+  # retain_policy_virtual_drives = var.retain_policy
+  unused_disks_state           = var.unused_disks_state
+  use_jbod_for_vd_creation     = var.use_jbod_for_vd_creation
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
   }
-  /*
-  dynamic "disk_group_policies" {
-    for_each = var.disk_group_policies
+  dynamic "m2_virtual_drive" {
+    for_each = var.m2_virtual_drive
     content {
-      additional_properties = ""
-      moid                  = disk_group_policies.value
-      object_type           = "storage.DiskGroupPolicy"
+      controller_slot = m2_virtual_drive.value.controller_slot
+      enable          = m2_virtual_drive.value.enable
+      # additional_properties = ""
+      # object_type           = "storage.DiskGroupPolicy"
     }
   }
-*/
   dynamic "profiles" {
     for_each = var.profiles
     content {
@@ -30,30 +31,27 @@ resource "intersight_storage_storage_policy" "storage" {
       object_type = "server.Profile"
     }
   }
+  dynamic "raid0_drive" {
+    for_each = var.raid0_drive
+    content {
+      drive_slots = raid0_drive.value.drive_slots
+      enable      = raid0_drive.value.enable
+      object_type = "server.Profile"
+      virtual_drive_policy  = {
+        access_policy         = virtual_drives.value.access_policy
+        drive_cache           = virtual_drives.value.drive_cache
+        object_type           = "storage.VirtualDriveConfig"
+        read_policy           = virtual_drives.value.read_policy
+        strip_size            = virtual_drives.value.strip_size
+        write_policy          = virtual_drives.value.write_policy
+      }
+    }
+  }
   dynamic "tags" {
     for_each = var.tags
     content {
       key   = tags.value.key
       value = tags.value.value
-    }
-  }
-  dynamic "virtual_drives" {
-    for_each = var.virtual_drives
-    content {
-      access_policy         = virtual_drives.value.access_policy
-      additional_properties = virtual_drives.value.additional_properties
-      boot_drive            = virtual_drives.value.boot_drive
-      disk_group_name       = virtual_drives.value.disk_group_name
-      disk_group_policy     = virtual_drives.value.disk_group_policy
-      drive_cache           = virtual_drives.value.drive_cache
-      expand_to_available   = virtual_drives.value.expand_to_available
-      io_policy             = virtual_drives.value.io_policy
-      name                  = virtual_drives.value.name
-      object_type           = "storage.VirtualDriveConfig"
-      read_policy           = virtual_drives.value.read_policy
-      size                  = virtual_drives.value.size
-      strip_size            = virtual_drives.value.strip_size
-      write_policy          = virtual_drives.value.write_policy
     }
   }
 }

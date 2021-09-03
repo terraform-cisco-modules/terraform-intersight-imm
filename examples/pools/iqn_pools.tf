@@ -16,9 +16,10 @@ module "iqn_pool" {
   tags             = var.tags
   iqn_suffix_blocks = [
     {
-      pool_size    = 32
-      starting_iqn = 01
-      suffix       = "ucs-host"
+      from   = 01
+      suffix = "ucs-host"
+      size   = 32
+      # to     = 31
     }
   ]
 }

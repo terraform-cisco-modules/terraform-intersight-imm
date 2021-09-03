@@ -5,5 +5,5 @@
 
 output "moid" {
   description = "VSAN Policy - Add VSAN Managed Object ID (moid)."
-  value       = intersight_fabric_vsan.vsan.moid
+  value       = { for v in sort(keys(intersight_fabric_vsan.vsan)) : v => intersight_fabric_vsan.vsan[v].moid }
 }

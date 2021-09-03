@@ -13,6 +13,7 @@ module "uuid_pool" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  # source           = "../../modules/uuid_pools"
   source           = "terraform-cisco-modules/imm/intersight//modules/uuid_pools"
   assignment_order = "sequential"
   description      = "Example UUID Pool."
@@ -21,8 +22,9 @@ module "uuid_pool" {
   tags             = var.tags
   uuid_suffix_blocks = [
     {
-      from = "e456-1234e89b42aa"
+      from = "0000-000000000000"
       size = 32768
+      # to   = "0000-000000000032"
     }
   ]
 }
@@ -43,7 +45,7 @@ module "uuid_default" {
   description         = ""
   name                = "default"
   org_moid            = local.org_moid
-  prefix              = "123e4567-e89b-42d3"
+  prefix              = "000025B5-0000-0000"
   tags                = var.tags
   uuid_suffix_blocks  = []
 }
