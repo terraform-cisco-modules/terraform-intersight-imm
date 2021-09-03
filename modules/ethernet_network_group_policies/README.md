@@ -42,12 +42,12 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_allowed_vlans"></a> [allowed\_vlans](#input\_allowed\_vlans) | List of VLAN's to Add to the VLAN Group Policy. | `string` | `"1-2,4-5"` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"network_group"` | no |
 | <a name="input_native_vlan"></a> [native\_vlan](#input\_native\_vlan) | VLAN to Assign as the Native VLAN. | `number` | `null` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_vlan_list"></a> [vlan\_list](#input\_vlan\_list) | List of VLAN's to Add to the VLAN Group Policy. | `string` | `"1-2,4-5"` | no |
 
 ## Outputs
 
