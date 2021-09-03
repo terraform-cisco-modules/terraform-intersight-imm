@@ -5,16 +5,16 @@
 #__________________________________________________________________
 
 resource "intersight_fabric_eth_network_control_policy" "vnic_control" {
-  cdp_enabled           = var.cdp_enabled
+  cdp_enabled           = var.cdp_enable
   description           = var.description
-  forge_mac             = var.forge_mac
-  mac_registration_mode = var.mac_registration_mode
+  forge_mac             = var.mac_security_forge
+  mac_registration_mode = var.mac_register_mode
   name                  = var.name
-  uplink_fail_action    = var.uplink_fail_action
+  uplink_fail_action    = var.action_on_uplink_fail
   lldp_settings {
     object_type      = "fabric.LldpSettings"
-    receive_enabled  = var.lldp_receive
-    transmit_enabled = var.lldp_transmit
+    receive_enabled  = var.lldp_enable_receive
+    transmit_enabled = var.lldp_enable_transmit
   }
   organization {
     moid        = var.org_moid

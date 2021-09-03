@@ -15,13 +15,13 @@ variable "error_detection_timeout" {
   type        = number
 }
 
-variable "error_recovery_enabled" {
+variable "enable_fcp_error_recovery" {
   default     = false
   description = "Enables Fibre Channel Error recovery."
   type        = bool
 }
 
-variable "error_recovery_io_retry_count" {
+variable "error_recovery_port_down_io_retry" {
   default     = 8
   description = "The number of times an I/O request to a port is retried because the port is busy before the system decides the port is unavailable.  Range is 0-255."
   type        = number
@@ -47,7 +47,7 @@ variable "error_recovery_port_down_timeout" {
 
 variable "flogi_retries" {
   default     = 8
-  description = "he number of times that the system tries to log in to the fabric after the first failure.  A Value greater than 0."
+  description = "The number of times that the system tries to log in to the fabric after the first failure.  A Value greater than 0."
   type        = number
 }
 
@@ -75,15 +75,15 @@ variable "io_throttle_count" {
   type        = number
 }
 
-variable "lun_count" {
-  default     = 1024
-  description = "The maximum number of LUNs that the Fibre Channel driver will export or show. The maximum number of LUNs is usually controlled by the operating system running on the server.  Rnage is 1-1024."
-  type        = number
-}
-
 variable "lun_queue_depth" {
   default     = 20
   description = "The number of commands that the HBA can send and receive in a single transmission per LUN.  Range is 1-254."
+  type        = number
+}
+
+variable "max_luns_per_target" {
+  default     = 1024
+  description = "The maximum number of LUNs that the Fibre Channel driver will export or show. The maximum number of LUNs is usually controlled by the operating system running on the server.  Rnage is 1-1024."
   type        = number
 }
 
@@ -116,13 +116,13 @@ variable "resource_allocation_timeout" {
   type        = number
 }
 
-variable "rx_ring_size" {
+variable "receive_ring_size" {
   default     = 64
   description = "The number of descriptors in each queue.  Range is 64-2048."
   type        = number
 }
 
-variable "scsi_io_queues" {
+variable "scsi_io_queue_count" {
   default     = 1
   description = "The number of SCSI I/O queue resources the system should allocate.  Range is 1-245."
   type        = number
@@ -134,7 +134,7 @@ variable "scsi_io_ring_size" {
   type        = number
 }
 
-variable "tx_ring_size" {
+variable "transmit_ring_size" {
   default     = 64
   description = "The number of descriptors in each queue.  Range is 64-2048."
   type        = number

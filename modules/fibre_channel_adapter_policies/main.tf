@@ -8,13 +8,13 @@ resource "intersight_vnic_fc_adapter_policy" "vhba_adapter" {
   description                 = var.description
   error_detection_timeout     = var.error_detection_timeout
   io_throttle_count           = var.io_throttle_count
-  lun_count                   = var.lun_count
+  lun_count                   = var.max_luns_per_target
   lun_queue_depth             = var.lun_queue_depth
   name                        = var.name
   resource_allocation_timeout = var.resource_allocation_timeout
   error_recovery_settings {
-    enabled           = var.error_recovery_enabled
-    io_retry_count    = var.error_recovery_io_retry_count
+    enabled           = var.enable_fcp_error_recovery
+    io_retry_count    = var.error_recovery_port_down_io_retry
     io_retry_timeout  = var.error_recovery_io_retry_timeout
     link_down_timeout = var.error_recovery_link_down_timeout
     port_down_timeout = var.error_recovery_port_down_timeout
@@ -36,15 +36,15 @@ resource "intersight_vnic_fc_adapter_policy" "vhba_adapter" {
   }
   rx_queue_settings {
     nr_count  = 1
-    ring_size = var.rx_ring_size
+    ring_size = var.receive_ring_size
   }
   scsi_queue_settings {
-    nr_count  = var.scsi_io_queues
+    nr_count  = var.scsi_io_queue_count
     ring_size = var.scsi_io_ring_size
   }
   tx_queue_settings {
     nr_count  = 1
-    ring_size = var.tx_ring_size
+    ring_size = var.transmit_ring_size
   }
   dynamic "tags" {
     for_each = var.tags

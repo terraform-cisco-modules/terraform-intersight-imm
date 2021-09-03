@@ -57,7 +57,7 @@ variable "profile_type" {
 variable "profiles" {
   default     = []
   description = "List of Profiles to Assign to the Policy."
-  type        = set(string)
+  type        = list(map(string))
 }
 
 variable "tags" {

@@ -3,18 +3,6 @@
 # Ethernet Adapter Policy Variables Section.
 #____________________________________________________________
 
-variable "advanced_filter" {
-  default     = false
-  description = "Enables advanced filtering on the interface."
-  type        = bool
-}
-
-variable "arfs_enable" {
-  default     = false
-  description = "Status of Accelerated Receive Flow Steering on the virtual ethernet interface."
-  type        = bool
-}
-
 variable "completion_queue_count" {
   default     = 5
   description = "The number of completion queue resources to allocate. In general, the number of completion queue resources to allocate is equal to the number of transmit queue resources plus the number of receive queue resources.  Range is 1-2000."
@@ -33,9 +21,39 @@ variable "description" {
   type        = string
 }
 
-variable "geneve_enabled" {
+variable "enable_accelerated_receive_flow_steering" {
+  default     = false
+  description = "Status of Accelerated Receive Flow Steering on the virtual ethernet interface."
+  type        = bool
+}
+
+variable "enable_advanced_filter" {
+  default     = false
+  description = "Enables advanced filtering on the interface."
+  type        = bool
+}
+
+variable "enable_geneve_offload" {
   default     = false
   description = "GENEVE offload protocol allows you to create logical networks that span physical network boundaries by allowing any information to be encoded in a packet and passed between tunnel endpoints."
+  type        = bool
+}
+
+variable "enable_interrupt_scaling" {
+  default     = false
+  description = "Enables Interrupt Scaling on the interface."
+  type        = bool
+}
+
+variable "enable_nvgre_offload" {
+  default     = false
+  description = "Status of the Network Virtualization using Generic Routing Encapsulation on the virtual ethernet interface."
+  type        = bool
+}
+
+variable "enable_vxlan_offload" {
+  default     = false
+  description = "Status of the Virtual Extensible LAN Protocol on the virtual ethernet interface."
   type        = bool
 }
 
@@ -49,33 +67,27 @@ variable "interrupt_coalescing_type" {
   type        = string
 }
 
-variable "interrupt_interrupts" {
-  default     = 8
-  description = "The number of interrupt resources to allocate. Typical value is be equal to the number of completion queue resources.  Range is 1-1024."
-  type        = number
-}
-
 variable "interrupt_mode" {
   default     = "MSIx"
   description = <<-EOT
   The preferred driver interrupt mode. This can be one of the following:
   * INTx - Line-based interrupt (INTx) mechanism similar to the one used in Legacy systems.
   * MSI - Message Signaled Interrupt (MSI) mechanism that treats messages as interrupts.
-  * MSIx - Message Signaled Interrupt (MSI) mechanism with the optional extension (MSIx).
+  * MSIx - Message Signaled Interrupt mechanism with the optional extension (MSIx).
   MSIx is the recommended and default option.
   EOT
   type        = string
 }
 
-variable "interrupt_scaling" {
-  default     = false
-  description = "Enables Interrupt Scaling on the interface."
-  type        = bool
-}
-
 variable "interrupt_timer" {
   default     = 125
   description = "The time to wait between interrupts or the idle period that must be encountered before an interrupt is sent. To turn off interrupt coalescing, enter 0 (zero) in this field.  Range is 0-65535."
+  type        = number
+}
+
+variable "interrupts" {
+  default     = 8
+  description = "The number of interrupt resources to allocate. Typical value is be equal to the number of completion queue resources.  Range is 1-1024."
   type        = number
 }
 
@@ -85,25 +97,19 @@ variable "name" {
   type        = string
 }
 
-variable "nvgre_enable" {
-  default     = false
-  description = "Status of the Network Virtualization using Generic Routing Encapsulation on the virtual ethernet interface."
-  type        = bool
-}
-
 variable "org_moid" {
   description = "Intersight Organization moid."
   type        = string
 }
 
-variable "receive_side_scaling" {
-  default     = false
+variable "receive_side_scaling_enable" {
+  default     = true
   description = "Receive Side Scaling allows the incoming traffic to be spread across multiple CPU cores."
   type        = bool
 }
 
 variable "roce_cos" {
-  default     = 5
+  default     = 6
   description = <<-EOT
   The Class of Service for RoCE on this virtual interface.  Options are:
   * 1
@@ -149,61 +155,61 @@ variable "roce_version" {
   type        = number
 }
 
-variable "rss_hash_ipv4_hash" {
+variable "rss_enable_ipv4_hash" {
   default     = true
   description = "When enabled, the IPv4 address is used for traffic distribution."
   type        = bool
 }
 
-variable "rss_hash_ipv6_ext_hash" {
+variable "rss_enable_ipv6_extensions_hash" {
   default     = false
   description = "When enabled, the IPv6 extensions are used for traffic distribution."
   type        = bool
 }
 
-variable "rss_hash_ipv6_hash" {
+variable "rss_enable_ipv6_hash" {
   default     = true
   description = "When enabled, the IPv6 address is used for traffic distribution."
   type        = bool
 }
 
-variable "rss_hash_tcp_ipv4_hash" {
+variable "rss_enable_tcp_and_ipv4_hash" {
   default     = true
   description = "When enabled, both the IPv4 address and TCP port number are used for traffic distribution."
   type        = bool
 }
 
-variable "rss_hash_tcp_ipv6_ext_hash" {
+variable "rss_enable_tcp_and_ipv6_extensions_hash" {
   default     = false
   description = "When enabled, both the IPv6 extensions and TCP port number are used for traffic distribution."
   type        = bool
 }
 
-variable "rss_hash_tcp_ipv6_hash" {
+variable "rss_enable_tcp_and_ipv6_hash" {
   default     = true
   description = "When enabled, both the IPv6 address and TCP port number are used for traffic distribution."
   type        = bool
 }
 
-variable "rss_hash_udp_ipv4_hash" {
+variable "rss_enable_udp_and_ipv4_hash" {
   default     = false
   description = "When enabled, both the IPv4 address and UDP port number are used for traffic distribution."
   type        = bool
 }
 
-variable "rss_hash_udp_ipv6_hash" {
+variable "rss_enable_udp_and_ipv6_hash" {
   default     = false
   description = "When enabled, both the IPv6 address and UDP port number are used for traffic distribution."
   type        = bool
 }
 
-variable "rx_queue_count" {
+variable "receive_queue_count" {
   default     = 4
   description = "The number of queue resources to allocate.  Range is 1-1000."
   type        = number
 }
 
-variable "rx_ring_size" {
+variable "receive_ring_size" {
   default     = 512
   description = "The number of descriptors in each queue.  Range is 64-4096."
   type        = number
@@ -239,22 +245,16 @@ variable "tcp_offload_tx_checksum" {
   type        = bool
 }
 
-variable "tx_queue_count" {
+variable "transmit_queue_count" {
   default     = 1
   description = "The number of queue resources to allocate.  Range is 1-1000."
   type        = number
 }
 
-variable "tx_ring_size" {
+variable "transmit_ring_size" {
   default     = 256
   description = "The number of descriptors in each queue.  Range is 64-4096."
   type        = number
-}
-
-variable "vxlan_enable" {
-  default     = false
-  description = "Status of the Virtual Extensible LAN Protocol on the virtual ethernet interface."
-  type        = bool
 }
 
 variable "uplink_failback_timeout" {

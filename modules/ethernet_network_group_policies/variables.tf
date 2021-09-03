@@ -3,6 +3,12 @@
 # Ethernet Network Group (VLAN Group) Policy Variables.
 #______________________________________________________________
 
+variable "allowed_vlans" {
+  default     = "1-2,4-5"
+  description = "List of VLAN's to Add to the VLAN Group Policy."
+  type        = string
+}
+
 variable "description" {
   default     = ""
   description = "Description for the Policy."
@@ -23,12 +29,6 @@ variable "native_vlan" {
 
 variable "org_moid" {
   description = "Intersight Organization moid."
-  type        = string
-}
-
-variable "vlan_list" {
-  default     = "1-2,4-5"
-  description = "List of VLAN's to Add to the VLAN Group Policy."
   type        = string
 }
 

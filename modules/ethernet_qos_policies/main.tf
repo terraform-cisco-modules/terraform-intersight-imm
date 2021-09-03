@@ -12,7 +12,7 @@ resource "intersight_vnic_eth_qos_policy" "vnic_qos" {
   mtu            = var.mtu
   priority       = var.priority
   rate_limit     = var.rate_limit
-  trust_host_cos = var.trust_host_cos
+  trust_host_cos = var.enable_trust_host_cos
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

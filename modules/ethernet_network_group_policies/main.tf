@@ -13,7 +13,7 @@ resource "intersight_fabric_eth_network_group_policy" "vlan_group" {
   }
   vlan_settings {
     native_vlan   = var.native_vlan
-    allowed_vlans = var.vlan_list
+    allowed_vlans = var.allowed_vlans
   }
   dynamic "tags" {
     for_each = var.tags
