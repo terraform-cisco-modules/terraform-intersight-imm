@@ -52,5 +52,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | UCS Domain Server Port Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | UCS Domain Port Policy - Server Ports Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

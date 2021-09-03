@@ -44,12 +44,10 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_assignment_order"></a> [assignment\_order](#input\_assignment\_order) | Assignment order decides the order in which the next identifier is allocated.<br>* sequential - Identifiers are assigned in a sequential order.<br>* default - Assignment order is decided by the system. | `string` | `"default"` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the IP Pool. | `string` | `""` | no |
-| <a name="input_dns_servers_v4"></a> [dns\_servers\_v4](#input\_dns\_servers\_v4) | List of IPv4 DNS Servers for this Pool. | `list(string)` | `[]` | no |
-| <a name="input_dns_servers_v6"></a> [dns\_servers\_v6](#input\_dns\_servers\_v6) | List of IPv6 DNS Servers for this Pool. | `list(string)` | `[]` | no |
 | <a name="input_ipv4_block"></a> [ipv4\_block](#input\_ipv4\_block) | List of IPv4 Addresses to Assign to the IP Pool. | `list(map(string))` | `[]` | no |
-| <a name="input_ipv4_config"></a> [ipv4\_config](#input\_ipv4\_config) | List of IPv4 Configuration Parameters to Assign to the IP Pool. | `list(map(string))` | `[]` | no |
+| <a name="input_ipv4_config"></a> [ipv4\_config](#input\_ipv4\_config) | List of IPv4 Addresses to Assign to the IP Pool.<br>* gateway - Gateway of the Subnet<br>* netmask - Netmask of the Subnet in X.X.X.X format<br>* primary\_dns = Primary DNS Server to Assign to the Pool<br>* secondary\_dns = Secondary DNS Server to Assign to the Pool | <pre>map(object(<br>    {<br>      gateway       = string<br>      netmask       = string<br>      primary_dns   = optional(string)<br>      secondary_dns = optional(string)<br>    }<br>  ))</pre> | `{}` | no |
 | <a name="input_ipv6_block"></a> [ipv6\_block](#input\_ipv6\_block) | List of IPv6 Addresses to Assign to the IP Pool. | `list(map(string))` | `[]` | no |
-| <a name="input_ipv6_config"></a> [ipv6\_config](#input\_ipv6\_config) | List of IPv6 Configuration Parameters to Assign to the IP Pool. | `list(map(string))` | `[]` | no |
+| <a name="input_ipv6_config"></a> [ipv6\_config](#input\_ipv6\_config) | List of IPv6 Configuration Parameters to Assign to the IP Pool.<br>* gateway - Gateway of the Subnet<br>* prefix - Prefix of the Subnet in Integer format<br>* primary\_dns = Primary DNS Server to Assign to the Pool<br>* secondary\_dns = Secondary DNS Server to Assign to the Pool | <pre>map(object(<br>    {<br>      gateway       = string<br>      prefix        = number<br>      primary_dns   = optional(string)<br>      secondary_dns = optional(string)<br>    }<br>  ))</pre> | `{}` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the IP Pool. | `string` | `"ip_pool"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |

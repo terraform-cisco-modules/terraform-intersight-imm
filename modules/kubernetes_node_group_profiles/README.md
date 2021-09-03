@@ -58,5 +58,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Intersight Kubernetes Service Cluster Node Group Profile Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Intersight Kubernetes Cluster Node Group Profile Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

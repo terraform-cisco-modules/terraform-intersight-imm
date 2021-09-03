@@ -36,7 +36,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [intersight_vnic_eth_adapter_policy.vnic_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_eth_adapter_policy) | resource |
+| [intersight_vnic_eth_adapter_policy.ethernet_adapter](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/vnic_eth_adapter_policy) | resource |
 
 ## Inputs
 
@@ -87,5 +87,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet (vNIC) Adapter Policy Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Ethernet Adapter Policy Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

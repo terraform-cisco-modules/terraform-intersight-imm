@@ -15,33 +15,33 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_intersight"></a> [intersight](#requirement\_intersight) | >=1.0.11 |
+| <a name="requirement_intersight"></a> [intersight](#requirement\_intersight) | 1.0.12 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_intersight"></a> [intersight](#provider\_intersight) | 1.0.11 |
+| <a name="provider_intersight"></a> [intersight](#provider\_intersight) | 1.0.12 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ip_pool_1"></a> [ip\_pool\_1](#module\_ip\_pool\_1) | terraform-cisco-modules/imm/intersight//modules/pools_ip | n/a |
-| <a name="module_ip_pool_2"></a> [ip\_pool\_2](#module\_ip\_pool\_2) | terraform-cisco-modules/imm/intersight//modules/pools_ip | n/a |
-| <a name="module_iqn_pool"></a> [iqn\_pool](#module\_iqn\_pool) | terraform-cisco-modules/imm/intersight//modules/pools_iqn | n/a |
-| <a name="module_mac_pool_a"></a> [mac\_pool\_a](#module\_mac\_pool\_a) | terraform-cisco-modules/imm/intersight//modules/pools_mac | n/a |
-| <a name="module_mac_pool_b"></a> [mac\_pool\_b](#module\_mac\_pool\_b) | terraform-cisco-modules/imm/intersight//modules/pools_mac | n/a |
-| <a name="module_uuid_pool"></a> [uuid\_pool](#module\_uuid\_pool) | terraform-cisco-modules/imm/intersight//modules/pools_uuid | n/a |
-| <a name="module_wwnn_pool"></a> [wwnn\_pool](#module\_wwnn\_pool) | terraform-cisco-modules/imm/intersight//modules/pools_fc | n/a |
-| <a name="module_wwpn_pool_a"></a> [wwpn\_pool\_a](#module\_wwpn\_pool\_a) | terraform-cisco-modules/imm/intersight//modules/pools_fc | n/a |
-| <a name="module_wwpn_pool_b"></a> [wwpn\_pool\_b](#module\_wwpn\_pool\_b) | terraform-cisco-modules/imm/intersight//modules/pools_fc | n/a |
+| <a name="module_ip_pool_1"></a> [ip\_pool\_1](#module\_ip\_pool\_1) | terraform-cisco-modules/imm/intersight//modules/ip_pools | n/a |
+| <a name="module_ip_pool_2"></a> [ip\_pool\_2](#module\_ip\_pool\_2) | terraform-cisco-modules/imm/intersight//modules/ip_pools | n/a |
+| <a name="module_iqn_pool"></a> [iqn\_pool](#module\_iqn\_pool) | terraform-cisco-modules/imm/intersight//modules/iqn_pools | n/a |
+| <a name="module_mac_pool_a"></a> [mac\_pool\_a](#module\_mac\_pool\_a) | terraform-cisco-modules/imm/intersight//modules/mac_pools | n/a |
+| <a name="module_mac_pool_b"></a> [mac\_pool\_b](#module\_mac\_pool\_b) | terraform-cisco-modules/imm/intersight//modules/mac_pools | n/a |
+| <a name="module_uuid_pool"></a> [uuid\_pool](#module\_uuid\_pool) | terraform-cisco-modules/imm/intersight//modules/uuid_pools | n/a |
+| <a name="module_wwnn_pool"></a> [wwnn\_pool](#module\_wwnn\_pool) | terraform-cisco-modules/imm/intersight//modules/fc_pools | n/a |
+| <a name="module_wwpn_pool_a"></a> [wwpn\_pool\_a](#module\_wwpn\_pool\_a) | terraform-cisco-modules/imm/intersight//modules/fc_pools | n/a |
+| <a name="module_wwpn_pool_b"></a> [wwpn\_pool\_b](#module\_wwpn\_pool\_b) | terraform-cisco-modules/imm/intersight//modules/fc_pools | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [intersight_organization_organization.org_moid](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/organization_organization) | data source |
+| [intersight_organization_organization.org_moid](https://registry.terraform.io/providers/CiscoDevNet/intersight/1.0.12/docs/data-sources/organization_organization) | data source |
 
 ## Inputs
 

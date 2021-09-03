@@ -73,119 +73,119 @@ rm * Syslog
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_intersight"></a> [intersight](#requirement\_intersight) | >=1.0.11 |
+| <a name="requirement_intersight"></a> [intersight](#requirement\_intersight) | 1.0.12 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_intersight"></a> [intersight](#provider\_intersight) | 1.0.11 |
+| <a name="provider_intersight"></a> [intersight](#provider\_intersight) | 1.0.12 |
 | <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_adapter_configuration_example"></a> [adapter\_configuration\_example](#module\_adapter\_configuration\_example) | terraform-cisco-modules/imm/intersight//modules/policies_adapter_configuration | n/a |
-| <a name="module_bios_example"></a> [bios\_example](#module\_bios\_example) | terraform-cisco-modules/imm/intersight//modules/policies_bios | n/a |
-| <a name="module_boot_legacy_iscsi"></a> [boot\_legacy\_iscsi](#module\_boot\_legacy\_iscsi) | terraform-cisco-modules/imm/intersight//modules/policies_boot_order | n/a |
-| <a name="module_boot_legacy_san"></a> [boot\_legacy\_san](#module\_boot\_legacy\_san) | terraform-cisco-modules/imm/intersight//modules/policies_boot_order | n/a |
-| <a name="module_boot_uefi_cimc_dvd"></a> [boot\_uefi\_cimc\_dvd](#module\_boot\_uefi\_cimc\_dvd) | terraform-cisco-modules/imm/intersight//modules/policies_boot_order | n/a |
-| <a name="module_boot_uefi_iscsi"></a> [boot\_uefi\_iscsi](#module\_boot\_uefi\_iscsi) | terraform-cisco-modules/imm/intersight//modules/policies_boot_order | n/a |
-| <a name="module_boot_uefi_kvm_dvd"></a> [boot\_uefi\_kvm\_dvd](#module\_boot\_uefi\_kvm\_dvd) | terraform-cisco-modules/imm/intersight//modules/policies_boot_order | n/a |
-| <a name="module_boot_uefi_local_disk"></a> [boot\_uefi\_local\_disk](#module\_boot\_uefi\_local\_disk) | terraform-cisco-modules/imm/intersight//modules/policies_boot_order | n/a |
-| <a name="module_boot_uefi_san"></a> [boot\_uefi\_san](#module\_boot\_uefi\_san) | terraform-cisco-modules/imm/intersight//modules/policies_boot_order | n/a |
-| <a name="module_cdp_example"></a> [cdp\_example](#module\_cdp\_example) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_network_control | n/a |
-| <a name="module_device_connector"></a> [device\_connector](#module\_device\_connector) | terraform-cisco-modules/imm/intersight//modules/policies_device_connector | n/a |
-| <a name="module_disk_group_example_raid1"></a> [disk\_group\_example\_raid1](#module\_disk\_group\_example\_raid1) | terraform-cisco-modules/imm/intersight//modules/policies_disk_group | n/a |
-| <a name="module_disk_group_example_raid10"></a> [disk\_group\_example\_raid10](#module\_disk\_group\_example\_raid10) | terraform-cisco-modules/imm/intersight//modules/policies_disk_group | n/a |
-| <a name="module_disk_group_example_raid5"></a> [disk\_group\_example\_raid5](#module\_disk\_group\_example\_raid5) | terraform-cisco-modules/imm/intersight//modules/policies_disk_group | n/a |
-| <a name="module_dns_example_1"></a> [dns\_example\_1](#module\_dns\_example\_1) | terraform-cisco-modules/imm/intersight//modules/policies_network_connectivity | n/a |
-| <a name="module_dns_example_2"></a> [dns\_example\_2](#module\_dns\_example\_2) | terraform-cisco-modules/imm/intersight//modules/policies_network_connectivity | n/a |
-| <a name="module_ethenret_uplink_example_a"></a> [ethenret\_uplink\_example\_a](#module\_ethenret\_uplink\_example\_a) | terraform-cisco-modules/imm/intersight//modules/policies_port_ethernet_uplink | n/a |
-| <a name="module_ethernet_adapter_example"></a> [ethernet\_adapter\_example](#module\_ethernet\_adapter\_example) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_adapter | n/a |
-| <a name="module_ethernet_adapter_linux_nvme_roce"></a> [ethernet\_adapter\_linux\_nvme\_roce](#module\_ethernet\_adapter\_linux\_nvme\_roce) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_adapter | n/a |
-| <a name="module_ethernet_adapter_vmware"></a> [ethernet\_adapter\_vmware](#module\_ethernet\_adapter\_vmware) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_adapter | n/a |
-| <a name="module_ethernet_adapter_windows"></a> [ethernet\_adapter\_windows](#module\_ethernet\_adapter\_windows) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_adapter | n/a |
-| <a name="module_ethernet_network_example"></a> [ethernet\_network\_example](#module\_ethernet\_network\_example) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_network | n/a |
-| <a name="module_ethernet_qos"></a> [ethernet\_qos](#module\_ethernet\_qos) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_qos | n/a |
-| <a name="module_ethernet_uplink_example_b"></a> [ethernet\_uplink\_example\_b](#module\_ethernet\_uplink\_example\_b) | terraform-cisco-modules/imm/intersight//modules/policies_port_ethernet_uplink | n/a |
-| <a name="module_ethernet_uplink_port_channel_example_a"></a> [ethernet\_uplink\_port\_channel\_example\_a](#module\_ethernet\_uplink\_port\_channel\_example\_a) | terraform-cisco-modules/imm/intersight//modules/policies_port_ethernet_uplink_port_channel | n/a |
-| <a name="module_ethernet_uplink_port_channel_example_b"></a> [ethernet\_uplink\_port\_channel\_example\_b](#module\_ethernet\_uplink\_port\_channel\_example\_b) | terraform-cisco-modules/imm/intersight//modules/policies_port_ethernet_uplink_port_channel | n/a |
-| <a name="module_fc_uplink_example_a"></a> [fc\_uplink\_example\_a](#module\_fc\_uplink\_example\_a) | terraform-cisco-modules/imm/intersight//modules/policies_port_fc_uplink | n/a |
-| <a name="module_fc_uplink_port_channel_example_a"></a> [fc\_uplink\_port\_channel\_example\_a](#module\_fc\_uplink\_port\_channel\_example\_a) | terraform-cisco-modules/imm/intersight//modules/policies_port_fc_uplink_port_channel | n/a |
-| <a name="module_fc_uplink_port_channel_example_b"></a> [fc\_uplink\_port\_channel\_example\_b](#module\_fc\_uplink\_port\_channel\_example\_b) | terraform-cisco-modules/imm/intersight//modules/policies_port_fc_uplink_port_channel | n/a |
-| <a name="module_fibre_channel_qos_example_1"></a> [fibre\_channel\_qos\_example\_1](#module\_fibre\_channel\_qos\_example\_1) | terraform-cisco-modules/imm/intersight//modules/policies_fibre_channel_qos | n/a |
-| <a name="module_fibre_channel_qos_example_2"></a> [fibre\_channel\_qos\_example\_2](#module\_fibre\_channel\_qos\_example\_2) | terraform-cisco-modules/imm/intersight//modules/policies_fibre_channel_qos | n/a |
-| <a name="module_flow_control_example"></a> [flow\_control\_example](#module\_flow\_control\_example) | terraform-cisco-modules/imm/intersight//modules/policies_flow_control | n/a |
-| <a name="module_imc_access_example"></a> [imc\_access\_example](#module\_imc\_access\_example) | terraform-cisco-modules/imm/intersight//modules/policies_imc_access | n/a |
-| <a name="module_ipmi_example"></a> [ipmi\_example](#module\_ipmi\_example) | terraform-cisco-modules/imm/intersight//modules/policies_ipmi_over_lan | n/a |
-| <a name="module_iscsi_adapter_example"></a> [iscsi\_adapter\_example](#module\_iscsi\_adapter\_example) | terraform-cisco-modules/imm/intersight//modules/policies_iscsi_adapter | n/a |
-| <a name="module_iscsi_boot_example"></a> [iscsi\_boot\_example](#module\_iscsi\_boot\_example) | terraform-cisco-modules/imm/intersight//modules/policies_iscsi_boot | n/a |
-| <a name="module_iscsi_target_example"></a> [iscsi\_target\_example](#module\_iscsi\_target\_example) | terraform-cisco-modules/imm/intersight//modules/policies_iscsi_static_target | n/a |
-| <a name="module_kvm_example"></a> [kvm\_example](#module\_kvm\_example) | terraform-cisco-modules/imm/intersight//modules/policies_virtual_kvm | n/a |
-| <a name="module_lan_connectivity_example"></a> [lan\_connectivity\_example](#module\_lan\_connectivity\_example) | terraform-cisco-modules/imm/intersight//modules/policies_lan_connectivity | n/a |
-| <a name="module_ldap_group_1"></a> [ldap\_group\_1](#module\_ldap\_group\_1) | terraform-cisco-modules/imm/intersight//modules/policies_ldap_group | n/a |
-| <a name="module_ldap_group_2"></a> [ldap\_group\_2](#module\_ldap\_group\_2) | terraform-cisco-modules/imm/intersight//modules/policies_ldap_group | n/a |
-| <a name="module_ldap_policy_example"></a> [ldap\_policy\_example](#module\_ldap\_policy\_example) | terraform-cisco-modules/imm/intersight//modules/policies_ldap | n/a |
-| <a name="module_ldap_provider_server1"></a> [ldap\_provider\_server1](#module\_ldap\_provider\_server1) | terraform-cisco-modules/imm/intersight//modules/policies_ldap_provider | n/a |
-| <a name="module_ldap_provider_server2"></a> [ldap\_provider\_server2](#module\_ldap\_provider\_server2) | terraform-cisco-modules/imm/intersight//modules/policies_ldap_provider | n/a |
-| <a name="module_link_aggregation_example"></a> [link\_aggregation\_example](#module\_link\_aggregation\_example) | terraform-cisco-modules/imm/intersight//modules/policies_link_aggregation | n/a |
-| <a name="module_link_control_example"></a> [link\_control\_example](#module\_link\_control\_example) | terraform-cisco-modules/imm/intersight//modules/policies_link_control | n/a |
-| <a name="module_lldp_example"></a> [lldp\_example](#module\_lldp\_example) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_network_control | n/a |
-| <a name="module_local_user_1"></a> [local\_user\_1](#module\_local\_user\_1) | terraform-cisco-modules/imm/intersight//modules/policies_local_user_users | n/a |
-| <a name="module_local_user_2"></a> [local\_user\_2](#module\_local\_user\_2) | terraform-cisco-modules/imm/intersight//modules/policies_local_user_users | n/a |
-| <a name="module_local_user_policy_example"></a> [local\_user\_policy\_example](#module\_local\_user\_policy\_example) | terraform-cisco-modules/imm/intersight//modules/policies_local_user | n/a |
-| <a name="module_multicast_example"></a> [multicast\_example](#module\_multicast\_example) | terraform-cisco-modules/imm/intersight//modules/policies_multicast | n/a |
-| <a name="module_ntp_example"></a> [ntp\_example](#module\_ntp\_example) | terraform-cisco-modules/imm/intersight//modules/policies_ntp | n/a |
-| <a name="module_persistent_memory_example_1"></a> [persistent\_memory\_example\_1](#module\_persistent\_memory\_example\_1) | terraform-cisco-modules/imm/intersight//modules/policies_persistent_memory | n/a |
-| <a name="module_port_mode_example_a"></a> [port\_mode\_example\_a](#module\_port\_mode\_example\_a) | terraform-cisco-modules/imm/intersight//modules/policies_port_mode | n/a |
-| <a name="module_port_mode_example_b"></a> [port\_mode\_example\_b](#module\_port\_mode\_example\_b) | terraform-cisco-modules/imm/intersight//modules/policies_port_mode | n/a |
-| <a name="module_port_policy_example_a"></a> [port\_policy\_example\_a](#module\_port\_policy\_example\_a) | terraform-cisco-modules/imm/intersight//modules/policies_port | n/a |
-| <a name="module_port_policy_example_b"></a> [port\_policy\_example\_b](#module\_port\_policy\_example\_b) | terraform-cisco-modules/imm/intersight//modules/policies_port | n/a |
-| <a name="module_san_connectivity"></a> [san\_connectivity](#module\_san\_connectivity) | terraform-cisco-modules/imm/intersight//modules/policies_san_connectivity | n/a |
-| <a name="module_san_uplink_example_b"></a> [san\_uplink\_example\_b](#module\_san\_uplink\_example\_b) | terraform-cisco-modules/imm/intersight//modules/policies_port_fc_uplink | n/a |
-| <a name="module_sd_card_example"></a> [sd\_card\_example](#module\_sd\_card\_example) | terraform-cisco-modules/imm/intersight//modules/policies_sd_card | n/a |
-| <a name="module_server_port_example_a1"></a> [server\_port\_example\_a1](#module\_server\_port\_example\_a1) | terraform-cisco-modules/imm/intersight//modules/policies_port_server | n/a |
-| <a name="module_server_port_example_a2"></a> [server\_port\_example\_a2](#module\_server\_port\_example\_a2) | terraform-cisco-modules/imm/intersight//modules/policies_port_server | n/a |
-| <a name="module_server_port_example_b1"></a> [server\_port\_example\_b1](#module\_server\_port\_example\_b1) | terraform-cisco-modules/imm/intersight//modules/policies_port_server | n/a |
-| <a name="module_server_port_example_b2"></a> [server\_port\_example\_b2](#module\_server\_port\_example\_b2) | terraform-cisco-modules/imm/intersight//modules/policies_port_server | n/a |
-| <a name="module_smtp_example"></a> [smtp\_example](#module\_smtp\_example) | terraform-cisco-modules/imm/intersight//modules/policies_smtp | n/a |
-| <a name="module_snmp_example"></a> [snmp\_example](#module\_snmp\_example) | terraform-cisco-modules/imm/intersight//modules/policies_snmp | n/a |
-| <a name="module_sol_example"></a> [sol\_example](#module\_sol\_example) | terraform-cisco-modules/imm/intersight//modules/policies_serial_over_lan | n/a |
-| <a name="module_ssh_example"></a> [ssh\_example](#module\_ssh\_example) | terraform-cisco-modules/imm/intersight//modules/policies_ssh | n/a |
-| <a name="module_standalone_ethernet_qos"></a> [standalone\_ethernet\_qos](#module\_standalone\_ethernet\_qos) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_qos | n/a |
-| <a name="module_storage_example"></a> [storage\_example](#module\_storage\_example) | terraform-cisco-modules/imm/intersight//modules/policies_storage | n/a |
-| <a name="module_switch_control_example"></a> [switch\_control\_example](#module\_switch\_control\_example) | terraform-cisco-modules/imm/intersight//modules/policies_switch_control | n/a |
-| <a name="module_syslog_example"></a> [syslog\_example](#module\_syslog\_example) | terraform-cisco-modules/imm/intersight//modules/policies_syslog | n/a |
-| <a name="module_system_qos_example_1"></a> [system\_qos\_example\_1](#module\_system\_qos\_example\_1) | terraform-cisco-modules/imm/intersight//modules/policies_system_qos | n/a |
-| <a name="module_system_qos_example_2"></a> [system\_qos\_example\_2](#module\_system\_qos\_example\_2) | terraform-cisco-modules/imm/intersight//modules/policies_system_qos | n/a |
-| <a name="module_ucs_domain_profile_a_example"></a> [ucs\_domain\_profile\_a\_example](#module\_ucs\_domain\_profile\_a\_example) | terraform-cisco-modules/imm/intersight//modules/profiles_ucs_switch | n/a |
-| <a name="module_ucs_domain_profile_b_example"></a> [ucs\_domain\_profile\_b\_example](#module\_ucs\_domain\_profile\_b\_example) | terraform-cisco-modules/imm/intersight//modules/profiles_ucs_switch | n/a |
-| <a name="module_ucs_domain_profile_example"></a> [ucs\_domain\_profile\_example](#module\_ucs\_domain\_profile\_example) | terraform-cisco-modules/imm/intersight//modules/profiles_ucs_domain | n/a |
-| <a name="module_ucs_server_profile"></a> [ucs\_server\_profile](#module\_ucs\_server\_profile) | terraform-cisco-modules/imm/intersight//modules/profiles_ucs_server | n/a |
-| <a name="module_ucs_server_profile_template"></a> [ucs\_server\_profile\_template](#module\_ucs\_server\_profile\_template) | terraform-cisco-modules/imm/intersight//modules/templates_ucs_server | n/a |
-| <a name="module_vhba_adapter_example"></a> [vhba\_adapter\_example](#module\_vhba\_adapter\_example) | terraform-cisco-modules/imm/intersight//modules/policies_fibre_channel_adapter | n/a |
-| <a name="module_vhba_network_example_2"></a> [vhba\_network\_example\_2](#module\_vhba\_network\_example\_2) | terraform-cisco-modules/imm/intersight//modules/policies_fibre_channel_network | n/a |
-| <a name="module_vhba_network_example_a"></a> [vhba\_network\_example\_a](#module\_vhba\_network\_example\_a) | terraform-cisco-modules/imm/intersight//modules/policies_fibre_channel_network | n/a |
-| <a name="module_vhba_network_example_b"></a> [vhba\_network\_example\_b](#module\_vhba\_network\_example\_b) | terraform-cisco-modules/imm/intersight//modules/policies_fibre_channel_network | n/a |
-| <a name="module_vlan_example_1"></a> [vlan\_example\_1](#module\_vlan\_example\_1) | terraform-cisco-modules/imm/intersight//modules/policies_vlan_add_vlan | n/a |
-| <a name="module_vlan_example_2"></a> [vlan\_example\_2](#module\_vlan\_example\_2) | terraform-cisco-modules/imm/intersight//modules/policies_vlan_add_vlan_list | n/a |
-| <a name="module_vlan_group_list"></a> [vlan\_group\_list](#module\_vlan\_group\_list) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_network_group | n/a |
-| <a name="module_vlan_group_range"></a> [vlan\_group\_range](#module\_vlan\_group\_range) | terraform-cisco-modules/imm/intersight//modules/policies_ethernet_network_group | n/a |
-| <a name="module_vlan_policy_example"></a> [vlan\_policy\_example](#module\_vlan\_policy\_example) | terraform-cisco-modules/imm/intersight//modules/modules/policies_vlan | n/a |
-| <a name="module_vmedia_example_1"></a> [vmedia\_example\_1](#module\_vmedia\_example\_1) | terraform-cisco-modules/imm/intersight//modules/policies_virtual_media | n/a |
-| <a name="module_vmedia_example_2"></a> [vmedia\_example\_2](#module\_vmedia\_example\_2) | terraform-cisco-modules/imm/intersight//modules/policies_virtual_media | n/a |
-| <a name="module_vsan_example_a"></a> [vsan\_example\_a](#module\_vsan\_example\_a) | terraform-cisco-modules/imm/intersight//modules/policies_vsan_add_vsan | n/a |
-| <a name="module_vsan_example_b"></a> [vsan\_example\_b](#module\_vsan\_example\_b) | terraform-cisco-modules/imm/intersight//modules/policies_vsan_add_vsan | n/a |
-| <a name="module_vsan_policy_example_a"></a> [vsan\_policy\_example\_a](#module\_vsan\_policy\_example\_a) | terraform-cisco-modules/imm/intersight//modules/policies_vsan | n/a |
-| <a name="module_vsan_policy_example_b"></a> [vsan\_policy\_example\_b](#module\_vsan\_policy\_example\_b) | terraform-cisco-modules/imm/intersight//modules/policies_vsan | n/a |
+| <a name="module_adapter_configuration_example"></a> [adapter\_configuration\_example](#module\_adapter\_configuration\_example) | terraform-cisco-modules/imm/intersight//modules/adapter_configuration_policies | n/a |
+| <a name="module_basic_storage_example"></a> [basic\_storage\_example](#module\_basic\_storage\_example) | ../../../modules/storage_policies | n/a |
+| <a name="module_bios_example"></a> [bios\_example](#module\_bios\_example) | terraform-cisco-modules/imm/intersight//modules/bios_policies | n/a |
+| <a name="module_boot_legacy_iscsi"></a> [boot\_legacy\_iscsi](#module\_boot\_legacy\_iscsi) | terraform-cisco-modules/imm/intersight//modules/boot_order_policies | n/a |
+| <a name="module_boot_legacy_san"></a> [boot\_legacy\_san](#module\_boot\_legacy\_san) | terraform-cisco-modules/imm/intersight//modules/boot_order_policies | n/a |
+| <a name="module_boot_uefi_cimc_dvd"></a> [boot\_uefi\_cimc\_dvd](#module\_boot\_uefi\_cimc\_dvd) | terraform-cisco-modules/imm/intersight//modules/boot_order_policies | n/a |
+| <a name="module_boot_uefi_iscsi"></a> [boot\_uefi\_iscsi](#module\_boot\_uefi\_iscsi) | terraform-cisco-modules/imm/intersight//modules/boot_order_policies | n/a |
+| <a name="module_boot_uefi_kvm_dvd"></a> [boot\_uefi\_kvm\_dvd](#module\_boot\_uefi\_kvm\_dvd) | terraform-cisco-modules/imm/intersight//modules/boot_order_policies | n/a |
+| <a name="module_boot_uefi_local_disk"></a> [boot\_uefi\_local\_disk](#module\_boot\_uefi\_local\_disk) | terraform-cisco-modules/imm/intersight//modules/boot_order_policies | n/a |
+| <a name="module_boot_uefi_san"></a> [boot\_uefi\_san](#module\_boot\_uefi\_san) | terraform-cisco-modules/imm/intersight//modules/boot_order_policies | n/a |
+| <a name="module_cdp_example"></a> [cdp\_example](#module\_cdp\_example) | terraform-cisco-modules/imm/intersight//modules/ethernet_network_control_policies | n/a |
+| <a name="module_device_connector"></a> [device\_connector](#module\_device\_connector) | terraform-cisco-modules/imm/intersight//modules/device_connector_policies | n/a |
+| <a name="module_dns_example_1"></a> [dns\_example\_1](#module\_dns\_example\_1) | terraform-cisco-modules/imm/intersight//modules/network_connectivity_policies | n/a |
+| <a name="module_dns_example_2"></a> [dns\_example\_2](#module\_dns\_example\_2) | terraform-cisco-modules/imm/intersight//modules/network_connectivity_policies | n/a |
+| <a name="module_ethenret_uplink_example_a"></a> [ethenret\_uplink\_example\_a](#module\_ethenret\_uplink\_example\_a) | terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink | n/a |
+| <a name="module_ethernet_adapter_example"></a> [ethernet\_adapter\_example](#module\_ethernet\_adapter\_example) | terraform-cisco-modules/imm/intersight//modules/ethernet_adapter_policies | n/a |
+| <a name="module_ethernet_adapter_linux_nvme_roce"></a> [ethernet\_adapter\_linux\_nvme\_roce](#module\_ethernet\_adapter\_linux\_nvme\_roce) | terraform-cisco-modules/imm/intersight//modules/ethernet_adapter_policies | n/a |
+| <a name="module_ethernet_adapter_vmware"></a> [ethernet\_adapter\_vmware](#module\_ethernet\_adapter\_vmware) | terraform-cisco-modules/imm/intersight//modules/ethernet_adapter_policies | n/a |
+| <a name="module_ethernet_adapter_windows"></a> [ethernet\_adapter\_windows](#module\_ethernet\_adapter\_windows) | terraform-cisco-modules/imm/intersight//modules/ethernet_adapter_policies | n/a |
+| <a name="module_ethernet_network_example"></a> [ethernet\_network\_example](#module\_ethernet\_network\_example) | terraform-cisco-modules/imm/intersight//modules/ethernet_network_policies | n/a |
+| <a name="module_ethernet_qos"></a> [ethernet\_qos](#module\_ethernet\_qos) | terraform-cisco-modules/imm/intersight//modules/ethernet_qos_policies | n/a |
+| <a name="module_ethernet_uplink_example_b"></a> [ethernet\_uplink\_example\_b](#module\_ethernet\_uplink\_example\_b) | terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink | n/a |
+| <a name="module_ethernet_uplink_port_channel_example_a"></a> [ethernet\_uplink\_port\_channel\_example\_a](#module\_ethernet\_uplink\_port\_channel\_example\_a) | terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink_port_channel | n/a |
+| <a name="module_ethernet_uplink_port_channel_example_b"></a> [ethernet\_uplink\_port\_channel\_example\_b](#module\_ethernet\_uplink\_port\_channel\_example\_b) | terraform-cisco-modules/imm/intersight//modules/port_ethernet_uplink_port_channel | n/a |
+| <a name="module_fc_uplink_example_a"></a> [fc\_uplink\_example\_a](#module\_fc\_uplink\_example\_a) | terraform-cisco-modules/imm/intersight//modules/port_fc_uplink | n/a |
+| <a name="module_fc_uplink_port_channel_example_a"></a> [fc\_uplink\_port\_channel\_example\_a](#module\_fc\_uplink\_port\_channel\_example\_a) | terraform-cisco-modules/imm/intersight//modules/port_fc_uplink_port_channel | n/a |
+| <a name="module_fc_uplink_port_channel_example_b"></a> [fc\_uplink\_port\_channel\_example\_b](#module\_fc\_uplink\_port\_channel\_example\_b) | terraform-cisco-modules/imm/intersight//modules/port_fc_uplink_port_channel | n/a |
+| <a name="module_fibre_channel_qos_example_1"></a> [fibre\_channel\_qos\_example\_1](#module\_fibre\_channel\_qos\_example\_1) | terraform-cisco-modules/imm/intersight//modules/fibre_channel_qos_policies | n/a |
+| <a name="module_fibre_channel_qos_example_2"></a> [fibre\_channel\_qos\_example\_2](#module\_fibre\_channel\_qos\_example\_2) | terraform-cisco-modules/imm/intersight//modules/fibre_channel_qos_policies | n/a |
+| <a name="module_flow_control_example"></a> [flow\_control\_example](#module\_flow\_control\_example) | terraform-cisco-modules/imm/intersight//modules/flow_control_policies | n/a |
+| <a name="module_imc_access_example"></a> [imc\_access\_example](#module\_imc\_access\_example) | terraform-cisco-modules/imm/intersight//modules/imc_access_policies | n/a |
+| <a name="module_ipmi_example"></a> [ipmi\_example](#module\_ipmi\_example) | terraform-cisco-modules/imm/intersight//modules/ipmi_over_lan_policies | n/a |
+| <a name="module_iscsi_adapter_example"></a> [iscsi\_adapter\_example](#module\_iscsi\_adapter\_example) | terraform-cisco-modules/imm/intersight//modules/iscsi_adapter_policies | n/a |
+| <a name="module_iscsi_boot_example"></a> [iscsi\_boot\_example](#module\_iscsi\_boot\_example) | terraform-cisco-modules/imm/intersight//modules/iscsi_boot_policies | n/a |
+| <a name="module_iscsi_target_example"></a> [iscsi\_target\_example](#module\_iscsi\_target\_example) | terraform-cisco-modules/imm/intersight//modules/iscsi_static_target_policies | n/a |
+| <a name="module_kvm_example"></a> [kvm\_example](#module\_kvm\_example) | terraform-cisco-modules/imm/intersight//modules/virtual_kvm_policies | n/a |
+| <a name="module_lan_connectivity_example"></a> [lan\_connectivity\_example](#module\_lan\_connectivity\_example) | terraform-cisco-modules/imm/intersight//modules/lan_connectivity_policies | n/a |
+| <a name="module_ldap_group_1"></a> [ldap\_group\_1](#module\_ldap\_group\_1) | terraform-cisco-modules/imm/intersight//modules/ldap_add_group | n/a |
+| <a name="module_ldap_group_2"></a> [ldap\_group\_2](#module\_ldap\_group\_2) | terraform-cisco-modules/imm/intersight//modules/ldap_add_group | n/a |
+| <a name="module_ldap_policy_example"></a> [ldap\_policy\_example](#module\_ldap\_policy\_example) | terraform-cisco-modules/imm/intersight//modules/ldap_policies | n/a |
+| <a name="module_ldap_provider_server1"></a> [ldap\_provider\_server1](#module\_ldap\_provider\_server1) | terraform-cisco-modules/imm/intersight//modules/ldap_add_server | n/a |
+| <a name="module_ldap_provider_server2"></a> [ldap\_provider\_server2](#module\_ldap\_provider\_server2) | terraform-cisco-modules/imm/intersight//modules/ldap_add_server | n/a |
+| <a name="module_link_aggregation_example"></a> [link\_aggregation\_example](#module\_link\_aggregation\_example) | terraform-cisco-modules/imm/intersight//modules/link_aggregation_policies | n/a |
+| <a name="module_link_control_example"></a> [link\_control\_example](#module\_link\_control\_example) | terraform-cisco-modules/imm/intersight//modules/link_control_policies | n/a |
+| <a name="module_lldp_example"></a> [lldp\_example](#module\_lldp\_example) | terraform-cisco-modules/imm/intersight//modules/ethernet_network_control_policies | n/a |
+| <a name="module_local_user_1"></a> [local\_user\_1](#module\_local\_user\_1) | terraform-cisco-modules/imm/intersight//modules/local_user_add_users | n/a |
+| <a name="module_local_user_2"></a> [local\_user\_2](#module\_local\_user\_2) | terraform-cisco-modules/imm/intersight//modules/local_user_add_users | n/a |
+| <a name="module_local_user_policy_example"></a> [local\_user\_policy\_example](#module\_local\_user\_policy\_example) | terraform-cisco-modules/imm/intersight//modules/local_user_policies | n/a |
+| <a name="module_m2_storage_example"></a> [m2\_storage\_example](#module\_m2\_storage\_example) | ../../../modules/storage_policies | n/a |
+| <a name="module_multicast_example"></a> [multicast\_example](#module\_multicast\_example) | terraform-cisco-modules/imm/intersight//modules/multicast_policies | n/a |
+| <a name="module_ntp_example"></a> [ntp\_example](#module\_ntp\_example) | terraform-cisco-modules/imm/intersight//modules/ntp_policies | n/a |
+| <a name="module_persistent_memory_example_1"></a> [persistent\_memory\_example\_1](#module\_persistent\_memory\_example\_1) | terraform-cisco-modules/imm/intersight//modules/persistent_memory_policies | n/a |
+| <a name="module_port_mode_example_a"></a> [port\_mode\_example\_a](#module\_port\_mode\_example\_a) | terraform-cisco-modules/imm/intersight//modules/port_mode | n/a |
+| <a name="module_port_mode_example_b"></a> [port\_mode\_example\_b](#module\_port\_mode\_example\_b) | terraform-cisco-modules/imm/intersight//modules/port_mode | n/a |
+| <a name="module_port_policy_example_a"></a> [port\_policy\_example\_a](#module\_port\_policy\_example\_a) | terraform-cisco-modules/imm/intersight//modules/port_policies | n/a |
+| <a name="module_port_policy_example_b"></a> [port\_policy\_example\_b](#module\_port\_policy\_example\_b) | terraform-cisco-modules/imm/intersight//modules/port_policies | n/a |
+| <a name="module_raid1_storage_example_1"></a> [raid1\_storage\_example\_1](#module\_raid1\_storage\_example\_1) | ../../../modules/storage_drive_group | n/a |
+| <a name="module_raid1_storage_example_2"></a> [raid1\_storage\_example\_2](#module\_raid1\_storage\_example\_2) | ../../../modules/storage_drive_group | n/a |
+| <a name="module_san_connectivity"></a> [san\_connectivity](#module\_san\_connectivity) | terraform-cisco-modules/imm/intersight//modules/san_connectivity_policies | n/a |
+| <a name="module_san_uplink_example_b"></a> [san\_uplink\_example\_b](#module\_san\_uplink\_example\_b) | terraform-cisco-modules/imm/intersight//modules/port_fc_uplink | n/a |
+| <a name="module_sd_card_example"></a> [sd\_card\_example](#module\_sd\_card\_example) | terraform-cisco-modules/imm/intersight//modules/sd_card_policies | n/a |
+| <a name="module_server_port_example_a1"></a> [server\_port\_example\_a1](#module\_server\_port\_example\_a1) | terraform-cisco-modules/imm/intersight//modules/port_server_ports | n/a |
+| <a name="module_server_port_example_a2"></a> [server\_port\_example\_a2](#module\_server\_port\_example\_a2) | terraform-cisco-modules/imm/intersight//modules/port_server_ports | n/a |
+| <a name="module_server_port_example_b1"></a> [server\_port\_example\_b1](#module\_server\_port\_example\_b1) | terraform-cisco-modules/imm/intersight//modules/port_server_ports | n/a |
+| <a name="module_server_port_example_b2"></a> [server\_port\_example\_b2](#module\_server\_port\_example\_b2) | terraform-cisco-modules/imm/intersight//modules/port_server_ports | n/a |
+| <a name="module_smtp_example"></a> [smtp\_example](#module\_smtp\_example) | terraform-cisco-modules/imm/intersight//modules/smtp_policies | n/a |
+| <a name="module_snmp_example"></a> [snmp\_example](#module\_snmp\_example) | terraform-cisco-modules/imm/intersight//modules/snmp_policies | n/a |
+| <a name="module_sol_example"></a> [sol\_example](#module\_sol\_example) | terraform-cisco-modules/imm/intersight//modules/serial_over_lan_policies | n/a |
+| <a name="module_ssh_example"></a> [ssh\_example](#module\_ssh\_example) | terraform-cisco-modules/imm/intersight//modules/ssh_policies | n/a |
+| <a name="module_standalone_ethernet_qos"></a> [standalone\_ethernet\_qos](#module\_standalone\_ethernet\_qos) | terraform-cisco-modules/imm/intersight//modules/ethernet_qos_policies | n/a |
+| <a name="module_switch_control_example"></a> [switch\_control\_example](#module\_switch\_control\_example) | terraform-cisco-modules/imm/intersight//modules/switch_control_policies | n/a |
+| <a name="module_syslog_example"></a> [syslog\_example](#module\_syslog\_example) | terraform-cisco-modules/imm/intersight//modules/syslog_policies | n/a |
+| <a name="module_system_qos_example_1"></a> [system\_qos\_example\_1](#module\_system\_qos\_example\_1) | terraform-cisco-modules/imm/intersight//modules/system_qos_policies | n/a |
+| <a name="module_system_qos_example_2"></a> [system\_qos\_example\_2](#module\_system\_qos\_example\_2) | terraform-cisco-modules/imm/intersight//modules/system_qos_policies | n/a |
+| <a name="module_ucs_domain_profile_a_example"></a> [ucs\_domain\_profile\_a\_example](#module\_ucs\_domain\_profile\_a\_example) | terraform-cisco-modules/imm/intersight//modules/ucs_domain_switches | n/a |
+| <a name="module_ucs_domain_profile_b_example"></a> [ucs\_domain\_profile\_b\_example](#module\_ucs\_domain\_profile\_b\_example) | terraform-cisco-modules/imm/intersight//modules/ucs_domain_switches | n/a |
+| <a name="module_ucs_domain_profile_example"></a> [ucs\_domain\_profile\_example](#module\_ucs\_domain\_profile\_example) | terraform-cisco-modules/imm/intersight//modules/ucs_domain_profiles | n/a |
+| <a name="module_ucs_server_profile"></a> [ucs\_server\_profile](#module\_ucs\_server\_profile) | terraform-cisco-modules/imm/intersight//modules/ucs_server_profiles | n/a |
+| <a name="module_ucs_server_profile_template"></a> [ucs\_server\_profile\_template](#module\_ucs\_server\_profile\_template) | terraform-cisco-modules/imm/intersight//modules/ucs_server_templates | n/a |
+| <a name="module_vhba_adapter_example"></a> [vhba\_adapter\_example](#module\_vhba\_adapter\_example) | terraform-cisco-modules/imm/intersight//modules/fibre_channel_adapter_policies | n/a |
+| <a name="module_vhba_network_example_2"></a> [vhba\_network\_example\_2](#module\_vhba\_network\_example\_2) | terraform-cisco-modules/imm/intersight//modules/fibre_channel_network_policies | n/a |
+| <a name="module_vhba_network_example_a"></a> [vhba\_network\_example\_a](#module\_vhba\_network\_example\_a) | terraform-cisco-modules/imm/intersight//modules/fibre_channel_network_policies | n/a |
+| <a name="module_vhba_network_example_b"></a> [vhba\_network\_example\_b](#module\_vhba\_network\_example\_b) | terraform-cisco-modules/imm/intersight//modules/fibre_channel_network_policies | n/a |
+| <a name="module_vlan_example_1"></a> [vlan\_example\_1](#module\_vlan\_example\_1) | terraform-cisco-modules/imm/intersight//modules/vlan_policy_add_vlan | n/a |
+| <a name="module_vlan_example_2"></a> [vlan\_example\_2](#module\_vlan\_example\_2) | terraform-cisco-modules/imm/intersight//modules/vlan_policy_add_vlan_list | n/a |
+| <a name="module_vlan_group"></a> [vlan\_group](#module\_vlan\_group) | terraform-cisco-modules/imm/intersight//modules/ethernet_network_group_policies | n/a |
+| <a name="module_vlan_group_list"></a> [vlan\_group\_list](#module\_vlan\_group\_list) | terraform-cisco-modules/imm/intersight//modules/ethernet_network_group_policies | n/a |
+| <a name="module_vlan_policy_example"></a> [vlan\_policy\_example](#module\_vlan\_policy\_example) | terraform-cisco-modules/imm/intersight//modules/vlan_policies | n/a |
+| <a name="module_vmedia_example_1"></a> [vmedia\_example\_1](#module\_vmedia\_example\_1) | terraform-cisco-modules/imm/intersight//modules/virtual_media_policies | n/a |
+| <a name="module_vmedia_example_2"></a> [vmedia\_example\_2](#module\_vmedia\_example\_2) | terraform-cisco-modules/imm/intersight//modules/virtual_media_policies | n/a |
+| <a name="module_vsan_example_a"></a> [vsan\_example\_a](#module\_vsan\_example\_a) | terraform-cisco-modules/imm/intersight//modules/vsan_policy_add_vsan | n/a |
+| <a name="module_vsan_example_b"></a> [vsan\_example\_b](#module\_vsan\_example\_b) | terraform-cisco-modules/imm/intersight//modules/vsan_policy_add_vsan | n/a |
+| <a name="module_vsan_policy_example_a"></a> [vsan\_policy\_example\_a](#module\_vsan\_policy\_example\_a) | terraform-cisco-modules/imm/intersight//modules/vsan_policies | n/a |
+| <a name="module_vsan_policy_example_b"></a> [vsan\_policy\_example\_b](#module\_vsan\_policy\_example\_b) | terraform-cisco-modules/imm/intersight//modules/vsan_policies | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [intersight_organization_organization.org_moid](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/organization_organization) | data source |
+| [intersight_organization_organization.org_moid](https://registry.terraform.io/providers/CiscoDevNet/intersight/1.0.12/docs/data-sources/organization_organization) | data source |
 | [terraform_remote_state.pools](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 
 ## Inputs
@@ -303,6 +303,8 @@ rm * Syslog
 | <a name="input_eadr_support"></a> [eadr\_support](#input\_eadr\_support) | BIOS Token for setting eADR Support configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * Auto - Value - Auto for configuring EadrSupport token.<br> * disabled - Value - disabled for configuring EadrSupport token.<br> * enabled - Value - enabled for configuring EadrSupport token. | `string` | `"platform-default"` | no |
 | <a name="input_edpc_en"></a> [edpc\_en](#input\_edpc\_en) | BIOS Token for setting IIO eDPC Support configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * disabled - Value - Disabled for configuring EdpcEn token.<br> * On Fatal Error - Value - On Fatal Error for configuring EdpcEn token.<br> * On Fatal and Non-Fatal Errors - Value - On Fatal and Non-Fatal Errors for configuring EdpcEn token. | `string` | `"platform-default"` | no |
 | <a name="input_enable_clock_spread_spec"></a> [enable\_clock\_spread\_spec](#input\_enable\_clock\_spread\_spec) | BIOS Token for setting External SSC Enable configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * enabled - Enables the BIOS setting.<br> * disabled - Disables the BIOS setting. | `string` | `"platform-default"` | no |
+| <a name="input_enable_ipv4"></a> [enable\_ipv4](#input\_enable\_ipv4) | Flag to Enable or Disable the IPv4 Address Family for Poliices. | `bool` | `true` | no |
+| <a name="input_enable_ipv6"></a> [enable\_ipv6](#input\_enable\_ipv6) | Flag to Enable or Disable the IPv6 Address Family for Poliices. | `bool` | `false` | no |
 | <a name="input_enable_local_server_video"></a> [enable\_local\_server\_video](#input\_enable\_local\_server\_video) | If enabled, displays KVM session on any monitor attached to the server. | `bool` | `true` | no |
 | <a name="input_enable_mktme"></a> [enable\_mktme](#input\_enable\_mktme) | BIOS Token for setting Multikey Total Memory Encryption (MK-TME) configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * enabled - Enables the BIOS setting.<br> * disabled - Disables the BIOS setting. | `string` | `"platform-default"` | no |
 | <a name="input_enable_sgx"></a> [enable\_sgx](#input\_enable\_sgx) | BIOS Token for setting Software Guard Extensions (SGX) configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * enabled - Enables the BIOS setting.<br> * disabled - Disables the BIOS setting. | `string` | `"platform-default"` | no |
@@ -352,10 +354,8 @@ rm * Syslog
 | <a name="input_ioh_resource"></a> [ioh\_resource](#input\_ioh\_resource) | BIOS Token for setting IOH Resource Allocation configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * IOH0 24k IOH1 40k - Value - IOH0 24k IOH1 40k for configuring IohResource token.<br> * IOH0 32k IOH1 32k - Value - IOH0 32k IOH1 32k for configuring IohResource token.<br> * IOH0 40k IOH1 24k - Value - IOH0 40k IOH1 24k for configuring IohResource token.<br> * IOH0 48k IOH1 16k - Value - IOH0 48k IOH1 16k for configuring IohResource token.<br> * IOH0 56k IOH1 8k - Value - IOH0 56k IOH1 8k for configuring IohResource token. | `string` | `"platform-default"` | no |
 | <a name="input_ip_address"></a> [ip\_address](#input\_ip\_address) | The IPv4 address assigned to the iSCSI target. | `string` | `""` | no |
 | <a name="input_ip_prefetch"></a> [ip\_prefetch](#input\_ip\_prefetch) | BIOS Token for setting DCU IP Prefetcher configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * enabled - Enables the BIOS setting.<br> * disabled - Disables the BIOS setting. | `string` | `"platform-default"` | no |
-| <a name="input_ipv4_enable"></a> [ipv4\_enable](#input\_ipv4\_enable) | Flag to Enable or Disable the IPv4 Address Family for Poliices. | `bool` | `true` | no |
 | <a name="input_ipv4http"></a> [ipv4http](#input\_ipv4http) | BIOS Token for setting IPV4 HTTP Support configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * enabled - Enables the BIOS setting.<br> * disabled - Disables the BIOS setting. | `string` | `"platform-default"` | no |
 | <a name="input_ipv4pxe"></a> [ipv4pxe](#input\_ipv4pxe) | BIOS Token for setting IPv4 PXE Support configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * enabled - Enables the BIOS setting.<br> * disabled - Disables the BIOS setting. | `string` | `"platform-default"` | no |
-| <a name="input_ipv6_enable"></a> [ipv6\_enable](#input\_ipv6\_enable) | Flag to Enable or Disable the IPv6 Address Family for Poliices. | `bool` | `false` | no |
 | <a name="input_ipv6http"></a> [ipv6http](#input\_ipv6http) | BIOS Token for setting IPV6 HTTP Support configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * enabled - Enables the BIOS setting.<br> * disabled - Disables the BIOS setting. | `string` | `"platform-default"` | no |
 | <a name="input_ipv6pxe"></a> [ipv6pxe](#input\_ipv6pxe) | BIOS Token for setting IPV6 PXE Support configuration.<br> * platform-default - Default value used by the platform for the BIOS setting.<br> * enabled - Enables the BIOS setting.<br> * disabled - Disables the BIOS setting. | `string` | `"platform-default"` | no |
 | <a name="input_iqn_allocation_type"></a> [iqn\_allocation\_type](#input\_iqn\_allocation\_type) | Allocation Type of iSCSI Qualified Name.  Options are {None\|Pool\|Static}. | `string` | `"None"` | no |
@@ -760,7 +760,11 @@ rm * Syslog
 | <a name="output_device_connector"></a> [device\_connector](#output\_device\_connector) | n/a |
 | <a name="output_dns_example_1"></a> [dns\_example\_1](#output\_dns\_example\_1) | n/a |
 | <a name="output_dns_example_2"></a> [dns\_example\_2](#output\_dns\_example\_2) | n/a |
-| <a name="output_domain_vnic_qos"></a> [domain\_vnic\_qos](#output\_domain\_vnic\_qos) | n/a |
+| <a name="output_ethernet_adapter_example"></a> [ethernet\_adapter\_example](#output\_ethernet\_adapter\_example) | n/a |
+| <a name="output_ethernet_adapter_linux_nvme_roce"></a> [ethernet\_adapter\_linux\_nvme\_roce](#output\_ethernet\_adapter\_linux\_nvme\_roce) | n/a |
+| <a name="output_ethernet_adapter_vmware"></a> [ethernet\_adapter\_vmware](#output\_ethernet\_adapter\_vmware) | n/a |
+| <a name="output_ethernet_adapter_windows"></a> [ethernet\_adapter\_windows](#output\_ethernet\_adapter\_windows) | n/a |
+| <a name="output_ethernet_qos"></a> [ethernet\_qos](#output\_ethernet\_qos) | n/a |
 | <a name="output_imc_access_example"></a> [imc\_access\_example](#output\_imc\_access\_example) | n/a |
 | <a name="output_ipmi_example"></a> [ipmi\_example](#output\_ipmi\_example) | n/a |
 | <a name="output_iscsi_adapter_example"></a> [iscsi\_adapter\_example](#output\_iscsi\_adapter\_example) | n/a |
@@ -774,18 +778,11 @@ rm * Syslog
 | <a name="output_sd_card_example"></a> [sd\_card\_example](#output\_sd\_card\_example) | n/a |
 | <a name="output_snmp_example"></a> [snmp\_example](#output\_snmp\_example) | n/a |
 | <a name="output_sol_example"></a> [sol\_example](#output\_sol\_example) | n/a |
-| <a name="output_standalone_vnic_qos"></a> [standalone\_vnic\_qos](#output\_standalone\_vnic\_qos) | n/a |
-| <a name="output_storage_example"></a> [storage\_example](#output\_storage\_example) | n/a |
+| <a name="output_standalone_ethernet_qos"></a> [standalone\_ethernet\_qos](#output\_standalone\_ethernet\_qos) | n/a |
 | <a name="output_syslog_example"></a> [syslog\_example](#output\_syslog\_example) | n/a |
 | <a name="output_vhba_network_example_a"></a> [vhba\_network\_example\_a](#output\_vhba\_network\_example\_a) | n/a |
 | <a name="output_vhba_network_example_b"></a> [vhba\_network\_example\_b](#output\_vhba\_network\_example\_b) | n/a |
-| <a name="output_vhbas"></a> [vhbas](#output\_vhbas) | n/a |
+| <a name="output_vlan_group"></a> [vlan\_group](#output\_vlan\_group) | n/a |
 | <a name="output_vlan_group_list"></a> [vlan\_group\_list](#output\_vlan\_group\_list) | n/a |
-| <a name="output_vlan_group_range"></a> [vlan\_group\_range](#output\_vlan\_group\_range) | n/a |
 | <a name="output_vmedia_example_1"></a> [vmedia\_example\_1](#output\_vmedia\_example\_1) | n/a |
-| <a name="output_vnic_adapter_example"></a> [vnic\_adapter\_example](#output\_vnic\_adapter\_example) | n/a |
-| <a name="output_vnic_adapter_linux_nvme_roce"></a> [vnic\_adapter\_linux\_nvme\_roce](#output\_vnic\_adapter\_linux\_nvme\_roce) | n/a |
-| <a name="output_vnic_adapter_vmware"></a> [vnic\_adapter\_vmware](#output\_vnic\_adapter\_vmware) | n/a |
-| <a name="output_vnic_adapter_windows"></a> [vnic\_adapter\_windows](#output\_vnic\_adapter\_windows) | n/a |
-| <a name="output_vnics"></a> [vnics](#output\_vnics) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

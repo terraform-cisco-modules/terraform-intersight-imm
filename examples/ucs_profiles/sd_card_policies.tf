@@ -12,8 +12,8 @@ module "sd_card_example" {
   description = "SD Card Policy Example."
   name        = "example"
   # profiles    = [var.profiles]
-  org_moid    = local.org_moid
-  tags        = var.tags
+  org_moid = local.org_moid
+  tags     = var.tags
 }
 
 

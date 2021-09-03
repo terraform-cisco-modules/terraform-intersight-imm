@@ -5,12 +5,12 @@
 #__________________________________________________________________
 
 resource "intersight_storage_storage_policy" "storage" {
-  description                  = var.description
-  global_hot_spares            = var.global_hot_spares
-  name                         = var.name
+  description              = var.description
+  global_hot_spares        = var.global_hot_spares
+  name                     = var.name
+  unused_disks_state       = var.unused_disks_state
+  use_jbod_for_vd_creation = var.use_jbod_for_vd_creation
   # retain_policy_virtual_drives = var.retain_policy
-  unused_disks_state           = var.unused_disks_state
-  use_jbod_for_vd_creation     = var.use_jbod_for_vd_creation
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
@@ -37,13 +37,13 @@ resource "intersight_storage_storage_policy" "storage" {
       drive_slots = raid0_drive.value.drive_slots
       enable      = raid0_drive.value.enable
       object_type = "server.Profile"
-      virtual_drive_policy  = {
-        access_policy         = virtual_drives.value.access_policy
-        drive_cache           = virtual_drives.value.drive_cache
-        object_type           = "storage.VirtualDriveConfig"
-        read_policy           = virtual_drives.value.read_policy
-        strip_size            = virtual_drives.value.strip_size
-        write_policy          = virtual_drives.value.write_policy
+      virtual_drive_policy = {
+        access_policy = virtual_drives.value.access_policy
+        drive_cache   = virtual_drives.value.drive_cache
+        object_type   = "storage.VirtualDriveConfig"
+        read_policy   = virtual_drives.value.read_policy
+        strip_size    = virtual_drives.value.strip_size
+        write_policy  = virtual_drives.value.write_policy
       }
     }
   }

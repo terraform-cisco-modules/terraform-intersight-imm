@@ -105,7 +105,7 @@ variable "virtual_drives" {
     - WriteBackGoodBbu - Data is stored in the cache, and is only written to the physical drives when space in the cache is needed. Virtual drives requesting this policy fall back to Write Through caching when the battery backup unit (BBU) cannot guarantee the safety of the cache in the event of a power failure.
     - AlwaysWriteBack - With this policy, write caching remains Write Back even if the battery backup unit is defective or discharged.
   EOT
-  type        = list(object(
+  type = list(object(
     {
       access_policy       = string
       boot_drive          = string
@@ -116,7 +116,6 @@ variable "virtual_drives" {
       size                = number
       strip_size          = number
       write_policy        = string
-
     }
   ))
 }

@@ -8,30 +8,30 @@ module "basic_storage_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid,
   ]
-  source        = "../../../modules/storage_policies"
-  description   = "Storage Policy Example."
-  name          = "basic_example"
-  org_moid      = local.org_moid
-  raid0_drive   = []
-  profiles      = []
-  tags          = var.tags
-  unused_disks_state = "UnconfiguredGood"
+  source                   = "../../../modules/storage_policies"
+  description              = "Storage Policy Example."
+  name                     = "basic_example"
+  org_moid                 = local.org_moid
+  raid0_drive              = []
+  profiles                 = []
+  tags                     = var.tags
+  unused_disks_state       = "UnconfiguredGood"
   use_jbod_for_vd_creation = true
-  m2_virtual_drive = []
+  m2_virtual_drive         = []
 }
 
 module "m2_storage_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid,
   ]
-  source        = "../../../modules/storage_policies"
-  description   = "Storage Policy Example."
-  name          = "m2_example"
-  org_moid      = local.org_moid
-  profiles      = []
-  raid0_drive   = []
-  tags          = var.tags
-  unused_disks_state = "UnconfiguredGood"
+  source                   = "../../../modules/storage_policies"
+  description              = "Storage Policy Example."
+  name                     = "m2_example"
+  org_moid                 = local.org_moid
+  profiles                 = []
+  raid0_drive              = []
+  tags                     = var.tags
+  unused_disks_state       = "UnconfiguredGood"
   use_jbod_for_vd_creation = true
   m2_virtual_drive = [
     {

@@ -43,10 +43,10 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_imc_ip_pool"></a> [imc\_ip\_pool](#input\_imc\_ip\_pool) | moid of an IP Pool to Assign to the IMC Access Policy. | `string` | `""` | no |
-| <a name="input_inband_vlan"></a> [inband\_vlan](#input\_inband\_vlan) | VLAN ID to Assign as the Inband Management VLAN for IMC Access. | `number` | `1` | no |
-| <a name="input_ipv4_enable"></a> [ipv4\_enable](#input\_ipv4\_enable) | Flag to Enable or Disable the IPv4 Address Family for Poliices. | `bool` | `true` | no |
-| <a name="input_ipv6_enable"></a> [ipv6\_enable](#input\_ipv6\_enable) | Flag to Enable or Disable the IPv6 Address Family for Poliices. | `bool` | `false` | no |
+| <a name="input_enable_ipv4"></a> [enable\_ipv4](#input\_enable\_ipv4) | Flag to Enable or Disable the IPv4 Address Family for Poliices. | `bool` | `true` | no |
+| <a name="input_enable_ipv6"></a> [enable\_ipv6](#input\_enable\_ipv6) | Flag to Enable or Disable the IPv6 Address Family for Poliices. | `bool` | `false` | no |
+| <a name="input_inband_ip_pool"></a> [inband\_ip\_pool](#input\_inband\_ip\_pool) | moid of an IP Pool to Assign to the IMC Access Policy. | `string` | `""` | no |
+| <a name="input_inband_vlan_id"></a> [inband\_vlan\_id](#input\_inband\_vlan\_id) | VLAN ID to Assign as the Inband Management VLAN for IMC Access. | `number` | `1` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"imc_access"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_profile_type"></a> [profile\_type](#input\_profile\_type) | Value to Identify the Type of Profile being applied to the policy.  Options are:<br>* chassis<br>* domain<br>* server | `string` | `"server"` | no |

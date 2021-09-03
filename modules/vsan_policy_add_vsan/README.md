@@ -44,10 +44,10 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_default_zoning"></a> [default\_zoning](#input\_default\_zoning) | Enables or Disables the default zoning state.<br>* Enabled - Admin configured Enabled State.<br>* Disabled - Admin configured Disabled State. | `string` | `"Disabled"` | no |
 | <a name="input_fc_zone_sharing_mode"></a> [fc\_zone\_sharing\_mode](#input\_fc\_zone\_sharing\_mode) | Logical grouping mode for fc ports. | `string` | `""` | no |
+| <a name="input_fcoe_vlan_id"></a> [fcoe\_vlan\_id](#input\_fcoe\_vlan\_id) | FCoE VLAN Identifier to Assign to the VSAN Policy. | `number` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_vsan_list"></a> [vsan\_list](#input\_vsan\_list) | n/a | <pre>map(object({<br>    fcoe_vlan = number<br>    vsan_id   = number<br>  }))</pre> | `{}` | no |
+| <a name="input_vsan_id"></a> [vsan\_id](#input\_vsan\_id) | VSAN Identifier to Assign to the VSAN Policy. | `number` | n/a | yes |
 | <a name="input_vsan_policy_moid"></a> [vsan\_policy\_moid](#input\_vsan\_policy\_moid) | VSAN Policy (Fibre-Channel Network Policy) moid. | `string` | n/a | yes |
-| <a name="input_vsan_prefix"></a> [vsan\_prefix](#input\_vsan\_prefix) | Prefix Name for VSANs. | `string` | `"VLAN"` | no |
 
 ## Outputs
 

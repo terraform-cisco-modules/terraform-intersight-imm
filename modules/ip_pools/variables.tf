@@ -56,7 +56,7 @@ variable "ipv4_config" {
   * primary_dns = Primary DNS Server to Assign to the Pool
   * secondary_dns = Secondary DNS Server to Assign to the Pool
   EOT
-  type        = map(object(
+  type = map(object(
     {
       gateway       = string
       netmask       = string
@@ -81,7 +81,7 @@ variable "ipv6_config" {
   * primary_dns = Primary DNS Server to Assign to the Pool
   * secondary_dns = Secondary DNS Server to Assign to the Pool
   EOT
-  type        = map(object(
+  type = map(object(
     {
       gateway       = string
       prefix        = number

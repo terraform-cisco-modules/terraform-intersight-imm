@@ -8,7 +8,7 @@ resource "intersight_storage_drive_group" "drive_group" {
   name       = var.name
   raid_level = var.raid_level
   storage_policy {
-    moid        = var.storage_moid
+    moid = var.storage_moid
     # object_type = "organization.Organization"
   }
   dynamic "automatic_drive_group" {
@@ -57,7 +57,7 @@ resource "intersight_storage_drive_group" "drive_group" {
       name                  = virtual_drives.value.name
       object_type           = "storage.VirtualDriveConfiguration"
       size                  = virtual_drives.value.size
-      virtual_drive_policy  = [
+      virtual_drive_policy = [
         {
           additional_properties = ""
           access_policy         = virtual_drives.value.access_policy
