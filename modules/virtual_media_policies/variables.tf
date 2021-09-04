@@ -15,15 +15,15 @@ variable "enabled" {
   type        = bool
 }
 
-variable "encryption" {
+variable "enable_low_power_usb" {
   default     = false
-  description = "If enabled, allows encryption of all Virtual Media communications."
+  description = "If enabled, the virtual drives appear on the boot selection menu after mapping the image and rebooting the host."
   type        = bool
 }
 
-variable "low_power_usb" {
+variable "enable_virtual_media_encryption" {
   default     = false
-  description = "If enabled, the virtual drives appear on the boot selection menu after mapping the image and rebooting the host."
+  description = "If enabled, allows encryption of all Virtual Media communications."
   type        = bool
 }
 

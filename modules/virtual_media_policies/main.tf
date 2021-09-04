@@ -7,8 +7,8 @@
 resource "intersight_vmedia_policy" "vmedia" {
   description   = var.description
   enabled       = var.enabled
-  encryption    = var.encryption
-  low_power_usb = var.low_power_usb
+  encryption    = var.enable_virtual_media_encryption
+  low_power_usb = var.enable_low_power_usb
   name          = var.name
   organization {
     moid        = var.org_moid

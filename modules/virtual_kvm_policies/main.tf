@@ -8,7 +8,7 @@ resource "intersight_kvm_policy" "kvm" {
   description               = var.description
   enable_local_server_video = var.enable_local_server_video
   enable_video_encryption   = var.enable_video_encryption
-  enabled                   = var.enabled
+  enabled                   = var.enable_virtual_kvm
   maximum_sessions          = var.maximum_sessions
   name                      = var.name
   remote_port               = var.remote_port

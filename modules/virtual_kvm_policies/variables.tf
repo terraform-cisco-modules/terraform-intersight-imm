@@ -21,7 +21,7 @@ variable "enable_video_encryption" {
   type        = bool
 }
 
-variable "enabled" {
+variable "enable_virtual_kvm" {
   default     = true
   description = "Flag to Enable or Disable the Policy."
   type        = bool
