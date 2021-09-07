@@ -1,3 +1,7 @@
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 #____________________________________________________________
 #
 # iSCSI Static Target Policy Variables Section.
@@ -22,17 +26,26 @@ variable "name" {
 }
 
 variable "lun" {
-  default     = []
+  default = [
+    {
+      bootable = true
+      lun_id   = null
+    }
+  ]
   description = <<-EOT
   The LUN parameters associated with an iSCSI target. This complex property has following sub-properties:
   * bootable - Specifies LUN is bootable. true or false.
   * lun_id - The Identifier of the LUN.
   EOT
-  type        = list(map(string))
+  type = list(object(
+    {
+      bootable = optional(bool)
+      lun_id   = number
+    }
+  ))
 }
 
 variable "port" {
-  default     = 0
   description = "The port associated with the iSCSI target."
   type        = number
 }
@@ -42,14 +55,15 @@ variable "org_moid" {
   type        = string
 }
 
+variable "tags" {
+  default     = []
+  description = "List of Tag Attributes to Assign to the Policy."
+  type        = list(map(string))
+}
+
 variable "target_name" {
   default     = ""
   description = "Qualified Name (IQN) or Extended Unique Identifier (EUI) name of the iSCSI target."
   type        = string
 }
 
-variable "tags" {
-  default     = []
-  description = "List of Tag Attributes to Assign to the Policy."
-  type        = list(map(string))
-}

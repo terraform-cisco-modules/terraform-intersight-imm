@@ -3,12 +3,6 @@
 # iSCSI Adapter Policy Variables Section.
 #____________________________________________________________
 
-variable "connection_time_out" {
-  default     = 15
-  description = "The number of seconds to wait until Cisco UCS assumes that the initial login has failed and the iSCSI adapter is unavailable.  Range is 0-255."
-  type        = number
-}
-
 variable "description" {
   default     = ""
   description = "Description for the Policy."
@@ -42,4 +36,10 @@ variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
+}
+
+variable "tcp_connection_timeout" {
+  default     = 15
+  description = "The number of seconds to wait until Cisco UCS assumes that the initial login has failed and the iSCSI adapter is unavailable.  Range is 0-255."
+  type        = number
 }

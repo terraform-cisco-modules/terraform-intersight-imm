@@ -45,7 +45,7 @@ No modules.
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
 | <a name="input_enable_local_server_video"></a> [enable\_local\_server\_video](#input\_enable\_local\_server\_video) | If enabled, displays KVM session on any monitor attached to the server. | `bool` | `true` | no |
 | <a name="input_enable_video_encryption"></a> [enable\_video\_encryption](#input\_enable\_video\_encryption) | If enabled, encrypts all video information sent through KVM. | `bool` | `true` | no |
-| <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to Enable or Disable the Policy. | `bool` | `true` | no |
+| <a name="input_enable_virtual_kvm"></a> [enable\_virtual\_kvm](#input\_enable\_virtual\_kvm) | Flag to Enable or Disable the Policy. | `bool` | `true` | no |
 | <a name="input_maximum_sessions"></a> [maximum\_sessions](#input\_maximum\_sessions) | The maximum number of concurrent KVM sessions allowed. Range is 1 to 4. | `number` | `4` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"kvm"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |

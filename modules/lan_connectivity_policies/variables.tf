@@ -9,6 +9,12 @@ variable "description" {
   type        = string
 }
 
+variable "enable_azure_stack_host_qos" {
+  default     = false
+  description = "Enabling AzureStack-Host QoS on an adapter allows the user to carve out traffic classes for RDMA traffic which ensures that a desired portion of the bandwidth is allocated to it."
+  type        = bool
+}
+
 variable "iqn_allocation_type" {
   default     = "None"
   description = <<-EOT
@@ -26,7 +32,7 @@ variable "iqn_pool" {
   type        = set(string)
 }
 
-variable "iqn_static_name" {
+variable "iqn_static_identifier" {
   default     = ""
   description = "User provided static iSCSI Qualified Name (IQN) for use as initiator identifiers by iSCSI vNICs."
   type        = string
@@ -40,12 +46,6 @@ variable "name" {
 
 variable "org_moid" {
   description = "Intersight Organization moid."
-  type        = string
-}
-
-variable "placement_mode" {
-  default     = "custom"
-  description = "The mode used for placement of vNICs on network adapters. It can either be auto or custom."
   type        = string
 }
 
@@ -69,4 +69,10 @@ variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
+}
+
+variable "vnic_placement_mode" {
+  default     = "custom"
+  description = "The mode used for placement of vNICs on network adapters. It can either be auto or custom."
+  type        = string
 }

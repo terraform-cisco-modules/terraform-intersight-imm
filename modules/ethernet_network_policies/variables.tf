@@ -21,9 +21,9 @@ variable "name" {
   type        = string
 }
 
-variable "default_vlan" {
-  default     = 1
-  description = "VLAN to Assign as the Default VLAN."
+variable "native_vlan" {
+  default     = 0
+  description = "Native VLAN ID of the virtual interface or the corresponding vethernet on the peer Fabric Interconnect to which the virtual interface is connected. Setting the ID to 0 will not associate any native VLAN to the traffic on the virtual interface."
   type        = number
 }
 
@@ -33,7 +33,7 @@ variable "org_moid" {
 }
 
 variable "mode" {
-  default     = "TRUNK"
+  default     = "ACCESS"
   description = <<-EOT
   Option to determine if the port can carry single VLAN (Access) or multiple VLANs (Trunk) traffic.
   * ACCESS - An access port carries traffic only for a single VLAN on the interface.

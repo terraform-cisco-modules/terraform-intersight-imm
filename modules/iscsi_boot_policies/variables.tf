@@ -3,12 +3,6 @@
 # Ethernet iSCSI Boot Policy Variables Section.
 #____________________________________________________________
 
-variable "auto_targetvendor_name" {
-  default     = ""
-  description = "Auto target interface that is represented via the Initiator name or the DHCP vendor ID. The vendor ID can be up to 32 alphanumeric characters."
-  type        = string
-}
-
 variable "chap_password" {
   default     = ""
   description = "Chap Password, if doing chap authentication."
@@ -25,6 +19,12 @@ variable "chap_user_id" {
 variable "description" {
   default     = ""
   description = "Description for the Policy."
+  type        = string
+}
+
+variable "dhcp_vendor_id_iqn" {
+  default     = ""
+  description = "Auto target interface that is represented via the Initiator name or the DHCP vendor ID. The vendor ID can be up to 32 alphanumeric characters."
   type        = string
 }
 
@@ -45,21 +45,15 @@ variable "initiator_ip_source" {
   type        = string
 }
 
-variable "initiator_static_ip" {
-  default     = ""
-  description = "Static IP address provided for iSCSI Initiator."
-  type        = string
-}
-
-variable "initiator_static_gateway" {
+variable "initiator_static_default_gateway" {
   default     = ""
   description = "IP address of the default IPv4 gateway."
   type        = string
 }
 
-variable "initiator_static_netmask" {
+variable "initiator_static_ip_address" {
   default     = ""
-  description = "A subnet mask is a 32-bit number that masks an IP address and divides the IP address into network address and host address."
+  description = "Static IP address provided for iSCSI Initiator."
   type        = string
 }
 
@@ -75,7 +69,13 @@ variable "initiator_static_secondary_dns" {
   type        = string
 }
 
-variable "iscsi_adapter_policy" {
+variable "initiator_static_subnet_mask" {
+  default     = ""
+  description = "A subnet mask is a 32-bit number that masks an IP address and divides the IP address into network address and host address."
+  type        = string
+}
+
+variable "iscsi_adapter_policy_moid" {
   default     = []
   description = "A reference to a vnicIscsiAdapterPolicy resource."
   type        = set(string)
@@ -105,13 +105,13 @@ variable "org_moid" {
   type        = string
 }
 
-variable "primary_target_policy" {
+variable "primary_target_policy_moid" {
   default     = []
   description = "A reference to a vnicIscsiStaticTargetPolicy resource."
   type        = set(string)
 }
 
-variable "secondary_target_policy" {
+variable "secondary_target_policy_moid" {
   default     = []
   description = "A reference to a vnicIscsiStaticTargetPolicy resource."
   type        = set(string)

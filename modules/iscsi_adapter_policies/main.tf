@@ -5,7 +5,7 @@
 #__________________________________________________________________
 
 resource "intersight_vnic_iscsi_adapter_policy" "iscsi_adapter" {
-  connection_time_out  = var.connection_time_out
+  connection_time_out  = var.tcp_connection_timeout
   description          = var.description
   dhcp_timeout         = var.dhcp_timeout
   lun_busy_retry_count = var.lun_busy_retry_count

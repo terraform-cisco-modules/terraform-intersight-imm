@@ -17,7 +17,7 @@ resource "intersight_vnic_iscsi_static_target_policy" "iscsi_static_target" {
   dynamic "lun" {
     for_each = var.lun
     content {
-      additional_properties = lun.value.additional_properties
+      additional_properties = ""
       bootable              = lun.value.bootable
       lun_id                = lun.value.lun_id
       object_type           = "vnic.Lun"

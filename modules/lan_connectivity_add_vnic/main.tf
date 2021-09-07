@@ -5,53 +5,56 @@
 #______________________________________________________________________
 
 resource "intersight_vnic_eth_if" "vnic" {
-  failover_enabled   = var.failover_enabled
-  mac_address_type   = var.mac_address_type
-  name               = var.vnic_name
-  order              = var.vnic_order
-  static_mac_address = var.static_mac_address
+  failover_enabled   = var.enable_failover
+  mac_address_type   = var.mac_address_allocation_type
+  name               = var.name
+  order              = var.placement_pci_order
+  static_mac_address = var.mac_address_static
   cdn {
-    value     = var.cdn_name
+    value     = var.cdn_value
     nr_source = var.cdn_source
   }
   eth_adapter_policy {
-    moid = var.vnic_adapter_moid
+    moid = var.eth_adapter_policy_moid
   }
   eth_qos_policy {
-    moid = var.vnic_qos_moid
+    moid = var.eth_qos_policy_moid
   }
   fabric_eth_network_control_policy {
-    moid = var.vnic_control_moid
-  }
-  fabric_eth_network_group_policy {
-    moid = var.vnic_network_group_moid
+    moid = var.eth_network_control_policy_moid
   }
   lan_connectivity_policy {
-    moid = var.lan_connectivity_moid
+    moid = var.lan_connectivity_policy_moid
   }
   placement {
     id        = var.placement_slot_id
     pci_link  = var.placement_pci_link
     switch_id = var.placement_switch_id
-    uplink    = var.placement_uplink
+    uplink    = var.placement_uplink_port
   }
   usnic_settings {
-    cos                  = var.usnic_cos
-    nr_count             = var.usnic_count
+    cos                  = var.usnic_class_of_service
+    nr_count             = var.usnic_number_of_usnics
     usnic_adapter_policy = var.usnic_adapter_policy_moid
   }
   vmq_settings {
     enabled             = var.vmq_enabled
-    multi_queue_support = var.vmq_multi_queue_support
-    num_interrupts      = var.vmq_interrupts
-    num_vmqs            = var.vmq_number_queues
-    num_sub_vnics       = var.vmq_number_sub_vnics
-    vmmq_adapter_policy = var.vmq_adapter_policy_moid
+    multi_queue_support = var.vmq_enable_virtual_machine_multi_queue
+    num_interrupts      = var.vmq_number_of_interrupts
+    num_vmqs            = var.vmq_number_of_virtual_machine_queues
+    num_sub_vnics       = var.vmq_number_of_sub_vnics
+    vmmq_adapter_policy = var.vmq_vmmq_adapter_policy_moid
   }
   dynamic "eth_network_policy" {
-    for_each = var.vnic_network_moid
+    for_each = var.eth_network_policy_moid
     content {
       moid = eth_network_policy.value
+    }
+  }
+  dynamic "fabric_eth_network_group_policy" {
+    for_each = var.eth_network_group_policy_moid
+    content {
+      moid = fabric_eth_network_group_policy.value
     }
   }
   dynamic "ip_lease" {
@@ -73,7 +76,7 @@ resource "intersight_vnic_eth_if" "vnic" {
     }
   }
   dynamic "mac_pool" {
-    for_each = var.mac_pool_moid
+    for_each = var.mac_address_pool_moid
     content {
       moid = mac_pool.value
     }

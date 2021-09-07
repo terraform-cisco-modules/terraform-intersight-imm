@@ -16,9 +16,8 @@ module "iscsi_target_example" {
   target_name = "iqn.1992-08.com.ci:sn.e461ee9f190611ebb06300a0985b4a87:vs.3"
   lun = [
     {
-      additional_properties = null
-      bootable              = true
-      lun_id                = 0
+      bootable = true
+      lun_id   = 0
     }
   ]
   org_moid = local.org_moid

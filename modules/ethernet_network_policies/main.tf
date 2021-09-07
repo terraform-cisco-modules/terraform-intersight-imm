@@ -13,7 +13,7 @@ resource "intersight_vnic_eth_network_policy" "vnic_policy" {
   }
   vlan_settings {
     allowed_vlans = var.allowed_vlans
-    default_vlan  = var.default_vlan
+    default_vlan  = var.native_vlan
     mode          = var.mode
     object_type   = "vnic.VlanSettings"
   }
