@@ -9,7 +9,6 @@ resource "intersight_server_profile_template" "server_template" {
   description     = var.description
   name            = var.name
   target_platform = var.target_platform
-  # type            = "template"
   organization {
     object_type = "organization.Organization"
     moid        = var.org_moid

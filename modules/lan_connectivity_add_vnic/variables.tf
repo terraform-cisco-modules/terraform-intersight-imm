@@ -26,13 +26,11 @@ variable "enable_failover" {
 }
 
 variable "eth_adapter_policy_moid" {
-  default     = ""
   description = "A reference to a vnicEthAdapterPolicy resource."
   type        = string
 }
 
 variable "eth_network_control_policy_moid" {
-  default     = ""
   description = "A reference to a fabricEthNetworkControlPolicy resource."
   type        = string
 }
@@ -50,7 +48,6 @@ variable "eth_network_policy_moid" {
 }
 
 variable "eth_qos_policy_moid" {
-  default     = ""
   description = "A reference to a vnicEthQosPolicy resource."
   type        = string
 }
@@ -67,7 +64,6 @@ variable "iscsi_boot_policy_moid" {
 }
 
 variable "lan_connectivity_policy_moid" {
-  default     = ""
   description = "A reference to a vnicLanConnectivityPolicy resource."
   type        = string
 }

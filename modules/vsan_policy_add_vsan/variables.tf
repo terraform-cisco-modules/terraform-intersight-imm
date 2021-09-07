@@ -24,10 +24,10 @@ variable "fcoe_vlan_id" {
   type        = number
 }
 
-variable "tags" {
-  default     = []
-  description = "List of Tag Attributes to Assign to the Policy."
-  type        = list(map(string))
+variable "name" {
+  default     = "vsan"
+  description = "Name for the VSAN."
+  type        = string
 }
 
 variable "vsan_id" {

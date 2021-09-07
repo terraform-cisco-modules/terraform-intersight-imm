@@ -7,10 +7,10 @@
 resource "intersight_vnic_san_connectivity_policy" "san_connectivity" {
   description         = var.description
   name                = var.name
-  placement_mode      = var.placement_mode
-  static_wwnn_address = var.static_wwnn_address
+  placement_mode      = var.vhba_placement_mode
+  static_wwnn_address = var.wwnn_static_address
   target_platform     = var.target_platform
-  wwnn_address_type   = var.wwnn_address_type
+  wwnn_address_type   = var.wwnn_allocation_type
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

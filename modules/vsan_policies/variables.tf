@@ -9,12 +9,6 @@ variable "description" {
   type        = string
 }
 
-variable "enable_trunking" {
-  default     = false
-  description = "Enable or Disable Trunking on all of configured FC uplink ports."
-  type        = bool
-}
-
 variable "name" {
   default     = "vsan_policy"
   description = "Name for the Policy."
@@ -36,4 +30,10 @@ variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
+}
+
+variable "uplink_trunking" {
+  default     = false
+  description = "Enable or Disable Trunking on all of configured FC uplink ports."
+  type        = bool
 }
