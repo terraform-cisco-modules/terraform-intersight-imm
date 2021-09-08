@@ -48,7 +48,7 @@ variable "profiles" {
     - server.Profile - For UCS Server Profiles.
     - server.ProfileTemplate - For UCS Server Profile Templates.
   EOT
-  type        = map(object(
+  type = map(object(
     {
       moid        = string
       object_type = string
@@ -197,7 +197,7 @@ variable "snmp_trap_destinations" {
     - Inform - Receive notifications when trap is sent to the destination. This option is valid only for SNMPv2.
     - Trap - Do not receive notifications when trap is sent to the destination.
   EOT
-  type        = map(object(
+  type = map(object(
     {
       community_string = optional(string)
       enable           = optional(bool)
@@ -233,7 +233,7 @@ variable "snmp_users" {
    - AuthPriv (Default) - The user requires both an authorization password and a privacy password.
    - NoAuthNoPriv - The user does not require an authorization or privacy password.
   EOT
-  type        = map(object(
+  type = map(object(
     {
       auth_password    = optional(number)
       auth_type        = optional(string)

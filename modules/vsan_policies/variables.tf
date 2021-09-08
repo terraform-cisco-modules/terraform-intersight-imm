@@ -28,7 +28,7 @@ variable "profiles" {
   * object_type - Object Type to Assign in the Profile Configuration.
     - fabric.SwitchProfile - For UCS Domain Switch Profiles.
   EOT
-  type        = map(object(
+  type = map(object(
     {
       moid        = string
       object_type = string

@@ -31,15 +31,15 @@ resource "intersight_snmp_policy" "snmp" {
   dynamic "snmp_traps" {
     for_each = var.snmp_trap_destinations
     content {
-      community   = length(
+      community = length(
         regexall("1", coalesce(snmp_traps.value.community_string, 10))
-      ) > 0 ? var.snmp_trap_community_1 : length(
+        ) > 0 ? var.snmp_trap_community_1 : length(
         regexall("2", coalesce(snmp_traps.value.community_string, 10))
-      ) > 0 ? var.snmp_trap_community_2 : length(
+        ) > 0 ? var.snmp_trap_community_2 : length(
         regexall("3", coalesce(snmp_traps.value.community_string, 10))
-      ) > 0 ? var.snmp_trap_community_3 : length(
+        ) > 0 ? var.snmp_trap_community_3 : length(
         regexall("4", coalesce(snmp_traps.value.community_string, 10))
-      ) > 0 ? var.snmp_trap_community_4 : length(
+        ) > 0 ? var.snmp_trap_community_4 : length(
         regexall("5", coalesce(snmp_traps.value.community_string, 10))
       ) > 0 ? var.snmp_trap_community_5 : ""
       destination = snmp_traps.key
@@ -53,34 +53,34 @@ resource "intersight_snmp_policy" "snmp" {
   dynamic "snmp_users" {
     for_each = var.snmp_users
     content {
-      auth_password    = length(
+      auth_password = length(
         regexall("1", coalesce(snmp_users.value.auth_password, 10))
-      ) > 0 ? var.snmp_auth_password_1 : length(
+        ) > 0 ? var.snmp_auth_password_1 : length(
         regexall("2", coalesce(snmp_users.value.auth_password, 10))
-      ) > 0 ? var.snmp_auth_password_2 : length(
+        ) > 0 ? var.snmp_auth_password_2 : length(
         regexall("3", coalesce(snmp_users.value.auth_password, 10))
-      ) > 0 ? var.snmp_auth_password_3 : length(
+        ) > 0 ? var.snmp_auth_password_3 : length(
         regexall("4", coalesce(snmp_users.value.auth_password, 10))
-      ) > 0 ? var.snmp_auth_password_3 : length(
+        ) > 0 ? var.snmp_auth_password_3 : length(
         regexall("5", coalesce(snmp_users.value.auth_password, 10))
       ) > 0 ? var.snmp_auth_password_5 : ""
-      auth_type        = snmp_users.value.auth_type
+      auth_type = snmp_users.value.auth_type
       # auth_type        = snmp_users.value.auth_type
-      name             = snmp_users.key
+      name = snmp_users.key
       privacy_password = length(
         regexall("1", coalesce(snmp_users.value.privacy_password, 10))
-      ) > 0 ? var.snmp_privacy_password_1 : length(
+        ) > 0 ? var.snmp_privacy_password_1 : length(
         regexall("2", coalesce(snmp_users.value.privacy_password, 10))
-      ) > 0 ? var.snmp_privacy_password_2 : length(
+        ) > 0 ? var.snmp_privacy_password_2 : length(
         regexall("3", coalesce(snmp_users.value.privacy_password, 10))
-      ) > 0 ? var.snmp_privacy_password_3 : length(
+        ) > 0 ? var.snmp_privacy_password_3 : length(
         regexall("4", coalesce(snmp_users.value.privacy_password, 10))
-      ) > 0 ? var.snmp_privacy_password_3 : length(
+        ) > 0 ? var.snmp_privacy_password_3 : length(
         regexall("5", coalesce(snmp_users.value.privacy_password, 10))
       ) > 0 ? var.snmp_privacy_password_5 : ""
-      privacy_type     = snmp_users.value.privacy_type
+      privacy_type = snmp_users.value.privacy_type
       # privacy_type     = snmp_users.value.privacy_type
-      security_level   = snmp_users.value.security_level
+      security_level = snmp_users.value.security_level
     }
   }
   dynamic "tags" {

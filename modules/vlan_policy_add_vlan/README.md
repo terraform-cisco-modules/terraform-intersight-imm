@@ -43,10 +43,11 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_auto_allow_on_uplinks"></a> [auto\_allow\_on\_uplinks](#input\_auto\_allow\_on\_uplinks) | Used to determine whether this VLAN will be allowed on all uplink ports and PCs in this FI. | `bool` | `true` | no |
-| <a name="input_multicast_moid"></a> [multicast\_moid](#input\_multicast\_moid) | Multicast Policy moid map. | `string` | n/a | yes |
-| <a name="input_native_vlan"></a> [native\_vlan](#input\_native\_vlan) | Used to determine if this VLAN should be untagged on the interfaces. | `bool` | `false` | no |
+| <a name="input_multicast_policy_moid"></a> [multicast\_policy\_moid](#input\_multicast\_policy\_moid) | Multicast Policy moid. | `string` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | The 'name' used to identify this VLAN. | `string` | `"vlan-{vlan_id}"` | no |
+| <a name="input_native_vlan"></a> [native\_vlan](#input\_native\_vlan) | Used to define whether this VLAN is to be classified as 'native' for traffic in this FI. | `bool` | `false` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_vlan_id"></a> [vlan\_id](#input\_vlan\_id) | VLAN Identifier to Assign to the VLAN Policy. | `number` | n/a | yes |
+| <a name="input_vlan_id"></a> [vlan\_id](#input\_vlan\_id) | The identifier for this Virtual LAN. | `number` | n/a | yes |
 | <a name="input_vlan_policy_moid"></a> [vlan\_policy\_moid](#input\_vlan\_policy\_moid) | VLAN Policy (Ethernet Network Policy) moid. | `string` | n/a | yes |
 
 ## Outputs

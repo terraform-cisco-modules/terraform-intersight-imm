@@ -48,7 +48,7 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"ipmi"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_privilege"></a> [privilege](#input\_privilege) | The highest privilege level that can be assigned to an IPMI session on a server.<br>* admin - Privilege to perform all actions available through IPMI.<br>* user - Privilege to perform some functions through IPMI but restriction on performing administrative tasks.<br>* read-only - Privilege to view information throught IPMI but restriction on making any changes. | `string` | `"admin"` | no |
-| <a name="input_profiles"></a> [profiles](#input\_profiles) | List of Profiles to Assign to the Policy. | `set(string)` | `[]` | no |
+| <a name="input_profiles"></a> [profiles](#input\_profiles) | Map of Profiles to Assign to the Policy.<br>* moid - Managed Object Identifier for the Managed Resource.<br>* object\_type - Object Type to Assign in the Profile Configuration.<br>  - server.Profile - For UCS Server Profiles.<br>  - server.ProfileTemplate - For UCS Server Profile Templates. | <pre>map(object(<br>    {<br>      moid        = string<br>      object_type = string<br>    }<br>  ))</pre> | `{}` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs

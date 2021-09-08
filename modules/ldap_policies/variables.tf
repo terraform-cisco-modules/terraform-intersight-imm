@@ -124,7 +124,7 @@ variable "profiles" {
     - server.Profile - For UCS Server Profiles.
     - server.ProfileTemplate - For UCS Server Profile Templates.
   EOT
-  type        = map(object(
+  type = map(object(
     {
       moid        = string
       object_type = string
