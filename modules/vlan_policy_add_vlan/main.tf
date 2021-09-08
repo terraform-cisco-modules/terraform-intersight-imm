@@ -13,6 +13,6 @@ resource "intersight_fabric_vlan" "vlan" {
     moid = var.vlan_policy_moid
   }
   multicast_policy {
-    moid = var.multicast_moid
+    moid = var.multicast_policy_moid
   }
 }

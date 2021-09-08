@@ -31,7 +31,7 @@ resource "intersight_networkconfig_policy" "dns" {
     for_each = var.profiles
     content {
       moid        = profiles.value.moid
-      object_type = profiles.value.type == "domain" ? "fabric.SwitchProfile" : "server.Profile"
+      object_type = profiles.value.object_type
     }
   }
   dynamic "tags" {

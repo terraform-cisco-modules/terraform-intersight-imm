@@ -45,9 +45,20 @@ variable "org_moid" {
 }
 
 variable "profiles" {
-  default     = []
-  description = "List of Profiles to Assign to the Policy."
-  type        = set(string)
+  default     = {}
+  description = <<-EOT
+  Map of Profiles to Assign to the Policy.
+  * moid - Managed Object Identifier for the Managed Resource.
+  * object_type - Object Type to Assign in the Profile Configuration.
+    - server.Profile - For UCS Server Profiles.
+    - server.ProfileTemplate - For UCS Server Profile Templates.
+  EOT
+  type        = map(object(
+    {
+      moid        = string
+      object_type = string
+    }
+  ))
 }
 
 variable "remote_port" {

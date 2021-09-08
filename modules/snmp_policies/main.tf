@@ -24,8 +24,8 @@ resource "intersight_snmp_policy" "snmp" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value
-      object_type = var.profile_type == "chassis" ? "chassis.Profile" : var.profile_type == "domain" ? "fabric.SwitchProfile" : "server.Profile"
+      moid        = profiles.value.moid
+      object_type = profiles.value.object_type
     }
   }
   dynamic "snmp_traps" {

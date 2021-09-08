@@ -38,8 +38,8 @@ resource "intersight_vmedia_policy" "vmedia" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value
-      object_type = "server.Profile"
+      moid        = profiles.value.moid
+      object_type = profiles.value.object_type
     }
   }
   dynamic "tags" {

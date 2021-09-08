@@ -14,8 +14,8 @@ resource "intersight_fabric_eth_network_policy" "vlan" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value
-      object_type = "fabric.SwitchProfile"
+      moid        = profiles.value.moid
+      object_type = profiles.value.object_type
     }
   }
   dynamic "tags" {

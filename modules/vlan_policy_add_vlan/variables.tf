@@ -9,14 +9,20 @@ variable "auto_allow_on_uplinks" {
   type        = bool
 }
 
+variable "name" {
+  default     = "vlan-{vlan_id}"
+  description = "The 'name' used to identify this VLAN."
+  type        = string
+}
+
 variable "native_vlan" {
   default     = false
-  description = "Used to determine if this VLAN should be untagged on the interfaces."
+  description = "Used to define whether this VLAN is to be classified as 'native' for traffic in this FI."
   type        = bool
 }
 
-variable "multicast_moid" {
-  description = "Multicast Policy moid map."
+variable "multicast_policy_moid" {
+  description = "Multicast Policy moid."
   type        = string
 }
 
@@ -27,7 +33,7 @@ variable "tags" {
 }
 
 variable "vlan_id" {
-  description = "VLAN Identifier to Assign to the VLAN Policy."
+  description = "The identifier for this Virtual LAN."
   type        = number
 }
 

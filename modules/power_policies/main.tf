@@ -18,8 +18,8 @@ resource "intersight_power_policy" "power" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value
-      object_type = var.profile_type == "chassis" ? "chassis.Profile" : "server.Profile"
+      moid        = profiles.value.moid
+      object_type = profiles.value.object_type
     }
   }
   dynamic "tags" {

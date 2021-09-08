@@ -44,9 +44,14 @@ variable "org_moid" {
 }
 
 variable "profiles" {
-  default     = []
-  description = "List of Profiles to Assign to the Policy."
-  type        = set(string)
+  default     = {}
+  description = "Map of Profiles to Assign to the Policy."
+  type        = map(object(
+    {
+      moid        = string
+      object_type = string
+    }
+  ))
 }
 
 variable "tags" {

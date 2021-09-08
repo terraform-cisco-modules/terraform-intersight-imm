@@ -23,8 +23,8 @@ resource "intersight_iam_end_point_user_policy" "user_policy" {
   dynamic "profiles" {
     for_each = var.profiles
     content {
-      moid        = profiles.value
-      object_type = "server.Profile"
+      moid        = profiles.value.moid
+      object_type = profiles.value.object_type
     }
   }
   dynamic "tags" {
