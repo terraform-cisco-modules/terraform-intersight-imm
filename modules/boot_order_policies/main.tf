@@ -7,7 +7,7 @@
 resource "intersight_boot_precision_policy" "boot_order" {
   configured_boot_mode     = var.boot_mode
   description              = var.description
-  enforce_uefi_secure_boot = var.boot_secure
+  enforce_uefi_secure_boot = var.enable_secure_boot
   name                     = var.name
   organization {
     moid        = var.org_moid
@@ -16,7 +16,7 @@ resource "intersight_boot_precision_policy" "boot_order" {
   dynamic "boot_devices" {
     for_each = var.boot_devices
     content {
-      additional_properties = boot_devices.value.additional_properties
+      additional_properties = boot_devices.value.additional_properties != "" ? boot_devices.value.additional_properties : ""
       enabled               = boot_devices.value.enabled
       object_type           = boot_devices.value.object_type
       name                  = boot_devices.value.name
