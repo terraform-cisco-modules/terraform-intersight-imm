@@ -16,7 +16,7 @@ resource "intersight_storage_storage_policy" "storage" {
     object_type = "organization.Organization"
   }
   dynamic "m2_virtual_drive" {
-    for_each = var.m2_virtual_drive
+    for_each = var.m2_configuration
     content {
       controller_slot = m2_virtual_drive.value.controller_slot
       enable          = m2_virtual_drive.value.enable
@@ -38,12 +38,12 @@ resource "intersight_storage_storage_policy" "storage" {
       enable      = raid0_drive.value.enable
       object_type = "server.Profile"
       virtual_drive_policy = {
-        access_policy = virtual_drives.value.access_policy
-        drive_cache   = virtual_drives.value.drive_cache
+        access_policy = raid0_drive.value.access_policy
+        drive_cache   = raid0_drive.value.drive_cache
         object_type   = "storage.VirtualDriveConfig"
-        read_policy   = virtual_drives.value.read_policy
-        strip_size    = virtual_drives.value.strip_size
-        write_policy  = virtual_drives.value.write_policy
+        read_policy   = raid0_drive.value.read_policy
+        strip_size    = raid0_drive.value.strip_size
+        write_policy  = raid0_drive.value.write_policy
       }
     }
   }

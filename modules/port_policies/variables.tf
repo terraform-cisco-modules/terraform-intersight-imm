@@ -12,7 +12,7 @@ variable "description" {
 variable "device_model" {
   default     = "UCS-FI-6454"
   description = <<-EOT
-  This field specifies the device model that this Port Policy is being configured for.
+  This field specifies the device model template for the Port Policy.
   * UCS-FI-6454 - The standard 4th generation UCS Fabric Interconnect with 54 ports.
   * UCS-FI-64108 - The expanded 4th generation UCS Fabric Interconnect with 108 ports.
   * unknown - Unknown device type, usage is TBD.

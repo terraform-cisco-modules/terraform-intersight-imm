@@ -18,17 +18,17 @@ resource "intersight_storage_drive_group" "drive_group" {
       drive_type               = automatic_drive_group.value.drive_type
       drives_per_span          = automatic_drive_group.value.drives_per_span
       minimum_drive_size       = automatic_drive_group.value.minimum_drive_size
-      num_dedicated_hot_spares = automatic_drive_group.value.num_dedicated_hot_spares
+      num_dedicated_hot_spares = automatic_drive_group.value.num_dedicated_hot_spares != null ? automatic_drive_group.value.num_dedicated_hot_spares : 0
       number_of_spans          = automatic_drive_group.value.number_of_spans
       object_type              = "storage.ManualDriveGroup"
-      use_remaining_drives     = automatic_drive_group.value.use_remaining_drives
+      use_remaining_drives     = automatic_drive_group.value.use_remaining_drives != null ? automatic_drive_group.value.use_remaining_drives : false
     }
   }
   dynamic "manual_drive_group" {
-    for_each = var.manual_drive_group
+    for_each = var.manual_drive_selection
     content {
       class_id             = "storage.ManualDriveGroup"
-      dedicated_hot_spares = manual_drive_group.value.dedicated_hot_spares
+      dedicated_hot_spares = manual_drive_group.value.dedicated_hot_spares != null ? manual_drive_group.value.dedicated_hot_spares : ""
       object_type          = "storage.ManualDriveGroup"
       span_groups = [
         {
@@ -54,7 +54,7 @@ resource "intersight_storage_drive_group" "drive_group" {
       boot_drive            = virtual_drives.value.boot_drive
       class_id              = "storage.VirtualDriveConfiguration"
       expand_to_available   = virtual_drives.value.expand_to_available
-      name                  = virtual_drives.value.name
+      name                  = virtual_drives.key
       object_type           = "storage.VirtualDriveConfiguration"
       size                  = virtual_drives.value.size
       virtual_drive_policy = [
@@ -62,7 +62,7 @@ resource "intersight_storage_drive_group" "drive_group" {
           additional_properties = ""
           access_policy         = virtual_drives.value.access_policy
           class_id              = "storage.VirtualDrivePolicy"
-          drive_cache           = virtual_drives.value.drive_cache
+          drive_cache           = virtual_drives.value.disk_cache
           object_type           = "storage.VirtualDrivePolicy"
           read_policy           = virtual_drives.value.read_policy
           strip_size            = virtual_drives.value.strip_size

@@ -14,16 +14,10 @@ variable "custom_mode" {
   type        = string
 }
 
-variable "port_id_end" {
-  default     = 4
-  description = "Ending range of the Port Identifier."
-  type        = number
-}
-
-variable "port_id_start" {
-  default     = 1
-  description = "Starting range of the Port Identifier."
-  type        = number
+variable "port_list" {
+  default     = [1, 4]
+  description = "List of Ports to Change the default Port Mode."
+  type        = list(number)
 }
 
 variable "port_policy_moid" {

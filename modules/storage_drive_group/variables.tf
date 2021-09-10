@@ -1,36 +1,54 @@
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 #____________________________________________________________
 #
 # Storage Policy Variables Section.
 #____________________________________________________________
 
 variable "automatic_drive_group" {
-  default     = []
+  default     = {}
   description = <<-EOT
   This drive group is created using automatic drive selection.  This complex property has following sub-properties:
-  * drive_type:(string) Type of drive that should be used for this RAID group.
+  * drive_type - Type of drive that should be used for this RAID group.
     - Any - Any type of drive can be used for virtual drive creation.
     - HDD - Hard disk drives should be used for virtual drive creation.
     - SSD - Solid state drives should be used for virtual drive creation.
-  * drives_per_span:(int) Number of drives within this span group. The minimum number of disks needed in a span group varies based on RAID level. RAID0 requires at least one disk. RAID1 and RAID10 requires at least 2 and in multiples of . RAID5 and RAID50 require at least 3 disks in a span group. RAID6 and RAID60 require atleast 4 disks in a span.
-  * minimum_drive_size:(int) Minimum size of the drive to be used for creating this RAID group.
-  * num_dedicated_hot_spares:(string) Number of dedicated hot spare disks for this RAID group. Allowed value is a comma or hyphen separated number range.
-  * number_of_spans:(int) Number of span groups to be created for this RAID group. Non-nested RAID levels have a single span.
-  * use_remaining_drives:(bool) This flag enables the drive group to use all the remaining drives on the server.
+  * drives_per_span - Number of drives within this span group. The minimum number of disks needed in a span group varies based on RAID level. RAID0 requires at least one disk. RAID1 and RAID10 requires at least 2 and in multiples of . RAID5 and RAID50 require at least 3 disks in a span group. RAID6 and RAID60 require atleast 4 disks in a span.
+  * minimum_drive_size - Minimum size of the drive to be used for creating this RAID group.
+  * num_dedicated_hot_spares - Number of dedicated hot spare disks for this RAID group. Allowed value is a comma or hyphen separated number range.
+  * number_of_spans - Number of span groups to be created for this RAID group. Non-nested RAID levels have a single span.
+  * use_remaining_drives - This flag enables the drive group to use all the remaining drives on the server.
   EOT
-  type        = list(map(string))
+  type = map(object(
+    {
+      drive_type               = string
+      drives_per_span          = number
+      minimum_drive_size       = number
+      num_dedicated_hot_spares = number
+      number_of_spans          = number
+      use_remaining_drives     = bool
+    }
+  ))
 }
 
-variable "manual_drive_group" {
-  default     = []
+variable "manual_drive_selection" {
+  default     = {}
   description = <<-EOT
   This drive group is created by specifying the drive slots to be used. This complex property has following sub-properties:
   * dedicated_hot_spares:(string) A collection of drives to be used as hot spares for this Drive Group.
-  * slots:(string) Collection of local disks that are part of this span group. Allowed value is a comma or hyphen separated number range. The minimum number of disks needed in a span group varies based on RAID level.
+  * drive_array_spans:(string) Collection of local disks that are part of this span group. Allowed value is a comma or hyphen separated number range. The minimum number of disks needed in a span group varies based on RAID level.
     - RAID0 requires at least one disk,
     - RAID1 and RAID10 requires at least 2 and in multiples of 2,
     - RAID5 RAID50 RAID6 and RAID60 require at least 3 disks in a span group.
   EOT
-  type        = list(map(string))
+  type = map(object(
+    {
+      dedicated_hot_spares = optional(string)
+      slots                = string
+    }
+  ))
 }
 
 variable "name" {
@@ -59,12 +77,6 @@ variable "storage_moid" {
   type        = string
 }
 
-variable "profiles" {
-  default     = []
-  description = "List of Profiles to Assign to the Policy."
-  type        = set(string)
-}
-
 variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
@@ -72,7 +84,7 @@ variable "tags" {
 }
 
 variable "virtual_drives" {
-  default     = []
+  default     = {}
   description = <<-EOT
   This complex property has following sub-properties:
   * boot_drive:(bool) This flag enables this virtual drive to be used as a boot drive.
@@ -84,7 +96,7 @@ variable "virtual_drives" {
     - ReadWrite - Enables host to perform read-write on the VD.
     - ReadOnly - Host can only read from the VD.
     - Blocked - Host can neither read nor write to the VD.
-  * drive_cache:(string) Disk cache policy for the virtual drive.
+  * disk_cache:(string) Disk cache policy for the virtual drive.
     - Default - Use platform default drive cache mode.
     - NoChange - Drive cache policy is unchanged.
     - Enable - Enables IO caching on the drive.
@@ -105,13 +117,12 @@ variable "virtual_drives" {
     - WriteBackGoodBbu - Data is stored in the cache, and is only written to the physical drives when space in the cache is needed. Virtual drives requesting this policy fall back to Write Through caching when the battery backup unit (BBU) cannot guarantee the safety of the cache in the event of a power failure.
     - AlwaysWriteBack - With this policy, write caching remains Write Back even if the battery backup unit is defective or discharged.
   EOT
-  type = list(object(
+  type = map(object(
     {
       access_policy       = string
       boot_drive          = string
-      drive_cache         = string
+      disk_cache          = string
       expand_to_available = bool
-      name                = string
       read_policy         = string
       size                = number
       strip_size          = number

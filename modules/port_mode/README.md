@@ -1,21 +1,21 @@
-# port_mode - Intersight UCS Domain Port Policy - Port Mode Terraform Module
+# port_modes - Intersight UCS Domain Port Policy - Port Mode Terraform Module
 
 ## Usage
 
 ```hcl
-module "port_mode" {
+module "port_modes" {
 
-  source = "terraform-cisco-modules/imm/intersight//modules/port_mode"
+  source = "terraform-cisco-modules/imm/intersight//modules/port_modes"
 
   # omitted...
 }
 ```
 
-This module will Configure the Port Mode of a Port Policy in Intersight.
+This module will Configure the Port Modes for a Port Policy in Intersight.
 
 These resources are consumed
 
-* [Port Mode](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_port_mode)
+* [Port Modes](https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/resources/fabric_port_mode)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -43,8 +43,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_custom_mode"></a> [custom\_mode](#input\_custom\_mode) | Custom Port Mode specified for the port range.<br>* FibreChannel - Fibre Channel Port Types.<br>* BreakoutEthernet10G - Breakout Ethernet 10G Port Type.<br>* BreakoutEthernet25G - Breakout Ethernet 25G Port Type. | `string` | `"FibreChannel"` | no |
-| <a name="input_port_id_end"></a> [port\_id\_end](#input\_port\_id\_end) | Ending range of the Port Identifier. | `number` | `4` | no |
-| <a name="input_port_id_start"></a> [port\_id\_start](#input\_port\_id\_start) | Starting range of the Port Identifier. | `number` | `1` | no |
+| <a name="input_port_list"></a> [port\_list](#input\_port\_list) | List of Ports to Change the default Port Mode. | `list(number)` | <pre>[<br>  1,<br>  4<br>]</pre> | no |
 | <a name="input_port_policy_moid"></a> [port\_policy\_moid](#input\_port\_policy\_moid) | A reference to a fabricPortPolicy resource. | `string` | n/a | yes |
 | <a name="input_slot_id"></a> [slot\_id](#input\_slot\_id) | Slot Identifier of the switch. | `number` | `1` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
@@ -53,5 +52,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_moid"></a> [moid](#output\_moid) | UCS Domain Port Policy > Mode Managed Object ID (moid). |
+| <a name="output_moid"></a> [moid](#output\_moid) | Intersight Port Policy > Mode Managed Object ID (moid). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

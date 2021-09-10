@@ -15,17 +15,22 @@ variable "global_hot_spares" {
   type        = string
 }
 
-variable "m2_virtual_drive" {
-  default     = []
+variable "m2_configuration" {
+  default     = {}
   description = <<-EOT
   Virtual Drive configuration for M.2 RAID controller. This complex property has following sub-properties:
-  * controller_slot:(string) Select the M.2 RAID controller slot on which the virtual drive is to be created. For example:
+  * controller_slot - Select the M.2 RAID controller slot on which the virtual drive is to be created. For example:
     - MSTOR-RAID-1 - Virtual drive will be created on the M.2 RAID controller in the first slot.
     - MSTOR-RAID-2 - Virtual drive will be created on the M.2 RAID controller in the second slot, if available.
-    - MSTOR-RAID-1,MSTOR-RAID-2 - Virtual drive will be created on the M.2 RAID controller in both the slots, if available.
-  * enable:(bool) If enabled, this will create a virtual drive on the M.2 RAID controller.
+    - MSTOR-RAID-1,MSTOR-RAID-2 (Default) - Virtual drive will be created on the M.2 RAID controller in both the slots, if available.
+  * enable - Default is true.  If enabled, this will create a virtual drive on the M.2 RAID controller.
   EOT
-  type        = list(map(string))
+  type = map(object(
+    {
+      controller_slot = string
+      enable          = bool
+    }
+  ))
 }
 
 variable "name" {
@@ -57,26 +62,26 @@ variable "profiles" {
 }
 
 variable "raid0_drive" {
-  default     = []
+  default     = {}
   description = <<-EOT
   This complex property has following sub-properties:
-  * drive_slots:(string) The set of drive slots where RAID0 virtual drives must be created.
-  * enable:(bool) If enabled, this will create a RAID0 virtual drive per disk and encompassing the whole disk.
-  * access_policy:(string) Access policy that host has on this virtual drive.
+  * access_policy - Access policy that host has on this virtual drive.
     - Default - Use platform default access mode.
     - ReadWrite - Enables host to perform read-write on the VD.
     - ReadOnly - Host can only read from the VD.
     - Blocked - Host can neither read nor write to the VD.
-  * drive_cache:(string) Disk cache policy for the virtual drive.
+  * drive_cache - Disk cache policy for the virtual drive.
     - Default - Use platform default drive cache mode.
     - NoChange - Drive cache policy is unchanged.
     - Enable - Enables IO caching on the drive.
     - Disable - Disables IO caching on the drive.
-  * read_policy:(string) Read ahead mode to be used to read data from this virtual drive.
+  * drive_slots - The set of drive slots where RAID0 virtual drives must be created.
+  * enable - If enabled, this will create a RAID0 virtual drive per disk and encompassing the whole disk.
+  * read_policy - Read ahead mode to be used to read data from this virtual drive.
     - Default - Use platform default read ahead mode.
     - ReadAhead - Use read ahead mode for the policy.
     - NoReadAhead - Do not use read ahead mode for the policy.
-  * strip_size:(int) Desired strip size - Allowed values are 64KiB, 128KiB, 256KiB, 512KiB, 1024KiB.
+  * strip_size - Desired strip size - Allowed values are 64KiB, 128KiB, 256KiB, 512KiB, 1024KiB.
     - 64 - Number of bytes in a strip is 64 Kibibytes.
     - 128 - Number of bytes in a strip is 128 Kibibytes.
     - 256 - Number of bytes in a strip is 256 Kibibytes.
@@ -88,14 +93,18 @@ variable "raid0_drive" {
     - WriteBackGoodBbu - Data is stored in the cache, and is only written to the physical drives when space in the cache is needed. Virtual drives requesting this policy fall back to Write Through caching when the battery backup unit (BBU) cannot guarantee the safety of the cache in the event of a power failure.
     - AlwaysWriteBack - With this policy, write caching remains Write Back even if the battery backup unit is defective or discharged.
   EOT
-  type        = list(map(string))
+  type = map(object(
+    {
+      access_policy = string
+      drive_cache   = string
+      drive_slots   = string
+      enable        = bool
+      read_policy   = string
+      strip_size    = number
+      write_policy  = string
+    }
+  ))
 }
-
-# variable "retain_policy_virtual_drives" {
-#   default     = true
-#   description = "Retains the virtual drives defined in policy if they exist already. If this flag is false, the existing virtual drives are removed and created again based on virtual drives in the policy."
-#   type        = bool
-# }
 
 variable "tags" {
   default     = []
