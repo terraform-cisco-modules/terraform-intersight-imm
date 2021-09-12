@@ -10,8 +10,8 @@ variable "breakout_port_id" {
 }
 
 variable "port_list" {
-  default     = "5-18"
-  description = "List of Ports to assign to the Server Port Policy."
+  default     = ""
+  description = "String of Ports to assign to the Port Policy."
   type        = string
 }
 

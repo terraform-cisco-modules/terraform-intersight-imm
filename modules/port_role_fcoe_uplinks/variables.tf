@@ -41,9 +41,9 @@ variable "link_control_policy_moid" {
 }
 
 variable "port_list" {
-  default     = [49]
-  description = "List of Ports to Assign to the LAN Uplink Policy."
-  type        = set(string)
+  default     = ""
+  description = "String of Ports to assign to the Port Policy."
+  type        = string
 }
 
 variable "port_policy_moid" {

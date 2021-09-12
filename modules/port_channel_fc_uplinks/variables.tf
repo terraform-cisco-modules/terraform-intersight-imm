@@ -1,12 +1,22 @@
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 #___________________________________________________________________________
 #
 # Intersight Port Policy - FC Uplink Port Channel Policy Variables Section
 #___________________________________________________________________________
 
-variable "breakout_sw_port" {
-  default     = 0
-  description = "Breakout port Identifier of the Switch Interface.  When a port is not configured as a breakout port, the aggregatePortId is set to 0, and unused.  When a port is configured as a breakout port, the 'aggregatePortId' port number as labeled on the equipment, e.g. the id of the port on the switch."
-  type        = number
+variable "admin_speed" {
+  default     = "16Gbps"
+  description = <<-EOT
+  Admin configured speed for the port.
+  * Auto - Admin configurable speed AUTO.
+  * 8Gbps - Admin configurable speed 8Gbps.
+  * 16Gbps - (default).  Admin configurable speed 16Gbps.
+  * 32Gbps - Admin configurable speed 32Gbps.
+  EOT
+  type        = string
 }
 
 variable "fill_pattern" {
@@ -19,39 +29,27 @@ variable "fill_pattern" {
   type        = string
 }
 
-variable "san_uplink_pc_ports" {
-  default     = [1, 2]
-  description = "List of Ports to Assign to the SAN Port-Channel Policy."
-  type        = set(string)
+variable "interfaces" {
+  default = []
+  description = "List of Ports to Assign to the LAN Port-Channel Policy."
+  type        = list(object(
+    {
+      breakout_port_id = optional(number)
+      port_id          = number
+      slot_id          = number
+    }
+  ))
 }
 
-variable "san_uplink_pc_id" {
+variable "pc_id" {
   default     = 1
   description = "Unique Identifier of the port-channel, local to this switch."
-  type        = string
-}
-
-variable "san_uplink_speed" {
-  default     = "16Gbps"
-  description = <<-EOT
-  Admin configured speed for the port.
-  * Auto - Admin configurable speed AUTO.
-  * 8Gbps - Admin configurable speed 8Gbps.
-  * 16Gbps - (default).  Admin configurable speed 16Gbps.
-  * 32Gbps - Admin configurable speed 32Gbps.
-  EOT
-  type        = string
+  type        = number
 }
 
 variable "port_policy_moid" {
   description = " A reference to a fabricPortPolicy resource."
   type        = string
-}
-
-variable "slot_id" {
-  default     = 1
-  description = "Slot Identifier of the Switch/FEX/Chassis Interface."
-  type        = number
 }
 
 variable "tags" {

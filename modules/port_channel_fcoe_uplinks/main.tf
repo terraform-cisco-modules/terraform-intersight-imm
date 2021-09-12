@@ -23,11 +23,11 @@ resource "intersight_fabric_fcoe_uplink_pc_role" "port_channel" {
     }
   }
   dynamic "ports" {
-    for_each = var.port_list
+    for_each = var.interfaces
     content {
-      port_id           = ports.value
-      aggregate_port_id = var.breakout_port_id
-      slot_id           = var.slot_id
+      aggregate_port_id = ports.value.breakout_port_id
+      port_id           = ports.value.port_id
+      slot_id           = ports.value.slot_id
     }
   }
   dynamic "tags" {

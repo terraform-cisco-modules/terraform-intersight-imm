@@ -32,9 +32,9 @@ variable "fill_pattern" {
 }
 
 variable "port_list" {
-  default     = [1]
-  description = "List of Ports to Assign to the SAN Uplink Policy."
-  type        = set(string)
+  default     = ""
+  description = "String of Ports to assign to the Port Policy."
+  type        = string
 }
 
 variable "port_policy_moid" {

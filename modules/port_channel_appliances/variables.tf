@@ -1,3 +1,7 @@
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 #___________________________________________________________________
 #
 # Intersight Port Policy - Port-Channel Appliance Variables Section
@@ -17,12 +21,6 @@ variable "admin_speed" {
   type        = string
 }
 
-variable "breakout_port_id" {
-  default     = 0
-  description = "Breakout port Identifier of the Switch Interface.  When a port is not configured as a breakout port, the aggregatePortId is set to 0, and unused.  When a port is configured as a breakout port, the 'aggregatePortId' port number as labeled on the equipment, e.g. the id of the port on the switch."
-  type        = number
-}
-
 variable "ethernet_network_control_policy_moid" {
   default     = []
   description = "A reference to a fabricEthNetworkControlPolicy resource."
@@ -35,10 +33,16 @@ variable "ethernet_network_group_policy_moid" {
   type        = set(string)
 }
 
-variable "pc_id" {
-  default     = 1
-  description = "Unique Identifier of the port-channel, local to this switch."
-  type        = number
+variable "interfaces" {
+  default = []
+  description = "List of Ports to Assign to the LAN Port-Channel Policy."
+  type        = list(object(
+    {
+      breakout_port_id = optional(number)
+      port_id          = number
+      slot_id          = number
+    }
+  ))
 }
 
 variable "mode" {
@@ -51,9 +55,10 @@ variable "mode" {
   type        = string
 }
 
-variable "port_list" {
-  description = "List of Ports to Assign to the LAN Uplink Policy."
-  type        = set(string)
+variable "pc_id" {
+  default     = 1
+  description = "Unique Identifier of the port-channel, local to this switch."
+  type        = number
 }
 
 variable "port_policy_moid" {
@@ -73,12 +78,6 @@ variable "priority" {
   * Silver - QoS Priority for Silver traffic.
   EOT
   type        = string
-}
-
-variable "slot_id" {
-  default     = 1
-  description = "Slot Identifier of the Switch/FEX/Chassis Interface."
-  type        = number
 }
 
 variable "tags" {
