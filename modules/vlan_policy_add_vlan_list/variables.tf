@@ -9,15 +9,21 @@ variable "auto_allow_on_uplinks" {
   type        = bool
 }
 
-variable "is_native" {
+variable "multicast_policy_moid" {
+  description = "Multicast Policy moid map."
+  type        = string
+}
+
+variable "name" {
+  default     = "VLAN"
+  description = "Prefix Name for VLANs."
+  type        = string
+}
+
+variable "native_vlan" {
   default     = false
   description = "Used to determine if this VLAN should be untagged on the interfaces."
   type        = bool
-}
-
-variable "multicast_moid" {
-  description = "Multicast Policy moid map."
-  type        = string
 }
 
 variable "tags" {
@@ -28,12 +34,6 @@ variable "tags" {
 
 variable "vlan_list" {
   description = "List of VLAN ID's to add to a VLAN Policy.  This string can contain ranges and comma seperated values.  Like \"2-10,21-30\""
-  type        = string
-}
-
-variable "vlan_prefix" {
-  default     = "VLAN"
-  description = "Prefix Name for VLANs."
   type        = string
 }
 
