@@ -15,8 +15,8 @@ resource "intersight_storage_drive_group" "drive_group" {
     for_each = var.automatic_drive_group
     content {
       class_id                 = "storage.ManualDriveGroup"
-      drive_type               = automatic_drive_group.value.drive_type
       drives_per_span          = automatic_drive_group.value.drives_per_span
+      drive_type               = automatic_drive_group.value.drive_type
       minimum_drive_size       = automatic_drive_group.value.minimum_drive_size
       num_dedicated_hot_spares = automatic_drive_group.value.num_dedicated_hot_spares != null ? automatic_drive_group.value.num_dedicated_hot_spares : 0
       number_of_spans          = automatic_drive_group.value.number_of_spans
@@ -25,19 +25,12 @@ resource "intersight_storage_drive_group" "drive_group" {
     }
   }
   dynamic "manual_drive_group" {
-    for_each = var.manual_drive_selection
+    for_each = var.manual_drive_group
     content {
       class_id             = "storage.ManualDriveGroup"
       dedicated_hot_spares = manual_drive_group.value.dedicated_hot_spares != null ? manual_drive_group.value.dedicated_hot_spares : ""
       object_type          = "storage.ManualDriveGroup"
-      span_groups = [
-        {
-          additional_properties = ""
-          class_id              = "storage.SpanDrives"
-          object_type           = "storage.SpanDrives"
-          slots                 = manual_drive_group.value.slots
-        }
-      ]
+      span_groups          = manual_drive_group.value.drive_array_spans
     }
   }
   dynamic "tags" {
@@ -65,7 +58,15 @@ resource "intersight_storage_drive_group" "drive_group" {
           drive_cache           = virtual_drives.value.disk_cache
           object_type           = "storage.VirtualDrivePolicy"
           read_policy           = virtual_drives.value.read_policy
-          strip_size            = virtual_drives.value.strip_size
+          strip_size            = length(
+          regexall("128KiB", virtual_drives.value.strip_size)
+        ) > 0 ? 128 : length(
+          regexall("256KiB", virtual_drives.value.strip_size)
+        ) > 0 ? 256 : length(
+          regexall("512KiB", virtual_drives.value.strip_size)
+        ) > 0 ? 512 : length(
+          regexall("1MiB", virtual_drives.value.strip_size)
+        ) > 0 ? 1024 : 64
           write_policy          = virtual_drives.value.write_policy
         }
       ]

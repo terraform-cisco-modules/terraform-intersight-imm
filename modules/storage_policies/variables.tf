@@ -67,20 +67,20 @@ variable "raid0_drive" {
   This complex property has following sub-properties:
   * access_policy - Access policy that host has on this virtual drive.
     - Default - Use platform default access mode.
-    - ReadWrite - Enables host to perform read-write on the VD.
-    - ReadOnly - Host can only read from the VD.
     - Blocked - Host can neither read nor write to the VD.
+    - ReadOnly - Host can only read from the VD.
+    - ReadWrite - Enables host to perform read-write on the VD.
   * drive_cache - Disk cache policy for the virtual drive.
     - Default - Use platform default drive cache mode.
-    - NoChange - Drive cache policy is unchanged.
-    - Enable - Enables IO caching on the drive.
     - Disable - Disables IO caching on the drive.
+    - Enable - Enables IO caching on the drive.
+    - NoChange - Drive cache policy is unchanged.
   * drive_slots - The set of drive slots where RAID0 virtual drives must be created.
   * enable - If enabled, this will create a RAID0 virtual drive per disk and encompassing the whole disk.
   * read_policy - Read ahead mode to be used to read data from this virtual drive.
     - Default - Use platform default read ahead mode.
-    - ReadAhead - Use read ahead mode for the policy.
     - NoReadAhead - Do not use read ahead mode for the policy.
+    - ReadAhead - Use read ahead mode for the policy.
   * strip_size - Desired strip size - Allowed values are 64KiB, 128KiB, 256KiB, 512KiB, 1024KiB.
     - 64 - Number of bytes in a strip is 64 Kibibytes.
     - 128 - Number of bytes in a strip is 128 Kibibytes.
@@ -89,9 +89,9 @@ variable "raid0_drive" {
     - 1024 - Number of bytes in a strip is 1024 Kibibytes or 1 Mebibyte.
   * write_policy:(string) Write mode to be used to write data to this virtual drive.
     - Default - Use platform default write mode.
-    - WriteThrough - Data is written through the cache and to the physical drives. Performance is improved, because subsequent reads of that data can be satisfied from the cache.
-    - WriteBackGoodBbu - Data is stored in the cache, and is only written to the physical drives when space in the cache is needed. Virtual drives requesting this policy fall back to Write Through caching when the battery backup unit (BBU) cannot guarantee the safety of the cache in the event of a power failure.
     - AlwaysWriteBack - With this policy, write caching remains Write Back even if the battery backup unit is defective or discharged.
+    - WriteBackGoodBbu - Data is stored in the cache, and is only written to the physical drives when space in the cache is needed. Virtual drives requesting this policy fall back to Write Through caching when the battery backup unit (BBU) cannot guarantee the safety of the cache in the event of a power failure.
+    - WriteThrough - Data is written through the cache and to the physical drives. Performance is improved, because subsequent reads of that data can be satisfied from the cache.
   EOT
   type = map(object(
     {
@@ -116,9 +116,9 @@ variable "unused_disks_state" {
   default     = "NoChange"
   description = <<-EOT
   State to which disks, not used in this policy, are to be moved.
+  * Jbod - JBOD state where the disks start showing up to Host OS.
   * NoChange - (Default) Drive state will not be modified by Storage Policy.
   * UnconfiguredGood - Unconfigured good state -ready to be added in a RAID group.
-  * Jbod - JBOD state where the disks start showing up to Host OS.
   EOT
   type        = string
 }
