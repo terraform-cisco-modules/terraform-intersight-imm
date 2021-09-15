@@ -5,11 +5,11 @@
 #________________________________________________________________________________________________
 
 resource "intersight_fabric_appliance_pc_role" "port_channel" {
-  admin_speed       = var.admin_speed
+  admin_speed = var.admin_speed
   # aggregate_port_id = var.breakout_port_id
-  mode              = var.mode
-  pc_id             = var.pc_id
-  priority          = var.priority
+  mode     = var.mode
+  pc_id    = var.pc_id
+  priority = var.priority
   port_policy {
     moid = var.port_policy_moid
   }

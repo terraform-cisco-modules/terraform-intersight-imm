@@ -24,7 +24,7 @@ variable "admin_speed" {
 variable "interfaces" {
   default     = []
   description = "List of Ports to Assign to the LAN Port-Channel Policy."
-  type        = list(object(
+  type = list(object(
     {
       breakout_port_id = optional(number)
       port_id          = number

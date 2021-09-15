@@ -34,9 +34,9 @@ variable "ethernet_network_group_policy_moid" {
 }
 
 variable "interfaces" {
-  default = []
+  default     = []
   description = "List of Ports to Assign to the LAN Port-Channel Policy."
-  type        = list(object(
+  type = list(object(
     {
       breakout_port_id = optional(number)
       port_id          = number

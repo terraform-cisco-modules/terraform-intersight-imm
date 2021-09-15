@@ -42,15 +42,7 @@ resource "intersight_storage_storage_policy" "storage" {
         drive_cache   = raid0_drive.value.drive_cache
         object_type   = "storage.VirtualDriveConfig"
         read_policy   = raid0_drive.value.read_policy
-        strip_size    = length(
-          regexall("128KiB", raid0_drive.value.strip_size)
-        ) > 0 ? 128 : length(
-          regexall("256KiB", raid0_drive.value.strip_size)
-        ) > 0 ? 256 : length(
-          regexall("512KiB", raid0_drive.value.strip_size)
-        ) > 0 ? 512 : length(
-          regexall("1MiB", raid0_drive.value.strip_size)
-        ) > 0 ? 1024 : 64
+        strip_size    = raid0_drive.value.strip_size
       }
     }
   }

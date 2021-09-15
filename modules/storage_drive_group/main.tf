@@ -58,15 +58,7 @@ resource "intersight_storage_drive_group" "drive_group" {
           drive_cache           = virtual_drives.value.disk_cache
           object_type           = "storage.VirtualDrivePolicy"
           read_policy           = virtual_drives.value.read_policy
-          strip_size            = length(
-          regexall("128KiB", virtual_drives.value.strip_size)
-        ) > 0 ? 128 : length(
-          regexall("256KiB", virtual_drives.value.strip_size)
-        ) > 0 ? 256 : length(
-          regexall("512KiB", virtual_drives.value.strip_size)
-        ) > 0 ? 512 : length(
-          regexall("1MiB", virtual_drives.value.strip_size)
-        ) > 0 ? 1024 : 64
+          strip_size            = virtual_drives.value.strip_size
           write_policy          = virtual_drives.value.write_policy
         }
       ]
