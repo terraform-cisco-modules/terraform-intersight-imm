@@ -37,13 +37,15 @@ resource "intersight_storage_storage_policy" "storage" {
       drive_slots = raid0_drive.value.drive_slots
       enable      = raid0_drive.value.enable
       object_type = "server.Profile"
-      virtual_drive_policy = {
-        access_policy = raid0_drive.value.access_policy
-        drive_cache   = raid0_drive.value.drive_cache
-        object_type   = "storage.VirtualDriveConfig"
-        read_policy   = raid0_drive.value.read_policy
-        strip_size    = raid0_drive.value.strip_size
-      }
+      virtual_drive_policy = [
+        {
+          access_policy = raid0_drive.value.access_policy
+          drive_cache   = raid0_drive.value.drive_cache
+          object_type   = "storage.VirtualDriveConfig"
+          read_policy   = raid0_drive.value.read_policy
+          strip_size    = raid0_drive.value.strip_size
+        }
+      ]
     }
   }
   dynamic "tags" {

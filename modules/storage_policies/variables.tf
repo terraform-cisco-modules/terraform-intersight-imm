@@ -82,7 +82,7 @@ variable "raid0_drive" {
     - NoReadAhead - Do not use read ahead mode for the policy.
     - ReadAhead - Use read ahead mode for the policy.
   * strip_size - Desired strip size - Allowed values are 64KiB, 128KiB, 256KiB, 512KiB, 1024KiB.
-    - 64 - Number of bytes in a strip is 64 Kibibytes.
+    - 64 - (Defualt)  Number of bytes in a strip is 64 Kibibytes.
     - 128 - Number of bytes in a strip is 128 Kibibytes.
     - 256 - Number of bytes in a strip is 256 Kibibytes.
     - 512 - Number of bytes in a strip is 512 Kibibytes.
