@@ -3,10 +3,10 @@ locals {
     regexall("-", var.port_list)) > 0 ? tolist(
     split(",", var.port_list)
   ) : length(regexall(",", var.port_list)) > 0 ? tolist(split(",", var.port_list)) : [var.port_list]
-  port_lists = length(local.port_split) == 1 ? local.port_split : flatten(
+  port_lists = length(regexall("(,|-)", jsonencode(var.port_list))) > 0 ? flatten(
     [for s in local.port_split : length(regexall("-", s)) > 0 ? [
       for v in range(tonumber(element(split("-", s), 0)), (tonumber(element(split("-", s), 1)) + 1)) : tonumber(v)] : [s]
-  ])
+  ]) : local.port_split
   port_list = toset(local.port_lists)
 }
 

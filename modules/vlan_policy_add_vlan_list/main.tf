@@ -3,10 +3,10 @@ locals {
     regexall("-", var.vlan_list)) > 0 ? tolist(
     split(",", var.vlan_list)
   ) : length(regexall(",", var.vlan_list)) > 0 ? tolist(split(",", var.vlan_list)) : [var.vlan_list]
-  vlan_lists = length(local.vlan_split) == 1 ? local.vlan_split : flatten(
+  vlan_lists = length(regexall("(,|-)", jsonencode(var.vlan_list))) > 0 ? flatten(
     [for s in local.vlan_split : length(regexall("-", s)) > 0 ? [
       for v in range(tonumber(element(split("-", s), 0)), (tonumber(element(split("-", s), 1)) + 1)) : tonumber(v)] : [s]
-  ])
+  ]) : local.vlan_split
   vlan_list = toset(local.vlan_lists)
 }
 
