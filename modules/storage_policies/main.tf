@@ -39,11 +39,14 @@ resource "intersight_storage_storage_policy" "storage" {
       object_type = "server.Profile"
       virtual_drive_policy = [
         {
-          access_policy = raid0_drive.value.access_policy
-          drive_cache   = raid0_drive.value.drive_cache
-          object_type   = "storage.VirtualDriveConfig"
-          read_policy   = raid0_drive.value.read_policy
-          strip_size    = raid0_drive.value.strip_size
+          additional_properties = ""
+          access_policy         = raid0_drive.value.access_policy
+          class_id              = "storage.VirtualDriveConfig"
+          drive_cache           = raid0_drive.value.drive_cache
+          object_type           = "storage.VirtualDriveConfig"
+          read_policy           = raid0_drive.value.read_policy
+          strip_size            = raid0_drive.value.strip_size
+          write_policy          = raid0_drive.value.write_policy
         }
       ]
     }
