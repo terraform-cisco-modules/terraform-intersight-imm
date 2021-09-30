@@ -102,6 +102,41 @@ variable "snmp_community_access" {
   type        = string
 }
 
+variable "snmp_community_string_1" {
+  default     = ""
+  description = "SNMP Trap Destination Community."
+  sensitive   = true
+  type        = string
+}
+
+variable "snmp_community_string_2" {
+  default     = ""
+  description = "SNMP Trap Destination Community."
+  sensitive   = true
+  type        = string
+}
+
+variable "snmp_community_string_3" {
+  default     = ""
+  description = "SNMP Trap Destination Community."
+  sensitive   = true
+  type        = string
+}
+
+variable "snmp_community_string_4" {
+  default     = ""
+  description = "SNMP Trap Destination Community."
+  sensitive   = true
+  type        = string
+}
+
+variable "snmp_community_string_5" {
+  default     = ""
+  description = "SNMP Trap Destination Community."
+  sensitive   = true
+  type        = string
+}
+
 variable "snmp_engine_input_id" {
   default     = ""
   description = "Unique string to identify the device for administration purpose. This is generated from the SNMP Input Engine ID if it is already defined, else it is derived from the BMC serial number."

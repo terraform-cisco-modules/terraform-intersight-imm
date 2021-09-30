@@ -1,10 +1,10 @@
-#________________________________________________________________________
+#________________________________________________________________________________________
 #
-# Intersight Operating System Software Configuration Utility (SCU)
-# GUI Location: Software Repository > SCU Links > Add SCU Link
-#________________________________________________________________________
+# Intersight Operating System Configuration File
+# GUI Location: Software Repository > OS Configuration Files > Add OS Configuration File
+#________________________________________________________________________________________
 
-resource "intersight_firmware_server_configuration_utility_distributable" "scu" {
+resource "intersight_os_configuration_file" "config" {
   description   = var.description
   import_action = var.import_action
   md5sum        = var.md5sum
@@ -14,7 +14,7 @@ resource "intersight_firmware_server_configuration_utility_distributable" "scu" 
     moid        = var.org_moid
     object_type = "organization.Organization"
   }
-  release_notes_url     = var.release_notes_url
+  release_notes_url = var.release_notes_url
   sha512sum             = var.sha512sum
   size                  = var.size
   software_advisory_url = var.software_advisory_url
@@ -37,7 +37,7 @@ resource "intersight_firmware_server_configuration_utility_distributable" "scu" 
   dynamic "release" {
     for_each = var.release
     content {
-      moid = release.value
+      moid        = release.value
       # object_type = ??
     }
   }

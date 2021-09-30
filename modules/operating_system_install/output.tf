@@ -1,9 +1,9 @@
-#____________________________________________________________
+#_______________________________________________________________
 #
-# Collect the moid of the Flow Control Policy as an Output
-#____________________________________________________________
+# Collect the moid of the Operating System Install as an Output
+#_______________________________________________________________
 
 output "moid" {
-  description = "Flow Control Policy Managed Object ID (moid)."
-  value       = intersight_fabric_flow_control_policy.flow_control.moid
+  description = "Operating System Install Managed Object ID (moid)."
+  value       = intersight_os_install.install.moid
 }

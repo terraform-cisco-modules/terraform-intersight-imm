@@ -3,6 +3,24 @@
 # Flow Control Policy Variables Section.
 #____________________________________________________________
 
+variable "answers" {
+  default = {
+    default = {
+      ip_config_type = "DHCP"
+    }
+  }
+  description = <<-EOT
+  * ip_config_type - IP configuration type. Values are Static or Dynamic configuration of IP.In case of static IP configuration, IP address, gateway and other details needto be populated. In case of dynamic the IP configuration is obtained dynamicallyfrom DHCP.
+    - DHCP - (Default).  In case of dynamic IP configuration, the IP address, netmask and gateway detailsare obtained from DHCP.
+    - static - In case of static IP configuraton, provide the details such as IP address, netmask, and gateway.
+  EOT
+  type = map(object(
+    {
+      ip_config_type = string
+    }
+  ))
+}
+
 variable "description" {
   default     = ""
   description = "Description for the Policy."
@@ -10,17 +28,25 @@ variable "description" {
 }
 
 variable "name" {
-  default     = "flow_control"
+  default     = "install"
   description = "Name for the Policy."
   type        = string
 }
 
-variable "priority_flow_control_mode" {
-  default     = "auto"
+variable "install_method" {
+  default     = "vMedia"
   description = <<-EOT
-  Configure PFC on a per-port basis to enable the no-drop behavior for the CoS as defined by the active network qos policy.
-  * auto - Enables the no-drop CoS values to be advertised by the DCBXP and negotiated with the peer.  A successful negotiation enables PFC on the no-drop CoS.  Any failures because of a mismatch in the capability of peers causes the PFC not to be enabled.
-  * on - Enables PFC on the local port regardless of the capability of the peers.
+  The install method to be used for OS installation - vMedia, iPXE. Only vMedia is supported as of now.
+  * vMedia - OS image is mounted as vMedia in target server for OS installation.
+  EOT
+  type        = string
+}
+
+variable "install_target" {
+  default     = "vMedia"
+  description = <<-EOT
+  Install Target on which Operating system is installed.
+  * vMedia - OS image is mounted as vMedia in target server for OS installation.
   EOT
   type        = string
 }
@@ -54,4 +80,10 @@ variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
+}
+
+variable "wait_for_completion" {
+  default     = false
+  description = "This model object can trigger workflows. Use this option to wait for all running workflows to reach a complete state."
+  type        = bool
 }

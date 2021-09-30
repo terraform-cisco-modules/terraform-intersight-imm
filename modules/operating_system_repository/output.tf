@@ -1,9 +1,9 @@
-#____________________________________________________________
+#__________________________________________________________________
 #
-# Collect the moid of the Flow Control Policy as an Output
-#____________________________________________________________
+# Collect the moid of the Operating System Repository as an Output
+#__________________________________________________________________
 
 output "moid" {
-  description = "Flow Control Policy Managed Object ID (moid)."
-  value       = intersight_fabric_flow_control_policy.flow_control.moid
+  description = "Operating System Repository Managed Object ID (moid)."
+  value       = intersight_softwarerepository_operating_system_file.repository.moid
 }

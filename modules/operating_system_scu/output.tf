@@ -1,9 +1,9 @@
-#____________________________________________________________
+#____________________________________________________________________________________________
 #
-# Collect the moid of the Flow Control Policy as an Output
-#____________________________________________________________
+# Collect the moid of the Operating System Software Configuration Utility (SCU) as an Output
+#____________________________________________________________________________________________
 
 output "moid" {
-  description = "Flow Control Policy Managed Object ID (moid)."
-  value       = intersight_fabric_flow_control_policy.flow_control.moid
+  description = "Operating System Software Configuration Utility (SCU) Managed Object ID (moid)."
+  value       = intersight_firmware_server_configuration_utility_distributable.scu.moid
 }
