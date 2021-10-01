@@ -3,6 +3,12 @@
 # Local User Policy Variables Section.
 #____________________________________________________________
 
+variable "always_send_user_password" {
+  default     = false
+  description = "User password will always be sent to endpoint device. If the option is not selected, then user password will be sent to endpoint device for new users and if user password is changed for existing users."
+  type        = bool
+}
+
 variable "description" {
   default     = ""
   description = "Description for the Policy."
@@ -18,12 +24,6 @@ variable "enable_password_expiry" {
 variable "enforce_strong_password" {
   default     = true
   description = "Enables a strong password policy. Strong password requirements: A. The password must have a minimum of 8 and a maximum of 20 characters. B. The password must not contain the User's Name. C. The password must contain characters from three of the following four categories. 1) English uppercase characters (A through Z). 2) English lowercase characters (a through z). 3) Base 10 digits (0 through 9). 4) Non-alphabetic characters (! , @, #, $, %, ^, &, *, -, _, +, =)."
-  type        = bool
-}
-
-variable "force_send_password" {
-  default     = false
-  description = "User password will always be sent to endpoint device. If the option is not selected, then user password will be sent to endpoint device for new users and if user password is changed for existing users."
   type        = bool
 }
 

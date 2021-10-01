@@ -10,7 +10,7 @@ resource "intersight_iam_end_point_user_policy" "user_policy" {
   password_properties {
     enable_password_expiry   = var.enable_password_expiry
     enforce_strong_password  = var.enforce_strong_password
-    force_send_password      = var.force_send_password
+    force_send_password      = var.always_send_user_password
     grace_period             = var.grace_period
     notification_period      = var.notification_period
     password_expiry_duration = var.password_expiry_duration
