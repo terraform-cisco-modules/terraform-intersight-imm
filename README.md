@@ -51,7 +51,7 @@ This set of modules support creating the following Policy Types:
 
 4. Boot Order.  See Module boot_order_policies and the example in the examples/ucs_profiles directory of boot_order_policies.tf.
 
-5. Certificate Management (Under Developement).  See Module certificate_management_policies and the example in the examples/ucs_profiles directory of certificate_management_policies.tf.
+5. Certificate Management.  See Module certificate_management_policies and the example in the examples/ucs_profiles directory of certificate_management_policies.tf.
 
 6. Container Runtime.  See Module container_runtime_policies and the example in the examples/ucs_profiles directory of container_runtime_policies.tf.
 
