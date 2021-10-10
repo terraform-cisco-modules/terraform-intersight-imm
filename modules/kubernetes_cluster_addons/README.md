@@ -44,7 +44,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_addons"></a> [addons](#input\_addons) | The Addon Policy Managed Object ID's to add to the Kubernetes Cluster. | `list(map(string))` | `[]` | no |
-| <a name="input_iks_cluster_moid"></a> [iks\_cluster\_moid](#input\_iks\_cluster\_moid) | A reference to a kubernetes Cluster resource moid. | `string` | n/a | yes |
+| <a name="input_kubernetes_cluster_moid"></a> [kubernetes\_cluster\_moid](#input\_kubernetes\_cluster\_moid) | A reference to a kubernetes Cluster resource moid. | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"k8s_addon"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |

@@ -44,8 +44,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description of the policy. | `string` | `""` | no |
-| <a name="input_k8s_version"></a> [k8s\_version](#input\_k8s\_version) | A reference to a kubernetesVersion resource. | `string` | `"1.19.5"` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name of the concrete policy. | `string` | `"k8s_version"` | no |
+| <a name="input_kubernetes_version"></a> [kubernetes\_version](#input\_kubernetes\_version) | A reference to a kubernetesVersion resource. | `string` | `"v1.19.5"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the concrete policy. | `string` | `"kubernetes_version"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of key/value pair Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 

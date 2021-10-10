@@ -10,7 +10,7 @@ resource "intersight_uuidpool_pool" "uuid_pool" {
   name             = var.name
   prefix           = var.prefix
   dynamic "uuid_suffix_blocks" {
-    for_each = var.uuid_suffix_blocks
+    for_each = var.uuid_blocks
     content {
       object_type = "uuidpool.UuidBlock"
       from        = uuid_suffix_blocks.value.from

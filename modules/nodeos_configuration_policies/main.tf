@@ -6,8 +6,8 @@
 
 resource "intersight_kubernetes_sys_config_policy" "nodeos_config" {
   description     = var.description
-  dns_domain_name = var.domain_name
-  dns_servers     = var.dns_servers_v4
+  dns_domain_name = var.dns_suffix
+  dns_servers     = var.dns_servers
   name            = var.name
   ntp_servers     = var.ntp_servers
   timezone        = var.timezone

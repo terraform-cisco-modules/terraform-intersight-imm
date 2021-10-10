@@ -44,10 +44,10 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_cpu"></a> [cpu](#input\_cpu) | umber of CPUs allocated to virtual machine.  Range is 1-40. | `number` | `4` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the infrastructure provider. | `string` | `""` | no |
-| <a name="input_disk_size"></a> [disk\_size](#input\_disk\_size) | Ephemeral disk capacity to be provided with units example - 10 for 10 Gigabytes. | `number` | `40` | no |
 | <a name="input_memory"></a> [memory](#input\_memory) | Virtual machine memory defined in mebibytes (MiB).  Range is 1-4177920. | `number` | `16384` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of an Kubernetes Virtual Machine Instance Type Policy mapped to this provider. | `string` | `"k8s_vm_instance_type"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
+| <a name="input_system_disk_size"></a> [system\_disk\_size](#input\_system\_disk\_size) | Ephemeral disk capacity to be provided with units example - 10 for 10 Gigabytes. | `number` | `40` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of key/value pair Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs

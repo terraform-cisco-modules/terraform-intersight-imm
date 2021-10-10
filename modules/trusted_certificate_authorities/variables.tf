@@ -22,7 +22,7 @@ variable "org_moid" {
 
 variable "root_ca_registries" {
   default     = []
-  description = "List of root CA certificates to assign to the policy."
+  description = "The list of root CA certificates to trust."
   type        = list(string)
 }
 
@@ -34,6 +34,6 @@ variable "tags" {
 
 variable "unsigned_registries" {
   default     = []
-  description = "List of unsigned registries to assign to the policy."
+  description = "The list of unsigned registries to allow docker trust."
   type        = list(string)
 }

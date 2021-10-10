@@ -43,8 +43,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_dns_servers_v4"></a> [dns\_servers\_v4](#input\_dns\_servers\_v4) | DNS Servers for the Kubernetes Node OS Configuration Policy. | `list(string)` | <pre>[<br>  "208.67.220.220",<br>  "208.67.222.222"<br>]</pre> | no |
-| <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Domain Name for the Kubernetes Node OS Configuration Policy. | `string` | `"example.com"` | no |
+| <a name="input_dns_servers"></a> [dns\_servers](#input\_dns\_servers) | DNS Servers for the Kubernetes Node OS Configuration Policy. | `list(string)` | <pre>[<br>  "208.67.220.220",<br>  "208.67.222.222"<br>]</pre> | no |
+| <a name="input_dns_suffix"></a> [dns\_suffix](#input\_dns\_suffix) | Domain Name for the Kubernetes Node OS Configuration Policy. | `string` | `"example.com"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"k8s_nodeos_config"` | no |
 | <a name="input_ntp_servers"></a> [ntp\_servers](#input\_ntp\_servers) | NTP Servers for the Kubernetes Node OS Configuration Policy. | `list(string)` | <pre>[<br>  "time-a-g.nist.gov",<br>  "time-b-g.nist.gov"<br>]</pre> | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |

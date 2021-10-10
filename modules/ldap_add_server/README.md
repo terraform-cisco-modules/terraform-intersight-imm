@@ -43,8 +43,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_ldap_policy_moid"></a> [ldap\_policy\_moid](#input\_ldap\_policy\_moid) | A reference to a iamLdapPolicy resource. | `string` | n/a | yes |
-| <a name="input_ldap_port"></a> [ldap\_port](#input\_ldap\_port) | LDAP Server Port for connection establishment. | `number` | `389` | no |
-| <a name="input_ldap_server"></a> [ldap\_server](#input\_ldap\_server) | LDAP Server Address, can be IP address or hostname. | `string` | n/a | yes |
+| <a name="input_port"></a> [port](#input\_port) | LDAP Server Port for connection establishment. | `number` | `389` | no |
+| <a name="input_server"></a> [server](#input\_server) | LDAP Server Address, can be IP address or hostname. | `string` | n/a | yes |
 
 ## Outputs
 

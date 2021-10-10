@@ -15,7 +15,7 @@ variable "enabled" {
   type        = bool
 }
 
-variable "min_severity" {
+variable "minimum_severity" {
   default     = "critical"
   description = <<-EOT
   Minimum fault severity level to receive email notifications. Email notifications are sent for all faults whose severity is equal to or greater than the chosen level.
@@ -68,13 +68,13 @@ variable "smtp_port" {
   type        = number
 }
 
-variable "smtp_recipients" {
+variable "mail_alert_recipients" {
   default     = []
   description = "List of Emails to send alerts to."
   type        = list(string)
 }
 
-variable "smtp_server" {
+variable "smtp_server_address" {
   description = "IP address or hostname of the SMTP server. The SMTP server is used by the managed device to send email notifications."
   type        = string
 }

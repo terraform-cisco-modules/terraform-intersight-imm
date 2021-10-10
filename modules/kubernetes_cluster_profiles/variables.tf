@@ -22,7 +22,7 @@ variable "cert_config" {
   type        = list(map(string))
 }
 
-variable "container_runtime_config" {
+variable "container_runtime_moid" {
   default     = ""
   description = "MOID for the Runtime Policy that is being consumed."
   type        = string
@@ -39,7 +39,7 @@ variable "ip_pool_moid" {
   type        = string
 }
 
-variable "load_balancer" {
+variable "load_balancer_count" {
   default     = 3
   description = "Number of load balancer addresses to deploy. Range is 1-999."
   type        = number
@@ -52,13 +52,18 @@ variable "master_vip" {
 }
 
 variable "name" {
-  default     = "k8s_cluster"
+  default     = "kubernetes_cluster"
   description = "Name for the Policy."
   type        = string
 }
 
-variable "net_config_moid" {
+variable "network_cidr_moid" {
   description = "MOID for the Network Config Policy that is being consumed."
+  type        = string
+}
+
+variable "nodeos_configuration_moid" {
+  description = "MOID for the System Config Policy that is being consumed."
   type        = string
 }
 
@@ -67,29 +72,24 @@ variable "org_moid" {
   type        = string
 }
 
-variable "ssh_user" {
-  default     = "iksadmin"
-  description = "SSH Username for node login."
-  type        = string
-}
-variable "ssh_key" {
+variable "ssh_public_key" {
   description = "SSH Public Key to be used to node login."
   sensitive   = true
   type        = string
 }
 
-variable "sys_config_moid" {
-  description = "MOID for the System Config Policy that is being consumed."
+variable "ssh_user" {
+  default     = "iksadmin"
+  description = "SSH Username for node login."
   type        = string
 }
-
 variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
 }
 
-variable "trusted_registries" {
+variable "trusted_certificate_authority_moid" {
   default     = ""
   description = "MOID for the Trusted Registry Policy that is being consumed."
   type        = string

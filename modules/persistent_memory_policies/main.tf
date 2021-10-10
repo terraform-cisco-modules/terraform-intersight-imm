@@ -10,9 +10,9 @@ resource "intersight_memory_persistent_memory_policy" "persistent_memory" {
   name              = var.name
   retain_namespaces = var.retain_namespaces
   goals {
-    memory_mode_percentage = var.goals_memory_percentage
+    memory_mode_percentage = var.memory_mode_percentage
     object_type            = "memory.PersistentMemoryGoal"
-    persistent_memory_type = var.goals_persistent_memory_type
+    persistent_memory_type = var.persistent_memory_type
     socket_id              = "All Sockets"
   }
   local_security {
@@ -25,14 +25,14 @@ resource "intersight_memory_persistent_memory_policy" "persistent_memory" {
     object_type = "organization.Organization"
   }
   dynamic "logical_namespaces" {
-    for_each = var.logical_namespaces
+    for_each = var.namespaces
     content {
       capacity         = logical_namespaces.value.capacity
-      mode             = logical_namespaces.value.mode
-      name             = logical_namespaces.value.name
+      mode             = logical_namespaces.value.mode != null ? logical_namespaces.value.mode : "raw"
+      name             = logical_namespaces.key
       object_type      = "memory.PersistentMemoryLocalSecurity"
-      socket_id        = logical_namespaces.value.socket_id
-      socket_memory_id = logical_namespaces.value.socket_memory_id
+      socket_id        = logical_namespaces.value.socket_id != null ? logical_namespaces.value.socket_id : 1
+      socket_memory_id = logical_namespaces.value.socket_memory_id != null ? logical_namespaces.value.socket_memory_id : "Not Applicable"
     }
   }
   dynamic "profiles" {

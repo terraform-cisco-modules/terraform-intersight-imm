@@ -8,13 +8,13 @@ variable "ldap_policy_moid" {
   type        = string
 }
 
-variable "ldap_port" {
+variable "port" {
   default     = 389
   description = "LDAP Server Port for connection establishment."
   type        = number
 }
 
-variable "ldap_server" {
+variable "server" {
   description = "LDAP Server Address, can be IP address or hostname."
   type        = string
 }

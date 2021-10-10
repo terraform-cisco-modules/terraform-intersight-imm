@@ -43,11 +43,11 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the infrastructure provider. | `string` | `""` | no |
-| <a name="input_k8s_node_group_moid"></a> [k8s\_node\_group\_moid](#input\_k8s\_node\_group\_moid) | MOID of the Kubernetes Node Profile mapped to this provider. | `string` | `""` | no |
-| <a name="input_k8s_vm_infra_config_moid"></a> [k8s\_vm\_infra\_config\_moid](#input\_k8s\_vm\_infra\_config\_moid) | MOID of the Kubernetes Infra Config Policy mapped to this provider. | `string` | `""` | no |
-| <a name="input_k8s_vm_instance_type_moid"></a> [k8s\_vm\_instance\_type\_moid](#input\_k8s\_vm\_instance\_type\_moid) | MOID of the Kubernetes Instance type Policy mapped to this provider. | `string` | `""` | no |
+| <a name="input_kubernetes_node_pool_moid"></a> [kubernetes\_node\_pool\_moid](#input\_kubernetes\_node\_pool\_moid) | MOID of the Kubernetes Node Profile mapped to this provider. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of an Kubernetes Virtual Machine Instance Type Policy mapped to this provider. | `string` | `"k8s_vm_instance_type"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of key/value pair Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
+| <a name="input_vm_infra_config_moid"></a> [vm\_infra\_config\_moid](#input\_vm\_infra\_config\_moid) | MOID of the Kubernetes Infra Config Policy mapped to this provider. | `string` | `""` | no |
+| <a name="input_vm_instance_type_moid"></a> [vm\_instance\_type\_moid](#input\_vm\_instance\_type\_moid) | MOID of the Kubernetes Instance type Policy mapped to this provider. | `string` | `""` | no |
 
 ## Outputs
 

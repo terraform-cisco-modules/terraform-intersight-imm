@@ -5,29 +5,35 @@
 #__________________________________________________________________
 
 resource "intersight_iam_ldap_policy" "ldap" {
-  base_properties {
-    attribute                  = var.attribute
-    base_dn                    = var.base_dn
-    bind_dn                    = var.bind_dn
-    bind_method                = var.bind_method
-    domain                     = var.domain
-    enable_encryption          = var.enable_encryption
-    enable_group_authorization = var.enable_group_authorization
-    filter                     = var.filter
-    group_attribute            = var.group_attribute
-    nested_group_search_depth  = var.nested_group_search_depth
-    password                   = var.password
-    timeout                    = var.timeout
-  }
   description = var.description
-  dns_parameters {
-    nr_source     = var.nr_source
-    search_domain = var.search_domain
-    search_forest = var.search_forest
+  name        = var.name
+  enabled     = var.enable_ldap
+  base_properties {
+    # Base Settings
+    base_dn = var.base_settings.base_dn
+    domain  = var.base_settings.domain
+    timeout = var.base_settings.timeout != null ? var.base_settings.timeout : 0
+    # Enable LDAP Encryption
+    enable_encryption = var.enable_encryption
+    # Binding Parameters
+    bind_method = var.binding_parameters.bind_method
+    bind_dn     = var.binding_parameters.bind_dn
+    password    = var.binding_parameters_password
+    # Search Parameters
+    attribute       = var.search_parameters.attribute
+    filter          = var.search_parameters.filter
+    group_attribute = var.search_parameters.group_attribute
+    # Group Authorization
+    enable_group_authorization = var.enable_group_authorization
+    nested_group_search_depth  = var.nested_group_search_depth
   }
-  enable_dns             = var.enable_dns
-  enabled                = var.enabled
-  name                   = var.name
+  # Configure LDAP Servers
+  enable_dns = var.ldap_from_dns.enable
+  dns_parameters {
+    nr_source     = var.ldap_from_dns.source
+    search_domain = var.ldap_from_dns.search_domain
+    search_forest = var.ldap_from_dns.search_forest
+  }
   user_search_precedence = var.user_search_precedence
   organization {
     moid        = var.org_moid

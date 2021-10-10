@@ -15,7 +15,7 @@ variable "description" {
   type        = string
 }
 
-variable "disk_size" {
+variable "system_disk_size" {
   default     = 40
   description = "Ephemeral disk capacity to be provided with units example - 10 for 10 Gigabytes."
   type        = number

@@ -9,21 +9,9 @@ variable "description" {
   type        = string
 }
 
-variable "k8s_node_group_moid" {
+variable "kubernetes_node_pool_moid" {
   default     = ""
   description = "MOID of the Kubernetes Node Profile mapped to this provider."
-  type        = string
-}
-
-variable "k8s_vm_infra_config_moid" {
-  default     = ""
-  description = "MOID of the Kubernetes Infra Config Policy mapped to this provider."
-  type        = string
-}
-
-variable "k8s_vm_instance_type_moid" {
-  default     = ""
-  description = "MOID of the Kubernetes Instance type Policy mapped to this provider."
   type        = string
 }
 
@@ -39,3 +27,14 @@ variable "tags" {
   type        = list(map(string))
 }
 
+variable "vm_infra_config_moid" {
+  default     = ""
+  description = "MOID of the Kubernetes Infra Config Policy mapped to this provider."
+  type        = string
+}
+
+variable "vm_instance_type_moid" {
+  default     = ""
+  description = "MOID of the Kubernetes Instance type Policy mapped to this provider."
+  type        = string
+}

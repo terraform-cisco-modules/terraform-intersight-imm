@@ -45,9 +45,9 @@ No modules.
 | <a name="input_description"></a> [description](#input\_description) | Description of the policy. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the concrete policy. | `string` | `"k8s_registry"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_root_ca_registries"></a> [root\_ca\_registries](#input\_root\_ca\_registries) | List of root CA certificates to assign to the policy. | `list(string)` | `[]` | no |
+| <a name="input_root_ca_registries"></a> [root\_ca\_registries](#input\_root\_ca\_registries) | The list of root CA certificates to trust. | `list(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of key/value pair Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
-| <a name="input_unsigned_registries"></a> [unsigned\_registries](#input\_unsigned\_registries) | List of unsigned registries to assign to the policy. | `list(string)` | `[]` | no |
+| <a name="input_unsigned_registries"></a> [unsigned\_registries](#input\_unsigned\_registries) | The list of unsigned registries to allow docker trust. | `list(string)` | `[]` | no |
 
 ## Outputs
 

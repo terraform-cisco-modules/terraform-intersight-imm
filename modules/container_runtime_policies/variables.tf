@@ -9,20 +9,20 @@ variable "description" {
   type        = string
 }
 
-variable "docker_bridge_cidr" {
-  description = "The CIDR for docker bridge network. This address space must not collide with other CIDRs on your networks, including the cluster's service CIDR, pod CIDR and IP Pools."
+variable "docker_daemon_bridge_ip" {
+  description = "Bridge IP (--bip) including Prefix (e.g., 172.17.0.5/24) that Docker will use for the default bridge network (docker0). Containers will connect to this if no other network is configured, not used by kubernetes pods because their network is managed by CNI. However this address space must not collide with other CIDRs on your networks, including the cluster's Service CIDR, Pod Network CIDR and IP Pools."
   default     = ""
   type        = string
 }
 
 variable "docker_no_proxy" {
   default     = []
-  description = "Docker no proxy list, when using internet proxy."
+  description = "Used to optionally exclude hosts or ranges from going through the proxy server. Refer to https://docs.docker.com/network/proxy/ for details."
   type        = list(string)
 }
 
 variable "name" {
-  default     = "k8s_runtime"
+  default     = "container_runtime"
   description = "Name of the concrete policy."
   type        = string
 }
@@ -33,33 +33,33 @@ variable "org_moid" {
 }
 
 variable "proxy_http_hostname" {
-  description = "Hostname of the HTTP Proxy Server."
+  description = "HTTP/HTTPS Proxy server FQDN or IP."
   type        = string
 }
 
 variable "proxy_http_password" {
   default     = ""
-  description = "Password for the HTTP Proxy Server, If required."
+  description = "The password for the HTTP/HTTPS Proxy, If required."
   sensitive   = true
   type        = string
 }
 
 variable "proxy_http_username" {
   default     = ""
-  description = "The username for the HTTP Proxy."
+  description = "The username for the HTTP/HTTPS Proxy, If required."
   type        = string
 }
 
 variable "proxy_http_port" {
   default     = 8080
-  description = "HTTP Proxy Port.  Range is 1-65535."
+  description = "The HTTP Proxy port number. The port number of the HTTP/HTTPS proxy must be between 1 and 65535, inclusive."
   type        = number
 }
 
 variable "proxy_http_protocol" {
   default     = "http"
   description = <<-EOT
-  HTTP Proxy Protocol. Options are:
+  Protocol to use for the HTTP/HTTPS Proxy.
   * http
   * https
   EOT
@@ -73,27 +73,27 @@ variable "proxy_https_hostname" {
 
 variable "proxy_https_password" {
   default     = ""
-  description = "Password for the HTTPS Proxy Server, If required."
+  description = "The password for the HTTP/HTTPS Proxy, If required."
   sensitive   = true
   type        = string
 }
 
 variable "proxy_https_username" {
   default     = ""
-  description = "Username for the HTTPS Proxy Server."
+  description = "The username for the HTTP/HTTPS Proxy, If Required."
   type        = string
 }
 
 variable "proxy_https_port" {
   default     = 8443
-  description = "HTTPS Proxy Port.  Range is 1-65535."
+  description = "The HTTPS Proxy port number. The port number of the HTTP/HTTPS proxy must be between 1 and 65535, inclusive."
   type        = number
 }
 
 variable "proxy_https_protocol" {
   default     = "https"
   description = <<-EOT
-  HTTPS Proxy Protocol. Options are:
+  Protocol to use for the HTTP/HTTPS Proxy.
   * http
   * https
   EOT

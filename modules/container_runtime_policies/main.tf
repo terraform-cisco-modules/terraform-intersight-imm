@@ -7,7 +7,7 @@
 resource "intersight_kubernetes_container_runtime_policy" "runtime" {
   description                = var.description
   name                       = var.name
-  docker_bridge_network_cidr = var.docker_bridge_cidr
+  docker_bridge_network_cidr = var.docker_daemon_bridge_ip
   docker_no_proxy            = var.docker_no_proxy
   docker_http_proxy {
     hostname = var.proxy_http_hostname

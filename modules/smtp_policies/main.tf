@@ -7,12 +7,12 @@
 resource "intersight_smtp_policy" "smtp" {
   description     = var.description
   enabled         = var.enabled
-  min_severity    = var.min_severity
+  min_severity    = var.minimum_severity
   name            = var.name
-  sender_email    = var.sender_email == "" ? var.smtp_server : var.sender_email
+  sender_email    = var.smtp_alert_sender_address == "" ? var.smtp_server_address : var.smtp_alert_sender_address
   smtp_port       = var.smtp_port
-  smtp_recipients = var.smtp_recipients
-  smtp_server     = var.smtp_server
+  smtp_recipients = var.mail_alert_recipients
+  smtp_server     = var.smtp_server_address
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

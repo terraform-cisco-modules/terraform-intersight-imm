@@ -9,14 +9,14 @@ variable "description" {
   type        = string
 }
 
-variable "k8s_version" {
-  default     = "1.19.5"
+variable "kubernetes_version" {
+  default     = "v1.19.5"
   description = "A reference to a kubernetesVersion resource."
   type        = string
 }
 
 variable "name" {
-  default     = "k8s_version"
+  default     = "kubernetes_version"
   description = "Name of the concrete policy."
   type        = string
 }

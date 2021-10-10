@@ -6,7 +6,7 @@
 
 #Importing the Kubernetes Version available
 data "intersight_kubernetes_version" "version" {
-  kubernetes_version = join("", ["v", var.k8s_version])
+  kubernetes_version = var.kubernetes_version
 }
 
 resource "intersight_kubernetes_version_policy" "version" {

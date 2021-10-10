@@ -6,10 +6,10 @@
 
 resource "intersight_ssh_policy" "ssh" {
   description = var.description
-  enabled     = var.enabled
+  enabled     = var.enable_ssh
   name        = var.name
   port        = var.ssh_port
-  timeout     = var.timeout
+  timeout     = var.ssh_timeout
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"

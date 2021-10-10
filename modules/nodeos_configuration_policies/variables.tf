@@ -20,13 +20,13 @@ variable "org_moid" {
   type        = string
 }
 
-variable "dns_servers_v4" {
+variable "dns_servers" {
   default     = ["208.67.220.220", "208.67.222.222"]
   description = "DNS Servers for the Kubernetes Node OS Configuration Policy."
   type        = list(string)
 }
 
-variable "domain_name" {
+variable "dns_suffix" {
   default     = "example.com"
   description = "Domain Name for the Kubernetes Node OS Configuration Policy."
   type        = string

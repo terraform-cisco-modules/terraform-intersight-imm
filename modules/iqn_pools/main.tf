@@ -8,9 +8,9 @@ resource "intersight_iqnpool_pool" "iqn_pool" {
   assignment_order = var.assignment_order
   description      = var.description
   name             = var.name
-  prefix           = var.iqn_prefix
+  prefix           = var.prefix
   dynamic "iqn_suffix_blocks" {
-    for_each = var.iqn_suffix_blocks
+    for_each = var.iqn_blocks
     content {
       from   = iqn_suffix_blocks.value.from
       suffix = iqn_suffix_blocks.value.suffix

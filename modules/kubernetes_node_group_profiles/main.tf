@@ -11,22 +11,23 @@ resource "intersight_kubernetes_node_group_profile" "node_group_profile" {
   name        = var.name
   node_type   = var.node_type
   desiredsize = var.desired_size
+  minsize     = var.min_size
   maxsize     = var.max_size
   ip_pools {
     moid        = var.ip_pool_moid
     object_type = "ippool.Pool"
   }
   kubernetes_version {
-    moid        = var.version_moid
+    moid        = var.kubernetes_version_moid
     object_type = "kubernetes.VersionPolicy"
   }
 
   cluster_profile {
-    moid        = var.iks_profile_moid
+    moid        = var.kubernetes_cluster_moid
     object_type = "kubernetes.ClusterProfile"
   }
   dynamic "labels" {
-    for_each = var.labels
+    for_each = var.kubernetes_labels
     content {
       key   = labels.value.key
       value = labels.value.value

@@ -19,7 +19,7 @@ variable "description" {
   type        = string
 }
 
-variable "iqn_prefix" {
+variable "prefix" {
   default     = ""
   description = "The prefix for IQN blocks created for this pool."
   type        = string

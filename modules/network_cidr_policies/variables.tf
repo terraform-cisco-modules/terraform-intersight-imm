@@ -3,24 +3,6 @@
 # Kubernetes Network CIDR Policy Variables
 #____________________________________________________________
 
-variable "description" {
-  default     = ""
-  description = "Description for the Policy."
-  type        = string
-}
-
-variable "cidr_pod" {
-  default     = "100.64.0.0/16"
-  description = "CIDR block to allocate pod network IP addresses from."
-  type        = string
-}
-
-variable "cidr_service" {
-  default     = "100.65.0.0/16"
-  description = "CIDR block to allocate cluster service IP addresses from."
-  type        = string
-}
-
 variable "cni_type" {
   default     = "Calico"
   description = <<-EOT
@@ -28,6 +10,12 @@ variable "cni_type" {
   * Calico - Calico CNI plugin as described in https://github.com/projectcalico/cni-plugin.
   * Aci - Cisco ACI Container Network Interface plugin.
   EOT
+  type        = string
+}
+
+variable "description" {
+  default     = ""
+  description = "Description for the Policy."
   type        = string
 }
 
@@ -39,6 +27,18 @@ variable "name" {
 
 variable "org_moid" {
   description = "Intersight Organization moid."
+  type        = string
+}
+
+variable "pod_network_cidr" {
+  default     = "100.64.0.0/16"
+  description = "CIDR block to allocate pod network IP addresses from."
+  type        = string
+}
+
+variable "service_cidr" {
+  default     = "100.65.0.0/16"
+  description = "CIDR block to allocate cluster service IP addresses from."
   type        = string
 }
 

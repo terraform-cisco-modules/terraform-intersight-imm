@@ -42,12 +42,12 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cidr_pod"></a> [cidr\_pod](#input\_cidr\_pod) | CIDR block to allocate pod network IP addresses from. | `string` | `"100.64.0.0/16"` | no |
-| <a name="input_cidr_service"></a> [cidr\_service](#input\_cidr\_service) | CIDR block to allocate cluster service IP addresses from. | `string` | `"100.65.0.0/16"` | no |
 | <a name="input_cni_type"></a> [cni\_type](#input\_cni\_type) | Supported CNI type. Currently we only support Calico.<br>* Calico - Calico CNI plugin as described in https://github.com/projectcalico/cni-plugin.<br>* Aci - Cisco ACI Container Network Interface plugin. | `string` | `"Calico"` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"k8s_network_cidr"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
+| <a name="input_pod_network_cidr"></a> [pod\_network\_cidr](#input\_pod\_network\_cidr) | CIDR block to allocate pod network IP addresses from. | `string` | `"100.64.0.0/16"` | no |
+| <a name="input_service_cidr"></a> [service\_cidr](#input\_service\_cidr) | CIDR block to allocate cluster service IP addresses from. | `string` | `"100.65.0.0/16"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of key/value pair Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 
 ## Outputs

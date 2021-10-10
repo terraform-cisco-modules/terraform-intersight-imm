@@ -5,8 +5,12 @@
 #__________________________________________________________________________________________
 
 locals {
-  container_runtime_config = var.container_runtime_config != "" ? [var.container_runtime_config] : []
-  trusted_registries       = var.trusted_registries != "" ? [var.trusted_registries] : []
+  container_runtime_moid = var.container_runtime_moid != "" ? [
+    var.container_runtime_moid
+  ] : []
+  trusted_certificate_authority_moid = var.trusted_certificate_authority_moid != "" ? [
+    var.trusted_certificate_authority_moid
+  ] : []
 }
 resource "intersight_kubernetes_cluster_profile" "cluster" {
   action              = var.action
@@ -25,22 +29,22 @@ resource "intersight_kubernetes_cluster_profile" "cluster" {
   #   }
   # }
   management_config {
-    load_balancer_count = var.load_balancer
+    load_balancer_count = var.load_balancer_count
     master_vip          = var.master_vip
     ssh_keys = [
-      var.ssh_key
+      var.ssh_public_key
     ]
     ssh_user = var.ssh_user
   }
   net_config {
-    moid = var.net_config_moid
+    moid = var.network_cidr_moid
   }
   organization {
     moid        = var.org_moid
     object_type = "organization.Organization"
   }
   sys_config {
-    moid = var.sys_config_moid
+    moid = var.nodeos_configuration_moid
   }
   dynamic "cert_config" {
     for_each = var.cert_config
@@ -57,7 +61,7 @@ resource "intersight_kubernetes_cluster_profile" "cluster" {
     }
   }
   dynamic "container_runtime_config" {
-    for_each = local.container_runtime_config
+    for_each = local.container_runtime_moid
     content {
       moid = container_runtime_config.value
     }
@@ -70,7 +74,7 @@ resource "intersight_kubernetes_cluster_profile" "cluster" {
     }
   }
   dynamic "trusted_registries" {
-    for_each = local.trusted_registries
+    for_each = local.trusted_certificate_authority_moid
     content {
       moid = trusted_registries.value
     }

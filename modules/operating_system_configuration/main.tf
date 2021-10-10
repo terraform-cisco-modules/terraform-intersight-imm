@@ -14,7 +14,7 @@ resource "intersight_os_configuration_file" "config" {
     moid        = var.org_moid
     object_type = "organization.Organization"
   }
-  release_notes_url = var.release_notes_url
+  release_notes_url     = var.release_notes_url
   sha512sum             = var.sha512sum
   size                  = var.size
   software_advisory_url = var.software_advisory_url
@@ -37,7 +37,7 @@ resource "intersight_os_configuration_file" "config" {
   dynamic "release" {
     for_each = var.release
     content {
-      moid        = release.value
+      moid = release.value
       # object_type = ??
     }
   }

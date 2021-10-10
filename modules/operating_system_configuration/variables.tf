@@ -131,7 +131,7 @@ variable "size" {
 }
 
 variable "supported_models" {
-  default     = [
+  default = [
     "B-series",
     "C-series",
   ]

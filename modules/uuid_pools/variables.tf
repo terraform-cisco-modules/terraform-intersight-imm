@@ -19,7 +19,7 @@ variable "description" {
   type        = string
 }
 
-variable "uuid_suffix_blocks" {
+variable "uuid_blocks" {
   default     = []
   description = "List of UUID's Suffix Parameters to Assign to the UUID Pool."
   type        = list(map(any))

@@ -22,20 +22,30 @@ variable "desired_size" {
   type        = string
 }
 
-variable "iks_profile_moid" {
-  description = "A reference to a kubernetesClusterProfile resource."
-  type        = string
-}
-
 variable "ip_pool_moid" {
   description = "MOID derived from the IP Pool that is being consumed."
   type        = string
 }
 
-variable "labels" {
+variable "kubernetes_cluster_moid" {
+  description = "A reference to a kubernetesClusterProfile resource."
+  type        = string
+}
+
+variable "kubernetes_version_moid" {
+  description = "MOID of the Version Policy to be assigned to the Node Profile."
+  type        = string
+}
+
+variable "kubernetes_labels" {
   default     = []
   description = "Kubernetes label policy of key/value Attributes to Assign to the Node."
   type        = list(map(string))
+}
+
+variable "min_size" {
+  description = "Minimum number of nodes desired in this node group."
+  type        = string
 }
 
 variable "max_size" {
@@ -64,10 +74,5 @@ variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
-}
-
-variable "version_moid" {
-  description = "MOID of the Version Policy to be assigned to the Node Profile."
-  type        = string
 }
 

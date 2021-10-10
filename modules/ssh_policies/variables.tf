@@ -9,7 +9,7 @@ variable "description" {
   type        = string
 }
 
-variable "enabled" {
+variable "enable_ssh" {
   default     = true
   description = "State of SSH service on the endpoint."
   type        = bool
@@ -49,14 +49,14 @@ variable "ssh_port" {
   type        = number
 }
 
+variable "ssh_timeout" {
+  default     = 1800
+  description = "Number of seconds to wait before the system considers a SSH request to have timed out.  Valid range is between 60-10800."
+  type        = number
+}
+
 variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
   type        = list(map(string))
-}
-
-variable "timeout" {
-  default     = 1800
-  description = "Number of seconds to wait before the system considers a SSH request to have timed out.  Valid range is between 60-10800."
-  type        = number
 }
