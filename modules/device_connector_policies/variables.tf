@@ -15,9 +15,9 @@ variable "name" {
   type        = string
 }
 
-variable "lockout" {
+variable "configuration_lockout" {
   default     = false
-  description = "Enables configuration lockout on the endpoint."
+  description = "Locks Down Configuration to Intersight Only."
   type        = bool
 }
 

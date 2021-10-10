@@ -6,7 +6,7 @@
 
 resource "intersight_deviceconnector_policy" "device_connector" {
   description     = var.description
-  lockout_enabled = var.lockout
+  lockout_enabled = var.configuration_lockout
   name            = var.name
   organization {
     moid        = var.org_moid

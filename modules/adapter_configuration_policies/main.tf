@@ -13,48 +13,48 @@ resource "intersight_adapter_config_policy" "vic_adapter" {
   }
   settings {
     object_type = "adapter.AdapterConfig"
-    slot_id     = var.slot_id
+    slot_id     = var.pci_slot
     dce_interface_settings = [
       {
         additional_properties = ""
         class_id              = "adapter.DceInterfaceSettings"
-        fec_mode              = var.int0_fec_mode
+        fec_mode              = var.fec_mode_1
         interface_id          = 0
         object_type           = "adapter.DceInterfaceSettings"
       },
       {
         additional_properties = ""
         class_id              = "adapter.DceInterfaceSettings"
-        fec_mode              = var.int1_fec_mode
+        fec_mode              = var.fec_mode_2
         interface_id          = 1
         object_type           = "adapter.DceInterfaceSettings"
       },
       {
         additional_properties = ""
         class_id              = "adapter.DceInterfaceSettings"
-        fec_mode              = var.int2_fec_mode
+        fec_mode              = var.fec_mode_3
         interface_id          = 2
         object_type           = "adapter.DceInterfaceSettings"
       },
       {
         additional_properties = ""
         class_id              = "adapter.DceInterfaceSettings"
-        fec_mode              = var.int3_fec_mode
+        fec_mode              = var.fec_mode_4
         interface_id          = 3
         object_type           = "adapter.DceInterfaceSettings"
       },
     ]
     eth_settings {
-      lldp_enabled = var.lldp_enabled
+      lldp_enabled = var.enable_lldp
       object_type  = "adapter.EthSettings"
     }
     fc_settings {
+      fip_enabled = var.enable_fip
       object_type = "adapter.FcSettings"
-      fip_enabled = var.fip_enabled
     }
     port_channel_settings {
+      enabled     = var.enable_port_channel
       object_type = "adapter.PortChannelSettings"
-      enabled     = var.portchannel_enabled
     }
   }
   dynamic "profiles" {
