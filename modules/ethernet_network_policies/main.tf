@@ -12,9 +12,9 @@ resource "intersight_vnic_eth_network_policy" "vnic_policy" {
     object_type = "organization.Organization"
   }
   vlan_settings {
-    allowed_vlans = var.allowed_vlans
-    default_vlan  = var.native_vlan
-    mode          = var.mode
+    allowed_vlans = "" # CSCvx98712.  This is no longer valid for the policy
+    default_vlan  = var.default_vlan
+    mode          = var.vlan_mode
     object_type   = "vnic.VlanSettings"
   }
   dynamic "tags" {

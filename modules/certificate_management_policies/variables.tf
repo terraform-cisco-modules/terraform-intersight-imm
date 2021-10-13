@@ -11,7 +11,7 @@ variable "description" {
 
 variable "certificate" {
   description = "The base64 encoded certificate in PEM format."
-  sensitive   = false
+  sensitive   = true
   type        = string
 }
 
@@ -34,7 +34,7 @@ variable "org_moid" {
 
 variable "private_key" {
   description = "Private Key which is used to validate the certificate."
-  sensitive   = false
+  sensitive   = true
   type        = string
 }
 
