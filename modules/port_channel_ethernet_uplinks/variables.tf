@@ -21,6 +21,12 @@ variable "admin_speed" {
   type        = string
 }
 
+variable "ethernet_network_control_policy_moid" {
+  default     = []
+  description = "A reference to a fabricEthNetworkControlPolicy resource."
+  type        = set(string)
+}
+
 variable "flow_control_policy_moid" {
   default     = []
   description = "A reference to a fabricFlowControlPolicy resource."

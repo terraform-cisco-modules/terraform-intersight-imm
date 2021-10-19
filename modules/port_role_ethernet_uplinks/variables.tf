@@ -23,6 +23,12 @@ variable "breakout_port_id" {
   type        = number
 }
 
+variable "ethernet_network_control_policy_moid" {
+  default     = []
+  description = "A reference to a fabricEthNetworkControlPolicy resource."
+  type        = set(string)
+}
+
 variable "fec" {
   default     = "Auto"
   description = <<-EOT

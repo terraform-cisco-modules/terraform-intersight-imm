@@ -10,6 +10,12 @@ resource "intersight_fabric_uplink_pc_role" "port_channel" {
   port_policy {
     moid = var.port_policy_moid
   }
+  dynamic "eth_network_group_policy" {
+    for_each = var.ethernet_network_group_policy_moid
+    content {
+      moid = eth_network_group_policy.value
+    }
+  }
   dynamic "flow_control_policy" {
     for_each = var.flow_control_policy_moid
     content {

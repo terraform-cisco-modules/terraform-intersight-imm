@@ -4,7 +4,7 @@
 #____________________________________________________________
 
 variable "auto_allow_on_uplinks" {
-  default     = true
+  default     = false
   description = "Used to determine whether this VLAN will be allowed on all uplink ports and PCs in this FI."
   type        = bool
 }
