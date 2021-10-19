@@ -1,4 +1,6 @@
-# Configuring Intersight Managed Mode with Cisco Intersight for Infrastructure Deployment
+# Terraform Intersight IMM - IaC
+
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/terraform-cisco-modules/terraform-intersight-imm)
 
 ## Contents
 

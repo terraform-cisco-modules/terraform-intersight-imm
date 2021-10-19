@@ -10,34 +10,34 @@ resource "intersight_vnic_iscsi_boot_policy" "iscsi_boot" {
     {
       additional_properties = ""
       class_id              = "vnic.IscsiAuthProfile"
-      is_password_set       = var.chap_password != "" ? true : false
+      is_password_set       = var.authentication == "chap" ? true : false
       object_type           = "vnic.IscsiAuthProfile"
-      password              = var.chap_password
-      user_id               = var.chap_user_id
+      password              = var.authentication == "chap" ? var.password : ""
+      user_id               = var.authentication == "chap" ? var.username : ""
     }
   ]
   description                    = var.description
   initiator_ip_source            = var.initiator_ip_source
-  initiator_static_ip_v4_address = var.initiator_static_ip_address
+  initiator_static_ip_v4_address = var.initiator_static_ip_v4_config.ip_address != null ? var.initiator_static_ip_v4_config.ip_address : ""
   initiator_static_ip_v4_config = [
     {
       additional_properties = ""
       class_id              = "ippool.IpV4Config"
-      gateway               = var.initiator_static_default_gateway
-      netmask               = var.initiator_static_subnet_mask
+      gateway               = var.initiator_static_ip_v4_config.default_gateway != null ? var.initiator_static_ip_v4_config.default_gateway : ""
+      netmask               = var.initiator_static_ip_v4_config.subnet_mask != null ? var.initiator_static_ip_v4_config.subnet_mask : ""
       object_type           = "ippool.IpV4Config"
-      primary_dns           = var.initiator_static_primary_dns
-      secondary_dns         = var.initiator_static_secondary_dns
+      primary_dns           = var.initiator_static_ip_v4_config.primary_dns != null ? var.initiator_static_ip_v4_config.primary_dns : ""
+      secondary_dns         = var.initiator_static_ip_v4_config.secondary_dns != null ? var.initiator_static_ip_v4_config.secondary_dns : ""
     }
   ]
   mutual_chap = [
     {
       additional_properties = ""
       class_id              = "vnic.IscsiAuthProfile"
-      is_password_set       = var.chap_password != "" ? true : false
+      is_password_set       = var.authentication == "mutual_chap" ? true : false
       object_type           = "vnic.IscsiAuthProfile"
-      password              = var.mschap_password
-      user_id               = var.mschap_user_id
+      password              = var.authentication == "mutual_chap" ? var.password : ""
+      user_id               = var.authentication == "mutual_chap" ? var.username : ""
     }
   ]
   name               = var.name
