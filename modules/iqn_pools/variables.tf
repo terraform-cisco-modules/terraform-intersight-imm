@@ -25,7 +25,7 @@ variable "prefix" {
   type        = string
 }
 
-variable "iqn_suffix_blocks" {
+variable "iqn_blocks" {
   default     = []
   description = <<-EOT
   List of IQN Pool Parameters to Assign to the IQN Pool.

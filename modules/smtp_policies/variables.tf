@@ -9,7 +9,7 @@ variable "description" {
   type        = string
 }
 
-variable "enabled" {
+variable "enable_smtp" {
   default     = true
   description = "If enabled, controls the state of the SMTP client service on the managed device."
   type        = bool
@@ -56,7 +56,7 @@ variable "profiles" {
   ))
 }
 
-variable "sender_email" {
+variable "smtp_alert_sender_address" {
   default     = ""
   description = "The email address entered here will be displayed as the from address (mail received from address) of all the SMTP mail alerts that are received. If not configured, the hostname of the server is used in the from address field."
   type        = string

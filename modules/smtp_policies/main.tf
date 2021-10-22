@@ -6,7 +6,7 @@
 
 resource "intersight_smtp_policy" "smtp" {
   description     = var.description
-  enabled         = var.enabled
+  enabled         = var.enable_smtp
   min_severity    = var.minimum_severity
   name            = var.name
   sender_email    = var.smtp_alert_sender_address == "" ? var.smtp_server_address : var.smtp_alert_sender_address

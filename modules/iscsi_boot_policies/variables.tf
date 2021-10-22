@@ -17,19 +17,6 @@ variable "authentication" {
   type        = string
 }
 
-variable "chap_password" {
-  default     = ""
-  description = "Chap Password, if doing chap authentication."
-  sensitive   = true
-  type        = string
-}
-
-variable "chap_user_id" {
-  default     = ""
-  description = "Chap User Id, if doing chap authentication."
-  type        = string
-}
-
 variable "description" {
   default     = ""
   description = "Description for the Policy."
@@ -79,53 +66,38 @@ variable "initiator_static_ip_v4_config" {
     }
   )
 }
-variable "initiator_static_default_gateway" {
-  default     = ""
-  description = "IP address of the default IPv4 gateway."
-  type        = string
-}
 
-variable "initiator_static_ip_address" {
-  default     = ""
-  description = "Static IP address provided for iSCSI Initiator."
-  type        = string
-}
-
-variable "initiator_static_primary_dns" {
-  default     = ""
-  description = "IP Address of the primary Domain Name System (DNS) server."
-  type        = string
-}
-
-variable "initiator_static_secondary_dns" {
-  default     = ""
-  description = "IP Address of the secondary Domain Name System (DNS) server."
-  type        = string
-}
-
-variable "initiator_static_subnet_mask" {
-  default     = ""
-  description = "A subnet mask is a 32-bit number that masks an IP address and divides the IP address into network address and host address."
-  type        = string
+variable "initiator_static_ip_v4_config" {
+  default = {
+    default_gateway = "**REQUIRED** if configuring static IP"
+    ip_address      = "**REQUIRED** if configuring static IP"
+    primary_dns     = ""
+    secondary_dns   = ""
+    subnet_mask     = "**REQUIRED** if configuring static IP"
+  }
+  description = <<-EOT
+  Object List of Initiator Static IPv4 Configuration
+  * default_gateway - IP address of the default IPv4 gateway.
+  * ip_address - Static IP address provided for iSCSI Initiator.
+  * primary_dns - IP Address of the primary Domain Name System (DNS) server.
+  * secondary_dns - IP Address of the secondary Domain Name System (DNS) server.
+  * subnet_mask - A subnet mask is a 32-bit number that masks an IP address and divides the IP address into network address and host address.
+  EOT
+  type = object(
+    {
+      default_gateway = string
+      ip_address      = string
+      primary_dns     = optional(string)
+      secondary_dns   = optional(string)
+      subnet_mask     = string
+    }
+  )
 }
 
 variable "iscsi_adapter_policy_moid" {
   default     = []
   description = "A reference to a vnicIscsiAdapterPolicy resource."
   type        = set(string)
-}
-
-variable "mschap_password" {
-  default     = ""
-  description = "Mutual Chap Password, if doing mschap authentication."
-  sensitive   = true
-  type        = string
-}
-
-variable "mschap_user_id" {
-  default     = ""
-  description = "Mutual Chap User Id, if doing mschap authentication."
-  type        = string
 }
 
 variable "name" {
@@ -136,6 +108,13 @@ variable "name" {
 
 variable "org_moid" {
   description = "Intersight Organization moid."
+  type        = string
+}
+
+variable "password" {
+  default     = ""
+  description = "Password, if doing authentication."
+  sensitive   = true
   type        = string
 }
 
@@ -164,5 +143,11 @@ variable "target_source_type" {
   * Auto - Type indicates that the system selects the target interface automatically during iSCSI boot.
   * Static - Type indicates that static target interface is assigned to iSCSI boot.
   EOT
+  type        = string
+}
+
+variable "username" {
+  default     = ""
+  description = "Username, if doing authentication."
   type        = string
 }
