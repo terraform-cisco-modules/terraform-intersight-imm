@@ -29,6 +29,12 @@ variable "ethernet_network_control_policy_moid" {
   type        = set(string)
 }
 
+variable "ethernet_network_group_policy_moid" {
+  default     = []
+  description = "A reference to a fabricEthNetworkGroupPolicy resource."
+  type        = set(string)
+}
+
 variable "fec" {
   default     = "Auto"
   description = <<-EOT

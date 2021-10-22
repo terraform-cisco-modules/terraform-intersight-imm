@@ -27,6 +27,12 @@ variable "ethernet_network_control_policy_moid" {
   type        = set(string)
 }
 
+variable "ethernet_network_group_policy_moid" {
+  default     = []
+  description = "A reference to a fabricEthNetworkGroupPolicy resource."
+  type        = set(string)
+}
+
 variable "flow_control_policy_moid" {
   default     = []
   description = "A reference to a fabricFlowControlPolicy resource."
