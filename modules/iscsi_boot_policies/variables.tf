@@ -47,27 +47,6 @@ variable "initiator_ip_source" {
 }
 
 variable "initiator_static_ip_v4_config" {
-  default     = {}
-  description = <<-EOT
-  When the Initiator IP source is Static, configure the Static IPv4 Parameters
-  * default_gateway - IP address of the default IPv4 gateway.
-  * ip_address - Static IP address provided for iSCSI Initiator.
-  * primary_dns - IP Address of the primary Domain Name System (DNS) server.
-  * secondary_dns - IP Address of the secondary Domain Name System (DNS) server.
-  * subnet_mask - A subnet mask is a 32-bit number that masks an IP address and divides the IP address into network address and host address.
-  EOT
-  type = object(
-    {
-      default_gateway = string
-      ip_address      = string
-      primary_dns     = optional(string)
-      secondary_dns   = optional(string)
-      subnet_mask     = string
-    }
-  )
-}
-
-variable "initiator_static_ip_v4_config" {
   default = {
     default_gateway = "**REQUIRED** if configuring static IP"
     ip_address      = "**REQUIRED** if configuring static IP"
