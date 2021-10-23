@@ -49,6 +49,12 @@ variable "src_template" {
   type        = set(string)
 }
 
+variable "static_uuid_address" {
+  default     = ""
+  description = "The UUID address for the server must include UUID prefix xxxxxxxx-xxxx-xxxx along with the UUID suffix of format xxxx-xxxxxxxxxxxx."
+  type        = string
+}
+
 variable "tags" {
   default     = []
   description = "List of Tag Attributes to Assign to the Policy."
@@ -75,6 +81,22 @@ variable "type" {
   type        = string
 }
 
+variable "uuid_address_type" {
+  default     = "NONE"
+  description = <<-EOT
+  UUID address allocation type selected to assign an UUID address for the server.
+  * NONE - The user did not assign any UUID address.
+  * STATIC - The user assigns a static UUID address.
+  * POOL - The user selects a pool from which the address will be leased.
+  EOT
+  type        = string
+}
+
+variable "uuid_pool" {
+  default     = ""
+  description = "A reference to a uuidpoolPool resource."
+  type        = string
+}
 variable "wait_for_completion" {
   default     = false
   description = "This model object can trigger workflows. Use this option to wait for all running workflows to reach a complete state."

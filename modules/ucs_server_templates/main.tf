@@ -5,10 +5,15 @@
 #____________________________________________________________
 
 resource "intersight_server_profile_template" "server_template" {
-  action          = var.action
-  description     = var.description
-  name            = var.name
-  target_platform = var.target_platform
+  action            = var.action
+  description       = var.description
+  name              = var.name
+  target_platform   = var.target_platform
+  uuid_address_type = var.uuid_address_type
+  uuid_pool = {
+    moid        = var.uuid_pool
+    object_type = "uuidpool.Pool"
+  }
   organization {
     object_type = "organization.Organization"
     moid        = var.org_moid

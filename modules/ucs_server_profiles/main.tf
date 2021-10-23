@@ -8,8 +8,14 @@ resource "intersight_server_profile" "server_profile" {
   action              = var.action
   description         = var.description
   name                = var.name
+  static_uuid_address = var.static_uuid_address
   target_platform     = var.target_platform
   type                = var.type
+  uuid_address_type   = var.uuid_address_type
+  uuid_pool = {
+    moid        = var.uuid_pool
+    object_type = "uuidpool.Pool"
+  }
   wait_for_completion = var.wait_for_completion
   organization {
     object_type = "organization.Organization"
