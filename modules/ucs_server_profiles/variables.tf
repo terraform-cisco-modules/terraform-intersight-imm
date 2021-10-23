@@ -81,17 +81,6 @@ variable "type" {
   type        = string
 }
 
-variable "uuid_address_type" {
-  default     = "NONE"
-  description = <<-EOT
-  UUID address allocation type selected to assign an UUID address for the server.
-  * NONE - The user did not assign any UUID address.
-  * STATIC - The user assigns a static UUID address.
-  * POOL - The user selects a pool from which the address will be leased.
-  EOT
-  type        = string
-}
-
 variable "uuid_pool" {
   default     = ""
   description = "A reference to a uuidpoolPool resource."

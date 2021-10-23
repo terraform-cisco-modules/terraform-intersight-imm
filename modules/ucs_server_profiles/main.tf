@@ -11,7 +11,7 @@ resource "intersight_server_profile" "server_profile" {
   static_uuid_address = var.static_uuid_address
   target_platform     = var.target_platform
   type                = var.type
-  uuid_address_type   = var.uuid_address_type
+  uuid_address_type   = var.uuid_pool != "" ? "POOL" : var.static_uuid_address != "" ? "STATIC" : "NONE"
   uuid_pool = {
     moid        = var.uuid_pool
     object_type = "uuidpool.Pool"

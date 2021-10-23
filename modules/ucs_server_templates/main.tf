@@ -9,7 +9,7 @@ resource "intersight_server_profile_template" "server_template" {
   description       = var.description
   name              = var.name
   target_platform   = var.target_platform
-  uuid_address_type = var.uuid_address_type
+  uuid_address_type = var.uuid_pool != "" ? "POOL" : "NONE"
   uuid_pool = {
     moid        = var.uuid_pool
     object_type = "uuidpool.Pool"
