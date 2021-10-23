@@ -61,7 +61,7 @@ variable "resource_type" {
   type        = string
 }
 
-variable "resource_type" {
+variable "server_type" {
   default     = "Blades"
   description = <<-EOT
   The type of the resource present in the pool, example 'server' its combination of RackUnit and Blade.

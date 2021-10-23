@@ -49,9 +49,12 @@ No modules.
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_policy_bucket"></a> [policy\_bucket](#input\_policy\_bucket) | List of Policies to Assign to the Profile. | `list(map(string))` | `[]` | no |
 | <a name="input_src_template"></a> [src\_template](#input\_src\_template) | A reference to a policyAbstractProfile resource.. | `set(string)` | `[]` | no |
+| <a name="input_static_uuid_address"></a> [static\_uuid\_address](#input\_static\_uuid\_address) | The UUID address for the server must include UUID prefix xxxxxxxx-xxxx-xxxx along with the UUID suffix of format xxxx-xxxxxxxxxxxx. | `string` | `""` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
 | <a name="input_target_platform"></a> [target\_platform](#input\_target\_platform) | The platform for which the server profile is applicable. It can either be a server that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight.<br>* FIAttached - Servers which are connected to a Fabric Interconnect that is managed by Intersight.<br>* Standalone - Servers which are operating in standalone mode i.e. not connected to a Fabric Interconnected. | `string` | `"FIAttached"` | no |
 | <a name="input_type"></a> [type](#input\_type) | Defines the type of the profile. Accepted values are:<br>  * instance<br>  * template | `string` | `"instance"` | no |
+| <a name="input_uuid_address_type"></a> [uuid\_address\_type](#input\_uuid\_address\_type) | UUID address allocation type selected to assign an UUID address for the server.<br>* NONE - The user did not assign any UUID address.<br>* STATIC - The user assigns a static UUID address.<br>* POOL - The user selects a pool from which the address will be leased. | `string` | `"NONE"` | no |
+| <a name="input_uuid_pool"></a> [uuid\_pool](#input\_uuid\_pool) | A reference to a uuidpoolPool resource. | `string` | `""` | no |
 | <a name="input_wait_for_completion"></a> [wait\_for\_completion](#input\_wait\_for\_completion) | This model object can trigger workflows. Use this option to wait for all running workflows to reach a complete state. | `bool` | `false` | no |
 
 ## Outputs

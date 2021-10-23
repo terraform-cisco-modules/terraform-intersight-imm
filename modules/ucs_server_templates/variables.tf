@@ -65,7 +65,7 @@ variable "uuid_address_type" {
 }
 
 variable "uuid_pool" {
-  default     = []
+  default     = ""
   description = "A reference to a uuidpoolPool resource."
   type        = string
 }

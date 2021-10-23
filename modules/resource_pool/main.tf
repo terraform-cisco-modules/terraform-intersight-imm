@@ -12,10 +12,10 @@ resource "intersight_resourcepool_pool" "resource_pool" {
   resource_pool_parameters = {
     object_type = "resourcepool.ServerPoolParameters"
   }
-  resource_type        = var.resource_type
+  resource_type = var.resource_type
   selectors = {
     object_type = "resource.Selector"
-    selector = "/api/v1/compute/${server_type}?$filter=(moid in (${moid_list})) and (ManagementMode eq 'Intersight')"
+    selector    = "/api/v1/compute/${server_type}?$filter=(moid in (${moid_list})) and (ManagementMode eq 'Intersight')"
   }
   organization {
     object_type = "organization.Organization"

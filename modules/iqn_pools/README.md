@@ -44,7 +44,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_assignment_order"></a> [assignment\_order](#input\_assignment\_order) | Assignment order decides the order in which the next identifier is allocated.<br>* sequential - Identifiers are assigned in a sequential order.<br>* default - Assignment order is decided by the system. | `string` | `"default"` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description for the IQN Pool. | `string` | `""` | no |
-| <a name="input_iqn_suffix_blocks"></a> [iqn\_suffix\_blocks](#input\_iqn\_suffix\_blocks) | List of IQN Pool Parameters to Assign to the IQN Pool.<br>* from: Starting IQN Address.<br>* size: Size of the IQN Pool.<br>* suffix: Suffix to assign to the IQN Pool. | `list(map(string))` | `[]` | no |
+| <a name="input_iqn_blocks"></a> [iqn\_blocks](#input\_iqn\_blocks) | List of IQN Pool Parameters to Assign to the IQN Pool.<br>* from: Starting IQN Address.<br>* size: Size of the IQN Pool.<br>* suffix: Suffix to assign to the IQN Pool. | `list(map(string))` | `[]` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the IP Pool. | `string` | `"ip_pool"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | The prefix for IQN blocks created for this pool. | `string` | `""` | no |

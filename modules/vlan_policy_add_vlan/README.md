@@ -42,7 +42,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_auto_allow_on_uplinks"></a> [auto\_allow\_on\_uplinks](#input\_auto\_allow\_on\_uplinks) | Used to determine whether this VLAN will be allowed on all uplink ports and PCs in this FI. | `bool` | `true` | no |
+| <a name="input_auto_allow_on_uplinks"></a> [auto\_allow\_on\_uplinks](#input\_auto\_allow\_on\_uplinks) | Used to determine whether this VLAN will be allowed on all uplink ports and PCs in this FI. | `bool` | `false` | no |
 | <a name="input_multicast_policy_moid"></a> [multicast\_policy\_moid](#input\_multicast\_policy\_moid) | Multicast Policy moid. | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The 'name' used to identify this VLAN. | `string` | `"vlan-{vlan_id}"` | no |
 | <a name="input_native_vlan"></a> [native\_vlan](#input\_native\_vlan) | Used to define whether this VLAN is to be classified as 'native' for traffic in this FI. | `bool` | `false` | no |
