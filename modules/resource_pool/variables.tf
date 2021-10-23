@@ -19,19 +19,8 @@ variable "description" {
   type        = string
 }
 
-variable "moid_list" {
-  default     = ""
-  description = <<-EOT
-  A List of Compute MOID's to assign to the policy.  Examples
-  "'60XXXXXXXXXXXXXXXXXXXXX1','60XXXXXXXXXXXXXXXXXXXXX2'"
-  "'60XXXXXXXXXXXXXXXXXXXXX1'"
-  First being a list of two servers and the second being a list of 1 server
-  EOT
-  type        = string
-}
-
 variable "name" {
-  default     = "mac_pool"
+  default     = "resource_pool"
   description = "Name for the MAC Pool."
   type        = string
 }
@@ -59,6 +48,11 @@ variable "resource_type" {
   * Server - Resource Pool holds the server kind of resources, example - RackServer, Blade.
   EOT
   type        = string
+}
+
+variable "serial_number_list" {
+  description = "A List of Compute Server Serial Numbers."
+  type        = set(string)
 }
 
 variable "server_type" {
