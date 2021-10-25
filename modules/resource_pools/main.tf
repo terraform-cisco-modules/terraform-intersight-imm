@@ -49,8 +49,6 @@ resource "intersight_resourcepool_pool" "resource_pool" {
       class_id              = "resource.Selector"
       object_type           = "resource.Selector"
       selector              = "/api/v1/compute/${var.server_type}?$filter=(Moid in (${local.moid_list})) and (ManagementMode eq 'Intersight')"
-      # selector              = "/api/v1/compute/Blades?$filter=(Moid in ('60f183ef6176752d39d0c8f4','60df95db6176752d3440a0f5')) and (ManagementMode eq 'Intersight')"
-      # selector              = "/api/v1/compute/${var.server_type}?$filter=(Moid in ('60df95db6176752d3440a0f5', '60f183ef6176752d39d0c8f4')) and (ManagementMode eq 'Intersight')"
     }
   ]
   organization {
