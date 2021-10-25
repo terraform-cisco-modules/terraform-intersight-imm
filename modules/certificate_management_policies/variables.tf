@@ -9,7 +9,7 @@ variable "description" {
   type        = string
 }
 
-variable "certificate" {
+variable "pem_certificate" {
   description = "The base64 encoded certificate in PEM format."
   sensitive   = true
   type        = string

@@ -1,0 +1,31 @@
+#__________________________________________________________________
+#
+# Intersight Certificate Management Policy
+# GUI Location: Policies > Create Policy > Certificate Management
+#__________________________________________________________________
+
+resource "intersight_certificatemanagement_policy" "certificate" {
+  description = var.description
+  name        = var.name
+  organization {
+    moid        = var.org_moid
+    object_type = "organization.Organization"
+  }
+  certificates = [
+    {
+      additional_properties = ""
+      certificate = [
+        {
+          additional_properties = ""
+          class_id              = "x509.Certificate"
+          pem_certificate = var.base64_certificate
+        }
+      ]
+      class_id          = "certificatemanagement.Imc"
+      enabled           = var.enabled
+      is_privatekey_set = true
+      object_type       = "certificatemanagement.Imc"
+      privatekey        = var.base64_private_key
+    }
+  ]
+}

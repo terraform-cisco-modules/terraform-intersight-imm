@@ -43,7 +43,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_action"></a> [action](#input\_action) | Action to Perform on the Chassis Profile Assignment.  Options are:<br>* Deploy<br>* No-op<br>* Unassign | `string` | `"No-op"` | no |
-| <a name="input_assigned_server"></a> [assigned\_server](#input\_assigned\_server) | A reference to a computePhysical resource. | `list(map(string))` | `[]` | no |
+| <a name="input_assigned_server"></a> [assigned\_server](#input\_assigned\_server) | A reference to a computePhysical resource.<br>* moid - Managed Object ID<br>* object\_type - Either Blade or RackUnit | `list(map(string))` | `[]` | no |
+| <a name="input_associated_server_pool"></a> [associated\_server\_pool](#input\_associated\_server\_pool) | A reference to a resourcepoolPool resource.<br>* moid - Managed Object ID | `list(map(string))` | `[]` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description to Assign to the Profile. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Profile. | `string` | `"server_profile"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |

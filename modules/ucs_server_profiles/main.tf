@@ -35,6 +35,13 @@ resource "intersight_server_profile" "server_profile" {
       object_type = policy_bucket.value.object_type
     }
   }
+  dynamic "associated_server_pool" {
+    for_each = var.associated_server_pool
+    content {
+      moid        = assigned_server.value.moid
+      object_type = "resourcepool.Pool"
+    }
+  }
   dynamic "src_template" {
     for_each = var.src_template
     content {

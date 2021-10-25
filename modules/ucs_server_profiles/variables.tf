@@ -16,7 +16,20 @@ variable "action" {
 
 variable "assigned_server" {
   default     = []
-  description = "A reference to a computePhysical resource."
+  description = <<-EOT
+  A reference to a computePhysical resource.
+  * moid - Managed Object ID
+  * object_type - Either Blade or RackUnit
+  EOT
+  type        = list(map(string))
+}
+
+variable "associated_server_pool" {
+  default     = []
+  description = <<-EOT
+  A reference to a resourcepoolPool resource.
+  * moid - Managed Object ID
+  EOT
   type        = list(map(string))
 }
 

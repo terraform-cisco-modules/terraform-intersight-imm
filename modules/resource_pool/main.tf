@@ -38,8 +38,8 @@ resource "intersight_resourcepool_pool" "resource_pool" {
           ManagementMode = "Intersight"
         }
       )
-      class_id              = "resourcepool.ServerPoolParameters"
-      object_type           = "resourcepool.ServerPoolParameters"
+      class_id    = "resourcepool.ServerPoolParameters"
+      object_type = "resourcepool.ServerPoolParameters"
     }
   ]
   resource_type = var.resource_type
