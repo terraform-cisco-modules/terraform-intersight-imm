@@ -9,8 +9,8 @@ variable "description" {
   type        = string
 }
 
-variable "pem_certificate" {
-  description = "The base64 encoded certificate in PEM format."
+variable "base64_certificate" {
+  description = "The Server Certificate in Base64 format."
   sensitive   = true
   type        = string
 }
@@ -32,8 +32,8 @@ variable "org_moid" {
   type        = string
 }
 
-variable "private_key" {
-  description = "Private Key which is used to validate the certificate."
+variable "base64_private_key" {
+  description = "Private Key in Base64 Format."
   sensitive   = true
   type        = string
 }

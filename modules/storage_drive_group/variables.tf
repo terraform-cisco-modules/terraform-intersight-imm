@@ -39,9 +39,9 @@ variable "manual_drive_group" {
   This drive group is created by specifying the drive slots to be used. This complex property has following sub-properties:
   * dedicated_hot_spares:(string) A collection of drives to be used as hot spares for this Drive Group.
   * drive_array_spans:(string) Collection of local disks that are part of this span group. Allowed value is a comma or hyphen separated number range. The minimum number of disks needed in a span group varies based on RAID level.
-    - RAID0 requires at least one disk,
-    - RAID1 and RAID10 requires at least 2 and in multiples of 2,
-    - RAID5 RAID50 RAID6 and RAID60 require at least 3 disks in a span group.
+    - Raid0 requires at least one disk,
+    - Raid1 and Raid10 requires at least 2 and in multiples of 2,
+    - Raid5 Raid50 Raid6 and Raid60 require at least 3 disks in a span group.
   EOT
   type = map(object(
     {
