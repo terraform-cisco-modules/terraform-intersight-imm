@@ -56,6 +56,17 @@ variable "policy_bucket" {
   type        = list(map(string))
 }
 
+variable "server_assignment_mode" {
+  default     = "None"
+  description = <<-EOT
+  Source of the server assigned to the server profile. Values can be Static, Pool or None. Static is used if a server is attached directly to server profile. Pool is used if a resource pool is attached to server profile. None is used if no server or resource pool is attached to server profile.
+  * None - No server is assigned to the server profile.
+  * Pool - Server is assigned from a resource pool.
+  * Static - Server is directly assigned to server profile using assign server.
+  EOT
+  type        = string
+}
+
 variable "src_template" {
   default     = []
   description = "A reference to a policyAbstractProfile resource.."

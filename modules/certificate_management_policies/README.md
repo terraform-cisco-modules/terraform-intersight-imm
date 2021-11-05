@@ -26,7 +26,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_intersight"></a> [intersight](#provider\_intersight) | 1.0.16 |
+| <a name="provider_intersight"></a> [intersight](#provider\_intersight) | n/a |
 
 ## Modules
 
@@ -43,13 +43,13 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_apikey"></a> [apikey](#input\_apikey) | Intersight API Key. | `string` | n/a | yes |
+| <a name="input_base64_certificate"></a> [base64\_certificate](#input\_base64\_certificate) | The Server Certificate in Base64 format. | `string` | n/a | yes |
+| <a name="input_base64_private_key"></a> [base64\_private\_key](#input\_base64\_private\_key) | Private Key in Base64 Format. | `string` | n/a | yes |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Enable/Disable the certificate in Certificate Management policy. | `bool` | `true` | no |
 | <a name="input_endpoint"></a> [endpoint](#input\_endpoint) | Intersight URL. | `string` | `"https://intersight.com"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"certificate"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |
-| <a name="input_pem_certificate"></a> [pem\_certificate](#input\_pem\_certificate) | The base64 encoded certificate in PEM format. | `string` | n/a | yes |
-| <a name="input_private_key"></a> [private\_key](#input\_private\_key) | Private Key which is used to validate the certificate. | `string` | n/a | yes |
 | <a name="input_profiles"></a> [profiles](#input\_profiles) | Map of Profiles to Assign to the Policy. | <pre>map(object(<br>    {<br>      moid        = string<br>      object_type = string<br>    }<br>  ))</pre> | `{}` | no |
 | <a name="input_secretkey"></a> [secretkey](#input\_secretkey) | Intersight Secret Key. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tag Attributes to Assign to the Policy. | `list(map(string))` | `[]` | no |
