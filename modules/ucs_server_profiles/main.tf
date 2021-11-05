@@ -5,13 +5,20 @@
 #____________________________________________________________
 
 resource "intersight_server_profile" "server_profile" {
-  action              = var.action
-  description         = var.description
-  name                = var.name
+  action      = var.action
+  description = var.description
+  name        = var.name
+  server_assignment_mode = length(
+    var.assigned_server
+    ) > 0 ? "Static" : length(
+    var.associated_server_pool
+  ) > 0 ? "Pool" : "None"
   static_uuid_address = var.static_uuid_address
   target_platform     = var.target_platform
   type                = var.type
-  uuid_address_type   = length(var.uuid_pool) > 0 ? "POOL" : var.static_uuid_address != "" ? "STATIC" : "NONE"
+  uuid_address_type = length(
+    var.uuid_pool
+  ) > 0 ? "POOL" : var.static_uuid_address != "" ? "STATIC" : "NONE"
   wait_for_completion = var.wait_for_completion
   organization {
     object_type = "organization.Organization"
