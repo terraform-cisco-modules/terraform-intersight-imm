@@ -50,12 +50,12 @@ resource "intersight_server_profile" "server_profile" {
       key   = tags.value.key
       value = tags.value.value
     }
+  }
   dynamic "uuid_pool" {
     for_each = var.uuid_pool
     content {
       moid        = uuid_pool.value.moid
       object_type = "uuidpool.Pool"
     }
-  }
   }
 }
