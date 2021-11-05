@@ -95,9 +95,9 @@ variable "type" {
 }
 
 variable "uuid_pool" {
-  default     = ""
+  default     = []
   description = "A reference to a uuidpoolPool resource."
-  type        = string
+  type        = list(map(string))
 }
 variable "wait_for_completion" {
   default     = false

@@ -12,10 +12,6 @@ resource "intersight_server_profile" "server_profile" {
   target_platform     = var.target_platform
   type                = var.type
   uuid_address_type   = var.uuid_pool != "" ? "POOL" : var.static_uuid_address != "" ? "STATIC" : "NONE"
-  uuid_pool = {
-    moid        = var.uuid_pool
-    object_type = "uuidpool.Pool"
-  }
   wait_for_completion = var.wait_for_completion
   organization {
     object_type = "organization.Organization"
@@ -28,18 +24,18 @@ resource "intersight_server_profile" "server_profile" {
       object_type = assigned_server.value.object_type
     }
   }
-  dynamic "policy_bucket" {
-    for_each = var.policy_bucket
-    content {
-      moid        = policy_bucket.value.moid
-      object_type = policy_bucket.value.object_type
-    }
-  }
   dynamic "associated_server_pool" {
     for_each = var.associated_server_pool
     content {
       moid        = assigned_server.value.moid
       object_type = "resourcepool.Pool"
+    }
+  }
+  dynamic "policy_bucket" {
+    for_each = var.policy_bucket
+    content {
+      moid        = policy_bucket.value.moid
+      object_type = policy_bucket.value.object_type
     }
   }
   dynamic "src_template" {
@@ -54,5 +50,12 @@ resource "intersight_server_profile" "server_profile" {
       key   = tags.value.key
       value = tags.value.value
     }
+  dynamic "uuid_pool" {
+    for_each = var.uuid_pool
+    content {
+      moid        = uuid_pool.value.moid
+      object_type = "uuidpool.Pool"
+    }
+  }
   }
 }
