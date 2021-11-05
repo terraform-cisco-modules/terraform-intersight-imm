@@ -11,7 +11,7 @@ resource "intersight_server_profile" "server_profile" {
   static_uuid_address = var.static_uuid_address
   target_platform     = var.target_platform
   type                = var.type
-  uuid_address_type   = var.uuid_pool != "" ? "POOL" : var.static_uuid_address != "" ? "STATIC" : "NONE"
+  uuid_address_type   = length(var.uuid_pool) > 0 ? "POOL" : var.static_uuid_address != "" ? "STATIC" : "NONE"
   wait_for_completion = var.wait_for_completion
   organization {
     object_type = "organization.Organization"
