@@ -23,29 +23,17 @@ variable "description" {
   type        = string
 }
 
-# variable "dns_servers_v4" {
-#   default     = []
-#   description = "List of IPv4 DNS Servers for this Pool."
-#   type        = list(string)
-# }
-#
-# variable "dns_servers_v6" {
-#   default     = []
-#   description = "List of IPv6 DNS Servers for this Pool."
-#   type        = list(string)
-# }
-
-variable "ipv4_block" {
-  default     = []
+variable "ipv4_blocks" {
+  default     = {}
   description = "List of IPv4 Addresses to Assign to the IP Pool."
-  type        = list(map(string))
+  type        = map(object(
+    {
+      from = string
+      size = optional(number)
+      to   = optional(string)
+    }
+  ))
 }
-
-# variable "ipv4_config" {
-#   default     = []
-#   description = "List of IPv4 Configuration Parameters to Assign to the IP Pool."
-#   type        = list(map(string))
-# }
 
 variable "ipv4_config" {
   default     = {}
@@ -66,10 +54,21 @@ variable "ipv4_config" {
   ))
 }
 
-variable "ipv6_block" {
-  default     = []
-  description = "List of IPv6 Addresses to Assign to the IP Pool."
-  type        = list(map(string))
+variable "ipv6_blocks" {
+  default     = {}
+  description = <<-EOT
+  List of IPv6 Addresses to Assign to the IP Pool.
+  * from - Starting IPv6 Address.
+  * size - Size of the IPv6 Address Pool
+  * to - Ending IPv6 Address.
+  EOT
+  type        = map(object(
+    {
+      from = string
+      size = optional(number)
+      to   = optional(string)
+    }
+  ))
 }
 
 variable "ipv6_config" {

@@ -9,10 +9,11 @@ resource "intersight_ippool_pool" "ip_pool" {
   description      = var.description
   name             = var.name
   dynamic "ip_v4_blocks" {
-    for_each = var.ipv4_block
+    for_each = var.ipv4_blocks
     content {
       from = ip_v4_blocks.value.from
-      to   = ip_v4_blocks.value.to
+      size = ip_v4_blocks.value.size != null ? ip_v4_blocks.value.size : null
+      to   = ip_v4_blocks.value.to != null ? ip_v4_blocks.value.to : null
     }
   }
   dynamic "ip_v4_config" {
@@ -25,11 +26,11 @@ resource "intersight_ippool_pool" "ip_pool" {
     }
   }
   dynamic "ip_v6_blocks" {
-    for_each = var.ipv6_block
+    for_each = var.ipv6_blocks
     content {
       from = ip_v6_blocks.value.from
-      size = ip_v6_blocks.value.size
-      # to   = ip_v6_blocks.value.to
+      size = ip_v6_blocks.value.size != null ? tonumber(ip_v6_blocks.value.size) : null
+      to   = ip_v6_blocks.value.to != null ? ip_v6_blocks.value.to : null
     }
   }
   dynamic "ip_v6_config" {

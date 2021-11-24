@@ -13,7 +13,8 @@ resource "intersight_macpool_pool" "mac_pool" {
     content {
       object_type = "macpool.Block"
       from        = mac_blocks.value.from
-      to          = mac_blocks.value.to
+      size        = mac_blocks.value.size != null ? tonumber(mac_blocks.value.size) : null
+      to          = mac_blocks.value.to != null ? mac_blocks.value.to : null
     }
   }
   organization {

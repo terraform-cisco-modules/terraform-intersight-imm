@@ -14,8 +14,8 @@ resource "intersight_uuidpool_pool" "uuid_pool" {
     content {
       object_type = "uuidpool.UuidBlock"
       from        = uuid_suffix_blocks.value.from
-      size        = tonumber(uuid_suffix_blocks.value.size)
-      # to          = uuid_suffix_blocks.value.to
+      size        = uuid_suffix_blocks.value.size != null ? uuid_suffix_blocks.value.size : null
+      to          = uuid_suffix_blocks.value.to != null ? uuid_suffix_blocks.value.to : null
     }
   }
   organization {

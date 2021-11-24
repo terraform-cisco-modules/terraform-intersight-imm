@@ -1,3 +1,7 @@
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 #____________________________________________________________
 #
 # UUID Pool Variables Section.
@@ -20,9 +24,15 @@ variable "description" {
 }
 
 variable "uuid_blocks" {
-  default     = []
+  default     = {}
   description = "List of UUID's Suffix Parameters to Assign to the UUID Pool."
-  type        = list(map(any))
+  type        = map(object(
+    {
+      from = string
+      size = optional(number)
+      to   = optional(string)
+    }
+  ))
 }
 
 variable "name" {

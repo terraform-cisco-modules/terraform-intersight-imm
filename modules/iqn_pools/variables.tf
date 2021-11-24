@@ -1,3 +1,7 @@
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 #____________________________________________________________
 #
 # IQN Pool Variables Section.
@@ -26,14 +30,22 @@ variable "prefix" {
 }
 
 variable "iqn_blocks" {
-  default     = []
+  default     = {}
   description = <<-EOT
   List of IQN Pool Parameters to Assign to the IQN Pool.
-  * from: Starting IQN Address.
-  * size: Size of the IQN Pool.
-  * suffix: Suffix to assign to the IQN Pool.
+  * from - Staring IQN Address.  An Exmaple is 0.
+  * size - Size of the IQN Pool.  An Exmaple is 1000.
+  * suffix - Suffix to assign to the IQN Pool.  An Exmaple is "ucs-host".
+  * to - Ending IQN Address.  An Exmaple is 1000.
   EOT
-  type        = list(map(string))
+  type        = map(object(
+    {
+      from   = string
+      size   = optional(number)
+      suffix = string
+      to     = optional(string)
+    }
+  ))
 }
 
 variable "name" {

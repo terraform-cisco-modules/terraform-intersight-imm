@@ -1,3 +1,7 @@
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 #____________________________________________________________
 #
 # Fibre-Channel Variables Section.
@@ -20,9 +24,20 @@ variable "description" {
 }
 
 variable "id_blocks" {
-  default     = []
-  description = "List of WWxN's Configuration Parameters to Assign to the Fiber-Channel Pool."
-  type        = list(map(string))
+  default     = {}
+  description = <<-EOT
+  List of WWxN's Configuration Parameters to Assign to the Fiber-Channel Pool.
+  * from - Staring WWxN Address.  An Example is "20:00:00:25:B5:00:00:00".
+  * size - Size of WWxN Pool.  An Example is 1000.
+  * to - Ending WWxN Address.  An Example is "20:00:00:25:B5:00:03:E7".
+  EOT
+  type        = map(object(
+    {
+      from = string
+      size = optional(number)
+      to   = optional(string)
+    }
+  ))
 }
 
 variable "name" {

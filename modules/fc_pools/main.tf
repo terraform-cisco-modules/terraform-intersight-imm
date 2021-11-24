@@ -14,7 +14,8 @@ resource "intersight_fcpool_pool" "fc_pool" {
     content {
       object_type = "fcpool.Block"
       from        = id_blocks.value.from
-      to          = id_blocks.value.to
+      size        = id_blocks.value.size != null ? id_blocks.value.size : null
+      to          = id_blocks.value.to != null ? id_blocks.value.to : null
     }
   }
   organization {

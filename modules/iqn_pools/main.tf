@@ -13,9 +13,9 @@ resource "intersight_iqnpool_pool" "iqn_pool" {
     for_each = var.iqn_blocks
     content {
       from   = iqn_suffix_blocks.value.from
+      size   = iqn_suffix_blocks.value.size != null ? tonumber(iqn_suffix_blocks.value.size) : null
       suffix = iqn_suffix_blocks.value.suffix
-      size   = iqn_suffix_blocks.value.size
-      # to     = iqn_suffix_blocks.value.to
+      to     = iqn_suffix_blocks.value.to != null ? iqn_suffix_blocks.value.to : null
     }
   }
   organization {
