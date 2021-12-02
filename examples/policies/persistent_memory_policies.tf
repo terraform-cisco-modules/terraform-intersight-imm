@@ -8,11 +8,12 @@ module "persistent_memory_example_1" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version           = ">=0.9.6"
   source            = "terraform-cisco-modules/imm/intersight//modules/persistent_memory_policies"
   description       = "Persistent Memory Policy Example."
   name              = "example"
   org_moid          = local.org_moid
-  profiles          = []
+  profiles          = {}
   retain_namespaces = true
   secure_passphrase = var.persistent_passphrase
   tags              = var.tags

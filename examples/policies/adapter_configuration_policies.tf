@@ -8,12 +8,13 @@ module "adapter_configuration_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version             = ">=0.9.6"
   source              = "terraform-cisco-modules/imm/intersight//modules/adapter_configuration_policies"
   description         = "Adapter Configuration Example."
   name                = "example"
   org_moid            = local.org_moid
   portchannel_enabled = true
-  profiles            = []
+  profiles            = {}
   tags                = var.tags
 }
 
@@ -40,7 +41,7 @@ module "adapter_configuration_defaults" {
   name                = "vic_adapter"
   org_moid            = local.org_moid
   portchannel_enabled = true
-  profiles            = []
+  profiles            = {}
   slot_id             = "MLOM"
   tags                = var.tags
 }

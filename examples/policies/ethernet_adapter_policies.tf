@@ -16,6 +16,7 @@ module "ethernet_adapter_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version     = ">=0.9.6"
   source      = "terraform-cisco-modules/imm/intersight//modules/ethernet_adapter_policies"
   description = "vNIC Adapter Example."
   name        = "example"

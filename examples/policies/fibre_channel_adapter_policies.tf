@@ -8,6 +8,7 @@ module "vhba_adapter_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version     = ">=0.9.6"
   source      = "terraform-cisco-modules/imm/intersight//modules/fibre_channel_adapter_policies"
   description = "vHBA Adapter Policy Example."
   name        = "vhba_adapter"

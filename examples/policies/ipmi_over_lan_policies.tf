@@ -8,6 +8,7 @@ module "ipmi_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version     = ">=0.9.6"
   source      = "terraform-cisco-modules/imm/intersight//modules/ipmi_over_lan_policies"
   description = "IPMI Over LAN Policy Example."
   name        = "example"

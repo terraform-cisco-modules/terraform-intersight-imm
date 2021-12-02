@@ -27,6 +27,7 @@ module "ucs_server_profile_template" {
     module.kvm_example,
     module.vmedia_example_1
   ]
+  version     = ">=0.9.6"
   source      = "terraform-cisco-modules/imm/intersight//modules/ucs_server_templates"
   action      = "No-op"
   description = "Server Profile Template Example."

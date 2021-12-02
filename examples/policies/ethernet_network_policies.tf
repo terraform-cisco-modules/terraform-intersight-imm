@@ -8,6 +8,7 @@ module "ethernet_network_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version       = ">=0.9.6"
   source        = "terraform-cisco-modules/imm/intersight//modules/ethernet_network_policies"
   allowed_vlans = "1-100"
   description   = "Ethernet Network Example."

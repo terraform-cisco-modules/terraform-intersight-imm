@@ -21,7 +21,7 @@ module "uuid_pool" {
   org_moid         = local.org_moid
   prefix           = "000025B5-0000-0000"
   tags             = var.tags
-  uuid_suffix_blocks = {
+  uuid_blocks = {
     "0" = {
       from = "0000-000000000000"
       size = 1000
@@ -41,14 +41,14 @@ module "uuid_default" {
   depends_on        = [
     data.intersight_organization_organization.org_moid
   ]
-  source              = "terraform-cisco-modules/imm/intersight//modules/uuid_pools"
-  assignment_order    = "default"
-  description         = ""
-  name                = "default"
-  org_moid            = local.org_moid
-  prefix              = "000025B5-0000-0000"
-  tags                = var.tags
-  uuid_suffix_blocks  = []
+  source           = "terraform-cisco-modules/imm/intersight//modules/uuid_pools"
+  assignment_order = "default"
+  description      = ""
+  name             = "default"
+  org_moid         = local.org_moid
+  prefix           = "000025B5-0000-0000"
+  tags             = var.tags
+  uuid_blocks      = {}
 }
 
 */

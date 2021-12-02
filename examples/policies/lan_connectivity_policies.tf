@@ -13,11 +13,12 @@ module "lan_connectivity_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version     = ">=0.9.6"
   source      = "terraform-cisco-modules/imm/intersight//modules/lan_connectivity_policies"
   description = "vNIC LAN Connectivity Example."
   name        = "example"
   org_moid    = local.org_moid
-  profiles    = []
+  profiles    = {}
   tags        = var.tags
 }
 

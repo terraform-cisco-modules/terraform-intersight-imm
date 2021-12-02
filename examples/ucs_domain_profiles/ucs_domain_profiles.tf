@@ -13,6 +13,7 @@ module "ucs_domain_profile_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version     = ">=0.9.6"
   source      = "terraform-cisco-modules/imm/intersight//modules/ucs_domain_profiles"
   description = "UCS Domain Profile Example."
   name        = "example"
@@ -31,6 +32,7 @@ module "ucs_domain_profile_a_example" {
     data.intersight_organization_organization.org_moid,
     module.ucs_domain_profile_example,
   ]
+  version         = ">=0.9.6"
   source          = "terraform-cisco-modules/imm/intersight//modules/ucs_domain_switches"
   action          = "No-op"
   assigned_switch = []
@@ -46,6 +48,7 @@ module "ucs_domain_profile_b_example" {
     module.ucs_domain_profile_example,
     module.ucs_domain_profile_a_example
   ]
+  version         = ">=0.9.6"
   source          = "terraform-cisco-modules/imm/intersight//modules/ucs_domain_switches"
   action          = "No-op"
   assigned_switch = []

@@ -11,30 +11,30 @@
 
 module "port_policy_example_a" {
   depends_on = [
-    data.intersight_organization_organization.org_moid,
-    module.ucs_domain_profile_a_example
+    data.intersight_organization_organization.org_moid
   ]
+  version      = ">=0.9.6"
   source       = "terraform-cisco-modules/imm/intersight//modules/port_policies"
   description  = "Port Policy Example."
   device_model = "UCS-FI-64108"
   name         = "example_a"
   org_moid     = local.org_moid
   tags         = var.tags
-  profiles     = [module.ucs_domain_profile_a_example.moid]
+  profiles     = {}
 }
 
 module "port_policy_example_b" {
   depends_on = [
-    data.intersight_organization_organization.org_moid,
-    module.ucs_domain_profile_b_example
+    data.intersight_organization_organization.org_moid
   ]
+  version      = ">=0.9.6"
   source       = "terraform-cisco-modules/imm/intersight//modules/port_policies"
   description  = "Port Policy Example."
   device_model = "UCS-FI-64108"
   name         = "example_b"
   org_moid     = local.org_moid
   tags         = var.tags
-  profiles     = [module.ucs_domain_profile_b_example.moid]
+  profiles     = {}
 }
 
 

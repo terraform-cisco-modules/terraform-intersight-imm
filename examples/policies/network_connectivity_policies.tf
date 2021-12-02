@@ -9,24 +9,23 @@ module "dns_example_1" {
     module.ucs_domain_profile_a_example,
     module.ucs_domain_profile_b_example
   ]
+  version        = ">=0.9.6"
   source         = "terraform-cisco-modules/imm/intersight//modules/network_connectivity_policies"
   description    = "Network Connectivity (DNS) Policy Example."
   dns_servers_v4 = var.dns_servers_v4
   name           = "example_1"
   org_moid       = local.org_moid
   profile_type   = "domain"
-  profiles = [
-    module.ucs_domain_profile_a_example.moid,
-    module.ucs_domain_profile_b_example.moid
-  ]
-  tags          = var.tags
-  update_domain = "example.com"
+  profiles       = {}
+  tags           = var.tags
+  update_domain  = "example.com"
 }
 
 module "dns_example_2" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version        = ">=0.9.6"
   source         = "terraform-cisco-modules/imm/intersight//modules/network_connectivity_policies"
   description    = "Network Connectivity (DNS) Policy Example with IPv6."
   dns_servers_v4 = var.dns_servers_v4
@@ -34,7 +33,7 @@ module "dns_example_2" {
   ipv6_enable    = true
   name           = "example_2"
   org_moid       = local.org_moid
-  profiles       = []
+  profiles       = {}
   tags           = var.tags
   update_domain  = "example.com"
 }

@@ -9,6 +9,7 @@ module "ntp_example" {
     module.ucs_domain_profile_a_example,
     module.ucs_domain_profile_b_example
   ]
+  version      = ">=0.9.6"
   source       = "terraform-cisco-modules/imm/intersight//modules/ntp_policies"
   description  = "NTP Policy Example."
   name         = "example"
@@ -17,10 +18,7 @@ module "ntp_example" {
   profile_type = "domain"
   timezone     = var.timezone
   tags         = var.tags
-  profiles = [
-    module.ucs_domain_profile_a_example.moid,
-    module.ucs_domain_profile_b_example.moid
-  ]
+  profiles     = {}
 }
 
 #______________________________________________

@@ -10,6 +10,7 @@ module "iscsi_boot_example" {
     module.iscsi_adapter_example,
     module.iscsi_target_example,
   ]
+  version                 = ">=0.9.6"
   source                  = "terraform-cisco-modules/imm/intersight//modules/iscsi_boot_policies"
   auto_targetvendor_name  = ""
   description             = "vNIC iSCSI Boot Example."

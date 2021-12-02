@@ -23,6 +23,7 @@ module "ucs_server_profile" {
     module.sol_example,
     module.snmp_example
   ]
+  version         = ">=0.9.6"
   source          = "terraform-cisco-modules/imm/intersight//modules/ucs_server_profiles"
   action          = "No-op"
   assigned_server = []

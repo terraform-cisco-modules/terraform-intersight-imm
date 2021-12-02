@@ -20,13 +20,13 @@ module "mac_pool_a" {
   name             = "mac_pool_a"
   org_moid         = local.org_moid
   tags             = var.tags
-  mac_blocks = [
-    {
+  mac_blocks = {
+    "0" = {
       from = "00:25:B5:0a:00:00"
       size = 256
       # to   = "00:25:B5:0a:00:ff"
     }
-  ]
+  }
 }
 
 module "mac_pool_b" {
@@ -40,18 +40,18 @@ module "mac_pool_b" {
   name             = "mac_pool_b"
   org_moid         = local.org_moid
   tags             = var.tags
-  mac_blocks = [
-    {
+  mac_blocks = {
+    "0" = {
       from = "00:25:B5:0b:00:00"
       size = 256
       # to   = "00:25:B5:0b:00:ff"
     },
-    {
+    "1" = {
       from = "00:25:B5:0c:00:00"
       size = 256
       # to   = "00:25:B5:0c:00:ff"
     }
-  ]
+  }
 }
 
 
@@ -72,7 +72,7 @@ module "mac_pool_default" {
   name                = "default"
   org_moid            = local.org_moid
   tags                = var.tags
-  mac_blocks          = []
+  mac_blocks          = {}
 }
 
 */

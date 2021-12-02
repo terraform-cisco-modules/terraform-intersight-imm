@@ -13,11 +13,12 @@ module "local_user_policy_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version     = ">=0.9.6"
   source      = "terraform-cisco-modules/imm/intersight//modules/local_user_policies"
   description = "Local User Policy Example; accepting default values."
   name        = "local_user_policy"
   org_moid    = local.org_moid
-  profiles    = []
+  profiles    = {}
   tags        = var.tags
 }
 
@@ -32,6 +33,7 @@ module "local_user_1" {
     data.intersight_organization_organization.org_moid,
     module.local_user_policy_example
   ]
+  version          = ">=0.9.6"
   source           = "terraform-cisco-modules/imm/intersight//modules/local_user_add_users"
   org_moid         = local.org_moid
   user_enabled     = true
@@ -46,6 +48,7 @@ module "local_user_2" {
     data.intersight_organization_organization.org_moid,
     module.local_user_policy_example
   ]
+  version          = ">=0.9.6"
   source           = "terraform-cisco-modules/imm/intersight//modules/local_user_add_users"
   org_moid         = local.org_moid
   user_enabled     = true

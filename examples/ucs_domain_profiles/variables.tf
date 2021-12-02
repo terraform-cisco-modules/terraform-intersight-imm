@@ -35,3 +35,15 @@ variable "organization" {
 }
 
 
+#__________________________________________________________
+#
+# Variables Shared between all the Pools
+#__________________________________________________________
+
+variable "tags" {
+  default     = []
+  description = "List of Key/Value Pairs to Assign as Attributes to the Policy."
+  type        = list(map(string))
+}
+
+

@@ -20,7 +20,7 @@ module "ip_pool_1" {
   name             = "ip_pool_1"
   org_moid         = local.org_moid
   tags             = var.tags
-  ipv4_block = {
+  ipv4_blocks = {
     "0" = {
       from = "198.18.1.32"
       size = 32
@@ -40,7 +40,7 @@ module "ip_pool_1" {
       secondary_dns = "198.18.1.11"
     }
   }
-  ipv6_block = {
+  ipv6_blocks = {
     "0" = {
       from = "2001:002:1::32"
       size = 32
@@ -74,7 +74,7 @@ module "ip_pool_2" {
   name             = "ip_pool_2"
   org_moid         = local.org_moid
   tags             = var.tags
-  ipv4_block = {
+  ipv4_blocks = {
     "0" = {
       from = "198.18.2.32"
       size = 32
@@ -108,9 +108,9 @@ module "ip_pool_default" {
   name                = "default"
   org_moid            = local.org_moid
   tags                = var.tags
-  ipv4_block          = {}
+  ipv4_blocks         = {}
   ipv4_config         = {}
-  ipv6_block          = {}
+  ipv6_blocks         = {}
   ipv6_config         = {}
 }
 

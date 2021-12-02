@@ -18,11 +18,12 @@ module "bios_example" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version     = ">=0.9.6"
   source      = "terraform-cisco-modules/imm/intersight//modules/bios_policies"
   description = "Example BIOS Policy."
   name        = "example"
   org_moid    = local.org_moid
-  profiles    = []
+  profiles    = {}
   tags        = var.tags
 
   #+++++++++++++++++++++++++++++++

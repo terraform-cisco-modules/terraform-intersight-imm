@@ -1,72 +1,10 @@
-# Intersight Policies and Profiles Examples
+# Intersight Chassis Profiles Examples
 
-## This folder contains examples of how to consume profiles and policies.  This is not meant to be a working deployment
+## This folder contains examples of UCS Chassis Profiles.  This is not meant to be a working deployment
 
 ### Examples in this Directory
 
-* Adapter Configuration
-* BIOS
-* Boot Order
-* Certificate Management (Under Developement)
-* Device Connector
-* Disk Group
-* Ethernet Adapter
-* Ethernet Network
-* Ethernet Network Control
-* Ethernet Network Group
-* Ethernet QoS
-* Fibre Channel Adapter
-* Fibre Channel Network
-* Fibre Channel QoS
-* Flow Control Policy
-* IMC Access
-* IPMI Over LAN
-* iSCSI Adapter
-* iSCSI Boot
-* iSCSI Static Target
-* LAN Connectivity
-    vNIC
-* LDAP
-    LDAP Group
-    LDAP Policy
-    LDAP Provider
-* Link Aggregation Policy
-* Link Control Policy
-* Local User
-    Local User
-    Local User Policy
-* Multicast Policy
-* Network Connectivity (DNS)
-* NTP
-* Persistent Memory
-* Port Policy with:
-    Port Mode
-    LAN Uplink
-    LAN Uplink Port-Channel
-    SAN Uplink
-    SAN Uplink Port-Channel
-    Server Port
-* SAN Connectivity
-    vHBA
-* SD Card
-* Serial Over LAN
-* SMTP
-* SNMP
-* SSH
-* Storage
-* Switch Control
-rm * Syslog
-* System QoS Policy
-* Virtual KVM
-* Virtual Media
-* UCS Domain Profile
-* UCS Domain Profile Switch
-* UCS Server Profile
-* UCS Server Template
-* VLAN Policy
-    VLAN - Range and list examples for VLAN Creation
-* VSAN Policy
-    VSAN - Examples for Fabric A and Fabric B assignments
+* UCS Chassis Profiles
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

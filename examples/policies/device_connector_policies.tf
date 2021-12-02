@@ -8,11 +8,12 @@ module "device_connector" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version     = ">=0.9.6"
   source      = "terraform-cisco-modules/imm/intersight//modules/device_connector_policies"
   description = "Device Connector Policy Example."
   name        = "example"
   org_moid    = local.org_moid
-  profiles    = []
+  profiles    = {}
   tags        = var.tags
 }
 
