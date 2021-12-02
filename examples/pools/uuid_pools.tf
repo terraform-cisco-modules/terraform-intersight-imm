@@ -13,20 +13,21 @@ module "uuid_pool" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
-  # source           = "../../modules/uuid_pools"
+  version          = ">=0.9.6"
   source           = "terraform-cisco-modules/imm/intersight//modules/uuid_pools"
   assignment_order = "sequential"
   description      = "Example UUID Pool."
   name             = "uuid_pool"
   org_moid         = local.org_moid
+  prefix           = "000025B5-0000-0000"
   tags             = var.tags
-  uuid_suffix_blocks = [
-    {
+  uuid_suffix_blocks = {
+    "0" = {
       from = "0000-000000000000"
-      size = 32768
-      # to   = "0000-000000000032"
+      size = 1000
+      # to   = "0000-0000000003E7"
     }
-  ]
+  }
 }
 
 #______________________________________________

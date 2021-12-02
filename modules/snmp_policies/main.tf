@@ -46,8 +46,8 @@ resource "intersight_snmp_policy" "snmp" {
       enabled     = snmp_traps.value.enable
       port        = snmp_traps.value.port
       type        = snmp_traps.value.trap_type
-      nr_version  = snmp_traps.value.snmp_v3_user != "" ? "V3" : "V2"
-      user        = snmp_traps.value.snmp_v3_user
+      nr_version  = snmp_traps.value.user != "" ? "V3" : "V2"
+      user        = snmp_traps.value.user
     }
   }
   dynamic "snmp_users" {

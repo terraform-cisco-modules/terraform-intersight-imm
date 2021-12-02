@@ -13,6 +13,7 @@ module "mac_pool_a" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version          = ">=0.9.6"
   source           = "terraform-cisco-modules/imm/intersight//modules/mac_pools"
   assignment_order = "sequential"
   description      = "Example A MAC Pool."
@@ -22,7 +23,8 @@ module "mac_pool_a" {
   mac_blocks = [
     {
       from = "00:25:B5:0a:00:00"
-      to   = "00:25:B5:0a:00:fe"
+      size = 256
+      # to   = "00:25:B5:0a:00:ff"
     }
   ]
 }
@@ -31,6 +33,7 @@ module "mac_pool_b" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version          = ">=0.9.6"
   source           = "terraform-cisco-modules/imm/intersight//modules/mac_pools"
   assignment_order = "sequential"
   description      = "Example B MAC Pool."
@@ -40,11 +43,13 @@ module "mac_pool_b" {
   mac_blocks = [
     {
       from = "00:25:B5:0b:00:00"
-      to   = "00:25:B5:0b:00:fe"
+      size = 256
+      # to   = "00:25:B5:0b:00:ff"
     },
     {
       from = "00:25:B5:0c:00:00"
-      to   = "00:25:B5:0c:00:fe"
+      size = 256
+      # to   = "00:25:B5:0c:00:ff"
     }
   ]
 }

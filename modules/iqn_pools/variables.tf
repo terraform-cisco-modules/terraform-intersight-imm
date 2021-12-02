@@ -38,7 +38,7 @@ variable "iqn_blocks" {
   * suffix - Suffix to assign to the IQN Pool.  An Exmaple is "ucs-host".
   * to - Ending IQN Address.  An Exmaple is 1000.
   EOT
-  type        = map(object(
+  type = map(object(
     {
       from   = string
       size   = optional(number)

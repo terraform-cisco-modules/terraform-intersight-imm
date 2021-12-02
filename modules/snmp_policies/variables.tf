@@ -227,7 +227,7 @@ variable "snmp_trap_destinations" {
   * community_string - Default is 0.  A number Between 1-5 to denote to use one of the variables snmp_auth_password_[1-5].  Any other number means no community string.
   * enable - Default is true.  Enables/disables the trap on the server If enabled, trap is active on the server.
   * port - Default is 162.  Port used by the server to communicate with the trap destination. Enter a value between 1-65535. Reserved ports not allowed (22, 23, 80, 123, 389, 443, 623, 636, 2068, 3268, 3269).
-  * snmp_v3_user - SNMP user for the trap. Applicable only to SNMPv3.
+  * user - SNMP user for the trap. Applicable only to SNMPv3.
   * trap_type - Type of trap which decides whether to receive a notification when a trap is received at the destination.
     - Inform - Receive notifications when trap is sent to the destination. This option is valid only for SNMPv2.
     - Trap - Do not receive notifications when trap is sent to the destination.
@@ -237,7 +237,7 @@ variable "snmp_trap_destinations" {
       community_string = optional(string)
       enable           = optional(bool)
       port             = optional(number)
-      snmp_v3_user     = optional(string)
+      user             = optional(string)
       trap_type        = optional(string)
     }
   ))

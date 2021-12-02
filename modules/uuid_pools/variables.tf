@@ -26,7 +26,7 @@ variable "description" {
 variable "uuid_blocks" {
   default     = {}
   description = "List of UUID's Suffix Parameters to Assign to the UUID Pool."
-  type        = map(object(
+  type = map(object(
     {
       from = string
       size = optional(number)

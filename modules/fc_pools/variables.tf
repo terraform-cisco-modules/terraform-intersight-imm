@@ -31,7 +31,7 @@ variable "id_blocks" {
   * size - Size of WWxN Pool.  An Example is 1000.
   * to - Ending WWxN Address.  An Example is "20:00:00:25:B5:00:03:E7".
   EOT
-  type        = map(object(
+  type = map(object(
     {
       from = string
       size = optional(number)

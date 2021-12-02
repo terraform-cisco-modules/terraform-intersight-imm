@@ -31,7 +31,7 @@ variable "mac_blocks" {
   * size - Size of MAC Address Pool.  An Example is 1000.
   * to - Ending MAC Address.  An Example is "00:25:B5:0A:03:E7".
   EOT
-  type        = map(object(
+  type = map(object(
     {
       from = string
       size = optional(number)

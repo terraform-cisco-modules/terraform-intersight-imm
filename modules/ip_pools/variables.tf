@@ -26,7 +26,7 @@ variable "description" {
 variable "ipv4_blocks" {
   default     = {}
   description = "List of IPv4 Addresses to Assign to the IP Pool."
-  type        = map(object(
+  type = map(object(
     {
       from = string
       size = optional(number)
@@ -62,7 +62,7 @@ variable "ipv6_blocks" {
   * size - Size of the IPv6 Address Pool
   * to - Ending IPv6 Address.
   EOT
-  type        = map(object(
+  type = map(object(
     {
       from = string
       size = optional(number)

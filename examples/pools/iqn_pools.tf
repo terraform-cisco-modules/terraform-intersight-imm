@@ -7,6 +7,7 @@ module "iqn_pool" {
   depends_on = [
     data.intersight_organization_organization.org_moid
   ]
+  version          = ">=0.9.6"
   source           = "terraform-cisco-modules/imm/intersight//modules/iqn_pools"
   assignment_order = "sequential"
   description      = "IQN Pool Example."
@@ -16,7 +17,7 @@ module "iqn_pool" {
   tags             = var.tags
   iqn_suffix_blocks = [
     {
-      from   = 01
+      from   = 00
       suffix = "ucs-host"
       size   = 32
       # to     = 31
