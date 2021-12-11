@@ -46,7 +46,7 @@ No modules.
 | <a name="input_base64_certificate"></a> [base64\_certificate](#input\_base64\_certificate) | The Server Certificate in Base64 format. | `string` | n/a | yes |
 | <a name="input_base64_private_key"></a> [base64\_private\_key](#input\_base64\_private\_key) | Private Key in Base64 Format. | `string` | n/a | yes |
 | <a name="input_description"></a> [description](#input\_description) | Description for the Policy. | `string` | `""` | no |
-| <a name="input_enabled"></a> [enabled](#input\_enabled) | Enable/Disable the certificate in Certificate Management policy. | `bool` | `true` | no |
+| <a name="input_enabled"></a> [enabled](#input\_enabled) | Enable/Disable the Certificate Management policy. | `bool` | `true` | no |
 | <a name="input_endpoint"></a> [endpoint](#input\_endpoint) | Intersight URL. | `string` | `"https://intersight.com"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the Policy. | `string` | `"certificate"` | no |
 | <a name="input_org_moid"></a> [org\_moid](#input\_org\_moid) | Intersight Organization moid. | `string` | n/a | yes |

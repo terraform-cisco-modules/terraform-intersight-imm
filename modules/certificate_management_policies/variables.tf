@@ -3,21 +3,27 @@
 # Certificate Management Policy Variables Section.
 #____________________________________________________________
 
-variable "description" {
-  default     = ""
-  description = "Description for the Policy."
-  type        = string
-}
-
 variable "base64_certificate" {
   description = "The Server Certificate in Base64 format."
   sensitive   = true
   type        = string
 }
 
+variable "base64_private_key" {
+  description = "Private Key in Base64 Format."
+  sensitive   = true
+  type        = string
+}
+
+variable "description" {
+  default     = ""
+  description = "Description for the Policy."
+  type        = string
+}
+
 variable "enabled" {
   default     = true
-  description = "Enable/Disable the certificate in Certificate Management policy."
+  description = "Enable/Disable the Certificate Management policy."
   type        = bool
 }
 
@@ -29,12 +35,6 @@ variable "name" {
 
 variable "org_moid" {
   description = "Intersight Organization moid."
-  type        = string
-}
-
-variable "base64_private_key" {
-  description = "Private Key in Base64 Format."
-  sensitive   = true
   type        = string
 }
 
