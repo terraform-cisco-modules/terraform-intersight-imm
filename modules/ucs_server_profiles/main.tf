@@ -17,8 +17,8 @@ resource "intersight_server_profile" "server_profile" {
   ) > 0 ? "POOL" : var.static_uuid_address != "" ? "STATIC" : "NONE"
   wait_for_completion = var.wait_for_completion
   organization {
-    object_type = "organization.Organization"
     moid        = var.org_moid
+    object_type = "organization.Organization"
   }
   dynamic "assigned_server" {
     for_each = var.assigned_server
@@ -35,7 +35,7 @@ resource "intersight_server_profile" "server_profile" {
     }
   }
   dynamic "policy_bucket" {
-    for_each = var.policy_bucket
+    for_each = [for s in var.policy_bucket : s if s != null]
     content {
       moid        = policy_bucket.value.moid
       object_type = policy_bucket.value.object_type

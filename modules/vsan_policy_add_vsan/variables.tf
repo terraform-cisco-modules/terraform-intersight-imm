@@ -39,3 +39,14 @@ variable "vsan_policy_moid" {
   description = "VSAN Policy (Fibre-Channel Network Policy) moid."
   type        = string
 }
+
+variable "vsan_scope" {
+  default     = "Uplink"
+  description = <<-EOT
+  Used to indicate whether the VSAN Id is defined for storage or uplink or both traffics in FI.
+    * Uplink - Vsan associated with uplink network.
+    * Storage - Vsan associated with storage network.
+    * Common - Vsan that is common for uplink and storage network.
+  EOT
+  type        = string
+}

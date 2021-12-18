@@ -48,6 +48,7 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Name for the VSAN. | `string` | `"vsan"` | no |
 | <a name="input_vsan_id"></a> [vsan\_id](#input\_vsan\_id) | VSAN Identifier to Assign to the VSAN Policy. | `number` | n/a | yes |
 | <a name="input_vsan_policy_moid"></a> [vsan\_policy\_moid](#input\_vsan\_policy\_moid) | VSAN Policy (Fibre-Channel Network Policy) moid. | `string` | n/a | yes |
+| <a name="input_vsan_scope"></a> [vsan\_scope](#input\_vsan\_scope) | Used to indicate whether the VSAN Id is defined for storage or uplink or both traffics in FI.<br>  * Uplink - Vsan associated with uplink network.<br>  * Storage - Vsan associated with storage network.<br>  * Common - Vsan that is common for uplink and storage network. | `string` | `"Uplink"` | no |
 
 ## Outputs
 

@@ -19,7 +19,7 @@ resource "intersight_fabric_switch_profile" "switch_profile" {
     }
   }
   dynamic "policy_bucket" {
-    for_each = var.policy_bucket
+    for_each = [for s in var.policy_bucket : s if s != null]
     content {
       moid        = policy_bucket.value.moid
       object_type = policy_bucket.value.object_type

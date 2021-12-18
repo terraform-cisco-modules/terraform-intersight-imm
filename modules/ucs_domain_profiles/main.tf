@@ -9,8 +9,8 @@ resource "intersight_fabric_switch_cluster_profile" "domain_profile" {
   name        = var.name
   type        = var.domain_type
   organization {
-    object_type = "organization.Organization"
     moid        = var.org_moid
+    object_type = "organization.Organization"
   }
   dynamic "src_template" {
     for_each = var.domain_src_template

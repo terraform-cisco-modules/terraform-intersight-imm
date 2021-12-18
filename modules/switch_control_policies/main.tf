@@ -6,6 +6,8 @@
 
 resource "intersight_fabric_switch_control_policy" "switch_control" {
   description                    = var.description
+  ethernet_switching_mode        = var.ethernet_switching_mode
+  fc_switching_mode              = var.fc_switching_mode
   name                           = var.name
   vlan_port_optimization_enabled = var.vlan_optimization
   mac_aging_settings {

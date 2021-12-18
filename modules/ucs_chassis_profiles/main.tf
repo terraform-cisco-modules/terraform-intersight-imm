@@ -12,8 +12,8 @@ resource "intersight_chassis_profile" "chassis_profile" {
   type                = var.type
   wait_for_completion = var.wait_for_completion
   organization {
-    object_type = "organization.Organization"
     moid        = var.org_moid
+    object_type = "organization.Organization"
   }
   dynamic "assigned_chassis" {
     for_each = var.assigned_chassis
@@ -22,7 +22,7 @@ resource "intersight_chassis_profile" "chassis_profile" {
     }
   }
   dynamic "policy_bucket" {
-    for_each = var.policy_bucket
+    for_each = [for s in var.policy_bucket : s if s != null]
     content {
       moid        = policy_bucket.value.moid
       object_type = policy_bucket.value.object_type

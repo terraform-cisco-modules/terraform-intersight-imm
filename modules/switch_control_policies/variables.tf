@@ -9,6 +9,26 @@ variable "description" {
   type        = string
 }
 
+variable "ethernet_switching_mode" {
+  default     = "end-host"
+  description = <<-EOT
+  Enable or Disable Ethernet End Host Switching Mode.
+    * end-host - In end-host mode, the fabric interconnects appear to the upstream devices as end hosts with multiple links.  In this mode, the switch does not run Spanning Tree Protocol and avoids loops by following a set of rules for traffic forwarding.  In case of ethernet switching mode - Ethernet end-host mode is also known as Ethernet host virtualizer.
+    * switch - In switch mode, the switch runs Spanning Tree Protocol to avoid loops, and broadcast and multicast packets are handled in the traditional way.This is the traditional switch mode.
+  EOT
+  type        = string
+}
+
+variable "fc_switching_mode" {
+  default     = "end-host"
+  description = <<-EOT
+  Enable or Disable FC End Host Switching Mode.
+    * end-host - In end-host mode, the fabric interconnects appear to the upstream devices as end hosts with multiple links.  In this mode, the switch does not run Spanning Tree Protocol and avoids loops by following a set of rules for traffic forwarding.  In case of ethernet switching mode - Ethernet end-host mode is also known as Ethernet host virtualizer.
+    * switch - In switch mode, the switch runs Spanning Tree Protocol to avoid loops, and broadcast and multicast packets are handled in the traditional way.This is the traditional switch mode.
+  EOT
+  type        = string
+}
+
 variable "mac_aging_option" {
   default     = "Default"
   description = <<-EOT
