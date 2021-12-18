@@ -20,7 +20,6 @@ resource "intersight_fabric_fc_storage_role" "port_role" {
   for_each          = local.port_list
   admin_speed       = var.admin_speed
   aggregate_port_id = var.breakout_port_id
-  fill_pattern      = var.fill_pattern
   port_id           = each.value
   slot_id           = var.slot_id
   vsan_id           = var.vsan_id

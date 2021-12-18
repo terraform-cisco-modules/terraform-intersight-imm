@@ -21,16 +21,6 @@ variable "breakout_port_id" {
   type        = number
 }
 
-variable "fill_pattern" {
-  default     = "Idle"
-  description = <<-EOT
-  Fill pattern to differentiate the configs in NPIV.
-  * Arbff - Fc Fill Pattern type Arbff.
-  * Idle - Fc Fill Pattern type Idle.
-  EOT
-  type        = string
-}
-
 variable "port_list" {
   default     = ""
   description = "String of Ports to assign to the Port Policy."
