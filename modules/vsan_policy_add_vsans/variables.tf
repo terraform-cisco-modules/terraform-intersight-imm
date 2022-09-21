@@ -27,14 +27,14 @@ variable "tags" {
 
 variable "vsan_list" {
   default = {}
-  type = map(object({
+  type = list(object({
     fcoe_vlan = number
     vsan_id   = number
   }))
 }
 
 variable "vsan_prefix" {
-  default     = "VLAN"
+  default     = "VSAN"
   description = "Prefix Name for VSANs."
   type        = string
 }

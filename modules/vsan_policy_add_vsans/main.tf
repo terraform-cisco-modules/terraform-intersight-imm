@@ -4,7 +4,7 @@
 # GUI Location: Policies > Create Policy > VSAN > Add VSAN
 #__________________________________________________________________
 
-resource "intersight_fabric_vsan" "vsan" {
+resource "intersight_fabric_vsan" "vsans" {
   for_each             = var.vsan_list
   default_zoning       = var.default_zoning
   fcoe_vlan            = each.value.fcoe_vlan
